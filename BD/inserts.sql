@@ -1,82 +1,93 @@
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Saiyans FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Ultimate Mostoles', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('El Barrio', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Kunisports', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('PIO FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Aniquiladores FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Los Troncos FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('1K FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Rayo de Barcelona', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('xBuyer Team', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Porcinos FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL)VALUES  ('Jijantes FC', 2000000);
 
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Iker Casillas','Casillas','11111111A','611111111','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/1K-IKER-CASILLAS.png');
+('Iker','Casillas','11111111A','611111111','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/1K-IKER-CASILLAS.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Julio García Mera','Mera','11111123A','611111123','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/1k/entrenador.png');
+('Julio','García Mera','11111123A','611111123','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/1k/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Juan Guarnizo','Guarnizo','11111124A','611111124','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/JUAN-GUARNIZO-ANIQUILADORES-FC.png');
+('Juan','Guarnizo','11111124A','611111124','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/JUAN-GUARNIZO-ANIQUILADORES-FC.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Sergio Verdirame','Verdirame','11111136A','611111136','ENTRENADOR','http://kingsleague.pro/wp-content/uploads/aniquiladores/entrenador.png');
+('Sergio','Verdirame','11111136A','611111136','ENTRENADOR','http://kingsleague.pro/wp-content/uploads/aniquiladores/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Adri Contreras','Contreras','11111137A','611111137','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/EL-BARRIO-ADRI-CONTRERAS.png');
+('Adri','Contreras','11111137A','611111137','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/EL-BARRIO-ADRI-CONTRERAS.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Juan Arroita','Arroita','11111149A','611111149','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/barrio/entrenador.png');
+('Juan','Arroita','11111149A','611111149','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/barrio/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Gerard Romero','Romero','11111150A','611111150','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/Gerard-Romero.png');
+('Gerard','Romero','11111150A','611111150','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/Gerard-Romero.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Marc Carmona','Carmona','11111162A','611111162','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/jijantes/entrenador.png');
+('Marc','Carmona','11111162A','611111162','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/jijantes/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Kun Agüero','Agüero','11111163A','611111163','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/KUNSPORTS-KUN-AGUERO.png');
+('Kun','Agüero','11111163A','611111163','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/KUNSPORTS-KUN-AGUERO.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Martín Posse','Posse','11111175A','611111175','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/kunisports/entrenador.png');
+('Martín','Posse','11111175A','611111175','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/kunisports/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Perxitaa',NULL,'11111176A','611111176','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/PERXITAA-LOS-TRONCOS-FC.png');
+('Jaume','Cremades','11111176A','611111176','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/PERXITAA-LOS-TRONCOS-FC.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Pol Font','Font','11111188A','611111188','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/troncos/entrenador.png');
+('Pol','Font','11111188A','611111188','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/troncos/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Rivers',NULL,'11111189A','611111189','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/RIVERS-PIO-FC.png');
+('Samy','Rivera','11111189A','611111189','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/RIVERS-PIO-FC.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Gerardo Torrado','Torrado','11111201A','611111201','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/pio/entrenador.png');
+('Gerardo','Torrado','11111201A','611111201','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/pio/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Ibai Llanos','Llanos','11111202A','611111202','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/IBAI-LLANOS-PORCINOS-FC.png');
+('Ibai','Llanos','11111202A','611111202','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/IBAI-LLANOS-PORCINOS-FC.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Juvenal Edjogo-Owono','Edjogo-Owono','11111214A','611111214','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/porcinos/entrenador.png');
+('Juvenal','Edjogo-Owono','11111214A','611111214','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/porcinos/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Spursito',NULL,'11111215A','611111215','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/SPURSITO-RAYO-BARCELONA.png');
+('Marti','Miras','11111215A','611111215','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/SPURSITO-RAYO-BARCELONA.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('JuanluDBZ',NULL,'11111227A','611111227','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/rayo-bcn/entrenador.png');
+('Juan','Luis','11111227A','611111227','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/rayo-bcn/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('TheGrefg',NULL,'11111228A','611111228','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/THEGREFG-SAIYANS-FC.png');
+('David','Canovas','11111228A','611111228','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/THEGREFG-SAIYANS-FC.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Daniel Romo','Romo','11111240A','611111240','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/saiyans/entrenador.png');
+('Daniel','Romo','11111240A','611111240','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/saiyans/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('DjMaRiiO',NULL,'11111241A','611111241','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/DJMARIIO-ULTIMATE-MOSTOLES.png');
+('Mario','Alonso','11111241A','611111241','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/DJMARIIO-ULTIMATE-MOSTOLES.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Nacho Castro','Castro','11111253A','611111253','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/entrenador.png');
+('Nacho','Castro','11111253A','611111253','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/entrenador.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Hnos. Buyer','Buyer','11111254A','611111254','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/BUYER-TEAM-xbuyer.png');
+('Javier','Ruiz','11111254A','611111254','PRESIDENTE','https://kingsleague.pro/wp-content/uploads/2022/12/BUYER-TEAM-xbuyer.png');
 INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES
-('Victor González','González','11111266A','611111266','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/xbuyer/entrenador.png');
-
+('Victor','González','11111266A','611111266','ENTRENADOR','https://kingsleague.pro/wp-content/uploads/xbuyer/entrenador.png');
 
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Ricardo','López','11111112A','611111112','PORTERO','https://kingsleague.pro/wp-content/uploads/1k/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Román','Alegre','11111113A','611111113','DEFENSA','https://kingsleague.pro/wp-content/uploads/1k/0.png','73','71','68','76','86','66');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Sorroche','Sorroche','11111114A','611111114','DELANTERO','https://kingsleague.pro/wp-content/uploads/1k/7.png','93','74','87','58','78','73');
+('Manuel','Sorroche','11111114A','611111114','DELANTERO','https://kingsleague.pro/wp-content/uploads/1k/7.png','93','74','87','58','78','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Marino','Gómez','11111115A','611111115','DELANTERO','https://kingsleague.pro/wp-content/uploads/1k/97.png','73','59','81','83','68','69');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Ledo','Ledo','11111116A','611111116','DEFENSA','https://kingsleague.pro/wp-content/uploads/1k/3.png','67','51','70','72','81','70');
+('Mario','Ledo','11111116A','611111116','DEFENSA','https://kingsleague.pro/wp-content/uploads/1k/3.png','67','51','70','72','81','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Sauras','Sauras','11111117A','611111117','DEFENSA','https://kingsleague.pro/wp-content/uploads/1k/8.png','73','69','69','62','65','82');
+('Juan','Sauras','11111117A','611111117','DEFENSA','https://kingsleague.pro/wp-content/uploads/1k/8.png','73','69','69','62','65','82');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Bruno','Gumà','11111118A','611111118','DEFENSA','https://kingsleague.pro/wp-content/uploads/1k/14.png','66','51','77','76','78','84');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Pluvins','Pluvins','11111119A','611111119','MEDIO','https://kingsleague.pro/wp-content/uploads/1k/80.png','72','58','78','70','87','71');
+('Alexander','Pluvins','11111119A','611111119','MEDIO','https://kingsleague.pro/wp-content/uploads/1k/80.png','72','58','78','70','87','71');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Rivero','Rivero','11111120A','611111120','MEDIO','https://kingsleague.pro/wp-content/uploads/1k/10.png','73','64','82','60','87','75');
+('Martin','Rivero','11111120A','611111120','MEDIO','https://kingsleague.pro/wp-content/uploads/1k/10.png','73','64','82','60','87','75');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Lautaro','Nicolas','11111121A','611111121','DELANTERO','https://kingsleague.pro/wp-content/uploads/1k/9.png','79','59','75','70','69','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Günter','Tremiño','11111122A','611111122','DELANTERO','https://kingsleague.pro/wp-content/uploads/1k/11.png','71','76','83','55','78','71');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('F. Hernández','Hernández','11111125A','611111125','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/14.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Fernando','Hernández','11111125A','611111125','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/14.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Daniel P.','Pérez','11111126A','611111126','PORTERO','https://kingsleague.pro/wp-content/uploads/aniquiladores/25.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Daniel','Pérez','11111126A','611111126','PORTERO','https://kingsleague.pro/wp-content/uploads/aniquiladores/25.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Galvany','Galvany','11111127A','611111127','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/8.png','73','63','86','87','81','90');
+('Zaza','Galvany','11111127A','611111127','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/8.png','73','63','86','87','81','90');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Andrés','Serrano','11111128A','611111128','DEFENSA','https://kingsleague.pro/wp-content/uploads/aniquiladores/5.png','74','69','69','71','63','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
@@ -86,47 +97,47 @@ INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Jorquera','Garcia','11111131A','611111131','DEFENSA','https://kingsleague.pro/wp-content/uploads/aniquiladores/22.png','74','69','70','83','66','71');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Gilles V.','Vidal','11111132A','611111132','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/9.png','82','58','65','81','81','73');
+('Gilles','Vidal','11111132A','611111132','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/9.png','82','58','65','81','81','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Jadir','Cirera','11111133A','611111133','DEFENSA','https://kingsleague.pro/wp-content/uploads/aniquiladores/21.png','72','55','67','57','58','68');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Roger','Bonet','11111134A','611111134','MEDIO','https://kingsleague.pro/wp-content/uploads/aniquiladores/11.png','71','75','73','73','85','68');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('X.Morales','Morales','11111135A','611111135','PORTERO','https://kingsleague.pro/wp-content/uploads/aniquiladores/10.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Xavier','Morales','11111135A','611111135','PORTERO','https://kingsleague.pro/wp-content/uploads/aniquiladores/10.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('José Juan','Figueiras','11111138A','611111138','PORTERO','https://kingsleague.pro/wp-content/uploads/barrio/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('José','Figueiras','11111138A','611111138','PORTERO','https://kingsleague.pro/wp-content/uploads/barrio/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Jacobo','Fernández','11111139A','611111139','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/10.png','86','68','84','81','84','67');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Mase','Massegú','11111140A','611111140','DEFENSA','https://kingsleague.pro/wp-content/uploads/barrio/6.png','71','76','78','83','74','79');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Beguer','Beguer','11111141A','611111141','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/9.png','73','57','84','66','86','71');
+('Edel','Beguer','11111141A','611111141','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/9.png','73','57','84','66','86','71');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Ros','Ros','11111142A','611111142','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/14.png','72','78','86','75','83','80');
+('Joan','Ros','11111142A','611111142','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/14.png','72','78','86','75','83','80');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Ubón','Ubón','11111143A','611111143','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/8.png','69','52','78','73','81','85');
+('Luis','Ubón','11111143A','611111143','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/8.png','69','52','78','73','81','85');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Pau ZZ','Ruiz','11111144A','611111144','DEFENSA','https://kingsleague.pro/wp-content/uploads/barrio/19.png','72','56','76','68','74','76');
+('Pau','Ruiz','11111144A','611111144','DEFENSA','https://kingsleague.pro/wp-content/uploads/barrio/19.png','72','56','76','68','74','76');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Olae','Olaechea','11111145A','611111145','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/23.png','81','70','75','77','80','67');
+('Oiher','Olaechea','11111145A','611111145','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/23.png','81','70','75','77','80','67');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('O. Boada','Boada','11111146A','611111146','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/11.png','72','53','80','63','79','73');
+('Oscar','Boada','11111146A','611111146','DELANTERO','https://kingsleague.pro/wp-content/uploads/barrio/11.png','72','53','80','63','79','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Baranera','Baranera','11111147A','611111147','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/7.png','73','60','62','69','74','68');
+('Ruben','Baranera','11111147A','611111147','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/7.png','73','60','62','69','74','68');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Capilla','Capilla','11111148A','611111148','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/12.png','73','40','78','70','77','78');
+('Papa','Capilla','11111148A','611111148','MEDIO','https://kingsleague.pro/wp-content/uploads/barrio/12.png','73','40','78','70','77','78');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Golobart','Golobart','11111151A','611111151','DEFENSA','https://kingsleague.pro/wp-content/uploads/2023/02/Jijantes_23.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Fernan','Golobart','11111151A','611111151','DEFENSA','https://kingsleague.pro/wp-content/uploads/2023/02/Jijantes_23.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Alsina','Alsina','11111152A','611111152','MEDIO','https://kingsleague.pro/wp-content/uploads/jijantes/8.png','93','74','87','76','84','73');
+('Chio','Alsina','11111152A','611111152','MEDIO','https://kingsleague.pro/wp-content/uploads/jijantes/8.png','93','74','87','76','84','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Pol','Zapata','11111153A','611111153','PORTERO','https://kingsleague.pro/wp-content/uploads/jijantes/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Jay','Mengeli','11111154A','611111154','DEFENSA','https://kingsleague.pro/wp-content/uploads/jijantes/4.png','86','82','74','66','76','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Quero','Quero','11111155A','611111155','MEDIO','https://kingsleague.pro/wp-content/uploads/jijantes/7.png','83','67','73','86','83','74');
+('Salbano','Quero','11111155A','611111155','MEDIO','https://kingsleague.pro/wp-content/uploads/jijantes/7.png','83','67','73','86','83','74');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Arnau M.V','Martínez','11111156A','611111156','DEFENSA','https://kingsleague.pro/wp-content/uploads/jijantes/5.png','74','62','81','60','68','82');
+('Arnau','Martínez','11111156A','611111156','DEFENSA','https://kingsleague.pro/wp-content/uploads/jijantes/5.png','74','62','81','60','68','82');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Iván','Pérez','11111157A','611111157','DELANTERO','https://kingsleague.pro/wp-content/uploads/2023/02/Jijantes_9.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
@@ -134,147 +145,147 @@ INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Noel','Bayarri','11111159A','611111159','DEFENSA','https://kingsleague.pro/wp-content/uploads/jijantes/6.png','72','62','71','64','72','68');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Dorado','Dorado','11111160A','611111160','DELANTERO','https://kingsleague.pro/wp-content/uploads/jijantes/31.png','72','52','80','71','78','58');
+('Pele','Dorado','11111160A','611111160','DELANTERO','https://kingsleague.pro/wp-content/uploads/jijantes/31.png','72','52','80','71','78','58');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Mario','León','11111161A','611111161','PORTERO','https://kingsleague.pro/wp-content/uploads/jijantes/25.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Coro','Corominas','11111164A','611111164','MEDIO','https://kingsleague.pro/wp-content/uploads/2023/01/Kunisports_23.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Carlos','Corominas','11111164A','611111164','MEDIO','https://kingsleague.pro/wp-content/uploads/2023/01/Kunisports_23.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Torrentbó','Torrentbó','11111165A','611111165','DELANTERO','https://kingsleague.pro/wp-content/uploads/kunisports/11.png','73','59','73','76','75','72');
+('Torrente','Torrentbó','11111165A','611111165','DELANTERO','https://kingsleague.pro/wp-content/uploads/kunisports/11.png','73','59','73','76','75','72');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Víctor','Cócera','11111166A','611111166','PORTERO','https://kingsleague.pro/wp-content/uploads/kunisports/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Guerrero','Guerrero','11111167A','611111167','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/4.png','71','55','82','77','83','83');
+('Bernard','Guerrero','11111167A','611111167','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/4.png','71','55','82','77','83','83');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Joan Inés','Inés','11111168A','611111168','MEDIO','https://kingsleague.pro/wp-content/uploads/kunisports/8.png','72','60','78','64','64','63');
+('Joan','Inés','11111168A','611111168','MEDIO','https://kingsleague.pro/wp-content/uploads/kunisports/8.png','72','60','78','64','64','63');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Rode','Ródenas','11111169A','611111169','PORTERO','https://kingsleague.pro/wp-content/uploads/kunisports/13.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Ruggeri','Ruggeri','11111170A','611111170','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/5.png','70','56','68','68','81','85');
+('Antonio','Ruggeri','11111170A','611111170','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/5.png','70','56','68','68','81','85');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Nacho J.','Jordà','11111171A','611111171','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/6.png','72','51','70','79','64','64');
+('Nacho ','Jordà','11111171A','611111171','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/6.png','72','51','70','79','64','64');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Hidalgo','Hidalgo','11111172A','611111172','DELANTERO','https://kingsleague.pro/wp-content/uploads/kunisports/9.png','72','56','71','65','68','74');
+('Manu','Hidalgo','11111172A','611111172','DELANTERO','https://kingsleague.pro/wp-content/uploads/kunisports/9.png','72','56','71','65','68','74');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Lluc','Riera','11111173A','611111173','DELANTERO','https://kingsleague.pro/wp-content/uploads/kunisports/7.png','69','57','61','67','78','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Miki','Fernández','11111174A','611111174','DEFENSA','https://kingsleague.pro/wp-content/uploads/kunisports/3.png','70','53','86','58','55','69');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('C. Planas','Planas','11111177A','611111177','DEFENSA','https://kingsleague.pro/wp-content/uploads/troncos/21.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Carlos','Planas','11111177A','611111177','DEFENSA','https://kingsleague.pro/wp-content/uploads/troncos/21.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('E. Álvaro','Álvaro','11111178A','611111178','DELANTERO','https://kingsleague.pro/wp-content/uploads/troncos/9.png','73','82','81','55','85','70');
+('Ernan','�?lvaro','11111178A','611111178','DELANTERO','https://kingsleague.pro/wp-content/uploads/troncos/9.png','73','82','81','55','85','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('P. Lechuga','Lechuga','11111179A','611111179','PORTERO','https://kingsleague.pro/wp-content/uploads/troncos/13.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Pol','Lechuga','11111179A','611111179','PORTERO','https://kingsleague.pro/wp-content/uploads/troncos/13.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('D.Soriano','Soriano','11111180A','611111180','DEFENSA','https://kingsleague.pro/wp-content/uploads/troncos/4.png','71','70','80','78','56','57');
+('Daniel','Soriano','11111180A','611111180','DEFENSA','https://kingsleague.pro/wp-content/uploads/troncos/4.png','71','70','80','78','56','57');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Sergio S.','Sánchez','11111181A','611111181','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/8.png','65','43','75','79','82','84');
+('Sergio','Sánchez','11111181A','611111181','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/8.png','65','43','75','79','82','84');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Noel L.','López','11111182A','611111182','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/5.png','73','68','79','70','89','67');
+('Noel','López','11111182A','611111182','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/5.png','73','68','79','70','89','67');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('X. Molas','Molas','11111183A','611111183','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/10.png','73','72','76','84','81','78');
+('Xavier','Molas','11111183A','611111183','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/10.png','73','72','76','84','81','78');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('R. Martínez','Martínez','11111184A','611111184','DELANTERO','https://kingsleague.pro/wp-content/uploads/troncos/7.png','73','50','70','76','84','73');
+('Rodri','Martínez','11111184A','611111184','DELANTERO','https://kingsleague.pro/wp-content/uploads/troncos/7.png','73','50','70','76','84','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Dorkis','Pérez','11111185A','611111185','DELANTERO','https://kingsleague.pro/wp-content/uploads/troncos/11.png','72','54','78','54','71','72');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('I. Nuevo','Nuevo','11111186A','611111186','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/6.png','70','63','80','61','83','73');
+('Ivan','Nuevo','11111186A','611111186','MEDIO','https://kingsleague.pro/wp-content/uploads/troncos/6.png','70','63','80','61','83','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('M. Arús','Arús','11111187A','611111187','PORTERO','https://kingsleague.pro/wp-content/uploads/troncos/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Manuel','Arús','11111187A','611111187','PORTERO','https://kingsleague.pro/wp-content/uploads/troncos/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Lopo','Lopo','11111190A','611111190','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/4.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Ferran','Lopo','11111190A','611111190','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/4.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Jorge','Ibáñez','11111191A','611111191','PORTERO','https://kingsleague.pro/wp-content/uploads/pio/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Carlitos','Val','11111192A','611111192','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/2.png','73','64','77','71','81','85');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Pau Fer','Fernández','11111193A','611111193','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/6.png','71','62','71','82','75','82');
+('Pau','Fernández','11111193A','611111193','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/6.png','71','62','71','82','75','82');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('I. Cabello','Cabello','11111194A','611111194','DELANTERO','https://kingsleague.pro/wp-content/uploads/2023/01/Pio_9.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Ignacio','Cabello','11111194A','611111194','DELANTERO','https://kingsleague.pro/wp-content/uploads/2023/01/Pio_9.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('B. Juárez','Juárez','11111195A','611111195','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/21.png','71','65','75','55','71','77');
+('Beñat','Juárez','11111195A','611111195','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/21.png','71','65','75','55','71','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Turner','Turner','11111196A','611111196','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/42.png','73','59','72','77','80','80');
+('Alexis','Turner','11111196A','611111196','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/42.png','73','59','72','77','80','80');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Adri','Castro','11111197A','611111197','DELANTERO','https://kingsleague.pro/wp-content/uploads/pio/11.png','70','45','80','89','82','81');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Cokita','López','11111198A','611111198','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/8.png','67','47','79','75','80','71');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('A. Ropero','Ropero','11111199A','611111199','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/22.png','72','57','82','72','72','68');
+('Anton','Ropero','11111199A','611111199','MEDIO','https://kingsleague.pro/wp-content/uploads/pio/22.png','72','57','82','72','72','68');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Santiago','Santiago','11111200A','611111200','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/14.png','67','46','71','74','78','70');
+('Unai','Santiago','11111200A','611111200','DEFENSA','https://kingsleague.pro/wp-content/uploads/pio/14.png','67','46','71','74','78','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Espinosa','Espinosa','11111203A','611111203','MEDIO','https://kingsleague.pro/wp-content/uploads/porcinos/8.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Martin','Espinosa','11111203A','611111203','MEDIO','https://kingsleague.pro/wp-content/uploads/porcinos/8.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('J. Segovia','Segovia','11111204A','611111204','PORTERO','https://kingsleague.pro/wp-content/uploads/porcinos/13.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Jorge','Segovia','11111204A','611111204','PORTERO','https://kingsleague.pro/wp-content/uploads/porcinos/13.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('G. Cichero','Cichero','11111205A','611111205','DEFENSA','https://kingsleague.pro/wp-content/uploads/porcinos/6.png','73','49','66','75','76','74');
+('Guillermo','Cichero','11111205A','611111205','DEFENSA','https://kingsleague.pro/wp-content/uploads/porcinos/6.png','73','49','66','75','76','74');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('David L.L.','López','11111206A','611111206','DEFENSA','https://kingsleague.pro/wp-content/uploads/porcinos/23.png','70','48','80','62','81','75');
+('David','López','11111206A','611111206','DEFENSA','https://kingsleague.pro/wp-content/uploads/porcinos/23.png','70','48','80','62','81','75');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Toti','Sàlvia','11111207A','611111207','MEDIO','https://kingsleague.pro/wp-content/uploads/porcinos/21.png','72','58','80','69','78','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Carlitos G.','González','11111208A','611111208','MEDIO','https://kingsleague.pro/wp-content/uploads/2023/02/Porcinos_20.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Carlitos','González','11111208A','611111208','MEDIO','https://kingsleague.pro/wp-content/uploads/2023/02/Porcinos_20.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Killian','Honorato','11111209A','611111209','DELANTERO','https://kingsleague.pro/wp-content/uploads/porcinos/9.png','72','70','87','69','78','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('J. Blanco','Blanco','11111210A','611111210','DELANTERO','https://kingsleague.pro/wp-content/uploads/porcinos/7.png','73','54','65','66','71','65');
+('Juan','Blanco','11111210A','611111210','DELANTERO','https://kingsleague.pro/wp-content/uploads/porcinos/7.png','73','54','65','66','71','65');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Uri Pons','Pons','11111211A','611111211','DELANTERO','https://kingsleague.pro/wp-content/uploads/2023/01/Porcinos_17.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Uri','Pons','11111211A','611111211','DELANTERO','https://kingsleague.pro/wp-content/uploads/2023/01/Porcinos_17.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Lao','Lao','11111212A','611111212','MEDIO','https://kingsleague.pro/wp-content/uploads/porcinos/4.png','73','69','89','65','74','77');
+('Hernesto','Lao','11111212A','611111212','MEDIO','https://kingsleague.pro/wp-content/uploads/porcinos/4.png','73','69','89','65','74','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Sergi','Aguilar','11111213A','611111213','PORTERO','https://kingsleague.pro/wp-content/uploads/porcinos/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Poloteli','Marcó','11111216A','611111216','DEFENSA','https://kingsleague.pro/wp-content/uploads/rayo-bcn/45.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Pelaz','Pelaz','11111217A','611111217','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/10.png','71','59','76','78','86','72');
+('Jon','Pelaz','11111217A','611111217','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/10.png','71','59','76','78','86','72');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Canet','Canet','11111218A','611111218','PORTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/41.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Mikel','Canet','11111218A','611111218','PORTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/41.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Guillem ZZ','Ruiz','11111219A','611111219','DELANTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/19.png','69','52','84','63','81','80');
+('Guillem','Ruiz','11111219A','611111219','DELANTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/19.png','69','52','84','63','81','80');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('M. Reyes','Reyes','11111220A','611111220','DEFENSA','https://kingsleague.pro/wp-content/uploads/rayo-bcn/22.png','66','53','76','72','73','69');
+('Mariano','Reyes','11111220A','611111220','DEFENSA','https://kingsleague.pro/wp-content/uploads/rayo-bcn/22.png','66','53','76','72','73','69');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Franky P.','Purtí','11111221A','611111221','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/30.png','73','71','74','66','82','78');
+('Franky','Purtí','11111221A','611111221','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/30.png','73','71','74','66','82','78');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Dani P.','Pérez','11111222A','611111222','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/8.png','96','75','78','88','66','62');
+('Dani ','Pérez','11111222A','611111222','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/8.png','96','75','78','88','66','62');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Alejandro','García','11111223A','611111223','DEFENSA','https://kingsleague.pro/wp-content/uploads/rayo-bcn/11.png','72','51','57','70','68','74');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Biboum M.','Biboum','11111224A','611111224','DELANTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/9.png','72','58','80','88','68','70');
+('Anton','Biboum','11111224A','611111224','DELANTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/9.png','72','58','80','88','68','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Jonathan','Jiménez','11111225A','611111225','MEDIO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/63.png','85','73','80','60','62','62');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Alex Race','Ramírez','11111226A','611111226','DELANTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/77.png','69','56','73','57','81','87');
+('Alex','Ramírez','11111226A','611111226','DELANTERO','https://kingsleague.pro/wp-content/uploads/rayo-bcn/77.png','69','56','73','57','81','87');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('David López','López','11111229A','611111229','MEDIO','https://kingsleague.pro/wp-content/uploads/2023/03/Saiyans_17.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('David','López','11111229A','611111229','MEDIO','https://kingsleague.pro/wp-content/uploads/2023/03/Saiyans_17.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Briones','Briones','11111230A','611111230','PORTERO','https://kingsleague.pro/wp-content/uploads/saiyans/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Pedro','Briones','11111230A','611111230','PORTERO','https://kingsleague.pro/wp-content/uploads/saiyans/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Gio Ferinu','Ferinu','11111231A','611111231','DELANTERO','https://kingsleague.pro/wp-content/uploads/saiyans/9.png','71','67','74','75','85','77');
+('Gio','Ferinu','11111231A','611111231','DELANTERO','https://kingsleague.pro/wp-content/uploads/saiyans/9.png','71','67','74','75','85','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Campu','Campuzano','11111232A','611111232','DEFENSA','https://kingsleague.pro/wp-content/uploads/saiyans/4.png','70','53','80','78','78','83');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Temo','Korkotashvili','11111233A','611111233','MEDIO','https://kingsleague.pro/wp-content/uploads/saiyans/7.png','72','45','75','74','73','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('C. Valle','Valle','11111234A','611111234','MEDIO','https://kingsleague.pro/wp-content/uploads/saiyans/14.png','71','52','76','86','78','66');
+('Canales','Valle','11111234A','611111234','MEDIO','https://kingsleague.pro/wp-content/uploads/saiyans/14.png','71','52','76','86','78','66');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('V. Torres','Torres','11111235A','611111235','DEFENSA','https://kingsleague.pro/wp-content/uploads/saiyans/5.png','71','39','74','73','69','60');
+('Victor','Torres','11111235A','611111235','DEFENSA','https://kingsleague.pro/wp-content/uploads/saiyans/5.png','71','39','74','73','69','60');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Feliu','Torrus','11111236A','611111236','MEDIO','https://kingsleague.pro/wp-content/uploads/saiyans/20.png','72','64','83','60','82','84');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('David Alba','Alba','11111237A','611111237','DELANTERO','https://kingsleague.pro/wp-content/uploads/saiyans/10.png','75','75','80','65','73','64');
+('David','Alba','11111237A','611111237','DELANTERO','https://kingsleague.pro/wp-content/uploads/saiyans/10.png','75','75','80','65','73','64');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('R. Carbó','Carbó','11111238A','611111238','MEDIO','https://kingsleague.pro/wp-content/uploads/saiyans/11.png','71','49','63','67','66','62');
+('Ramon','Carbó','11111238A','611111238','MEDIO','https://kingsleague.pro/wp-content/uploads/saiyans/11.png','71','49','63','67','66','62');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Fajardo','Fajardo','11111239A','611111239','PORTERO','https://kingsleague.pro/wp-content/uploads/saiyans/22.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Ibai','Fajardo','11111239A','611111239','PORTERO','https://kingsleague.pro/wp-content/uploads/saiyans/22.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Juanma Glez.','González','11111242A','611111242','MEDIO','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/22.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Juanma','González','11111242A','611111242','MEDIO','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/22.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Arché','García','11111243A','611111243','MEDIO','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/10.png','72','69','79','78','77','65');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Iu','Morral','11111244A','611111244','PORTERO','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Thomas','Morral','11111244A','611111244','PORTERO','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Guti','Gutiérrez','11111245A','611111245','DEFENSA','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/11.png','73','62','76','58','74','77');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
@@ -292,55 +303,58 @@ INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Lucca','Ribeiro','11111252A','611111252','MEDIO','https://kingsleague.pro/wp-content/uploads/ultimate-mostoles/20.png','72','77','77','50','77','83');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('C. Castro','Castro','11111255A','611111255','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/10.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Carlo','Castro','11111255A','611111255','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/10.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Capi','Gutiérrez','11111256A','611111256','PORTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/13.png',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Poch','Poch','11111257A','611111257','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/9.png','68','53','84','79','79','73');
+('Sorran','Poch','11111257A','611111257','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/9.png','68','53','84','79','79','73');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Iñaki','Villalba','11111258A','611111258','MEDIO','https://kingsleague.pro/wp-content/uploads/xbuyer/20.png','73','64','79','75','70','70');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Dani','Santiago','11111259A','611111259','DEFENSA','https://kingsleague.pro/wp-content/uploads/xbuyer/5.png','64','69','79','55','75','83');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Granero','Granero','11111260A','611111260','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/32.png','72','62','70','65','56','72');
+('Juan','Granero','11111260A','611111260','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/32.png','72','62','70','65','56','72');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Goran','Ehsan','11111261A','611111261','MEDIO','https://kingsleague.pro/wp-content/uploads/xbuyer/11.png','92','61','72','51','71','60');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Bañuls','Bañuls','11111262A','611111262','DEFENSA','https://kingsleague.pro/wp-content/uploads/xbuyer/3.png','71','58','81','76','76','80');
+('David','Bañuls','11111262A','611111262','DEFENSA','https://kingsleague.pro/wp-content/uploads/xbuyer/3.png','71','58','81','76','76','80');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Franc','Cortés','11111263A','611111263','MEDIO','https://kingsleague.pro/wp-content/uploads/xbuyer/7.png','64','46','77','87','81','74');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('B. Sierra','Sierra','11111264A','611111264','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/21.png','73','66','66','77','77','75');
+('Berria','Sierra','11111264A','611111264','DELANTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/21.png','73','66','66','77','77','75');
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
-('Sep','Corderas','11111265A','611111265','PORTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
+('Sepe','Corderas','11111265A','611111265','PORTERO','https://kingsleague.pro/wp-content/uploads/xbuyer/1.png',NULL,NULL,NULL,NULL,NULL,NULL);
+
+
+update jugadores set tipo = 'WILD-CARD' where VELOCIDAD is null and POSICION NOT in 'PORTERO';
+
+update jugadores set velocidad = 99, fisico = 99, tiro = 99, pase = 99, talento = 99, defensa = 99 where upper(tipo) in 'WILD-CARD';
+
+update jugadores set velocidad = 0, fisico = 0, tiro = 0, pase = 0, talento = 99, defensa = 99 where upper(posicion) in 'PORTERO';
+
+update jugadores set tipo = 'DRAFT' where TIPO is null;
 
 
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111112A'),NULL, '1');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111112A'),1000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111113A'),83000000, '0');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111113A'),83000000, '0');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111114A'),35000000, '7');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111114A'),35000000, '7');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111115A'),5000000, '97');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111115A'),5000000, '97');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111116A'),30000000, '3');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111117A'),10000000, '8');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111117A'),10000000, '8');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111119A'),82000000, '80');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111118A'),5000000, '14');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111120A'),35000000, '10');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111119A'),82000000, '80');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111120A'),35000000, '10');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111121A'),5000000, '9');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111122A'),10000000, '11');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111125A'),NULL, '14');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111122A'),10000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111126A'),70000000, '25');
+INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111125A'),1000000, '14');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111127A'),60000000, '8');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -348,7 +362,7 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111129A'),20000000, '31');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111130A'),NULL, '24');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111130A'),1000000, '24');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111131A'),20000000, '22');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -358,9 +372,7 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111134A'),5000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111135A'),5000000, '10');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111138A'),NULL, '1');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111138A'),1000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111139A'),1000000, '10');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -368,9 +380,9 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111141A'),72000000, '9');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111142A'),48000000, '14');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111169A'),2000000, '13');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111143A'),110000000, '8');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111142A'),48000000, '14');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111144A'),40000000, '19');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -378,11 +390,7 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111146A'),25000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111147A'),1000000, '7');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'el barrio'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111148A'),1000000, '12');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'jijantes fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111151A'),NULL, '26');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'jijantes fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111151A'),1000000, '26');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'jijantes fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111152A'),75000000, '8');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -402,13 +410,9 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'jijantes fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111160A'),10000000, '31');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'jijantes fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111161A'),15000000, '25');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111164A'),NULL, '23');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111164A'),1000000, '23');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111165A'),83000000, '11');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111166A'),46000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111167A'),42000000, '4');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -418,25 +422,19 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111170A'),40000000, '5');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111171A'),1000000, '6');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111187A'),1000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111172A'),4000000, '9');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111173A'),3000000, '7');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'kunisports'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111174A'),4000000, '3');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111177A'),NULL, '21');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111177A'),1000000, '21');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111178A'),125000000, '9');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111179A'),15000000, '13');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111180A'),24000000, '4');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111181A'),55000000, '8');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111182A'),55000000, '5');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111183A'),5000000, '10');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -444,11 +442,9 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111185A'),18000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111186A'),1000000, '6');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'los troncos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111187A'),1000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111190A'),NULL, '4');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111190A'),1000000, '4');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111191A'),80000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -466,11 +462,9 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111198A'),65000000, '8');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111199A'),25000000, '22');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111200A'),1000000, '14');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'pio fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111200A'),NULL, '14');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111203A'),NULL, '4');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111203A'),1000000, '4');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111204A'),48000000, '13');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -486,43 +480,35 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111210A'),30000000, '7');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111211A'),60000000, '80');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111248A'),30000000, '7');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111212A'),35000000, '4');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111213A'),20000000, '1');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111216A'),1000000, '45');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111216A'),NULL, '45');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111218A'),8000000, '41');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111217A'),120000000, '10');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111219A'),20000000, '19');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111218A'),8000000, '41');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111220A'),75000000, '22');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111219A'),20000000, '19');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111221A'),34000000, '30');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111220A'),75000000, '22');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111222A'),29000000, '8');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111221A'),34000000, '30');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111223A'),2000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111222A'),29000000, '8');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111224A'),8000000, '9');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111223A'),2000000, '11');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111225A'),2000000, '63');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111224A'),8000000, '9');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111225A'),2000000, '63');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111226A'),2000000, '77');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111229A'),NULL, '16');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111229A'),1000000, '16');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111230A'),70000000, '1');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111231A'),22000000, '9');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111232A'),55000000, '4');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111233A'),15000000, '7');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111234A'),1000000, '14');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -534,9 +520,7 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111238A'),101000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111239A'),1000000, '22');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111242A'),NULL, '22');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111242A'),1000000, '22');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111243A'),81000000, '10');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -548,17 +532,13 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111247A'),5000000, '19');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111248A'),1000000, '4');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111249A'),81000000, '3');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111250A'),1000000, '7');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111251A'),15000000, '13');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'ultimate mostoles'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111252A'),5000000, '20');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111255A'),NULL, '10');
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111255A'),1000000, '10');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111256A'),40000000, '13');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
@@ -568,8 +548,6 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111259A'),44000000, '5');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111260A'),22000000, '32');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111261A'),1000000, '11');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111262A'),44000000, '3');
@@ -577,14 +555,12 @@ INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111263A'),1000000, '7');
 INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM JUGADORES WHERE DNI = '11111264A'),4000000, '21');
-INSERT INTO CONTRATOS_JUGADORES (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_JUGADOR, CLAUSULA, DORSAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM JUGADORES WHERE DNI = '11111265A'),1000000, '1');
 
 
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111111A'));
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111111A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111123A'));
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = '1k fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111123A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'aniquiladores fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,15000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111124A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
@@ -614,9 +590,9 @@ INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_P
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'porcinos fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111214A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111215A'));
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111215A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
-((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM PERSONALES WHERE DNI = '11111227A'));
+((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'rayo de barcelona'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,22500000,(SELECT ID FROM PERSONALES WHERE DNI = '11111227A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'saiyans fc'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10000000,(SELECT ID FROM PERSONALES WHERE DNI = '11111228A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
@@ -629,3 +605,8 @@ INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_P
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM PERSONALES WHERE DNI = '11111254A'));
 INSERT INTO CONTRATOS_PERSONAL (ID_EQUIPO, FECHA_INICIO, FECHA_FIN, SUELDO, ID_PERSONAL) VALUES
 ((SELECT ID FROM EQUIPOS WHERE LOWER(NOMBRE) = 'xbuyer team'),TO_DATE('01/01/2023','DD/MM/YYYY'),NULL,10500000,(SELECT ID FROM PERSONALES WHERE DNI = '11111266A'));
+
+
+
+
+
