@@ -1,0 +1,21 @@
+﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="clasificacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="equipo" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="victorias" type="xs:integer"/>
+              <xs:element name="goles_a_favor" type="xs:integer"/>
+              <xs:element name="goles_en_contra" type="xs:integer"/>
+              <xs:element name="diferencia_de_goles" type="xs:integer"/>
+            </xs:sequence>
+            <xs:attribute name="posicion" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="split" type="xs:integer" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
