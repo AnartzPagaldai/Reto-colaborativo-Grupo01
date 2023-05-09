@@ -44,6 +44,10 @@ public class PartidosEntity {
     @JoinColumn(name = "ID_EQUIPO2", referencedColumnName = "ID")
     private EquiposEntity equiposByIdEquipo2;
 
+    public PartidosEntity() {
+
+    }
+
     public short getId() {
         return id;
     }

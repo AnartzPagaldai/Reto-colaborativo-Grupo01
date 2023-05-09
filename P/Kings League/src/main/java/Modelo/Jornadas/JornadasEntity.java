@@ -28,6 +28,9 @@ public class JornadasEntity {
     @OneToMany(mappedBy = "jornadasByIdJornada")
     private Collection<PartidosEntity> partidosById;
 
+    public JornadasEntity() {
+    }
+
     public byte getId() {
         return id;
     }
@@ -95,7 +98,9 @@ public class JornadasEntity {
     public Collection<PartidosEntity> getPartidosById() {
         return partidosById;
     }
+    public void generarJornada(){
 
+    }
     public void setPartidosById(Collection<PartidosEntity> partidosById) {
         this.partidosById = partidosById;
     }
