@@ -34,6 +34,9 @@ public class ContratosJugadoresEntity {
     @JoinColumn(name = "ID_JUGADOR", referencedColumnName = "ID")
     private JugadoresEntity jugadoresByIdJugador;
 
+    public ContratosJugadoresEntity() {
+    }
+
     public byte getId() {
         return id;
     }

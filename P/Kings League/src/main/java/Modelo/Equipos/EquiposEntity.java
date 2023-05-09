@@ -29,6 +29,9 @@ public class EquiposEntity {
     @OneToMany(mappedBy = "equiposByIdEquipo2")
     private Collection<PartidosEntity> partidosById_0;
 
+    public EquiposEntity() {
+    }
+
     public byte getId() {
         return id;
     }
@@ -106,5 +109,14 @@ public class EquiposEntity {
 
     public void setPartidosById_0(Collection<PartidosEntity> partidosById_0) {
         this.partidosById_0 = partidosById_0;
+    }
+    public void contarJugadores(){
+
+    }
+    public void ficharJugador(){
+
+    }
+    public void venderJugador(){
+
     }
 }

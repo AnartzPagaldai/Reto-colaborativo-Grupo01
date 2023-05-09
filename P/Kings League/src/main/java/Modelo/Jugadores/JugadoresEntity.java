@@ -53,6 +53,10 @@ public class JugadoresEntity {
     @OneToMany(mappedBy = "jugadoresByIdJugador")
     private Collection<ContratosJugadoresEntity> contratosJugadoresById;
 
+    public JugadoresEntity() {
+
+    }
+
     public byte getId() {
         return id;
     }
