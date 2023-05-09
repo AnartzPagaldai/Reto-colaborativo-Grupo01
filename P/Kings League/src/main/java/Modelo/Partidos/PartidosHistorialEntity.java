@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
-//TODO: HACER EN VISUAL LA CLASE
+//TODO: HACER EN VISUALPARADIGM LA CLASE
 @Entity
 @Table(name = "PARTIDOS_HISTORIAL", schema = "EQDAW01", catalog = "")
 public class PartidosHistorialEntity {
