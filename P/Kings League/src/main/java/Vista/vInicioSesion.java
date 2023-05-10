@@ -61,7 +61,7 @@ public class vInicioSesion {
         fLogoKingsLeague.setIcon(newIcon);
 
         // Poner la imagen de THE GREFG
-        imagenTheGrefg = new ImageIcon("src/main/java/Vista/Imagenes/THEGREFG.png");
+        imagenTheGrefg = new ImageIcon(new URL("https://raw.githubusercontent.com/OiherOleaga/Reto-colaborativo-Grupo01/6ee3a0729ffdc90dd1217e0d5d400f6cda1f7f66/P/Kings%20League/src/main/java/Vista/Imagenes/THEGREFG.png"));
         Image imgGrefg = imagenTheGrefg.getImage().getScaledInstance(450, 610, Image.SCALE_SMOOTH);
         ImageIcon nuevoIcono = new ImageIcon(imgGrefg);
         JLThegrefg.setIcon(nuevoIcono);
