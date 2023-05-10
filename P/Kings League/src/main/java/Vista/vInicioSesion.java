@@ -73,7 +73,7 @@ public class vInicioSesion {
         ImageIcon ibaiicono = new ImageIcon(imgIbai);
         JLIbai.setIcon(ibaiicono);
 
-        // Poner la imagenes del footer
+        // Poner lsa imágenes del footer
         imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
         Image imgTwitch = imagenTwitch.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
         ImageIcon twitchIcono = new ImageIcon(imgTwitch);
@@ -96,7 +96,7 @@ public class vInicioSesion {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                // poner validación de datos e ir a la siguiente página
+                // Hay que poner la validación de datos e ir a la ventana vPrincipal
 
             }
         });
