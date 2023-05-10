@@ -22,10 +22,6 @@ public class UsuariosEntity {
     @Column(name = "TIPO")
     private String tipo;
 
-    public UsuariosEntity() {
-
-    }
-
     public byte getId() {
         return id;
     }

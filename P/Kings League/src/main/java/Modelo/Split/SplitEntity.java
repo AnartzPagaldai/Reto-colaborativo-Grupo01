@@ -25,10 +25,6 @@ public class SplitEntity {
     @OneToMany(mappedBy = "splitByIdSplit")
     private Collection<JornadasEntity> jornadasById;
 
-    public SplitEntity() {
-
-    }
-
     public byte getId() {
         return id;
     }
