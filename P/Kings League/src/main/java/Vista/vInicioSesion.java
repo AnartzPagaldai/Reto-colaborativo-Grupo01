@@ -54,6 +54,7 @@ public class vInicioSesion {
 
     public vInicioSesion() throws MalformedURLException {
 
+
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
@@ -87,7 +88,6 @@ public class vInicioSesion {
         Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
         ImageIcon twIcono = new ImageIcon(imgTw);
         fTwitter.setIcon(twIcono);
-
 
 
 
