@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PruebaKings" />
+        <module name="KingsLeague" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="KingsLeague" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
