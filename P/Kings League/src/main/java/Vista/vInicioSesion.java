@@ -1,12 +1,10 @@
 package Vista;
 import javax.swing.*;
-import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.ParseException;
 
 public class vInicioSesion {
 
@@ -32,7 +30,11 @@ public class vInicioSesion {
 
     private JPanel pDatos;
     private ImageIcon LogoKingsLeague;
-    private ImageIcon ImagenBalonLlamas;
+    private ImageIcon imagenTheGrefg;
+    private ImageIcon imagenIbai;
+    private ImageIcon imagenInstagram;
+    private ImageIcon imagenTwitter;
+    private ImageIcon imagenTwitch;
     private JLabel fLogoKingsLeague;
     private JPanel pIniciarSesion;
     private JTextField tfNombre;
@@ -40,7 +42,14 @@ public class vInicioSesion {
     private JLabel jlContrasena;
     private JButton bIniciarSesion;
     private JPasswordField contrasena;
-    private JLabel fImagenBalonLlamas;
+    private JLabel JLThegrefg;
+    private JLabel JLIbai;
+    private JPanel pHeader;
+    private JPanel pFooter;
+    private JLabel fTwitch;
+    private JLabel fInstagram;
+    private JLabel fTwitter;
+    private JButton crearCuentaButton;
 
 
     public vInicioSesion() throws MalformedURLException {
@@ -51,12 +60,35 @@ public class vInicioSesion {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
-        // Poner la imagen del balón en llamas
-        ImagenBalonLlamas = new ImageIcon(new URL("https://th.bing.com/th/id/R.23e581f9a4a52c70ed576c442d3e8611?rik=iSDaQxC2ztwQ2A&riu=http%3a%2f%2fclipartmag.com%2fimages%2fsoccer-ball-with-flames-clipart-43.png&ehk=o0wMuOb0oyNia65TeeMOa51boeR1lxpmg5jlPTYT16U%3d&risl=&pid=ImgRaw&r=0"));
-        Image ImagenBalon = ImagenBalonLlamas.getImage().getScaledInstance(500, 390, Image.SCALE_SMOOTH);
-        ImageIcon nuevoIcono = new ImageIcon(ImagenBalon);
-        fImagenBalonLlamas.setIcon(nuevoIcono);
+        // Poner la imagen de THE GREFG
+        imagenTheGrefg = new ImageIcon("src/main/java/Vista/Imagenes/THEGREFG.png");
+        Image imgGrefg = imagenTheGrefg.getImage().getScaledInstance(450, 610, Image.SCALE_SMOOTH);
+        ImageIcon nuevoIcono = new ImageIcon(imgGrefg);
+        JLThegrefg.setIcon(nuevoIcono);
 
+        // Poner la imagen de Ibai Llanos
+        imagenIbai = new ImageIcon(new URL("https://kingsleague.pro/wp-content/uploads/2022/12/IBAI-LLANOS-PORCINOS-FC.png"));
+        Image imgIbai = imagenIbai.getImage().getScaledInstance(456, 640, Image.SCALE_SMOOTH);
+        ImageIcon ibaiicono = new ImageIcon(imgIbai);
+        JLIbai.setIcon(ibaiicono);
+
+        // Poner la imagenes del footer
+        imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
+        Image imgTwitch = imagenTwitch.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
+        ImageIcon twitchIcono = new ImageIcon(imgTwitch);
+        fTwitch.setIcon(twitchIcono);
+
+        imagenInstagram = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/02/instagram-icone-noir.png"));
+        Image imgIg = imagenInstagram.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
+        ImageIcon igIcono = new ImageIcon(imgIg);
+        fInstagram.setIcon(igIcono);
+
+        imagenTwitter = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/02/icones-twitter-noires.png"));
+        Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
+        ImageIcon twIcono = new ImageIcon(imgTw);
+        fTwitter.setIcon(twIcono);
+
+        
         bIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,10 +114,5 @@ public class vInicioSesion {
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
-    }
-
-    private void createUIComponents() throws ParseException {
-        // TODO: place custom component creation code here
-        contrasena = new JPasswordField(new MaskFormatter(("UUUUUUUUUU")).getPlaceholderCharacter());
     }
 }
