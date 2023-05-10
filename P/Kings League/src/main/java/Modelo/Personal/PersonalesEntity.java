@@ -32,10 +32,6 @@ public class PersonalesEntity {
     @OneToMany(mappedBy = "personalesByIdPersonal")
     private Collection<ContratosPersonalEntity> contratosPersonalsById;
 
-    public PersonalesEntity() {
-
-    }
-
     public byte getId() {
         return id;
     }

@@ -28,10 +28,6 @@ public class ContratosPersonalEntity {
     @JoinColumn(name = "ID_EQUIPO", referencedColumnName = "ID")
     private EquiposEntity equiposByIdEquipo;
 
-    public ContratosPersonalEntity() {
-
-    }
-
     public byte getId() {
         return id;
     }
