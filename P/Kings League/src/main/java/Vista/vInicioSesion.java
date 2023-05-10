@@ -73,7 +73,7 @@ public class vInicioSesion {
         ImageIcon ibaiicono = new ImageIcon(imgIbai);
         JLIbai.setIcon(ibaiicono);
 
-        // Poner lsa imágenes del footer
+        // Poner las imágenes del footer
         imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
         Image imgTwitch = imagenTwitch.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
         ImageIcon twitchIcono = new ImageIcon(imgTwitch);
