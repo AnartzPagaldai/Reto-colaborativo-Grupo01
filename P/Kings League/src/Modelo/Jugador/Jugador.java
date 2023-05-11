@@ -1,6 +1,7 @@
 package Modelo.Jugador;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Jugador {
     private int id;
@@ -12,7 +13,7 @@ public class Jugador {
 
 
 
-    private enum TipoPosicion{
+    public enum TipoPosicion{
         Portero,
         Defensa,
         Medio,
@@ -144,6 +145,26 @@ public class Jugador {
 
     public void setDefensa(int defensa) {
         this.defensa = defensa;
+    }
+
+    public void resultSetObjeto(ResultSet resultSet) throws SQLException {
+        try {
+            id = resultSet.getInt("id");
+            nombre = resultSet.getString("nombre");
+        } catch (Exception e) {
+            id = resultSet.getInt("id_jugador");
+            nombre = resultSet.getString("nombre_jugador");
+        }
+        img = resultSet.getString("img");
+        apellidos = resultSet.getString("apellido");
+        tipoPosicion = Jugador.TipoPosicion.valueOf(resultSet.getString("posicion"));
+        velocidad = resultSet.getInt("velocidad");
+        fisico = resultSet.getInt("fisico");
+        tiro = resultSet.getInt("tiro");
+        pase = resultSet.getInt("pase");
+        talento = resultSet.getInt("talento");
+        defensa = resultSet.getInt("defensa");
+
     }
 
 }

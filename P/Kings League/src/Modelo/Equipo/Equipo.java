@@ -35,35 +35,24 @@ public class Equipo {
     public void setPresupuestoAnual(double presupuestoAnual) {
         this.presupuestoAnual = presupuestoAnual;
     }
-    private int contarJugadores(){
+
+    private int contarJugadores() {
 
         return 0;
     }
-    private void ficharJugador(){
+
+    private void ficharJugador() {
 
     }
-    private void venderJugador(){
+
+    private void venderJugador() {
 
     }
 
-    public void resutlSetObjeto(ResultSet resultSet) {
-        try {
-            id = resultSet.getInt("id");
-        } catch (SQLException e) {
-            System.out.println("no hay id");
-        }
-        try {
-            nombre = resultSet.getString("nombre");
-            presupuestoAnual = resultSet.getDouble("presupuesto_anual");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
-
-
-
-
-
-
+    public void resultSetObjeto(ResultSet resultSet) throws SQLException {
+        id = resultSet.getInt("id");
+        nombre = resultSet.getString("nombre");
+        presupuestoAnual = resultSet.getDouble("presupuesto_anual");
     }
+
 }

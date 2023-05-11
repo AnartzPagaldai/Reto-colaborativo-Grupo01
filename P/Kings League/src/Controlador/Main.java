@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
+import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Modelo.XML.XML;
@@ -19,10 +20,10 @@ public class Main {
     public static JFrame vPrinicpal;
     public static Usuario u;
     public static void main(String[] args) throws MalformedURLException {
-        //generarVentanaInicio();
-        Equipo equipo = new Equipo();
+        generarVentanaInicio();
+        /*Equipo equipo = new Equipo();
         equipo.setNombre("1K FC");
-        TEquipo.getInfomeEquipos(equipo);
+        TEquipo.getInfomeEquipos(equipo, new Personal[2]);*/
     }
 
 
