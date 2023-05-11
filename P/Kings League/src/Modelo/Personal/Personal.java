@@ -2,6 +2,9 @@ package Modelo.Personal;
 
 import Modelo.Enumeraciones.TipoPersonal;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Personal {
     private int id;
     private String nombre;
@@ -12,6 +15,11 @@ public class Personal {
     private String img;
 
     public Personal() {
+    }
+
+    public Personal(int id, TipoPersonal oficio) {
+        this.id = id;
+        this.oficio = oficio;
     }
 
     public int getId() {
@@ -68,5 +76,15 @@ public class Personal {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public void resultSetObjeto(ResultSet resultSet) throws SQLException {
+        id = resultSet.getInt("id");
+        nombre = resultSet.getString("nombre");
+        apellidos = resultSet.getString("apellidos");
+        dni = resultSet.getString("dni");
+        telefono = resultSet.getInt("telefono");
+        oficio = TipoPersonal.valueOf(resultSet.getString("oficio"));
+        img = resultSet.getString("img");
     }
 }

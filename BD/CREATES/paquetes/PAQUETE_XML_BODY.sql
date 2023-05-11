@@ -34,11 +34,12 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
                 END IF;
                 RESULT := RESULT || '<jornada num_jornada="' || NUMERO_JORNADA || '">
                         <tipo_split>' || TIPO_SPLIT || '</tipo_split>
-                        <tipo_jornada>' || TIPO_JORNADA || '</tipo_jornada>';     
+                        <tipo_jornada>' || TIPO_JORNADA || '</tipo_jornada>';  
+                NUMERO_JORNADA_ANTERIOR := NUMERO_JORNADA;   
             END IF;
             RESULT := RESULT || 
             '<partido id_partido="'|| ID ||'">
-                <equipo1>'|| EQUIPO1 || '<equipo1>
+                <equipo1>'|| EQUIPO1 || '</equipo1>
                 <goles_equipo1>' || GOLES_EQUIPO1 || '</goles_equipo1>
                 <equipo2>'|| EQUIPO2 || '</equipo2>
                 <goles_equipo2>'|| GOLES_EQUIPO2 || '</goles_equipo2>
@@ -52,7 +53,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
 
     END GENERAR_XML_JORNADAS;
 
-    PROCEDURE GENERAR_XML_CLASIFICACIO AS 
+    PROCEDURE GENERAR_XML_CLASIFICACION AS 
         RESULT CLOB;
     BEGIN
         RESULT := '<?xml version="1.0" encoding="UTF-8"?> 
@@ -70,7 +71,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
         END LOOP;
         RESULT := RESULT || '</clasificacion>';
         INSERT INTO XML_CLASIFICACION (RESUL) VALUES (RESULT);
-    END GENERAR_XML_CLASIFICACIO;
+    END GENERAR_XML_CLASIFICACION;
     
 END PAQUETE_XML;
 /
