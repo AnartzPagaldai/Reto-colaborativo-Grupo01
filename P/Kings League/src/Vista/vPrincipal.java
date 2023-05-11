@@ -1,10 +1,10 @@
 package Vista;
 
+import Controlador.Main;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+import java.awt.event.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -57,14 +57,13 @@ public class vPrincipal {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
-
         // Poner la imagen de la noticia de actualidad de la Kings League
         ImagenNoticia = new ImageIcon(new URL("https://s1.abcstatics.com/abc/www/multimedia/deportes/2023/03/24/DIRECTO-FINAL-KINGS-LEAGUE(1)-U16424855837hdU-1200x630@abc.jpg"));
         Image LogoNoticia = ImagenNoticia.getImage().getScaledInstance(1100, 630, Image.SCALE_SMOOTH);
         ImageIcon NoticiaIcon = new ImageIcon(LogoNoticia);
         jlImagen.setIcon(NoticiaIcon);
 
-
+        // Poner las imágenes del footer
         imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
         Image imgTwitch = imagenTwitch.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
         ImageIcon twitchIcono = new ImageIcon(imgTwitch);
@@ -80,90 +79,90 @@ public class vPrincipal {
         ImageIcon twIcono = new ImageIcon(imgTw);
         fTwitter.setIcon(twIcono);
 
+        // Poner la imagen del usuario
         imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
 
+        // Poner los ":hover" en los elemntos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
         mEquipos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 mEquipos.setBackground(Color.orange);
                 mEquipos.setOpaque(true);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 mEquipos.setBackground(UIManager.getColor("Menu.background"));
                 mEquipos.setOpaque(false);
             }
         });
-
-
         mJugadores.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 mJugadores.setBackground(Color.orange);
                 mJugadores.setOpaque(true);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 mJugadores.setBackground(UIManager.getColor("Menu.background"));
                 mJugadores.setOpaque(false);
             }
         });
-
-
-
         mClasificacion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 mClasificacion.setBackground(Color.orange);
                 mClasificacion.setOpaque(true);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 mClasificacion.setBackground(UIManager.getColor("Menu.background"));
                 mClasificacion.setOpaque(false);
             }
         });
-
-
-
-         mPartidos.addMouseListener(new MouseAdapter() {
+        mPartidos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 mPartidos.setBackground(Color.orange);
                 mPartidos.setOpaque(true);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 mPartidos.setBackground(UIManager.getColor("Menu.background"));
                 mPartidos.setOpaque(false);
             }
         });
-
-
-
         mUsuario.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 mUsuario.setBackground(Color.orange);
                 mUsuario.setOpaque(true);
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
                 mUsuario.setBackground(UIManager.getColor("Menu.background"));
                 mUsuario.setOpaque(false);
             }
         });
+
+        jmiCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaInicio();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vPrincipal");

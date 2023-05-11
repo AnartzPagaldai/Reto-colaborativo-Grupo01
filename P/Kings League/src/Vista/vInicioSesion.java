@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import Controlador.Main;
 
 public class vInicioSesion {
 
@@ -41,7 +42,7 @@ public class vInicioSesion {
     private JLabel jlNombre;
     private JLabel jlContrasena;
     private JButton bIniciarSesion;
-    private JPasswordField contrasena;
+    private JPasswordField pfContrasena;
     private JLabel JLThegrefg;
     private JLabel JLIbai;
     private JPanel pHeader;
@@ -96,8 +97,18 @@ public class vInicioSesion {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                // Hay que poner la validación de datos e ir a la ventana vPrincipal
+                // TODO : Hay que poner la validación de datos e ir a la ventana vPrincipal
 
+                if (tfNombre.getText().equals("admin") && pfContrasena.getText().equals("admin")) {
+                    try {
+                        bIniciarSesion.setBackground(Color.green);
+                        Main.generarVentanaPrincipal();
+                    } catch (MalformedURLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+                else
+                    bIniciarSesion.setBackground(Color.red);
             }
         });
     }
