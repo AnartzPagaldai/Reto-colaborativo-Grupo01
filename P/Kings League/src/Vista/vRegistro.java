@@ -1,12 +1,18 @@
 package Vista;
 import Controlador.Main;
+import Modelo.Usuario.Usuario;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class vRegistro {
 
@@ -43,9 +49,23 @@ public class vRegistro {
     private JPanel pClave;
     private JPasswordField pfClaveAdmin;
     private JPanel pCrearDatos;
-
+    private JButton atrasButton;
+    private Usuario.TipoUsuario tipo;
+    private String tipoUsuario;
+    private final String clave="12345";
+    private static final String patronEmail = "^[\\w-\\.]+@gmail\\.com$";
 
     public vRegistro() throws MalformedURLException {
+        pPrincipal = new JPanel(new BorderLayout());
+
+        // Agrega pHeader al norte
+        pPrincipal.add(pHeader, BorderLayout.NORTH);
+
+        // Agrega pDatos al centro
+        pPrincipal.add(pDatos, BorderLayout.CENTER);
+
+        // Agrega pFooter al sur
+        pPrincipal.add(pFooter, BorderLayout.SOUTH);
 
     // Poner la imagen del logo oficial de la Kings League
     LogoKingsLeague =new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
@@ -84,13 +104,30 @@ public class vRegistro {
         bIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                // TODO : poner validar datos
-
+                boolean insertar;
                 try {
-                    Main.generarVentanaPrincipal();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
+                    if (rbAdmin.isSelected()){
+                        tipoUsuario=tipo.Admin.toString();
+                        if (!pfClaveAdmin.getText().equals(clave)){
+                            pfClaveAdmin.setBackground(Color.red);
+                            throw new Exception( "La clave de admin no es la correcta");
+                        }
+                    }else tipoUsuario=tipo.Usuario.toString();
+                    insertar=Main.crearUsuario(tfNombre.getText().toUpperCase(), tfCorreo.getText().toUpperCase(), pfContrasena.getText().toUpperCase(), Usuario.TipoUsuario.valueOf(tipoUsuario));
+                    if (insertar){
+                        JOptionPane.showMessageDialog(null, "Usuario creado");
+                        tfNombre.setText("");
+                        tfCorreo.setText("");
+                        pfContrasena.setText("");
+                        pfClaveAdmin.setText("");
+                    }else {
+                        throw new SQLIntegrityConstraintViolationException("Ya hay un usuario con el mismo nombre");
+                    }
+                } catch (SQLIntegrityConstraintViolationException ex) {
+                    tfNombre.setBackground(Color.red);
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         });
@@ -104,6 +141,17 @@ public class vRegistro {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pClave.setVisible(false);
+            }
+        });
+        tfCorreo.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                Pattern pattern = Pattern.compile(patronEmail);
+                Matcher matcher = pattern.matcher(tfCorreo.getText());
+                if (!matcher.matches()){
+                    tfCorreo.setBackground(Color.red);
+                    JOptionPane.showMessageDialog(null, "Email no valido");
+                }else tfCorreo.setBackground(Color.green);
             }
         });
     }

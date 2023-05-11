@@ -6,7 +6,7 @@ public class Usuario {
     private String contrasena;
     private String correo;
     private TipoUsuario tipoUsuario;
-    private enum TipoUsuario{
+    public enum TipoUsuario{
         Usuario,
         Admin
     }

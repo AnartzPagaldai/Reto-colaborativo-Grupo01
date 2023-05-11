@@ -56,4 +56,15 @@ public class Main {
         existe=TUsuario.selectUsuarioAdmin(u);
         return existe;
     }
+
+    public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo){
+        boolean insertar;
+        u=new Usuario();
+        u.setNombre(nombre);
+        u.setCorreo(correo);
+        u.setContrasena(contrasena);
+        u.setTipoUsuario(Usuario.TipoUsuario.valueOf(tipo.toString()));
+        insertar=TUsuario.insertar(u);
+        return insertar;
+    }
 }
