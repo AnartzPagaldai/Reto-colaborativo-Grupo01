@@ -2,43 +2,44 @@ package Modelo.Jornada;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class TJornada {
-
-    private static Connection con;
 
     public static void generarXMLjornadas() {
         try {
             BaseDeDatos.abrirConexion();
-            con = BaseDeDatos.getCon();
-            CallableStatement statement = con.prepareCall("call {paquete_xml.generar_xml_jornadas}");
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call PAQUETE_XML.GENERAR_XML_JORNADAS()}");
             statement.execute();
+            BaseDeDatos.cerrarConexion();
         } catch (Exception e) {
-            System.out.println("getXML\n" + e.getMessage());
+            throw new RuntimeException(e.getMessage());
         }
     }
 
     public static void getXMLjornadas() {
         try {
             BaseDeDatos.abrirConexion();
-            con = BaseDeDatos.getCon();
-            PreparedStatement statement = con.prepareStatement("select resul from xml_jornada where id = (select max(id) from xml_jornada)");
+            PreparedStatement statement = BaseDeDatos.getCon().prepareStatement("select resul from xml_jornada where id = (select max(id) from xml_jornada)");
             ResultSet resultado = statement.executeQuery();
-            String xml;
             if (resultado.next()) {
-                xml = String.valueOf(resultado.getClob("resul"));
-                BufferedWriter fichero = new BufferedWriter(new FileWriter("src/Modelo/Jornada"));
-                fichero.write(xml);
+                Clob xml = resultado.getClob("resul");
+                BufferedReader reader = new BufferedReader(xml.getCharacterStream());
+                String line;
+                StringBuilder content = new StringBuilder();
+                while ((line = reader.readLine()) != null) {
+                    content.append(line);
+                }
+                BufferedWriter fichero = new BufferedWriter(new FileWriter("src/Modelo/Jornada/jornadas.xml"));
+                fichero.write(String.valueOf(content));
                 fichero.close();
             }
+            BaseDeDatos.cerrarConexion();
         } catch (Exception e) {
-
+            throw new RuntimeException(e.getMessage());
         }
     }
 }
