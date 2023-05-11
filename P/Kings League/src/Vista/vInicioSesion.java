@@ -53,18 +53,8 @@ public class vInicioSesion {
     private JButton crearCuentaButton;
 
 
+
     public vInicioSesion() throws MalformedURLException {
-        pPrincipal = new JPanel(new BorderLayout());
-
-        // Agrega pHeader al norte
-        pPrincipal.add(pHeader, BorderLayout.NORTH);
-
-        // Agrega pDatos al centro
-        pPrincipal.add(pDatos, BorderLayout.CENTER);
-
-        // Agrega pFooter al sur
-        pPrincipal.add(pFooter, BorderLayout.SOUTH);
-
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
@@ -98,26 +88,18 @@ public class vInicioSesion {
         Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
         ImageIcon twIcono = new ImageIcon(imgTw);
         fTwitter.setIcon(twIcono);
-
-
-
-
         bIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                // TODO : Hay que poner la validación de datos e ir a la ventana vPrincipal
-
-                if (tfNombre.getText().equals("admin") && pfContrasena.getText().equals("admin")) {
-                    try {
-                        bIniciarSesion.setBackground(Color.green);
+                boolean existe=false;
+                try {
+                    existe=Main.selectUsuario(tfNombre.getText(), pfContrasena.getPassword().toString());
+                    if (existe){
                         Main.generarVentanaPrincipal();
-                    } catch (MalformedURLException ex) {
-                        throw new RuntimeException(ex);
-                    }
+                    }else throw new Exception("Quien eres");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
-                else
-                    bIniciarSesion.setBackground(Color.red);
             }
         });
     }
