@@ -48,4 +48,12 @@ public class Main {
         actual=vPrinicpal;
         vInicio.dispose();
     }
+    public static boolean selectUsuario(String nombre, String contrasena){
+        boolean existe;
+        u=new Usuario();
+        u.setNombre(nombre);
+        u.setContrasena(contrasena);
+        existe=TUsuario.selectUsuarioAdmin(u);
+        return existe;
+    }
 }
