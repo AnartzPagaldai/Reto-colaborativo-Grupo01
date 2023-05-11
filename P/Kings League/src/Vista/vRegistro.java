@@ -49,12 +49,12 @@ public class vRegistro {
     private JPanel pClave;
     private JPasswordField pfClaveAdmin;
     private JPanel pCrearDatos;
+    private JPanel pDegradado;
     private JButton atrasButton;
     private Usuario.TipoUsuario tipo;
     private String tipoUsuario;
     private final String clave="12345";
     private static final String patronEmail = "^[\\w-\\.]+@gmail\\.com$";
-
     public vRegistro() throws MalformedURLException {
         pPrincipal = new JPanel(new BorderLayout());
 
@@ -66,6 +66,30 @@ public class vRegistro {
 
         // Agrega pFooter al sur
         pPrincipal.add(pFooter, BorderLayout.SOUTH);
+
+        pPrincipal = new JPanel(new BorderLayout());
+
+        pPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                Graphics2D g2d = (Graphics2D) g;
+
+                Color colorInicio = new Color(239, 122, 14);
+                Color colorFin = new Color(253, 214, 44);
+
+                GradientPaint gradient = new GradientPaint(
+                        0, 0, colorInicio,
+                        0, getHeight(), colorFin);
+
+                g2d.setPaint(gradient);
+
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+
+        pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
     // Poner la imagen del logo oficial de la Kings League
     LogoKingsLeague =new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
