@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
+import Modelo.XML.XML;
 import Vista.vInicioSesion;
 import Vista.vPrincipal;
 import Vista.vRegistro;
