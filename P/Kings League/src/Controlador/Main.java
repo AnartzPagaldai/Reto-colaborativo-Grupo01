@@ -2,6 +2,7 @@ package Controlador;
 
 import Vista.vInicioSesion;
 import Vista.vPrincipal;
+import Vista.vRegistro;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,6 +23,14 @@ public class Main {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+    public static void generarVentanaRegistro () throws MalformedURLException {
+        JFrame frame = new JFrame("vRegistro");
+        frame.setContentPane(new vRegistro().getpPrincipal());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+    }
     public static void generarVentanaPrincipal () throws MalformedURLException {
         JFrame frame = new JFrame("vPrincipal");
         frame.setContentPane(new vPrincipal().getpPrincipal());
@@ -30,4 +39,5 @@ public class Main {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
 }

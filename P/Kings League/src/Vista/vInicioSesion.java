@@ -64,13 +64,13 @@ public class vInicioSesion {
 
         // Poner la imagen de THE GREFG
         imagenTheGrefg = new ImageIcon(new URL("https://raw.githubusercontent.com/OiherOleaga/Reto-colaborativo-Grupo01/6ee3a0729ffdc90dd1217e0d5d400f6cda1f7f66/P/Kings%20League/src/main/java/Vista/Imagenes/THEGREFG.png"));
-        Image imgGrefg = imagenTheGrefg.getImage().getScaledInstance(450, 610, Image.SCALE_SMOOTH);
+        Image imgGrefg = imagenTheGrefg.getImage().getScaledInstance(420, 570, Image.SCALE_SMOOTH);
         ImageIcon nuevoIcono = new ImageIcon(imgGrefg);
         JLThegrefg.setIcon(nuevoIcono);
 
         // Poner la imagen de Ibai Llanos
         imagenIbai = new ImageIcon(new URL("https://kingsleague.pro/wp-content/uploads/2022/12/IBAI-LLANOS-PORCINOS-FC.png"));
-        Image imgIbai = imagenIbai.getImage().getScaledInstance(456, 640, Image.SCALE_SMOOTH);
+        Image imgIbai = imagenIbai.getImage().getScaledInstance(416, 600, Image.SCALE_SMOOTH);
         ImageIcon ibaiicono = new ImageIcon(imgIbai);
         JLIbai.setIcon(ibaiicono);
 
@@ -109,6 +109,16 @@ public class vInicioSesion {
                 }
                 else
                     bIniciarSesion.setBackground(Color.red);
+            }
+        });
+        crearCuentaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaRegistro();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
