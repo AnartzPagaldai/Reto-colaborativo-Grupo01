@@ -4,26 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="getXMLjornada y generarXmljornadas">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/XML/XML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="xml generacion y get">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kings League.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kings League.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kings League/Controlador/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Controlador/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jornada/TJornada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jornada/TJornada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Usuario/TUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Usuario/TUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vInicioSesion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vInicioSesion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vInicioSesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vInicioSesion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Equipo/TEquipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Equipo/TEquipo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/XML.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +50,21 @@
       <updated>1683787169222</updated>
       <workItem from="1683787170484" duration="1067000" />
     </task>
+    <task id="LOCAL-00001" summary="xml generacion y get">
+      <created>1683800631820</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683800631820</updated>
+    </task>
+    <task id="LOCAL-00002" summary="xml generacion y get">
+      <created>1683800649104</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683800649104</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,5 +80,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="xml generacion y get" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml generacion y get" />
   </component>
 </project>

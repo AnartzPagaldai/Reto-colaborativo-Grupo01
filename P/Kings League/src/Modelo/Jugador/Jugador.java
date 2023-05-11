@@ -1,5 +1,7 @@
 package Modelo.Jugador;
 
+import java.sql.ResultSet;
+
 public class Jugador {
     private int id;
     private String nombre;
@@ -7,6 +9,9 @@ public class Jugador {
     private String dni;
     private int telefono;
     private TipoPosicion tipoPosicion;
+
+
+
     private enum TipoPosicion{
         Portero,
         Defensa,
@@ -140,4 +145,5 @@ public class Jugador {
     public void setDefensa(int defensa) {
         this.defensa = defensa;
     }
+
 }

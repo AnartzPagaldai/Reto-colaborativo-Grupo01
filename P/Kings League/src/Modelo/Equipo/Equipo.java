@@ -1,5 +1,8 @@
 package Modelo.Equipo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Equipo {
     private int id;
     private String nombre;
@@ -40,6 +43,27 @@ public class Equipo {
 
     }
     private void venderJugador(){
+
+    }
+
+    public void resutlSetObjeto(ResultSet resultSet) {
+        try {
+            id = resultSet.getInt("id");
+        } catch (SQLException e) {
+            System.out.println("no hay id");
+        }
+        try {
+            nombre = resultSet.getString("nombre");
+            presupuestoAnual = resultSet.getDouble("presupuesto_anual");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+
+
+
+
+
 
     }
 }

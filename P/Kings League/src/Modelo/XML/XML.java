@@ -54,7 +54,8 @@ public class XML {
             }
             BaseDeDatos.cerrarConexion();
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
