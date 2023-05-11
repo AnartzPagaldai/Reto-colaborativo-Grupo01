@@ -1,11 +1,14 @@
 package Vista;
 
 import Controlador.Main;
-
+import java.awt.Desktop;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 public class vPrincipal {
@@ -47,9 +50,17 @@ public class vPrincipal {
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
+    private JLabel jlImagenFran;
+    private JLabel jlImagenDavid;
+    private JButton bEnlace;
+    private JPanel pBoton;
 
 
     public vPrincipal() throws MalformedURLException {
+
+        String videoId = "k5jRcR6QP4Q";
+        String youtubeLink = generateYouTubeLink(videoId);
+
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
@@ -59,7 +70,7 @@ public class vPrincipal {
 
         // Poner la imagen de la noticia de actualidad de la Kings League
         ImagenNoticia = new ImageIcon(new URL("https://s1.abcstatics.com/abc/www/multimedia/deportes/2023/03/24/DIRECTO-FINAL-KINGS-LEAGUE(1)-U16424855837hdU-1200x630@abc.jpg"));
-        Image LogoNoticia = ImagenNoticia.getImage().getScaledInstance(1100, 630, Image.SCALE_SMOOTH);
+        Image LogoNoticia = ImagenNoticia.getImage().getScaledInstance(900, 480, Image.SCALE_SMOOTH);
         ImageIcon NoticiaIcon = new ImageIcon(LogoNoticia);
         jlImagen.setIcon(NoticiaIcon);
 
@@ -84,6 +95,7 @@ public class vPrincipal {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
+
 
 
         // Poner los ":hover" en los elemntos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
@@ -158,6 +170,12 @@ public class vPrincipal {
                 }
             }
         });
+        bEnlace.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openLink(youtubeLink);
+            }
+        });
     }
 
     public JPanel getpPrincipal() {
@@ -171,5 +189,18 @@ public class vPrincipal {
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+    }
+
+    public static String generateYouTubeLink(String videoId) {
+        return "https://youtu.be/" + videoId;
+    }
+
+    public static void openLink(String link) {
+        try {
+            // Utilizar la clase Desktop para abrir el enlace en un navegador web
+            Desktop.getDesktop().browse(new URI(link));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -4,6 +4,7 @@ import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.vInicioSesion;
 import Vista.vPrincipal;
+import Vista.vRegistro;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +30,14 @@ public class Main {
         vInicio.setExtendedState(Frame.MAXIMIZED_BOTH);
         actual=vInicio;
     }
+    public static void generarVentanaRegistro () throws MalformedURLException {
+        JFrame frame = new JFrame("vRegistro");
+        frame.setContentPane(new vRegistro().getpPrincipal());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+    }
     public static void generarVentanaPrincipal () throws MalformedURLException {
         vPrinicpal= new JFrame("vPrincipal");
         vPrinicpal.setContentPane(new vPrincipal().getpPrincipal());
@@ -39,14 +48,4 @@ public class Main {
         actual=vPrinicpal;
         vInicio.dispose();
     }
-
-
-    public static boolean selectUsuario(String nombre, String contrasena){
-        boolean existe;
-        u=new Usuario();
-        u.setNombre(nombre);
-        u.setContrasena(contrasena);
-        existe=TUsuario.selectUsuarioAdmin(u);
-        return existe;
-    }       
 }
