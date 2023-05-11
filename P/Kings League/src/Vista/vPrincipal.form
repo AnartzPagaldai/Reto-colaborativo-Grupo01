@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Vista.vPrincipal">
+  <grid id="27dc6" binding="pPrincipal" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1681" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="90419" binding="pHeader" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="bdcb9" class="javax.swing.JMenuBar" binding="jmheader" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1585287"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="f9194" class="javax.swing.JMenu" binding="mEquipos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="28"/>
+                  <foreground color="-16777216"/>
+                  <margin top="2" left="2" bottom="2" right="2"/>
+                  <text value="Equipos"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="12036" class="javax.swing.JMenuItem" binding="jmiConsultarEquipos">
+                    <constraints/>
+                    <properties>
+                      <text value="Consultar"/>
+                    </properties>
+                  </component>
+                  <component id="bfd01" class="javax.swing.JMenuItem" binding="jmiActualizarEquipos">
+                    <constraints/>
+                    <properties>
+                      <text value="Actualizar"/>
+                    </properties>
+                  </component>
+                  <component id="e629a" class="javax.swing.JMenuItem" binding="jmiEliminarEquipos">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="d0507" class="javax.swing.JMenuItem" binding="jmiInsertarEquipos">
+                    <constraints/>
+                    <properties>
+                      <text value="Insertar"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <component id="14ee" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="26"/>
+                  <foreground color="-1585287"/>
+                  <text value="................."/>
+                </properties>
+              </component>
+              <grid id="e6456" class="javax.swing.JMenu" binding="mJugadores" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="28"/>
+                  <foreground color="-16777216"/>
+                  <text value="Jugadores"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="1fade" class="javax.swing.JMenuItem" binding="jmiInsertar">
+                    <constraints/>
+                    <properties>
+                      <text value="Insertar"/>
+                    </properties>
+                  </component>
+                  <component id="6a3d5" class="javax.swing.JMenuItem" binding="jmiEliminar">
+                    <constraints/>
+                    <properties>
+                      <text value="Eliminar"/>
+                    </properties>
+                  </component>
+                  <component id="fba86" class="javax.swing.JMenuItem" binding="jmiActualizar">
+                    <constraints/>
+                    <properties>
+                      <text value="Actualizar"/>
+                    </properties>
+                  </component>
+                  <component id="2b32d" class="javax.swing.JMenuItem" binding="jmiSeleccionar">
+                    <constraints/>
+                    <properties>
+                      <text value="Seleccionar"/>
+                    </properties>
+                  </component>
+                  <hspacer id="99cf4">
+                    <constraints/>
+                  </hspacer>
+                  <hspacer id="d82c7">
+                    <constraints/>
+                  </hspacer>
+                </children>
+              </grid>
+              <component id="abe51" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="26"/>
+                  <foreground color="-1585287"/>
+                  <text value="................."/>
+                </properties>
+              </component>
+              <grid id="aeaa6" class="javax.swing.JMenu" binding="mPartidos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="28"/>
+                  <foreground color="-16777216"/>
+                  <text value="Partidos"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="48f41" class="javax.swing.JMenuItem" binding="jmiVer">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver resultados Partidos"/>
+                    </properties>
+                  </component>
+                  <component id="90ea1" class="javax.swing.JMenuItem" binding="jmiResultados">
+                    <constraints/>
+                    <properties>
+                      <text value="Añadir resultados a los partidos"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <component id="c3401" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="26"/>
+                  <foreground color="-1585287"/>
+                  <text value="................."/>
+                </properties>
+              </component>
+              <grid id="4ef3a" class="javax.swing.JMenu" binding="mClasificacion" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="34" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="28"/>
+                  <foreground color="-16777216"/>
+                  <text value="Ver clasificación"/>
+                </properties>
+                <border type="none"/>
+                <children/>
+              </grid>
+              <hspacer id="4c99">
+                <constraints/>
+              </hspacer>
+              <component id="38f5f" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="26"/>
+                  <foreground color="-1585287"/>
+                  <text value="..........................................................................."/>
+                </properties>
+              </component>
+              <grid id="b5478" class="javax.swing.JMenu" binding="mUsuario" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="2">
+                <constraints/>
+                <properties>
+                  <background color="-1585287"/>
+                  <font size="28"/>
+                  <foreground color="-11991040"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="2"/>
+                  <label value=""/>
+                  <margin top="2" left="50" bottom="2" right="2"/>
+                  <text value=""/>
+                  <verticalAlignment value="0"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="5e30b" class="javax.swing.JMenuItem" binding="jmiVerPerfil">
+                    <constraints/>
+                    <properties>
+                      <text value="Ver perfil"/>
+                    </properties>
+                  </component>
+                  <component id="40824" class="javax.swing.JMenuItem" binding="jmiCerrarSesion">
+                    <constraints/>
+                    <properties>
+                      <text value="Cerrar sesion"/>
+                    </properties>
+                  </component>
+                  <hspacer id="713ff">
+                    <constraints/>
+                  </hspacer>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="3bf41" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-545995"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="db3ec" class="javax.swing.JLabel" binding="fLogoKingsLeague">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-293106"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="79790" binding="pImagenNoticia" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="d4215" class="javax.swing.JLabel" binding="jlImagen">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="8a3db" binding="pContenido" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="3550a" binding="pFooter" layout-manager="GridLayoutManager" row-count="2" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="20" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-545995"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="ef048" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-293106"/>
+              <font size="36"/>
+              <foreground color="-545995"/>
+              <text value="."/>
+            </properties>
+          </component>
+          <grid id="b5717" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="11" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-545995"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="a760a" class="javax.swing.JLabel" binding="fTwitch">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="86d69" class="javax.swing.JLabel" binding="fInstagram">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="7653e" class="javax.swing.JLabel" binding="fTwitter">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
