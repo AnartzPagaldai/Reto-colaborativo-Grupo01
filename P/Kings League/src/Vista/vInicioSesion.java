@@ -54,7 +54,16 @@ public class vInicioSesion {
 
 
     public vInicioSesion() throws MalformedURLException {
+        pPrincipal = new JPanel(new BorderLayout());
 
+        // Agrega pHeader al norte
+        pPrincipal.add(pHeader, BorderLayout.NORTH);
+
+        // Agrega pDatos al centro
+        pPrincipal.add(pDatos, BorderLayout.CENTER);
+
+        // Agrega pFooter al sur
+        pPrincipal.add(pFooter, BorderLayout.SOUTH);
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
