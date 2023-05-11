@@ -124,7 +124,7 @@ public class vInicioSesion {
             public void actionPerformed(ActionEvent e) {
                 boolean existe=false;
                 try {
-                    existe=Main.selectUsuario(tfNombre.getText(), pfContrasena.getPassword().toString());
+                    existe=Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
                     if (existe){
                         Main.generarVentanaPrincipal();
                     }else throw new Exception("Quien eres");
