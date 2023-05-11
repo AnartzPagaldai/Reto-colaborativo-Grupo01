@@ -7,6 +7,7 @@ else
     echo "Se ha creado el directorio /kingsLeague."
 fi
 
+
 if [ -d "/kingsLeague/PROG" ]; then
     echo "El directorio /kingsLeague/PROG existe."
 else
@@ -14,6 +15,7 @@ else
     mkdir /kingsLeague/PROG
     echo "Se ha creado el directorio /kingsLeague/PROG."
 fi
+
 
 if [ -d "/kingsLeague/BD" ]; then
     echo "El directorio /kingsLeague/BD existe."
@@ -23,12 +25,22 @@ else
     echo "Se ha creado el directorio /kingsLeague/BD."
 fi
 
+
 if [ -d "/kingsLeague/ED" ]; then
     echo "El directorio /kingsLeague/ED existe."
 else
     echo "El directorio /kingsLeague/ED no existe."
     mkdir /kingsLeague/ED
     echo "Se ha creado el directorio /kingsLeague/ED."
+fi
+
+
+if [ -d "/kingsLeague/BD/paquetes" ]; then
+    echo "El directorio /kingsLeague/BD/paquetes existe."
+else
+    echo "El directorio /kingsLeague/BD/paquetes no existe."
+    mkdir /kingsLeague/BD/paquetes
+    echo "Se ha creado el directorio /kingsLeague/BD/paquetes."
 fi
 
 
@@ -40,6 +52,7 @@ else
     echo "Se ha creado el directorio /kingsLeague/BD/creates."
 fi
 
+
 if [ -d "/kingsLeague/BD/inserts" ]; then
     echo "El directorio /kingsLeague/BD/inserts existe."
 else
@@ -47,6 +60,7 @@ else
     mkdir /kingsLeague/BD/inserts
     echo "Se ha creado el directorio /kingsLeague/BD/inserts."
 fi
+
 
 if [ -d "/kingsLeague/BD/triggers" ]; then
     echo "El directorio /kingsLeague/BD/triggers existe."
@@ -56,13 +70,6 @@ else
     echo "Se ha creado el directorio /kingsLeague/BD/triggers."
 fi
 
-if [ -d "/kingsLeague/BD/MERyrelacional" ]; then
-    echo "El directorio /kingsLeague/BD/MERyrelacional existe."
-else
-    echo "El directorio /kingsLeague/BD/MERyrelacional no existe."
-    mkdir /kingsLeague/BD/MERyrelacional
-    echo "Se ha creado el directorio /kingsLeague/BD/MERyrelacional."
-fi
 
 if [ -d "/kingsLeague/BD/MERyrelacional" ]; then
     echo "El directorio /kingsLeague/BD/MERyrelacional existe."
@@ -71,6 +78,7 @@ else
     mkdir /kingsLeague/BD/MERyrelacional
     echo "Se ha creado el directorio /kingsLeague/BD/MERyrelacional."
 fi
+
 
 if [ -d "/kingsLeague/ED/Diagramas" ]; then
     echo "El directorio /kingsLeague/ED/Diagramas existe."
@@ -80,6 +88,7 @@ else
     echo "Se ha creado el directorio /kingsLeague/ED/Diagramas."
 fi
 
+
 if [ -d "/kingsLeague/lmsg/Clasificacion" ]; then
     echo "El directorio /kingsLeague/lmsg/Clasificacion existe."
 else
@@ -88,18 +97,11 @@ else
     echo "Se ha creado el directorio /kingsLeague/lmsg/Clasificacion."
 fi
 
+
 if [ -d "/kingsLeague/lmsg/Jornadas" ]; then
     echo "El directorio /kingsLeague/lmsg/Jornadas existe."
 else
     echo "El directorio /kingsLeague/lmsg/Jornadas no existe."
     mkdir /kingsLeague/lmsg/Jornadas
     echo "Se ha creado el directorio /kingsLeague/lmsg/Jornadas."
-fi
-
-if [ -d "/kingsLeague/PROG/ProgramaJava" ]; then
-    echo "El directorio /kingsLeague/PROG/ProgramaJava existe."
-else
-    echo "El directorio /kingsLeague/PROG/ProgramaJava no existe."
-    mkdir /kingsLeague/PROG/ProgramaJava
-    echo "Se ha creado el directorio /kingsLeague/PROG/ProgramaJava."
 fi
