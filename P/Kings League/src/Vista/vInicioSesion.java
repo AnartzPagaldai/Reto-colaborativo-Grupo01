@@ -54,7 +54,38 @@ public class vInicioSesion {
 
 
 
-    public vInicioSesion() throws MalformedURLException {
+        pPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                g2d.setPaint(gradient);
+
+                        0, getHeight(), colorFin);
+                        0, 0, colorInicio,
+                GradientPaint gradient = new GradientPaint(
+
+                Color colorFin = new Color(253, 214, 44);
+                Color colorInicio = new Color(239, 122, 14);
+
+                Graphics2D g2d = (Graphics2D) g;
+
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+
+
+        // Agrega pHeader al norte
+        pPrincipal.add(pHeader, BorderLayout.NORTH);
+        // Agrega pDatos al centro
+
+        pPrincipal.add(pDatos, BorderLayout.CENTER);
+
+        // Agrega pFooter al sur
+        pPrincipal.add(pFooter, BorderLayout.SOUTH);
+
+
+
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
