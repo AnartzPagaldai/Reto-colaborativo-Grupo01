@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInicioSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInicioSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipal.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipal.java" afterDir="false" />
-    </list>
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +27,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/1GDAW05/Desktop/Kings League/P/Kings League"
+    "last_opened_file_path": "C:/Users/1GDAW05/Desktop/Kings League/P/Kings League",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
