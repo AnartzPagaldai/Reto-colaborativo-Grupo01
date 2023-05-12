@@ -1,5 +1,8 @@
 package Modelo.Equipo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Equipo {
     private int id;
     private String nombre;
@@ -32,14 +35,24 @@ public class Equipo {
     public void setPresupuestoAnual(double presupuestoAnual) {
         this.presupuestoAnual = presupuestoAnual;
     }
-    private int contarJugadores(){
+
+    private int contarJugadores() {
 
         return 0;
     }
-    private void ficharJugador(){
+
+    private void ficharJugador() {
 
     }
-    private void venderJugador(){
+
+    private void venderJugador() {
 
     }
+
+    public void resultSetObjeto(ResultSet resultSet) throws SQLException {
+        id = resultSet.getInt("id");
+        nombre = resultSet.getString("nombre");
+        presupuestoAnual = resultSet.getDouble("presupuesto_anual");
+    }
+
 }

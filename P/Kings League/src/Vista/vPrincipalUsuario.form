@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD:P/Kings League/src/Vista/vPrincipalUsuario.form
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Vista.vPrincipalUsuario">
+=======
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Vista.vPrincipal">
+>>>>>>> main:P/Kings League/src/Vista/vPrincipal.form
   <grid id="27dc6" binding="pPrincipal" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -63,11 +67,23 @@
                       <component id="12036" class="javax.swing.JMenuItem" binding="jmiConsultarEquipos">
                         <constraints/>
                         <properties>
+<<<<<<< HEAD:P/Kings League/src/Vista/vPrincipalUsuario.form
                           <background color="-545995"/>
+=======
+>>>>>>> main:P/Kings League/src/Vista/vPrincipal.form
                           <font size="20"/>
                           <text value="Consultar"/>
                         </properties>
                       </component>
+<<<<<<< HEAD:P/Kings League/src/Vista/vPrincipalUsuario.form
+=======
+                      <component id="a0f1a" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value="                                 "/>
+                        </properties>
+                      </component>
+>>>>>>> main:P/Kings League/src/Vista/vPrincipal.form
                     </children>
                   </grid>
                   <component id="14ee" class="javax.swing.JLabel">
@@ -92,7 +108,10 @@
                       <component id="2b32d" class="javax.swing.JMenuItem" binding="jmiSeleccionar">
                         <constraints/>
                         <properties>
+<<<<<<< HEAD:P/Kings League/src/Vista/vPrincipalUsuario.form
                           <background color="-545995"/>
+=======
+>>>>>>> main:P/Kings League/src/Vista/vPrincipal.form
                           <font size="20"/>
                           <text value="Seleccionar"/>
                         </properties>
@@ -127,7 +146,10 @@
                       <component id="48f41" class="javax.swing.JMenuItem" binding="jmiVer">
                         <constraints/>
                         <properties>
+<<<<<<< HEAD:P/Kings League/src/Vista/vPrincipalUsuario.form
                           <background color="-545995"/>
+=======
+>>>>>>> main:P/Kings League/src/Vista/vPrincipal.form
                           <font size="20"/>
                           <text value="Ver resultados Partidos"/>
                         </properties>

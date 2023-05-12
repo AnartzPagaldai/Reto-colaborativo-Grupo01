@@ -1,29 +1,29 @@
 package Modelo.Personal;
+
 import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.BaseDeDatos.BaseDeDatos;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class TPersonal {
-    public static boolean insertar(Personal p){
-        boolean insertado=false;
+    public static boolean insertar(Personal p) {
+        return BaseDeDatos.insert("INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES (?,?,?,?,?,?);",
+                new Object[]{p.getNombre(), p.getApellidos(), p.getDni(), p.getTelefono(), p.getOficio().toString(), p.getImg()});
+    }
+
+    public static void ConsultaPersnal(Personal personal) {
         try {
-            BaseDeDatos.abrirConexion();
-            PreparedStatement ps=BaseDeDatos.getCon().prepareStatement("INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES (?,?,?,?,?,?);");
-            ps.setString(1,p.getNombre());
-            ps.setString(2, p.getApellidos());
-            ps.setString(3, p.getDni());
-            ps.setInt(4, p.getTelefono());
-            ps.setString(5, p.getOficio().toString());
-            ps.setString(6, p.getImg());
-            ResultSet resultado = ps.executeQuery();
-            if (resultado.next()){
-                insertado=true;
+             PreparedStatement statement = BaseDeDatos.rellenarStatemet("select * from personales where id = ?", new Object[]{personal.getId()});
+             ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                personal.resultSetObjeto(resultSet);
             }
-            return insertado;
-        }catch (Exception e){
-            return insertado=false;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
+        BaseDeDatos.cerrarConexion();
     }
 }

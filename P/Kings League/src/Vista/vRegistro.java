@@ -50,6 +50,7 @@ public class vRegistro {
     private JPanel pClave;
     private JPasswordField pfClaveAdmin;
     private JPanel pCrearDatos;
+    private JPanel pDegradado;
     private JButton atrasButton;
     private Usuario.TipoUsuario tipo;
     private String tipoUsuario;
