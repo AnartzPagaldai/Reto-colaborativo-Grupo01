@@ -4,9 +4,11 @@ import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Jugador.Jugador;
 import Modelo.Personal.Personal;
+import Modelo.Personal.TPersonal;
 import oracle.jdbc.OracleTypes;
 
 import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -23,8 +25,10 @@ public class TEquipo {
             ArrayList<Jugador> jugadores = new ArrayList<>();
             if (resultSet.next()) {
                 equipo.resultSetObjeto(resultSet);
-                personales[0] = new Personal(resultSet.getInt("entrenador"), TipoPersonal.Entrenador);
-                personales[1] = new Personal(resultSet.getInt("presidente"), TipoPersonal.Presidente);
+                personales[0] = new Personal(resultSet.getInt("id_entrenador"), TipoPersonal.Entrenador);
+                personales[1] = new Personal(resultSet.getInt("id_presidente"), TipoPersonal.Presidente);
+                TPersonal.ConsultarPersonal(personales[0]);
+                TPersonal.ConsultarPersonal(personales[1]);
                 do {
                     jugadores.add(new Jugador());
                     jugadores.get(jugadores.size() - 1).resultSetObjeto(resultSet);
@@ -34,6 +38,22 @@ public class TEquipo {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    public static Equipo getEquipoPorNombre(String nombre) {
+        try {
+            PreparedStatement statement = BaseDeDatos.rellenarStatemet("select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
+            ResultSet resultSet = statement.executeQuery();
+            Equipo equipo = new Equipo();
+            if (resultSet.next()) {
+               equipo.resultSetObjeto(resultSet);
+            }
+            BaseDeDatos.cerrarConexion();
+            return equipo;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

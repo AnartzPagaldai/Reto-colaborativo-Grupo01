@@ -20,10 +20,10 @@ public class Main {
     public static JFrame vPrinicpal;
     public static Usuario u;
     public static void main(String[] args) throws MalformedURLException {
-        generarVentanaInicio();
-        /*Equipo equipo = new Equipo();
+        //generarVentanaInicio();
+        Equipo equipo = new Equipo();
         equipo.setNombre("1K FC");
-        TEquipo.getInfomeEquipos(equipo, new Personal[2]);*/
+        TEquipo.getInfomeEquipos(equipo, new Personal[2]);
     }
 
 
