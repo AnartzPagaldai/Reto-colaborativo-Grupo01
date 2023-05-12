@@ -14,6 +14,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import java.io.File;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -41,10 +43,14 @@ public class TJornada {
                     Element partido = (Element) listaJornada.item(e);
                     partidos.add(new Partido());
                     int ultimo = partidos.size() - 1;
-                    // todo rellenar partidos
-                    //partidos.get(ultimo).;
+                    partidos.get(ultimo).setId(Integer.parseInt(partido.getAttribute("id")));
+                    partidos.get(ultimo).setJornada(jornadas[i]);
                     partidos.get(ultimo).setEquipo1(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo1").item(0).getTextContent()));
                     partidos.get(ultimo).setEquipo2(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo2").item(0).getTextContent()));
+                    partidos.get(ultimo).setGolesEquipo1(Integer.parseInt(partido.getElementsByTagName("goles_equipo1").item(0).getTextContent()));
+                    partidos.get(ultimo).setGolesEquipo2(Integer.parseInt(partido.getElementsByTagName("goles_equipo2").item(0).getTextContent()));
+                    partidos.get(ultimo).setFecha((Date) new SimpleDateFormat("dd/MM/yy").parse(jornada.getElementsByTagName("fecha_partido").item(0).getTextContent()));
+                    partidos.get(ultimo).setLugar(partido.getElementsByTagName("lugar_partido").item(0).getTextContent());
                 }
 
             }

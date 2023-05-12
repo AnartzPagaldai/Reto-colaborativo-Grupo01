@@ -25,8 +25,8 @@ public class TEquipo {
             ArrayList<Jugador> jugadores = new ArrayList<>();
             if (resultSet.next()) {
                 equipo.resultSetObjeto(resultSet);
-                personales[0] = new Personal(resultSet.getInt("id_entrenador"), TipoPersonal.Entrenador);
-                personales[1] = new Personal(resultSet.getInt("id_presidente"), TipoPersonal.Presidente);
+                personales[0] = new Personal(resultSet.getInt("id_entrenador"), TipoPersonal.ENTRENADOR);
+                personales[1] = new Personal(resultSet.getInt("id_presidente"), TipoPersonal.PRESIDENTE);
                 TPersonal.ConsultarPersonal(personales[0]);
                 TPersonal.ConsultarPersonal(personales[1]);
                 do {
