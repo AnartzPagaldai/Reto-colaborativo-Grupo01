@@ -46,6 +46,7 @@ public class vRegistro {
     private JRadioButton rbUsuarioNomal;
     private JLabel jlClave;
     private JPanel pTipoUsuario;
+    private JPanel pDegradado;
     private JPanel pClave;
     private JPasswordField pfClaveAdmin;
     private JPanel pCrearDatos;
@@ -53,23 +54,13 @@ public class vRegistro {
     private JButton atrasButton;
     private Usuario.TipoUsuario tipo;
     private String tipoUsuario;
+    private boolean correoCorrecto;
     private final String clave="12345";
     private static final String patronEmail = "^[\\w-\\.]+@gmail\\.com$";
+//TODO:LOS RADIOS BUTTON TIENE QUE ESTAR EN UN GRUPOS
     public vRegistro() throws MalformedURLException {
         pPrincipal = new JPanel(new BorderLayout());
-
-        // Agrega pHeader al norte
-        pPrincipal.add(pHeader, BorderLayout.NORTH);
-
-        // Agrega pDatos al centro
-        pPrincipal.add(pDatos, BorderLayout.CENTER);
-
-        // Agrega pFooter al sur
-        pPrincipal.add(pFooter, BorderLayout.SOUTH);
-
-        pPrincipal = new JPanel(new BorderLayout());
-
-        pPrincipal = new JPanel() {
+        pPrincipal= new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -138,18 +129,25 @@ public class vRegistro {
                         }
                     }else tipoUsuario=tipo.Usuario.toString();
                     insertar=Main.crearUsuario(tfNombre.getText().toUpperCase(), tfCorreo.getText().toUpperCase(), pfContrasena.getText().toUpperCase(), Usuario.TipoUsuario.valueOf(tipoUsuario));
-                    if (insertar){
+                    if (!correoCorrecto){
+                        throw new Exception("El correo no es valido");
+                    }
+                    if (tfCorreo.getText().isEmpty() || tfNombre.getText().isEmpty()|| pfContrasena.getText().isEmpty() || !rbAdmin.isSelected() || !rbUsuarioNomal.isSelected()){
+                        throw new Exception("No pueden haber campos vacios");
+                    }else if (insertar && correoCorrecto){
                         JOptionPane.showMessageDialog(null, "Usuario creado");
                         tfNombre.setText("");
                         tfCorreo.setText("");
                         pfContrasena.setText("");
                         pfClaveAdmin.setText("");
+                        pfClaveAdmin.setBackground(new Color(255, 233, 176));
+                        tfNombre.setBackground(new Color(255, 233, 176));
+                        tfCorreo.setBackground(new Color(255, 233, 176));
                     }else {
-                        throw new SQLIntegrityConstraintViolationException("Ya hay un usuario con el mismo nombre");
+                        tfNombre.setBackground(Color.red);
+                        tfCorreo.setBackground(Color.red);
+                        throw new Exception("Ya hay un usuario con el mismo nombre o email");
                     }
-                } catch (SQLIntegrityConstraintViolationException ex) {
-                    tfNombre.setBackground(Color.red);
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
@@ -173,9 +171,13 @@ public class vRegistro {
                 Pattern pattern = Pattern.compile(patronEmail);
                 Matcher matcher = pattern.matcher(tfCorreo.getText());
                 if (!matcher.matches()){
+                    correoCorrecto=false;
                     tfCorreo.setBackground(Color.red);
                     JOptionPane.showMessageDialog(null, "Email no valido");
-                }else tfCorreo.setBackground(Color.green);
+                }else {
+                    tfCorreo.setBackground(Color.green);
+                    correoCorrecto=true;
+                }
             }
         });
     }

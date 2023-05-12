@@ -11,7 +11,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class vPrincipal {
+public class vPrincipalUsuario {
     private JPanel pPrincipal;
 
     private ImageIcon imagenInstagram;
@@ -52,7 +52,7 @@ public class vPrincipal {
     private JPanel pDegradado;
 
 
-    public vPrincipal() throws MalformedURLException {
+    public vPrincipalUsuario() throws MalformedURLException {
 
 
         pPrincipal = new JPanel(new BorderLayout());
@@ -217,7 +217,7 @@ public class vPrincipal {
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vPrincipal");
-        frame.setContentPane(new vPrincipal().pPrincipal);
+        frame.setContentPane(new vPrincipalUsuario().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

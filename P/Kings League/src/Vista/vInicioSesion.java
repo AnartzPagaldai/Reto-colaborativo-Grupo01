@@ -8,8 +8,37 @@ import java.net.URL;
 import Controlador.Main;
 
 public class vInicioSesion {
+    private JPanel pDatos;
+    private JPanel pPrincipal;
+    private ImageIcon LogoKingsLeague;
+    private ImageIcon imagenTheGrefg;
+    private ImageIcon imagenIbai;
+    private ImageIcon imagenInstagram;
+    private ImageIcon imagenTwitter;
+    private ImageIcon imagenTwitch;
+    private JLabel fLogoKingsLeague;
+    private JPanel pIniciarSesion;
+    private JTextField tfNombre;
+    private JLabel jlNombre;
+    private JPanel pDegradado;
+    private JLabel jlContrasena;
+    private JButton bIniciarSesion;
+    private JPasswordField pfContrasena;
+    private JLabel JLThegrefg;
+    private JLabel JLIbai;
+    private JPanel pHeader;
+    private JPanel pFooter;
+    private JLabel fTwitch;
+    private JLabel fInstagram;
+    private JLabel fTwitter;
+    private JButton crearCuentaButton;
 
-    private JPanel pPrincipal; /*= new JPanel() {
+
+
+    public vInicioSesion() throws MalformedURLException {
+
+        pPrincipal = new JPanel(new BorderLayout());
+        pPrincipal= new JPanel() {
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -27,65 +56,9 @@ public class vInicioSesion {
 
             g2d.fillRect(0, 0, getWidth(), getHeight());
         }
-    };*/
+    };
 
-    private JPanel pDatos;
-    private ImageIcon LogoKingsLeague;
-    private ImageIcon imagenTheGrefg;
-    private ImageIcon imagenIbai;
-    private ImageIcon imagenInstagram;
-    private ImageIcon imagenTwitter;
-    private ImageIcon imagenTwitch;
-    private JLabel fLogoKingsLeague;
-    private JPanel pIniciarSesion;
-    private JTextField tfNombre;
-    private JLabel jlNombre;
-    private JLabel jlContrasena;
-    private JButton bIniciarSesion;
-    private JPasswordField pfContrasena;
-    private JLabel JLThegrefg;
-    private JLabel JLIbai;
-    private JPanel pHeader;
-    private JPanel pFooter;
-    private JLabel fTwitch;
-    private JLabel fInstagram;
-    private JLabel fTwitter;
-    private JButton crearCuentaButton;
-
-
-
-        pPrincipal = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                g2d.setPaint(gradient);
-
-                        0, getHeight(), colorFin);
-                        0, 0, colorInicio,
-                GradientPaint gradient = new GradientPaint(
-
-                Color colorFin = new Color(253, 214, 44);
-                Color colorInicio = new Color(239, 122, 14);
-
-                Graphics2D g2d = (Graphics2D) g;
-
-                g2d.fillRect(0, 0, getWidth(), getHeight());
-            }
-        };
-
-
-        // Agrega pHeader al norte
-        pPrincipal.add(pHeader, BorderLayout.NORTH);
-        // Agrega pDatos al centro
-
-        pPrincipal.add(pDatos, BorderLayout.CENTER);
-
-        // Agrega pFooter al sur
-        pPrincipal.add(pFooter, BorderLayout.SOUTH);
-
-
-
+        pPrincipal.add(pDegradado, BorderLayout.CENTER);
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);

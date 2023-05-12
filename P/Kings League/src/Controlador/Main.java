@@ -7,7 +7,7 @@ import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Modelo.XML.XML;
 import Vista.vInicioSesion;
-import Vista.vPrincipal;
+import Vista.vPrincipalUsuario;
 import Vista.vRegistro;
 
 import javax.swing.*;
@@ -18,6 +18,8 @@ public class Main {
     public static JFrame actual;
     public static JFrame vInicio;
     public static JFrame vPrinicpal;
+
+    public static JFrame vRegistro;
     public static Usuario u;
     public static void main(String[] args) throws MalformedURLException {
         //generarVentanaInicio();
@@ -25,7 +27,6 @@ public class Main {
         equipo.setNombre("1K FC");
         TEquipo.getInfomeEquipos(equipo, new Personal[2]);
     }
-
 
     public static void generarVentanaInicio () throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
@@ -35,19 +36,21 @@ public class Main {
         vInicio.pack();
         vInicio.setVisible(true);
         vInicio.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual=vInicio;
+        actual.dispose();
     }
     public static void generarVentanaRegistro () throws MalformedURLException {
-        JFrame frame = new JFrame("vRegistro");
-        frame.setContentPane(new vRegistro().getpPrincipal());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vRegistro= new JFrame("vRegistro");
+        vRegistro.setContentPane(new vRegistro().getpPrincipal());
+        vRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vRegistro.pack();
+        vRegistro.setVisible(true);
+        vRegistro.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual=vRegistro;
+        vInicio.dispose();
     }
     public static void generarVentanaPrincipal () throws MalformedURLException {
         vPrinicpal= new JFrame("vPrincipal");
-        vPrinicpal.setContentPane(new vPrincipal().getpPrincipal());
+        vPrinicpal.setContentPane(new vPrincipalUsuario().getpPrincipal());
         vPrinicpal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vPrinicpal.pack();
         vPrinicpal.setVisible(true);
@@ -60,18 +63,22 @@ public class Main {
         u=new Usuario();
         u.setNombre(nombre);
         u.setContrasena(contrasena);
-        existe=TUsuario.selectUsuarioAdmin(u);
+        existe=TUsuario.selectUsuario(u);
         return existe;
     }
 
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo){
+        boolean existe;
         boolean insertar;
         u=new Usuario();
         u.setNombre(nombre);
         u.setCorreo(correo);
         u.setContrasena(contrasena);
         u.setTipoUsuario(Usuario.TipoUsuario.valueOf(tipo.toString()));
-        insertar=TUsuario.insertar(u);
+        existe=TUsuario.selectUsuarioInsertar(u);
+        if (existe){
+            insertar=false;
+        }else insertar=TUsuario.insertar(u);
         return insertar;
     }
 }
