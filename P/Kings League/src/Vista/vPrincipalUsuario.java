@@ -11,7 +11,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class vPrincipal {
+public class vPrincipalUsuario {
     private JPanel pPrincipal;
 
     private ImageIcon imagenInstagram;
@@ -28,18 +28,11 @@ public class vPrincipal {
     private JPanel pContenido;
     private JMenu mEquipos;
     private JMenuBar jmheader;
-    private JMenuItem jmiInsertarEquipos;
-    private JMenuItem jmiEliminarEquipos;
-    private JMenuItem jmiActualizarEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
-    private JMenuItem jmiInsertar;
-    private JMenuItem jmiEliminar;
-    private JMenuItem jmiActualizar;
     private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
-    private JMenuItem jmiResultados;
     private JMenu mClasificacion;
     private JLabel jlImagen;
     private JPanel pFooter;
@@ -52,15 +45,48 @@ public class vPrincipal {
     private JLabel fLogoKingsLeague;
     private JLabel jlImagenFran;
     private JLabel jlImagenDavid;
-    private JButton bEnlace;
-    private JPanel pBoton;
+    private JButton bGolazos;
+    private JPanel pBotonGolazos;
+    private JButton bTrailer;
+    private JPanel pBotonTrailer;
+    private JPanel pDegradado;
 
 
-    public vPrincipal() throws MalformedURLException {
+    public vPrincipalUsuario() throws MalformedURLException {
 
+
+        pPrincipal = new JPanel(new BorderLayout());
+
+        pPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                Graphics2D g2d = (Graphics2D) g;
+
+                Color colorInicio = new Color(233, 86, 31);
+                Color colorFin = new Color(247, 169, 33);
+
+                GradientPaint gradient = new GradientPaint(
+                        0, 0, colorInicio,
+                        0, getHeight(), colorFin);
+
+                g2d.setPaint(gradient);
+
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+
+        // Agrega pHeader al norte
+        pPrincipal.add(pDegradado, BorderLayout.CENTER);
+
+        // Poner vídeo de YouTube sobre los golazos
         String videoId = "k5jRcR6QP4Q";
         String youtubeLink = generateYouTubeLink(videoId);
 
+        // Poner vídeo de YouTube sobre la Kings League
+        String idVideo = "y1eFrUSam1k";
+        String linkYoutube = generateYouTubeLink(idVideo);
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
@@ -98,7 +124,7 @@ public class vPrincipal {
 
 
 
-        // Poner los ":hover" en los elemntos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
+        // Poner los ":hover" en los elementos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
         mEquipos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -170,10 +196,17 @@ public class vPrincipal {
                 }
             }
         });
-        bEnlace.addActionListener(new ActionListener() {
+        bGolazos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openLink(youtubeLink);
+            }
+        });
+
+        bTrailer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openLink(linkYoutube);
             }
         });
     }
@@ -184,7 +217,7 @@ public class vPrincipal {
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vPrincipal");
-        frame.setContentPane(new vPrincipal().pPrincipal);
+        frame.setContentPane(new vPrincipalUsuario().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
