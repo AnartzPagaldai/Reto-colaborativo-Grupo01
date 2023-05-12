@@ -7,7 +7,7 @@ public class Jornada {
     private int numJornada;
     private TipoJornada tipoJornada;
     private Split split;
-    private enum TipoJornada{
+    public enum TipoJornada{
         Normal,
         PlayOff
     }

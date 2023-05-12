@@ -13,7 +13,7 @@ public class TPersonal {
                 new Object[]{p.getNombre(), p.getApellidos(), p.getDni(), p.getTelefono(), p.getOficio().toString(), p.getImg()});
     }
 
-    public static void ConsultaPersnal(Personal personal) {
+    public static void ConsultarPersonal(Personal personal) {
         try {
              PreparedStatement statement = BaseDeDatos.rellenarStatemet("select * from personales where id = ?", new Object[]{personal.getId()});
              ResultSet resultSet = statement.executeQuery();

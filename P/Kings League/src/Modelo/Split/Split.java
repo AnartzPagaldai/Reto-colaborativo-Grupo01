@@ -1,12 +1,16 @@
 package Modelo.Split;
 
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Split {
     private int id;
     private Date anio;
     private TipoSplit tipoSplit;
     private EstadoSplit estadoSplit;
+
+
 
     private enum TipoSplit{
         Invierno,
@@ -50,5 +54,10 @@ public class Split {
 
     public void setEstadoSplit(EstadoSplit estadoSplit) {
         this.estadoSplit = estadoSplit;
+    }public void resultSetObjeto(ResultSet resultSet) throws SQLException {
+        id = resultSet.getInt("id");
+        anio = resultSet.getDate("anio");
+        tipoSplit = TipoSplit.valueOf(resultSet.getString("tipo"));
+        estadoSplit = EstadoSplit.valueOf(resultSet.getString("estado"));
     }
 }
