@@ -1,0 +1,11 @@
+<!ELEMENT clasificacion (equipo)*>
+<!ATTLIST clasificacion split CDATA #REQUIRED>
+
+<!ELEMENT equipo (nombre, victorias, goles_a_favor?, goles_en_contra?, diferencia_de_goles?)>
+<!ATTLIST equipo posicion CDATA #REQUIRED>
+
+<!ELEMENT victorias (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT goles_a_favor (#PCDATA)>
+<!ELEMENT goles_en_contra (#PCDATA)>
+<!ELEMENT diferencia_de_goles (#PCDATA)>

@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="get jornadas a medias">
+      <change afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.dtd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../BD/CREATES/paquetes/PAQUETE_XML_BODY.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../BD/CREATES/paquetes/PAQUETE_XML_BODY.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jornada/Jornada$TipoJornada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jornada/Jornada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jornada/TJornada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/ContratoJugador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Partido/Partido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/ContratoPersonal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Split/Split$EstadoSplit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Split/Split$TipoSplit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Split/Split.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Split/TSplit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kings League.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kings League.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Enumeraciones/TipoPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Enumeraciones/TipoPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/Jornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/Jornada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/XML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/clasificacio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +40,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "4",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Lantek/kings leage/Reto-colaborativo-Grupo01/P/Kings League",
+    "last_opened_file_path": "C:/Users/Lantek/kings leage/Reto-colaborativo-Grupo01/P/Kings League/src/Modelo/XML",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lantek\kings leage\Reto-colaborativo-Grupo01\P\Kings League\src\Modelo\XML" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

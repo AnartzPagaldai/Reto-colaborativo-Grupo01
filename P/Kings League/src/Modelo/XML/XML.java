@@ -1,19 +1,31 @@
 package Modelo.XML;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Clob;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.HashMap;
 
 public class XML {
     public static void generarXMLjornadas() {
         generarXML("GENERAR_XML_JORNADAS();");
+        getXML("xml_jornada", "jornadas.xml");
     }
 
     public static void generarXMLclasificacion() {
         generarXML("GENERAR_XML_CLASIFICACION()");
+        getXML("xml_clasificacion", "clasificacion.xml");
     }
 
     private static void generarXML(String procedure) {
@@ -25,14 +37,6 @@ public class XML {
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
-    }
-
-    public static void getXMLjornadas() {
-        getXML("xml_jornada", "jornadas.xml");
-    }
-
-    public static void getXMLclasificacion() {
-        getXML("xml_clasificacion", "clasificacio.xml");
     }
 
     private static void getXML(String tabla, String archivo) {
@@ -56,6 +60,34 @@ public class XML {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    public static HashMap[] getClasificacion() {
+        try {
+            HashMap[] clasificacion = new HashMap[12];
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document documento = dBuilder.parse(new File("src/Modelo/XML/clasificacion.xml"));
+            Element root = documento.getDocumentElement();
+
+            NodeList listaEquipos = root.getElementsByTagName("equipo");
+            for (int i = 0; i < listaEquipos.getLength(); i++) {
+                HashMap<String, String> equipo = new HashMap<>();
+                Element tagEquipo = (Element) listaEquipos.item(i);
+                equipo.put("posicion", tagEquipo.getAttribute("posiscion"));
+                equipo.put("equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
+                equipo.put("victorias", tagEquipo.getElementsByTagName("victorias").item(0).getTextContent());
+                equipo.put("golesAfavor", tagEquipo.getElementsByTagName("goles_a_favor").item(0).getTextContent());
+                equipo.put("golesEnContra", tagEquipo.getElementsByTagName("goles_en_contra").item(0).getTextContent());
+                equipo.put("diferenciaDeGoles", tagEquipo.getElementsByTagName("diferencia_de_goles").item(0).getTextContent());
+
+                clasificacion[i] = equipo;
+            }
+            return clasificacion;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
