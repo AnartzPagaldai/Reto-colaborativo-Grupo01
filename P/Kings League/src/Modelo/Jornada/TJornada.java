@@ -14,6 +14,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import java.io.File;
+import java.sql.CallableStatement;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -62,6 +63,17 @@ public class TJornada {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void generarJornadas() {
+        try {
+            BaseDeDatos.abrirConexion();
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.GENERAR_ENFRENTAMIENTOS");
+            statement.execute();
+            BaseDeDatos.cerrarConexion();
+        } catch (Exception e) {
+            generarJornadas(); // todo especificar el error
         }
     }
 
