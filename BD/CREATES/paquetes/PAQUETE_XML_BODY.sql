@@ -32,7 +32,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
                 IF NUMERO_JORNADA_ANTERIOR != 0 THEN
                     RESULT := RESULT || '</jornada>';
                 END IF;
-                RESULT := RESULT || '<jornada num_jornada="' || NUMERO_JORNADA || '">
+                RESULT := RESULT || '<jornada num_jornada="' || NUMERO_JORNADA || '" id_jornada="' || ID_JORNADA || '">
                         <tipo_split>' || TIPO_SPLIT || '</tipo_split>
                         <tipo_jornada>' || TIPO_JORNADA || '</tipo_jornada>';  
                 NUMERO_JORNADA_ANTERIOR := NUMERO_JORNADA;   

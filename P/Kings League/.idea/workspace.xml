@@ -4,36 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="cambio vista informe equipos">
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="get jornadas a medias">
+      <change afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.dtd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../BD/CREATES/paquetes/PAQUETE_XML_BODY.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../BD/CREATES/paquetes/PAQUETE_XML_BODY.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Controlador/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/BaseDeDatos/BaseDeDatos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Equipo/Equipo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Equipo/TEquipo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/Jugador$TipoJugador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/Jugador$TipoPosicion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/Jugador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/Personal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TPersonal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Usuario/TUsuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Usuario/Usuario$TipoUsuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Usuario/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vInicioSesion$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vInicioSesion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Vista/vPrincipal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kings League.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kings League.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/Jornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/Jornada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Split/Split.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/Split.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/XML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/clasificacio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,15 +34,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lantek/kings leage/Reto-colaborativo-Grupo01/P/Kings League&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "4",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Lantek/kings leage/Reto-colaborativo-Grupo01/P/Kings League/src/Modelo/XML",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lantek\kings leage\Reto-colaborativo-Grupo01\P\Kings League\src\Modelo\XML" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683787169222</updated>
       <workItem from="1683787170484" duration="1067000" />
+      <workItem from="1683887467266" duration="3892000" />
     </task>
     <task id="LOCAL-00001" summary="xml generacion y get">
       <created>1683800631820</created>
@@ -92,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683873454537</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="get jornadas a medias">
+      <created>1683878764071</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683878764071</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="xml generacion y get" />
     <MESSAGE value="cambio vista informe equipos" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio vista informe equipos" />
+    <MESSAGE value="get jornadas a medias" />
+    <option name="LAST_COMMIT_MESSAGE" value="get jornadas a medias" />
   </component>
 </project>

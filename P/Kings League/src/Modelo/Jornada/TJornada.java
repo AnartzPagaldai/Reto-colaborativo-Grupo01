@@ -14,6 +14,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import java.io.File;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -31,20 +33,30 @@ public class TJornada {
             NodeList listaJornada = root.getElementsByTagName("jornada");
 
             for (int i = 0; i < listaJornada.getLength(); i++) {
-                NodeList listaJornda = (NodeList) listaJornada.item(i);
+
                 Element jornada = (Element) listaJornada.item(i);
-                jornadas[i].setId(Integer.parseInt(jornada.getAttribute("num_jornada")));
-                jornadas[i].setNumJornada(i + 1);
+                jornadas[i] = new Jornada();
+                jornadas[i].setId(Integer.parseInt(jornada.getAttribute("id_jornada")));
+                jornadas[i].setNumJornada(Integer.parseInt(jornada.getAttribute("num_jornada")));
                 jornadas[i].setTipoJornada(Jornada.TipoJornada.valueOf(jornada.getElementsByTagName("tipo_jornada").item(0).getTextContent()));
                 jornadas[i].setSplit(TSplit.ConsultarSplitDeJorada(jornadas[i]));
-                for (int e = 0; e < listaJornada.getLength(); e++) {
-                    Element partido = (Element) listaJornada.item(e);
+                NodeList listaPartidos = jornada.getElementsByTagName("partido");
+                for (int e = 0; e < listaPartidos.getLength(); e++) {
                     partidos.add(new Partido());
                     int ultimo = partidos.size() - 1;
-                    // todo rellenar partidos
-                    //partidos.get(ultimo).;
+                    Element partido = (Element) listaPartidos.item(e);
+                    partidos.get(ultimo).setId(Integer.parseInt(partido.getAttribute("id_partido")));
+                    partidos.get(ultimo).setJornada(jornadas[i]);
                     partidos.get(ultimo).setEquipo1(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo1").item(0).getTextContent()));
                     partidos.get(ultimo).setEquipo2(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo2").item(0).getTextContent()));
+                    String golesEquipo1 = String.valueOf(partido.getElementsByTagName("goles_equipo1").item(0));
+                    if (golesEquipo1.equals("")) {
+                        partidos.get(ultimo).setGolesEquipo1(Integer.parseInt(golesEquipo1));
+                        partidos.get(ultimo).setGolesEquipo2(Integer.parseInt(partido.getElementsByTagName("goles_equipo2").item(0).getTextContent()));
+                    }
+                    Date date = new SimpleDateFormat("dd/MM/yy").parse(jornada.getElementsByTagName("fecha_partido").item(0).getTextContent());
+                    partidos.get(ultimo).setFecha(new java.sql.Date(date.getTime()));
+                    partidos.get(ultimo).setLugar(partido.getElementsByTagName("lugar_partido").item(0).getTextContent());
                 }
 
             }
