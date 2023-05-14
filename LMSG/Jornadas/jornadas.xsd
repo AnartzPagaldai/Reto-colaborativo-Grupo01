@@ -14,6 +14,7 @@
         <xs:element name="partido" type="tipo_partido" maxOccurs="unbounded"/>
       </xs:sequence>
       <xs:attribute name="num_jornada" type="xs:int" use="required"/>
+      <xs:attribute name="id_jornada" type="xs:int" use="required"/>
       </xs:complexType>
       
       <xs:complexType name="tipo_partido">
