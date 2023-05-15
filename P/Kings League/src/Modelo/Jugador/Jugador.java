@@ -14,10 +14,10 @@ public class Jugador {
 
 
     public enum TipoPosicion{
-        Portero,
-        Defensa,
-        Medio,
-        Delantero
+        PORTERO,
+        DEFENSA,
+        MEDIO,
+        DELANTERO
     }
     private String img;
     private TipoJugador tipoJugador;
@@ -149,14 +149,14 @@ public class Jugador {
 
     public void resultSetObjeto(ResultSet resultSet) throws SQLException {
         try {
-            id = resultSet.getInt("id");
-            nombre = resultSet.getString("nombre");
-        } catch (Exception e) {
             id = resultSet.getInt("id_jugador");
             nombre = resultSet.getString("nombre_jugador");
+        } catch (Exception e) {
+            id = resultSet.getInt("id");
+            nombre = resultSet.getString("nombre");
         }
         img = resultSet.getString("img");
-        apellidos = resultSet.getString("apellido");
+        apellidos = resultSet.getString("apellidos");
         tipoPosicion = Jugador.TipoPosicion.valueOf(resultSet.getString("posicion"));
         velocidad = resultSet.getInt("velocidad");
         fisico = resultSet.getInt("fisico");

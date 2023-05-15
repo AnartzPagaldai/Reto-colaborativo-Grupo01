@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jornadas xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="jornadas.xsd">
-    <jornada num_jornada="1">
+    <jornada num_jornada="1" id_jornada="41">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="1">
@@ -52,7 +52,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="2">
+    <jornada num_jornada="2" id_jornada="42">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="7">
@@ -104,7 +104,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="3">
+    <jornada num_jornada="3" id_jornada="43">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="13">
@@ -156,7 +156,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="4">
+    <jornada num_jornada="4" id_jornada="44">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="19">
@@ -208,7 +208,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="5">
+    <jornada num_jornada="5" id_jornada="45">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="30">
@@ -260,7 +260,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="6">
+    <jornada num_jornada="6" id_jornada="46">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="36">
@@ -312,7 +312,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="7">
+    <jornada num_jornada="7" id_jornada="47">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="42">
@@ -364,7 +364,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="8">
+    <jornada num_jornada="8" id_jornada="48">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="53">
@@ -416,7 +416,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="9">
+    <jornada num_jornada="9" id_jornada="49">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="74">
@@ -468,7 +468,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="10">
+    <jornada num_jornada="10" id_jornada="50">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="85">
@@ -520,7 +520,7 @@
             <lugar_partido>CUPRA ARENA</lugar_partido>
         </partido>
     </jornada>
-    <jornada num_jornada="11">
+    <jornada num_jornada="11" id_jornada="51">
         <tipo_split>VERANO</tipo_split>
         <tipo_jornada>NORMAL</tipo_jornada>
         <partido id_partido="91">
