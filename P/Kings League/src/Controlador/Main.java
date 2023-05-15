@@ -2,7 +2,9 @@ package Controlador;
 
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
+import Modelo.Jornada.TJornada;
 import Modelo.Jugador.Jugador;
+import Modelo.Partido.Partido;
 import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
@@ -15,6 +17,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class Main {
@@ -28,6 +31,8 @@ public class Main {
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Personal[] personalesInfome = new Personal[2];
+
+    private static ArrayList<Partido> partidos;
 
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
@@ -99,12 +104,20 @@ public class Main {
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
         HashMap<String, String> persona = new HashMap<>();
         if (posicion == 0 || posicion == 1) {
-            persona.put("nombre", personalesInfome[posicion].getNombre());
-            persona.put("img", personalesInfome[posicion].getImg());// todo rellenar personas y personal
+            persona.put("nombre", personalesInfome[posicion].getNombre()); // ¿se necesita apellido?
+            persona.put("img", personalesInfome[posicion].getImg());
+            persona.put("oficio", String.valueOf(personalesInfome[posicion].getOficio()));
         } else {
             persona.put("nombre", jugadoresInfome.get(posicion - 2).getNombre());
             persona.put("img", jugadoresInfome.get(posicion - 2).getImg());
-
+            persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
+            persona.put("posicion", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoPosicion()));
+            persona.put("velocidad", String.valueOf(jugadoresInfome.get(posicion - 2).getVelocidad()));
+            persona.put("fisico", String.valueOf(jugadoresInfome.get(posicion - 2).getFisico()));
+            persona.put("tiro", String.valueOf(jugadoresInfome.get(posicion - 2).getTiro()));
+            persona.put("pase", String.valueOf(jugadoresInfome.get(posicion - 2).getPase()));
+            persona.put("talento", String.valueOf(jugadoresInfome.get(posicion - 2).getTalento()));
+            persona.put("defensa", String.valueOf(jugadoresInfome.get(posicion - 2).getDefensa()));
         }
         return persona;
     }
@@ -112,5 +125,42 @@ public class Main {
 
     public static HashMap[] getClasificacion() {
         return XML.getClasificacion();
+    }
+
+    public static boolean generarJornada() {
+       return TJornada.generarJornadas();
+    }
+    public static HashMap[] getJornadas() throws Exception{
+        partidos = TJornada.getJornadas();
+        if (partidos == null) {
+            throw new Exception("error al leer desde jornadas");
+        }
+        HashMap[] partidosMap = new HashMap[partidos.size()];
+        for (int i = 0; i < partidos.size(); i++) {
+            partidosMap[i] = dePartidosAhashmap(partidos.get(i));
+        }
+        return partidosMap;
+    }
+
+    public static HashMap<String, String> getJornada(int numJornada) {
+        Partido partido = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).findAny().orElse(null);
+        return dePartidosAhashmap(partido);
+    }
+    private static HashMap<String, String> dePartidosAhashmap(Partido partido) {
+        HashMap<String, String> partidoMap = new HashMap<>();
+        partidoMap.put("numJornada", String.valueOf(partido.getJornada().getNumJornada()));
+        partidoMap.put("fecha", partido.getFecha().toString());
+        partidoMap.put("nombre_equiop1", partido.getEquipo1().getNombre());
+        partidoMap.put("nombre_equiop2", partido.getEquipo2().getNombre());
+        //partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
+        //partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
+        if (partido.getFecha().before(new Date())) {
+            partidoMap.put("golesEquipo1", String.valueOf(partido.getGolesEquipo1()));
+            partidoMap.put("golesEquipo2", String.valueOf(partido.getGolesEquipo2()));
+        } else {
+            partidoMap.put("golesEquipo1", "sin jugar");
+            partidoMap.put("golesEquipo2", "sin jugar");
+        }
+        return partidoMap;
     }
 }

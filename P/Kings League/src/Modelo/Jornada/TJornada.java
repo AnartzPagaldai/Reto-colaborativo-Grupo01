@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class TJornada {
 
-    public static void getJornadas() {
+    public static ArrayList<Partido> getJornadas() {
         try {
             Jornada[] jornadas = new Jornada[11];
             ArrayList<Partido> partidos = new ArrayList<>();
@@ -59,22 +59,25 @@ public class TJornada {
                     partidos.get(ultimo).setFecha(new java.sql.Date(date.getTime()));
                     partidos.get(ultimo).setLugar(partido.getElementsByTagName("lugar_partido").item(0).getTextContent());
                 }
-
+                return partidos;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
-    public static void generarJornadas() {
+    public static boolean generarJornadas() {
         try {
             BaseDeDatos.abrirConexion();
             CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.GENERAR_ENFRENTAMIENTOS");
             statement.execute();
             BaseDeDatos.cerrarConexion();
+            return true;
         } catch (Exception e) {
-            generarJornadas(); // todo especificar el error
+            generarJornadas(); // todo especificar el error. Por si el error es que no se a creado split
         }
+        return false;
     }
 
 }
