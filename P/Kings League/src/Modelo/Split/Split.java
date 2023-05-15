@@ -1,10 +1,12 @@
 package Modelo.Split;
 
+import Modelo.BaseDeDatos.ResultSetObjeto;
+
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Split {
+public class Split implements ResultSetObjeto {
     private int id;
     private Date anio;
     private TipoSplit tipoSplit;

@@ -1,9 +1,11 @@
 package Modelo.Equipo;
 
+import Modelo.BaseDeDatos.ResultSetObjeto;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Equipo {
+public class Equipo implements ResultSetObjeto {
     private int id;
     private String nombre;
     private double presupuestoAnual;

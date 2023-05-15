@@ -1,9 +1,11 @@
 package Modelo.Jugador;
 
+import Modelo.BaseDeDatos.ResultSetObjeto;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Jugador {
+public class Jugador implements ResultSetObjeto {
     private int id;
     private String nombre;
     private String apellidos;

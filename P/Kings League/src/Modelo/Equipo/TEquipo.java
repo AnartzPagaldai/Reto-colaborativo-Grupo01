@@ -45,19 +45,9 @@ public class TEquipo {
     }
 
     public static Equipo getEquipoPorNombre(String nombre) {
-        try {
-            PreparedStatement statement = BaseDeDatos.rellenarStatemet("select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
-            ResultSet resultSet = statement.executeQuery();
-            Equipo equipo = new Equipo();
-            if (resultSet.next()) {
-               equipo.resultSetObjeto(resultSet);
-            }
-            BaseDeDatos.cerrarConexion();
-            return equipo;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        Equipo equipo = new Equipo();
+        BaseDeDatos.cosultaObjeto(equipo, "select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
+        return equipo;
     }
 
 
