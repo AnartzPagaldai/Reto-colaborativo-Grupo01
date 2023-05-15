@@ -7,7 +7,7 @@ import javax.xml.parsers.DocumentBuilder;
 
 import Modelo.Equipo.TEquipo;
 import Modelo.Partido.Partido;
-import Modelo.Split.Split;
+
 import Modelo.Split.TSplit;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

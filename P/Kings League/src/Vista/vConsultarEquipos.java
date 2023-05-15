@@ -1,18 +1,18 @@
 package Vista;
 
 import Controlador.Main;
-import java.awt.Desktop;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
-public class  vPrincipalUsuario {
-    private JPanel pPrincipal;
+public class vConsultarEquipos {
+
 
     private ImageIcon imagenInstagram;
     private ImageIcon imagenTwitter;
@@ -23,36 +23,44 @@ public class  vPrincipalUsuario {
     private ImageIcon LogoKingsLeague;
 
     private ImageIcon ImagenNoticia;
+    private JPanel pPrincipal;
     private JPanel pHeader;
-    private JPanel pImagenNoticia;
-    private JPanel pContenido;
-    private JMenu mEquipos;
     private JMenuBar jmheader;
+    private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
     private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
     private JMenu mClasificacion;
-    private JLabel jlImagen;
-    private JPanel pFooter;
-    private JLabel fTwitch;
-    private JLabel fInstagram;
-    private JLabel fTwitter;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
-    private JLabel jlImagenFran;
-    private JLabel jlImagenDavid;
-    private JButton bGolazos;
-    private JPanel pBotonGolazos;
-    private JButton bTrailer;
-    private JPanel pBotonTrailer;
+    private JPanel pFooter;
+    private JLabel fTwitch;
+    private JLabel fInstagram;
+    private JLabel fTwitter;
+    private JPanel pContenido;
     private JPanel pDegradado;
+    private JPanel pBotones;
+    private JButton b1K;
+    private JButton bTroncos;
+    private JButton bBarrio;
+    private JButton bJijantes;
+    private JButton bAniquiladores;
+    private JButton bKuni;
+    private JButton bPio;
+    private JButton bPorcinos;
+    private JButton bRayo;
+    private JButton bSaiyans;
+    private JButton bMostoles;
+    private JButton bXbuyer;
+    private JMenu mPrincipal;
+    private JMenuItem jmiPrincipal;
 
 
-    public vPrincipalUsuario() throws MalformedURLException {
+    public vConsultarEquipos() throws MalformedURLException {
 
 
         pPrincipal = new JPanel(new BorderLayout());
@@ -64,12 +72,13 @@ public class  vPrincipalUsuario {
 
                 Graphics2D g2d = (Graphics2D) g;
 
+
                 Color colorInicio = new Color(233, 86, 31);
                 Color colorFin = new Color(247, 169, 33);
 
                 GradientPaint gradient = new GradientPaint(
                         0, 0, colorInicio,
-                        0, getHeight(), colorFin);
+                        getWidth(), getHeight(), colorFin);
 
                 g2d.setPaint(gradient);
 
@@ -77,28 +86,14 @@ public class  vPrincipalUsuario {
             }
         };
 
-        // Agrega pHeader al norte
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
-        // Poner vídeo de YouTube sobre los golazos
-        String videoId = "k5jRcR6QP4Q";
-        String youtubeLink = generateYouTubeLink(videoId);
-
-        // Poner vídeo de YouTube sobre la Kings League
-        String idVideo = "y1eFrUSam1k";
-        String linkYoutube = generateYouTubeLink(idVideo);
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
-
-        // Poner la imagen de la noticia de actualidad de la Kings League
-        ImagenNoticia = new ImageIcon(new URL("https://s1.abcstatics.com/abc/www/multimedia/deportes/2023/03/24/DIRECTO-FINAL-KINGS-LEAGUE(1)-U16424855837hdU-1200x630@abc.jpg"));
-        Image LogoNoticia = ImagenNoticia.getImage().getScaledInstance(900, 480, Image.SCALE_SMOOTH);
-        ImageIcon NoticiaIcon = new ImageIcon(LogoNoticia);
-        jlImagen.setIcon(NoticiaIcon);
 
         // Poner las imágenes del footer
         imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
@@ -122,9 +117,6 @@ public class  vPrincipalUsuario {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-
-
-        // Poner los ":hover" en los elementos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
         mEquipos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -185,61 +177,34 @@ public class  vPrincipalUsuario {
                 mUsuario.setOpaque(false);
             }
         });
-
-        jmiCerrarSesion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.cerrarSesion();
-            }
-        });
-        bGolazos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openLink(youtubeLink);
-            }
-        });
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
+        jmiPrincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarVentanaEquipos();
+                    Main.generarVentanaPrincipal();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
             }
         });
-
-        bTrailer.addActionListener(new ActionListener() {
+        jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openLink(linkYoutube);
+                    Main.cerrarSesion();
             }
         });
     }
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
-
     public static void main(String[] args) throws MalformedURLException {
-        JFrame frame = new JFrame("vPrincipal");
-        frame.setContentPane(new vPrincipalUsuario().pPrincipal);
+        JFrame frame = new JFrame("vConsultarEquipos");
+        frame.setContentPane(new vConsultarEquipos().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
-    public static String generateYouTubeLink(String videoId) {
-        return "https://youtu.be/" + videoId;
-    }
-
-    public static void openLink(String link) {
-        try {
-            // Utilizar la clase Desktop para abrir el enlace en un navegador web
-            Desktop.getDesktop().browse(new URI(link));
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
+    public JPanel getpPrincipal() {
+        return pPrincipal;
     }
 }

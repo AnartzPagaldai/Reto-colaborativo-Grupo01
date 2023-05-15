@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import Controlador.Main;
 
+import static Controlador.Main.generarVentanaRegistro;
+
 public class vInicioSesion {
     private JPanel pDatos;
     private JPanel pPrincipal;
@@ -100,7 +102,9 @@ public class vInicioSesion {
                     existe=Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
                     if (existe){
                         Main.generarVentanaPrincipal();
-                    }else throw new Exception("Quien eres");
+                        tfNombre.setText("");
+                        pfContrasena.setText("");
+                    }else throw new Exception("Usuario o contraseña incorrectos");
                 }catch (Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
@@ -110,9 +114,9 @@ public class vInicioSesion {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarVentanaRegistro();
+                    generarVentanaRegistro();
                 } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
+                    System.out.println("error");
                 }
             }
         });

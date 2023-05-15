@@ -67,12 +67,6 @@
                           <text value="Consultar"/>
                         </properties>
                       </component>
-                      <component id="a0f1a" class="javax.swing.JLabel">
-                        <constraints/>
-                        <properties>
-                          <text value="                                 "/>
-                        </properties>
-                      </component>
                     </children>
                   </grid>
                   <component id="14ee" class="javax.swing.JLabel">
