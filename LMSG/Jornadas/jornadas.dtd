@@ -1,5 +1,6 @@
 <!ELEMENT jornadas (jornada+)>
 <!ATTLIST jornada num_jornada CDATA #REQUIRED>
+<!ATTLIST jornada id_jornada CDATA #REQUIRED>
 <!ELEMENT tipo_split (#PCDATA)>
 <!ELEMENT tipo_jornada (#PCDATA)>
 <!ELEMENT jornada (tipo_split?, tipo_jornada?, partido+)>
