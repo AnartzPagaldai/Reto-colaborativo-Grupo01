@@ -8,11 +8,11 @@ import Modelo.Partido.Partido;
 import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
-import Modelo.XML.XML;
+import Vista.vConsultarEquipos;
 import Vista.vInicioSesion;
 import Vista.vPrincipalUsuario;
 import Vista.vRegistro;
-
+import Modelo.XML.*;
 import javax.swing.*;
 import javax.swing.plaf.SplitPaneUI;
 import java.awt.*;
@@ -23,14 +23,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class Main {
     public static JFrame actual;
     public static JFrame vInicio;
     public static JFrame vPrinicpal;
-
+    public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static Usuario u;
-
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Personal[] personalesInfome = new Personal[2];
@@ -38,7 +38,7 @@ public class Main {
     private static ArrayList<Partido> partidos;
 
     public static void main(String[] args) throws MalformedURLException {
-        //generarVentanaInicio();
+        generarVentanaInicio();
         /*try {
             HashMap[] mp = getJornadas();
             for (HashMap hashMap : mp) {
@@ -52,7 +52,15 @@ public class Main {
             throw new RuntimeException(e);
         }*/
     }
+    public static void cerrarSesion() {
+        actual.dispose();
+        vInicio.setVisible(true);
+    }
 
+    public static void Principal() {
+        actual.dispose();
+        vPrinicpal.setVisible(true);
+    }
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,6 +92,17 @@ public class Main {
         vPrinicpal.setExtendedState(Frame.MAXIMIZED_BOTH);
         actual = vPrinicpal;
         vInicio.dispose();
+    }
+
+    public static void generarVentanaEquipos() throws MalformedURLException {
+        vEquipos= new JFrame("vConsultarEquipos");
+        vEquipos.setContentPane(new vConsultarEquipos().getpPrincipal());
+        vEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vEquipos.pack();
+        vEquipos.setVisible(true);
+        vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpal.setVisible(false);
+        actual = vEquipos;
     }
 
     public static boolean selectUsuario(String nombre, String contrasena) {
@@ -182,4 +201,6 @@ public class Main {
         }
         return partidoMap;
     }
+
+
 }
