@@ -14,11 +14,14 @@ import Vista.vPrincipalUsuario;
 import Vista.vRegistro;
 
 import javax.swing.*;
+import javax.swing.plaf.SplitPaneUI;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static JFrame actual;
@@ -35,7 +38,19 @@ public class Main {
     private static ArrayList<Partido> partidos;
 
     public static void main(String[] args) throws MalformedURLException {
-        generarVentanaInicio();
+        //generarVentanaInicio();
+        /*try {
+            HashMap[] mp = getJornadas();
+            for (HashMap hashMap : mp) {
+                System.out.println(hashMap);
+            }
+            HashMap[] map = getJornada(1);
+            for (HashMap hashMap : map) {
+                System.out.println(hashMap);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }*/
     }
 
     public static void generarVentanaInicio() throws MalformedURLException {
@@ -97,7 +112,7 @@ public class Main {
 
     public static void setObjetosInformeEquipo(String nombre) {
         Equipo equipo = new Equipo();
-        equipo.setNombre("Porcinos FC");
+        equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
     }
 
@@ -142,9 +157,13 @@ public class Main {
         return partidosMap;
     }
 
-    public static HashMap<String, String> getJornada(int numJornada) {
-        Partido partido = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).findAny().orElse(null);
-        return dePartidosAhashmap(partido);
+    public static HashMap[] getJornada(int numJornada) {
+        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toList());
+        HashMap[] partidosMap = new HashMap[partidoDeJornada.size()];
+        for (int i = 0; i < partidoDeJornada.size(); i++) {
+            partidosMap[i] = dePartidosAhashmap(partidoDeJornada.get(i));
+        }
+        return partidosMap;
     }
     private static HashMap<String, String> dePartidosAhashmap(Partido partido) {
         HashMap<String, String> partidoMap = new HashMap<>();
