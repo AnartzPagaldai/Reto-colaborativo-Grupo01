@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Equipo.Equipo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class vConsultarEquipos {
 
@@ -19,6 +22,8 @@ public class vConsultarEquipos {
     private ImageIcon imagenTwitch;
 
     private ImageIcon imagenUsuario;
+
+    private ImageIcon imagenEquipo;
 
     private ImageIcon LogoKingsLeague;
 
@@ -56,12 +61,48 @@ public class vConsultarEquipos {
     private JButton bEquipo10;
     private JButton bEquipo11;
     private JButton bEquipo12;
+    private JMenu jmInicio;
     private JMenu mPrincipal;
     private JMenuItem jmiPrincipal;
 
 
     public vConsultarEquipos() throws MalformedURLException {
+        jmInicio.requestFocus();
+        ArrayList<JButton> botones = new ArrayList<>();
+        botones.add(bEquipo1);
+        botones.add(bEquipo2);
+        botones.add(bEquipo3);
+        botones.add(bEquipo4);
+        botones.add(bEquipo5);
+        botones.add(bEquipo6);
+        botones.add(bEquipo7);
+        botones.add(bEquipo8);
+        botones.add(bEquipo9);
+        botones.add(bEquipo10);
+        botones.add(bEquipo11);
+        botones.add(bEquipo12);
 
+        try {
+            ArrayList<Equipo> listaEquipos = Main.rellenarBotones();
+
+            for (int x = 0; x < botones.size(); x++)
+            {
+                Color colorFondo = Color.decode(listaEquipos.get(x).getColor());
+
+                botones.get(x).setText(listaEquipos.get(x).getNombre());
+
+                imagenEquipo = new ImageIcon(new URL(listaEquipos.get(x).getLogoImg()));
+                Image imgEquipo = imagenEquipo.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                ImageIcon eqIcono = new ImageIcon(imgEquipo);
+                botones.get(x).setIcon(eqIcono);
+
+                botones.get(x).setBackground(colorFondo);
+
+            }
+        }catch (SQLException e)
+        {
+            JOptionPane.showMessageDialog(null, "Eror de SQL");
+        }
 
         pPrincipal = new JPanel(new BorderLayout());
 

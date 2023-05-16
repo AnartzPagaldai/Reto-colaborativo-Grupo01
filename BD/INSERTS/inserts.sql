@@ -11,7 +11,7 @@ INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Aniqui
 INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Los Troncos FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/8/84/Los_troncos_fckingsleague.png
 ', '#30585a');
 INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('1K FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/9/98/1K_F.C_logo.png
-' , '#4997d9');
+' , '#8B68FF');
 INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Rayo de Barcelona', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rayo_de_Barcelona_FC.svg/800px-Rayo_de_Barcelona_FC.svg.png
 ', '#cd8c28');
 INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('xBuyer Team', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Xbuyer.png', '#4d4d4d');

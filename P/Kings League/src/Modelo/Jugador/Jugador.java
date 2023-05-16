@@ -159,7 +159,6 @@ public class Jugador implements ResultSetObjeto {
         }
         img = resultSet.getString("img");
         apellidos = resultSet.getString("apellidos");
-        tipoJugador = TipoJugador.valueOf(resultSet.getString("tipo")); // todo provar
         tipoPosicion = Jugador.TipoPosicion.valueOf(resultSet.getString("posicion"));
         velocidad = resultSet.getInt("velocidad");
         fisico = resultSet.getInt("fisico");
