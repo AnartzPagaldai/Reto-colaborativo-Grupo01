@@ -16,6 +16,7 @@ import Modelo.XML.*;
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -128,10 +129,11 @@ public class Main {
         return insertar;
     }
 
-    public static void setObjetosInformeEquipo(String nombre) {
+    public static Equipo setObjetosInformeEquipo(String nombre) {
         Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
+        return equipo;
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
@@ -203,4 +205,11 @@ public class Main {
     public static int getCantidadPersonas(){
         return jugadoresInfome.size()+2;
     }
+
+    public static ArrayList<Equipo> rellenarBotones() throws SQLException {
+        ArrayList equipos = new ArrayList<>();
+        TEquipo.selectAllEquipos(equipos);
+    return equipos;}
+
+
 }
