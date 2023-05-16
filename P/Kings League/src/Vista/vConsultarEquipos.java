@@ -44,18 +44,18 @@ public class vConsultarEquipos {
     private JPanel pContenido;
     private JPanel pDegradado;
     private JPanel pBotones;
-    private JButton b1K;
-    private JButton bTroncos;
-    private JButton bBarrio;
-    private JButton bJijantes;
-    private JButton bAniquiladores;
-    private JButton bKuni;
-    private JButton bPio;
-    private JButton bPorcinos;
-    private JButton bRayo;
-    private JButton bSaiyans;
-    private JButton bMostoles;
-    private JButton bXbuyer;
+    private JButton bEquipo1;
+    private JButton bEquipo2;
+    private JButton bEquipo3;
+    private JButton bEquipo4;
+    private JButton bEquipo5;
+    private JButton bEquipo6;
+    private JButton bEquipo7;
+    private JButton bEquipo8;
+    private JButton bEquipo9;
+    private JButton bEquipo10;
+    private JButton bEquipo11;
+    private JButton bEquipo12;
     private JMenu mPrincipal;
     private JMenuItem jmiPrincipal;
 
@@ -180,11 +180,7 @@ public class vConsultarEquipos {
         jmiPrincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaPrincipal();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Main.Principal();
             }
         });
         jmiCerrarSesion.addActionListener(new ActionListener() {
