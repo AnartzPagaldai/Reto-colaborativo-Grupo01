@@ -2,8 +2,6 @@ package Modelo.XML;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Equipo.TEquipo;
-import Modelo.Jornada.TJornada;
-import Modelo.Partido.Partido;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -18,7 +16,6 @@ import java.sql.CallableStatement;
 import java.sql.Clob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class XML {
@@ -81,7 +78,7 @@ public class XML {
                 Element tagEquipo = (Element) listaEquipos.item(i);
                 equipo.put("posicion", tagEquipo.getAttribute("posiscion"));
                 equipo.put("nombre_equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
-                equipo.put("img", TEquipo.getEquipoPorNombre(equipo.get("nombre")).getLogoImg());
+                //equipo.put("logoImg", TEquipo.getEquipoPorNombre(equipo.get("nombre")).getLogoImg());
                 equipo.put("victorias", tagEquipo.getElementsByTagName("victorias").item(0).getTextContent());
                 equipo.put("golesAfavor", tagEquipo.getElementsByTagName("goles_a_favor").item(0).getTextContent());
                 equipo.put("golesEnContra", tagEquipo.getElementsByTagName("goles_en_contra").item(0).getTextContent());
@@ -98,29 +95,7 @@ public class XML {
 
     public static void generarXMlultimaJornada() {
         try {
-            StringBuilder xml = new StringBuilder();
-            ArrayList<Partido> partidos = TJornada.getJornadas();
-            int ultimo = partidos.size() - 1;
-            xml.append(String.valueOf("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                    "<jornadas xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:noNamespaceSchemaLocation=\"jornadas.xsd\">\n" +
-                    "    <jornada num_jornada=\"" + partidos.get(ultimo) + "\" id_jornada=\"" + partidos.get(ultimo).getJornada().getId() + "\">\n" +
-                    " <tipo_split>" + partidos.get(ultimo).getJornada().getSplit().getTipoSplit() + "</tipo_split>\n" +
-                    "  <tipo_jornada>" + partidos.get(ultimo) + "</tipo_jornada>"));
-
-            for (int i = ultimo - 6; i < ultimo + 1; i++) {
-
-                xml.append(String.valueOf("<partido id_partido=\"" + partidos.get(i).getId() + "\">" +
-                        " <equipo1>" + partidos.get(ultimo).getEquipo1() + "</equipo1>" +
-                        "<goles_equipo1>" + partidos.get(ultimo).getGolesEquipo1() + "</goles_equipo1>" +
-                        "<equipo2>" + partidos.get(ultimo).getEquipo2() + "</equipo2>" +
-                        "<goles_equipo2>" + partidos.get(ultimo).getGolesEquipo2() + "</goles_equipo2>" +
-                        "<fecha_partido>" + partidos.get(ultimo).getFecha() + "</fecha_partido>" +
-                        "<lugar_partido>" + partidos.get(ultimo).getLugar() + "</lugar_partido>"
-                        + "</partido>"));
-            }
-//todo probar si funciona
-            xml.append("</jornada>");
-
+           // StringBuilder xml =
         } catch (Exception e) {
             e.printStackTrace();
         }
