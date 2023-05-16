@@ -57,6 +57,7 @@ public class vConsultarJugadores {
     private JLabel jlImagen;
     private JMenu mPrincipal;
     private JMenuItem jmiPrincipal;
+    private JLabel jlEquipo;
     private int posicion=0;
 
     public vConsultarJugadores() throws MalformedURLException {
