@@ -112,7 +112,7 @@ public class Main {
         u.setContrasena(contrasena);
         existe = TUsuario.selectUsuario(u);
         return existe;
-    }
+    };
 
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
         boolean existe;
@@ -201,6 +201,9 @@ public class Main {
             partidoMap.put("golesEquipo2", "sin jugar");
         }
         return partidoMap;
+    }
+    public static int getCantidadPersonas(){
+        return jugadoresInfome.size()+2;
     }
 
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {

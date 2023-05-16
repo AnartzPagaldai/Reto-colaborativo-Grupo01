@@ -7,8 +7,8 @@ public class Usuario {
     private String correo;
     private TipoUsuario tipoUsuario;
     public enum TipoUsuario{
-        Usuario,
-        Admin
+        USUARIO,
+        ADMIN
     }
 
     public Usuario() {
