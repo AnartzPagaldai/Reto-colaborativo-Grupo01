@@ -4,13 +4,9 @@ import Modelo.Usuario.Usuario;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import java.awt.event.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -50,6 +46,7 @@ public class vRegistro {
     private JPanel pClave;
     private JPasswordField pfClaveAdmin;
     private JPanel pCrearDatos;
+    private JButton bSalir;
     private JButton atrasButton;
     private Usuario.TipoUsuario tipo;
     private String tipoUsuario;
@@ -127,11 +124,11 @@ public class vRegistro {
                             throw new Exception( "La clave de admin no es la correcta");
                         }
                     }else tipoUsuario=tipo.Usuario.toString();
-                    insertar=Main.crearUsuario(tfNombre.getText().toUpperCase(), tfCorreo.getText().toUpperCase(), pfContrasena.getText().toUpperCase(), Usuario.TipoUsuario.valueOf(tipoUsuario));
+                    insertar=Main.crearUsuario(tfNombre.getText().toUpperCase(), tfCorreo.getText().toUpperCase(), pfContrasena.getText().toUpperCase(), Usuario.TipoUsuario.valueOf(tipoUsuario.toUpperCase()));
                     if (!correoCorrecto){
                         throw new Exception("El correo no es valido");
                     }
-                    if (tfCorreo.getText().isEmpty() || tfNombre.getText().isEmpty()|| pfContrasena.getText().isEmpty() || !rbAdmin.isSelected() || !rbUsuarioNomal.isSelected()){
+                    if (tfCorreo.getText().isEmpty() || tfNombre.getText().isEmpty()|| pfContrasena.getText().isEmpty()){
                         throw new Exception("No pueden haber campos vacios");
                     }else if (insertar && correoCorrecto){
                         JOptionPane.showMessageDialog(null, "Usuario creado");
@@ -179,8 +176,13 @@ public class vRegistro {
                 }
             }
         });
+        bSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.cerrarSesion();
+            }
+        });
     }
-
 
     public JPanel getpPrincipal() {
         return pPrincipal;
@@ -194,4 +196,5 @@ public class vRegistro {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
 }

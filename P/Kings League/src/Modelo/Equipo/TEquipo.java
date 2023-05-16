@@ -10,6 +10,7 @@ import oracle.jdbc.OracleTypes;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TEquipo {
@@ -46,9 +47,28 @@ public class TEquipo {
 
     public static Equipo getEquipoPorNombre(String nombre) {
         Equipo equipo = new Equipo();
-        BaseDeDatos.cosultaObjeto(equipo, "select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
+        BaseDeDatos.cosultaObjeto(equipo, "select * from equipos where upper(nombre) = upper(?)", new Object[]{nombre});
         return equipo;
     }
+
+
+    public static ArrayList<Equipo> selectAllEquipos (ArrayList<Equipo> equipos) throws SQLException {
+        BaseDeDatos.abrirConexion();
+
+        PreparedStatement ps = BaseDeDatos.getCon().prepareStatement("select nombre, logo_img, color from equipos");
+        ResultSet resul = ps.executeQuery();
+        while (resul.next())
+        {
+            Equipo equipo = new Equipo();
+            equipo.setNombre(resul.getString("nombre"));
+            equipo.setLogoImg(resul.getString("logo_img"));
+            equipo.setColor(resul.getString("color"));
+            equipos.add(equipo);
+        }
+        BaseDeDatos.cerrarConexion();
+    return equipos;}
+
+
 
 
 }

@@ -10,8 +10,9 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.HashMap;
 
-public class vPrincipalUsuario {
+public class  vPrincipalUsuario {
     private JPanel pPrincipal;
 
     private ImageIcon imagenInstagram;
@@ -189,17 +190,23 @@ public class vPrincipalUsuario {
         jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaInicio();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Main.cerrarSesion();
             }
         });
         bGolazos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openLink(youtubeLink);
+            }
+        });
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaEquipos();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 

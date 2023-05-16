@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jornadas SYSTEM "jornadas.dtd">
 <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd">
-<jornada num_jornada="1" id_jornada="1">
+<jornada num_jornada="1">
   <tipo_split> VERANO</tipo_split>
-  <tipo_jornada> NORMAL</tipo_jornada>
+  <tipo_jornada>NORMAL</tipo_jornada>
   <partido id_partido="1">
     <equipo1> JIJANTES FC</equipo1>
     <goles_equipo1> 3</goles_equipo1>
@@ -19,8 +20,6 @@
     <fecha_partido> 05/10/2023</fecha_partido>
     <lugar_partido> CUPRA ARENA</lugar_partido>
   </partido>
-  
-  
   <partido id_partido="3">
     <equipo1> PIO FC</equipo1>
     <goles_equipo1> 1</goles_equipo1>
@@ -29,7 +28,5 @@
     <fecha_partido> 05/10/2023</fecha_partido>
     <lugar_partido> CUPRA ARENA</lugar_partido>
   </partido>
-  
-  
 </jornada>
 </jornadas>

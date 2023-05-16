@@ -7,7 +7,7 @@ import javax.xml.parsers.DocumentBuilder;
 
 import Modelo.Equipo.TEquipo;
 import Modelo.Partido.Partido;
-import Modelo.Split.Split;
+
 import Modelo.Split.TSplit;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -59,8 +59,8 @@ public class TJornada {
                     partidos.get(ultimo).setFecha(new java.sql.Date(date.getTime()));
                     partidos.get(ultimo).setLugar(partido.getElementsByTagName("lugar_partido").item(0).getTextContent());
                 }
-                return partidos;
             }
+            return partidos;
         } catch (Exception e) {
             e.printStackTrace();
         }

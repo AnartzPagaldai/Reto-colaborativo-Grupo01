@@ -63,14 +63,9 @@
                       <component id="12036" class="javax.swing.JMenuItem" binding="jmiConsultarEquipos">
                         <constraints/>
                         <properties>
+                          <background color="-545995"/>
                           <font size="20"/>
                           <text value="Consultar"/>
-                        </properties>
-                      </component>
-                      <component id="a0f1a" class="javax.swing.JLabel">
-                        <constraints/>
-                        <properties>
-                          <text value="                                 "/>
                         </properties>
                       </component>
                     </children>
@@ -97,6 +92,7 @@
                       <component id="2b32d" class="javax.swing.JMenuItem" binding="jmiSeleccionar">
                         <constraints/>
                         <properties>
+                          <background color="-545995"/>
                           <font size="20"/>
                           <text value="Seleccionar"/>
                         </properties>
@@ -131,6 +127,7 @@
                       <component id="48f41" class="javax.swing.JMenuItem" binding="jmiVer">
                         <constraints/>
                         <properties>
+                          <background color="-545995"/>
                           <font size="20"/>
                           <text value="Ver resultados Partidos"/>
                         </properties>
@@ -189,6 +186,7 @@
                       <component id="5e30b" class="javax.swing.JMenuItem" binding="jmiVerPerfil">
                         <constraints/>
                         <properties>
+                          <background color="-545995"/>
                           <font size="20"/>
                           <text value="Ver perfil"/>
                         </properties>
@@ -196,6 +194,8 @@
                       <component id="40824" class="javax.swing.JMenuItem" binding="jmiCerrarSesion">
                         <constraints/>
                         <properties>
+                          <background color="-545995"/>
+                          <enabled value="false"/>
                           <font size="20"/>
                           <text value="Cerrar sesion"/>
                         </properties>

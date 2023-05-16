@@ -71,6 +71,7 @@ public class BaseDeDatos {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            objeto = null;
         }
     }
 }

@@ -1,15 +1,24 @@
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Saiyans FC', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Ultimate Mostoles', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('El Barrio', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Kunisports', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('PIO FC', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Aniquiladores FC', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Los Troncos FC', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('1K FC', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Rayo de Barcelona', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('xBuyer Team', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL) VALUES ('Porcinos FC', 2000000);
-INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL)VALUES  ('Jijantes FC', 2000000);
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Saiyans FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/0/06/Saiyans_FC.png
+', '#1c2f79');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Ultimate Mostoles', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/1/14/Ultimatemostoles.png', '#674d2a');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('El Barrio', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/El_Barrio_KL_Logo.svg/800px-El_Barrio_KL_Logo.svg.png
+', '#245b58');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Kunisports', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kunisports_logo.svg/800px-Kunisports_logo.svg.png
+', '#101920');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('PIO FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/PIO_FC.svg/1200px-PIO_FC.svg.png
+', '#c9bf44');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Aniquiladores FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Aniquiladores_fc.png' , '#c13f59');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Los Troncos FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/8/84/Los_troncos_fckingsleague.png
+', '#30585a');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('1K FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/9/98/1K_F.C_logo.png
+' , '#8B68FF');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Rayo de Barcelona', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rayo_de_Barcelona_FC.svg/800px-Rayo_de_Barcelona_FC.svg.png
+', '#cd8c28');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('xBuyer Team', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Xbuyer.png', '#4d4d4d');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES ('Porcinos FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/3/30/Porcinos_FC.png
+', '#e13a72');
+INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES  ('Jijantes FC', 2000000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/JIJANTES_FC.svg/1200px-JIJANTES_FC.svg.png
+' , '#872943');
 
 INSERT INTO JUGADORES (NOMBRE, APELLIDOS, DNI, TELEFONO, POSICION,IMG, VELOCIDAD, FISICO, TIRO, PASE, TALENTO, DEFENSA) VALUES
 ('Ricardo','López','11111112A','611111112','PORTERO','https://kingsleague.pro/wp-content/uploads/1k/1.png',NULL,NULL,NULL,NULL,NULL,NULL);

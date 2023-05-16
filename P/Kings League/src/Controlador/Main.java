@@ -8,26 +8,29 @@ import Modelo.Partido.Partido;
 import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
-import Modelo.XML.XML;
+import Vista.vConsultarEquipos;
 import Vista.vInicioSesion;
 import Vista.vPrincipalUsuario;
 import Vista.vRegistro;
-
+import Modelo.XML.*;
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class Main {
     public static JFrame actual;
     public static JFrame vInicio;
     public static JFrame vPrinicpal;
-
+    public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static Usuario u;
-
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Personal[] personalesInfome = new Personal[2];
@@ -36,8 +39,28 @@ public class Main {
 
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
+        /*try {
+            HashMap[] mp = getJornadas();
+            for (HashMap hashMap : mp) {
+                System.out.println(hashMap);
+            }
+            HashMap[] map = getJornada(1);
+            for (HashMap hashMap : map) {
+                System.out.println(hashMap);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }*/
+    }
+    public static void cerrarSesion() {
+        actual.dispose();
+        vInicio.setVisible(true);
     }
 
+    public static void Principal() {
+        actual.dispose();
+        vPrinicpal.setVisible(true);
+    }
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,6 +94,17 @@ public class Main {
         vInicio.dispose();
     }
 
+    public static void generarVentanaEquipos() throws MalformedURLException {
+        vEquipos= new JFrame("vConsultarEquipos");
+        vEquipos.setContentPane(new vConsultarEquipos().getpPrincipal());
+        vEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vEquipos.pack();
+        vEquipos.setVisible(true);
+        vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpal.setVisible(false);
+        actual = vEquipos;
+    }
+
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
@@ -95,10 +129,11 @@ public class Main {
         return insertar;
     }
 
-    public static void setObjetosInformeEquipo(String nombre) {
+    public static Equipo setObjetosInformeEquipo(String nombre) {
         Equipo equipo = new Equipo();
-        equipo.setNombre("Porcinos FC");
+        equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
+        return equipo;
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
@@ -142,9 +177,13 @@ public class Main {
         return partidosMap;
     }
 
-    public static HashMap<String, String> getJornada(int numJornada) {
-        Partido partido = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).findAny().orElse(null);
-        return dePartidosAhashmap(partido);
+    public static HashMap[] getJornada(int numJornada) {
+        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toList());
+        HashMap[] partidosMap = new HashMap[partidoDeJornada.size()];
+        for (int i = 0; i < partidoDeJornada.size(); i++) {
+            partidosMap[i] = dePartidosAhashmap(partidoDeJornada.get(i));
+        }
+        return partidosMap;
     }
     private static HashMap<String, String> dePartidosAhashmap(Partido partido) {
         HashMap<String, String> partidoMap = new HashMap<>();
@@ -152,8 +191,8 @@ public class Main {
         partidoMap.put("fecha", partido.getFecha().toString());
         partidoMap.put("nombre_equiop1", partido.getEquipo1().getNombre());
         partidoMap.put("nombre_equiop2", partido.getEquipo2().getNombre());
-        //partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
-        //partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
+        partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
+        partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
         if (partido.getFecha().before(new Date())) {
             partidoMap.put("golesEquipo1", String.valueOf(partido.getGolesEquipo1()));
             partidoMap.put("golesEquipo2", String.valueOf(partido.getGolesEquipo2()));
@@ -163,4 +202,11 @@ public class Main {
         }
         return partidoMap;
     }
+
+    public static ArrayList<Equipo> rellenarBotones() throws SQLException {
+        ArrayList equipos = new ArrayList<>();
+        TEquipo.selectAllEquipos(equipos);
+    return equipos;}
+
+
 }
