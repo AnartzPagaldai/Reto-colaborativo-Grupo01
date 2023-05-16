@@ -93,7 +93,7 @@ public class XML {
         }
     }
 
-    public static void generarXMlultimaJornada() {
+    public static void generarXMlultimaJornada() { // ultimoma jornada que se alla jugado
         try {
            // StringBuilder xml =
         } catch (Exception e) {

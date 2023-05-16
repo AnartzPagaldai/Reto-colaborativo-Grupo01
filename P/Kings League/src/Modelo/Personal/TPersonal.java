@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class TPersonal {
     public static boolean insertar(Personal p) {
-        return BaseDeDatos.insert("INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES (?,?,?,?,?,?);",
+        return BaseDeDatos.executeUpdate("INSERT INTO PERSONALES (NOMBRE, APELLIDOS, DNI, TELEFONO, OFICIO, IMG) VALUES (?,?,?,?,?,?);",
                 new Object[]{p.getNombre(), p.getApellidos(), p.getDni(), p.getTelefono(), p.getOficio().toString(), p.getImg()});
     }
 

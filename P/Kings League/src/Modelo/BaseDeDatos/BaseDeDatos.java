@@ -35,15 +35,13 @@ public class BaseDeDatos {
     }
 
 
-    public static boolean insert(String insert, Object[] argumentos) {
+    public static boolean executeUpdate(String insert, Object[] argumentos) {
         try {
-            abrirConexion();
             PreparedStatement statement = rellenarStatemet(insert, argumentos);
             int resultado = statement.executeUpdate();
             cerrarConexion();
             return resultado != 0;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
             return false;
         }
