@@ -10,6 +10,10 @@ public class Equipo implements ResultSetObjeto {
     private String nombre;
     private double presupuestoAnual;
 
+    private String logoImg;
+
+    private String color;
+
     public Equipo() {
 
     }
@@ -38,6 +42,22 @@ public class Equipo implements ResultSetObjeto {
         this.presupuestoAnual = presupuestoAnual;
     }
 
+    public String getLogoImg() {
+        return logoImg;
+    }
+
+    public void setLogoImg(String logoImg) {
+        this.logoImg = logoImg;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     private int contarJugadores() {
 
         return 0;
@@ -55,6 +75,8 @@ public class Equipo implements ResultSetObjeto {
         id = resultSet.getInt("id");
         nombre = resultSet.getString("nombre");
         presupuestoAnual = resultSet.getDouble("presupuesto_anual");
+        logoImg = resultSet.getString("logo_img");
+        color = resultSet.getString("color");
     }
 
 }
