@@ -60,7 +60,7 @@ public class BaseDeDatos {
         return statement;
     }
 
-    public static <T extends ResultSetObjeto> void cosultaObjeto(T objeto, String consulta, Object[] argumentos) {
+    public static void cosultaObjeto(ResultSetObjeto objeto, String consulta, Object[] argumentos) {
         try {
             PreparedStatement statement = rellenarStatemet(consulta, argumentos);
             ResultSet resultSet = statement.executeQuery();
