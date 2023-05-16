@@ -201,6 +201,7 @@ public class Main {
         }
         return partidoMap;
     }
-
-
+    public static int getCantidadPersonas(){
+        return jugadoresInfome.size()+2;
+    }
 }

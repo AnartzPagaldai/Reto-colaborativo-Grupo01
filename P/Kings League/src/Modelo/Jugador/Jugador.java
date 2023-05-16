@@ -166,7 +166,5 @@ public class Jugador implements ResultSetObjeto {
         pase = resultSet.getInt("pase");
         talento = resultSet.getInt("talento");
         defensa = resultSet.getInt("defensa");
-
     }
-
 }
