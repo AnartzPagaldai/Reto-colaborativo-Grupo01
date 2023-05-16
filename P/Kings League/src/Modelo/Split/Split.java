@@ -15,12 +15,12 @@ public class Split implements ResultSetObjeto {
 
 
     private enum TipoSplit{
-        Invierno,
-        Verano
+        INVIERNO,
+        VERANO
     }
     private enum EstadoSplit{
-        Abierto,
-        Cerrado
+        ABIERTO,
+        CERRADO
     }
 
     public Split() {
@@ -56,7 +56,8 @@ public class Split implements ResultSetObjeto {
 
     public void setEstadoSplit(EstadoSplit estadoSplit) {
         this.estadoSplit = estadoSplit;
-    }public void resultSetObjeto(ResultSet resultSet) throws SQLException {
+    }
+    public void resultSetObjeto(ResultSet resultSet) throws SQLException {
         id = resultSet.getInt("id");
         anio = resultSet.getDate("anio");
         tipoSplit = TipoSplit.valueOf(resultSet.getString("tipo"));
