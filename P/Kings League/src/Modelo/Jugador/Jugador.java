@@ -13,8 +13,6 @@ public class Jugador implements ResultSetObjeto {
     private int telefono;
     private TipoPosicion tipoPosicion;
 
-
-
     public enum TipoPosicion{
         PORTERO,
         DEFENSA,
@@ -29,6 +27,9 @@ public class Jugador implements ResultSetObjeto {
         private final String tipo;
         TipoJugador(String tipo) {
             this.tipo=tipo;
+        }
+        public String getTipo(){
+            return tipo;
         }
     }
     private int velocidad;
@@ -166,8 +167,8 @@ public class Jugador implements ResultSetObjeto {
         tipoPosicion = Jugador.TipoPosicion.valueOf(resultSet.getString("posicion"));
         velocidad = resultSet.getInt("velocidad");
         fisico = resultSet.getInt("fisico");
-        tiro = resultSet.getInt("tiro");//TODO NO FUNCIONA WILD-CARD
-        tipoJugador= TipoJugador.valueOf(resultSet.getString("tipo"));
+        tiro = resultSet.getInt("tiro");
+        tipoJugador= TipoJugador.valueOf(resultSet.getString("tipo"));//TODO NO FUNCIONA WILD-CARD
         pase = resultSet.getInt("pase");
         talento = resultSet.getInt("talento");
         defensa = resultSet.getInt("defensa");

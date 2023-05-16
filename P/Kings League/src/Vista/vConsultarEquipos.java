@@ -230,6 +230,17 @@ public class vConsultarEquipos {
                     Main.cerrarSesion();
             }
         });
+        bEquipo1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo1.getText());
+            }
+        });
     }
 
     public static void main(String[] args) throws MalformedURLException {

@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Equipo.Equipo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,6 +54,7 @@ public class vConsultarJugadores {
     private JButton bDerecha;
     private JLabel jlNombre;
     private JLabel jlPosicion;
+    private JLabel jlEquipo;
     private JPanel pimagen;
     private JLabel jlImagen;
     private JMenu mPrincipal;
@@ -60,9 +62,12 @@ public class vConsultarJugadores {
     private JLabel jaOficio;
     private int posicion=0;
     private int maximo;
+    private Equipo equipo;
 
     public vConsultarJugadores() throws MalformedURLException {
-        Main.setObjetosInformeEquipo("Jijantes FC");
+        equipo=Main.relacionJugadorEquipo();
+        jlEquipo.setText(equipo.getNombre());
+        Main.setObjetosInformeEquipo(equipo.getNombre());
         HashMap<String, String> persona= Main.getPersonaPorPosicion(posicion);
         maximo=Main.getCantidadPersonas();
         mostrarPersona();
@@ -135,6 +140,11 @@ public class vConsultarJugadores {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
+
     private void comprobarTipo(int posicion){
         if (posicion==0 || posicion==1){
             jlDefensa.setVisible(false);
