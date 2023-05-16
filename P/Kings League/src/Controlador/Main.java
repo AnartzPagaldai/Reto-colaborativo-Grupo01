@@ -129,11 +129,15 @@ public class Main {
         return insertar;
     }
 
-    public static Equipo setObjetosInformeEquipo(String nombre) {
+    public static HashMap<String, String> setObjetosInformeEquipo(String nombre) {
         Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
-        return equipo;
+        return new HashMap<String, String>() {{
+            put("nombre", equipo.getNombre());
+            put("logoImg", equipo.getLogoImg());
+            put("color", equipo.getColor());
+        }};
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {

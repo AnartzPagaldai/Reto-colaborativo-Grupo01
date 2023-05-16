@@ -60,7 +60,7 @@ public class vConsultarJugadores {
     private int posicion=0;
 
     public vConsultarJugadores() throws MalformedURLException {
-        Main.setObjetosInformeEquipo("Porcinos FC");
+        HashMap<String, String> equipo = Main.setObjetosInformeEquipo("Porcinos FC");
         HashMap<String,String> persona =Main.getPersonaPorPosicion(posicion);
         jlNombre.setText(persona.get("nombre"));
         ImageIcon Jugador = new ImageIcon(new URL(persona.get("img")));
