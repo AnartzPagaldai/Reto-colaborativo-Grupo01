@@ -118,12 +118,12 @@ public class vRegistro {
                 boolean insertar;
                 try {
                     if (rbAdmin.isSelected()){
-                        tipoUsuario=tipo.Admin.toString();
+                        tipoUsuario=tipo.ADMIN.toString();
                         if (!pfClaveAdmin.getText().equals(clave)){
                             pfClaveAdmin.setBackground(Color.red);
                             throw new Exception( "La clave de admin no es la correcta");
                         }
-                    }else tipoUsuario=tipo.Usuario.toString();
+                    }else tipoUsuario=tipo.USUARIO.toString();
                     insertar=Main.crearUsuario(tfNombre.getText().toUpperCase(), tfCorreo.getText().toUpperCase(), pfContrasena.getText().toUpperCase(), Usuario.TipoUsuario.valueOf(tipoUsuario.toUpperCase()));
                     if (!correoCorrecto){
                         throw new Exception("El correo no es valido");

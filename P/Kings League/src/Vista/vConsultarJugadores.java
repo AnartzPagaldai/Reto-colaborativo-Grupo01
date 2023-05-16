@@ -62,7 +62,7 @@ public class vConsultarJugadores {
     private int maximo;
 
     public vConsultarJugadores() throws MalformedURLException {
-        Main.setObjetosInformeEquipo("1K FC");
+        Main.setObjetosInformeEquipo("Jijantes FC");
         HashMap<String, String> persona= Main.getPersonaPorPosicion(posicion);
         maximo=Main.getCantidadPersonas();
         mostrarPersona();

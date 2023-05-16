@@ -111,7 +111,7 @@ public class Main {
         u.setContrasena(contrasena);
         existe = TUsuario.selectUsuario(u);
         return existe;
-    }
+    };
 
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
         boolean existe;

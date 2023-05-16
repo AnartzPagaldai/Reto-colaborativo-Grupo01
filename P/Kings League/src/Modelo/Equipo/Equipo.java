@@ -78,5 +78,4 @@ public class Equipo implements ResultSetObjeto {
         logoImg = resultSet.getString("logo_img");
         color = resultSet.getString("color");
     }
-
 }
