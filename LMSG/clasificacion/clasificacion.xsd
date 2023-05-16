@@ -1,13 +1,12 @@
 ﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="clasificacion" type="tipo_clasificacion"/>
-  
     <xs:complexType name="tipo_clasificacion">
       <xs:sequence>
+          <xs:element name="fecha"  type="xs:string"/>
           <xs:element name="equipo" maxOccurs="12" type="tipo_equipo"/>
       </xs:sequence>
       <xs:attribute name="split" type="xs:int" use="required"/>
     </xs:complexType>
-    
     <xs:complexType name="tipo_equipo">
       <xs:sequence>
         <xs:element name="nombre" type="xs:string"/>

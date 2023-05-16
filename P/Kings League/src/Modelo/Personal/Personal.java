@@ -1,11 +1,12 @@
 package Modelo.Personal;
 
+import Modelo.BaseDeDatos.ResultSetObjeto;
 import Modelo.Enumeraciones.TipoPersonal;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Personal {
+public class Personal implements ResultSetObjeto {
     private int id;
     private String nombre;
     private String apellidos;

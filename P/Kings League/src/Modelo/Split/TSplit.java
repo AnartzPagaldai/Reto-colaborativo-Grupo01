@@ -11,20 +11,9 @@ import java.sql.SQLException;
 public class TSplit {
 
     public static Split ConsultarSplitDeJorada(Jornada jornada) {
-        try {
-            Split split = new Split();
-            PreparedStatement statement = BaseDeDatos.rellenarStatemet("select s.* from split s, jornadas j where s.id = j.id_split and j.id = ?", new Object[]{jornada.getId()});
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                split.resultSetObjeto(resultSet);
-            }
-            BaseDeDatos.cerrarConexion();
-            return split;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-
+        Split split = new Split();
+        BaseDeDatos.cosultaObjeto(split, "select s.* from split s, jornadas j where s.id = j.id_split and j.id = ?", new Object[]{jornada.getId()});
+        return split;
     }
 
     public static boolean crearSpit(String tipo) {
@@ -32,7 +21,7 @@ public class TSplit {
             // VERIFICAR QUE SE AN INTRODUCIDO LOS PLAYOFS ANTES DE QUE SE INTORDUCCAN EN NUEVAS JORNADAS EN EL SIGUIENTE SPLIT
             BaseDeDatos.abrirConexion();
             CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.CREAR_SPLIT(?)}");
-            statement.setString(1,tipo);
+            statement.setString(1, tipo);
             statement.execute();
             BaseDeDatos.cerrarConexion();
             return true;

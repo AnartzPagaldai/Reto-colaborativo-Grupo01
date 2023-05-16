@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class TEquipo {
 
-    public static void getInfomeEquipos(Equipo equipo, Personal[] personales) {
+    public static ArrayList<Jugador> getInfomeEquipos(Equipo equipo, Personal[] personales) {
         try {
             BaseDeDatos.abrirConexion();
             CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call INFORMES.INFORME_EQUIPO(?,?)}");
@@ -25,8 +25,9 @@ public class TEquipo {
             ArrayList<Jugador> jugadores = new ArrayList<>();
             if (resultSet.next()) {
                 equipo.resultSetObjeto(resultSet);
-                personales[0] = new Personal(resultSet.getInt("id_entrenador"), TipoPersonal.ENTRENADOR);
-                personales[1] = new Personal(resultSet.getInt("id_presidente"), TipoPersonal.PRESIDENTE);
+                personales[0] = new Personal(resultSet.getInt("id_presidente"), TipoPersonal.PRESIDENTE);
+                personales[1] = new Personal(resultSet.getInt("id_entrenador"), TipoPersonal.ENTRENADOR);
+
                 TPersonal.ConsultarPersonal(personales[0]);
                 TPersonal.ConsultarPersonal(personales[1]);
                 do {
@@ -35,26 +36,18 @@ public class TEquipo {
                 } while (resultSet.next());
             }
             BaseDeDatos.cerrarConexion();
+            return jugadores;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+        return null;
     }
 
     public static Equipo getEquipoPorNombre(String nombre) {
-        try {
-            PreparedStatement statement = BaseDeDatos.rellenarStatemet("select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
-            ResultSet resultSet = statement.executeQuery();
-            Equipo equipo = new Equipo();
-            if (resultSet.next()) {
-               equipo.resultSetObjeto(resultSet);
-            }
-            BaseDeDatos.cerrarConexion();
-            return equipo;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        Equipo equipo = new Equipo();
+        BaseDeDatos.cosultaObjeto(equipo, "select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
+        return equipo;
     }
 
 
