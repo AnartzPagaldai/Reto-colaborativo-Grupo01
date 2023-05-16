@@ -14,7 +14,6 @@ import Vista.vPrincipalUsuario;
 import Vista.vRegistro;
 import Modelo.XML.*;
 import javax.swing.*;
-import javax.swing.plaf.SplitPaneUI;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -190,8 +189,8 @@ public class Main {
         partidoMap.put("fecha", partido.getFecha().toString());
         partidoMap.put("nombre_equiop1", partido.getEquipo1().getNombre());
         partidoMap.put("nombre_equiop2", partido.getEquipo2().getNombre());
-        //partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
-        //partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
+        partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
+        partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
         if (partido.getFecha().before(new Date())) {
             partidoMap.put("golesEquipo1", String.valueOf(partido.getGolesEquipo1()));
             partidoMap.put("golesEquipo2", String.valueOf(partido.getGolesEquipo2()));
