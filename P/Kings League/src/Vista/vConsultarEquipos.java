@@ -241,6 +241,127 @@ public class vConsultarEquipos {
                 Main.jugadoresEquipo(bEquipo1.getText());
             }
         });
+        bEquipo2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo2.getText());
+            }
+        });
+        bEquipo3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo3.getText());
+            }
+        });
+        bEquipo4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo4.getText());
+            }
+        });
+        bEquipo5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo5.getText());
+            }
+        });
+        bEquipo6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo6.getText());
+            }
+        });
+        bEquipo7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo7.getText());
+            }
+        });
+        bEquipo8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo8.getText());
+            }
+        });
+        bEquipo9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo9.getText());
+            }
+        });
+        bEquipo10.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo10.getText());
+            }
+        });
+        bEquipo11.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo11.getText());
+            }
+        });
+        bEquipo12.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.jugadoresEquipo(bEquipo12.getText());
+            }
+        });
     }
 
     public static void main(String[] args) throws MalformedURLException {
