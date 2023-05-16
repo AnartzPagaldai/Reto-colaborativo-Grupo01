@@ -92,4 +92,12 @@ public class XML {
             return null;
         }
     }
+
+    public static void generarXMlultimaJornada() {
+        try {
+           // StringBuilder xml =
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

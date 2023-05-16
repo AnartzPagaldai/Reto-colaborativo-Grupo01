@@ -46,7 +46,7 @@ public class TEquipo {
 
     public static Equipo getEquipoPorNombre(String nombre) {
         Equipo equipo = new Equipo();
-        BaseDeDatos.cosultaObjeto(equipo, "select * from equipo where upper(nombre) = upper(?)", new Object[]{nombre});
+        BaseDeDatos.cosultaObjeto(equipo, "select * from equipos where upper(nombre) = upper(?)", new Object[]{nombre});
         return equipo;
     }
 

@@ -61,7 +61,8 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
         <clasificacion split="1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="clasificacion.xsd">';
         FOR FILA IN (SELECT * FROM CLASIFICACION) LOOP
             RESULT :=  RESULT || 
-            '<equipo posicion="' || FILA.POSICION || '">
+            '<fecha>' || TO_DATE(SYSDATE, 'DD/MM/YYYY') || ' </fecha>
+            <equipo posicion="' || FILA.POSICION || '">
                 <nombre>' || FILA.EQUIPO || '</nombre>
                 <victorias>' || FILA.VICTORIAS || '</victorias>
                 <goles_a_favor>' || FILA.GOLES_A_FAVOR || '</goles_a_favor>

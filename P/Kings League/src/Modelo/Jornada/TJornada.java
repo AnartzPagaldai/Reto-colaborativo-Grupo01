@@ -59,8 +59,8 @@ public class TJornada {
                     partidos.get(ultimo).setFecha(new java.sql.Date(date.getTime()));
                     partidos.get(ultimo).setLugar(partido.getElementsByTagName("lugar_partido").item(0).getTextContent());
                 }
-                return partidos;
             }
+            return partidos;
         } catch (Exception e) {
             e.printStackTrace();
         }
