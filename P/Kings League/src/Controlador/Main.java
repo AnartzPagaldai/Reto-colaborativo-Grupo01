@@ -8,10 +8,7 @@ import Modelo.Partido.Partido;
 import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
-import Vista.vConsultarEquipos;
-import Vista.vInicioSesion;
-import Vista.vPrincipalUsuario;
-import Vista.vRegistro;
+import Vista.*;
 import Modelo.XML.*;
 import javax.swing.*;
 import java.awt.*;
@@ -30,7 +27,9 @@ public class Main {
     public static JFrame vPrinicpal;
     public static JFrame vEquipos;
     public static JFrame vRegistro;
+    public static JFrame vJugadores;
     public static Usuario u;
+    public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Personal[] personalesInfome = new Personal[2];
@@ -104,6 +103,16 @@ public class Main {
         vPrinicpal.setVisible(false);
         actual = vEquipos;
     }
+    public static void generarVentanaJugadores() throws MalformedURLException {
+        vJugadores= new JFrame("vConsultarJugadores");
+        vJugadores.setContentPane(new vConsultarJugadores().getpPrincipal());
+        vJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vJugadores.pack();
+        vJugadores.setVisible(true);
+        vJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vEquipos.setVisible(false);
+        actual=vJugadores;
+    }
 
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
@@ -145,7 +154,9 @@ public class Main {
         } else {
             persona.put("nombre", jugadoresInfome.get(posicion - 2).getNombre());
             persona.put("img", jugadoresInfome.get(posicion - 2).getImg());
-            persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
+            if (String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()).equals("WILD-CARD")){
+                persona.put("oficio", "WILD-CARD");
+            }else persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
             persona.put("posicion", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoPosicion()));
             persona.put("velocidad", String.valueOf(jugadoresInfome.get(posicion - 2).getVelocidad()));
             persona.put("fisico", String.valueOf(jugadoresInfome.get(posicion - 2).getFisico()));
@@ -211,5 +222,12 @@ public class Main {
         TEquipo.selectAllEquipos(equipos);
     return equipos;}
 
-
+    public static void jugadoresEquipo(String nombre){
+        equipo.setNombre(nombre);
+        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
+        relacionJugadorEquipo();
+    }
+    public static Equipo relacionJugadorEquipo(){
+        return equipo;
+    }
 }
