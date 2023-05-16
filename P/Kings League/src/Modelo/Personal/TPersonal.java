@@ -14,16 +14,6 @@ public class TPersonal {
     }
 
     public static void ConsultarPersonal(Personal personal) {
-        try {
-             PreparedStatement statement = BaseDeDatos.rellenarStatemet("select * from personales where id = ?", new Object[]{personal.getId()});
-             ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                personal.resultSetObjeto(resultSet);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
-        BaseDeDatos.cerrarConexion();
+        BaseDeDatos.cosultaObjeto(personal,"select * from personales where id = ?", new Object[]{personal.getId()});
     }
 }

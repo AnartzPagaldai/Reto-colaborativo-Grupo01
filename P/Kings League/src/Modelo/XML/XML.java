@@ -1,6 +1,7 @@
 package Modelo.XML;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Equipo.TEquipo;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 
 public class XML {
     public static void generarXMLjornadas() {
-        generarXML("GENERAR_XML_JORNADAS();");
+        generarXML("GENERAR_XML_JORNADAS()");
         getXML("xml_jornada", "jornadas.xml");
     }
 
@@ -76,7 +77,8 @@ public class XML {
                 HashMap<String, String> equipo = new HashMap<>();
                 Element tagEquipo = (Element) listaEquipos.item(i);
                 equipo.put("posicion", tagEquipo.getAttribute("posiscion"));
-                equipo.put("equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
+                equipo.put("nombre_equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
+                //equipo.put("logoImg", TEquipo.getEquipoPorNombre(equipo.get("nombre")).getLogoImg());
                 equipo.put("victorias", tagEquipo.getElementsByTagName("victorias").item(0).getTextContent());
                 equipo.put("golesAfavor", tagEquipo.getElementsByTagName("goles_a_favor").item(0).getTextContent());
                 equipo.put("golesEnContra", tagEquipo.getElementsByTagName("goles_en_contra").item(0).getTextContent());

@@ -1,7 +1,5 @@
 package Modelo.BaseDeDatos;
 
-import oracle.jdbc.proxy.annotation.Pre;
-
 import java.sql.*;
 
 public class BaseDeDatos {
@@ -62,6 +60,18 @@ public class BaseDeDatos {
             }
         }
         return statement;
+    }
+
+    public static <T extends ResultSetObjeto> void cosultaObjeto(T objeto, String consulta, Object[] argumentos) {
+        try {
+            PreparedStatement statement = rellenarStatemet(consulta, argumentos);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                objeto.resultSetObjeto(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
 
