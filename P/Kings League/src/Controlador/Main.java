@@ -29,9 +29,13 @@ public class Main {
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
+
+    public static JFrame vUsuario;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
+
+    private static Usuario usuarioInicio = new Usuario();
 
     private static Personal[] personalesInfome = new Personal[2];
 
@@ -69,7 +73,6 @@ public class Main {
         vInicio.pack();
         vInicio.setVisible(true);
         vInicio.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual.dispose();
     }
 
     public static void generarVentanaRegistro() throws MalformedURLException {
@@ -103,6 +106,7 @@ public class Main {
         vPrinicpalAdmin.setExtendedState(Frame.MAXIMIZED_BOTH);
         actual = vPrinicpalAdmin;
         vInicio.dispose();
+
     }
 
     public static void generarVentanaEquipos() throws MalformedURLException {
@@ -127,12 +131,26 @@ public class Main {
         actual=vJugadores;
     }
 
+    public static void generarVentanaAjustesUsuario() throws MalformedURLException {
+        vUsuario = new JFrame("vPerfilUsuario");
+        vUsuario.setContentPane(new vPerfilUsuario().getpPrincipal());
+        vUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUsuario.pack();
+        vUsuario.setVisible(true);
+        vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpal.setVisible(false);
+        actual=vUsuario;
+    }
+
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
         u.setNombre(nombre);
         u.setContrasena(contrasena);
         existe = TUsuario.selectUsuario(u);
+        if (existe) {
+            usuarioInicio = TUsuario.selectDatosUsuario(u);
+        }
         return existe;
     };
 
@@ -147,15 +165,17 @@ public class Main {
         existe = TUsuario.selectUsuarioInsertar(u);
         if (existe) {
             insertar = false;
-        } else insertar = TUsuario.insertar(u);
+        } else {
+            insertar = TUsuario.insertar(u);
+            usuarioInicio = u;
+        }
         return insertar;
     }
 
-    public static Equipo setObjetosInformeEquipo(String nombre) {
-        Equipo equipo = new Equipo();
+    public static void setObjetosInformeEquipo(String nombre) {
+        equipo = new Equipo();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
-        return equipo;
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
@@ -167,9 +187,7 @@ public class Main {
         } else {
             persona.put("nombre", jugadoresInfome.get(posicion - 2).getNombre());
             persona.put("img", jugadoresInfome.get(posicion - 2).getImg());
-            if (String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()).equals("WILD-CARD")){
-                persona.put("oficio", "WILD-CARD");
-            }else persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
+            persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
             persona.put("posicion", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoPosicion()));
             persona.put("velocidad", String.valueOf(jugadoresInfome.get(posicion - 2).getVelocidad()));
             persona.put("fisico", String.valueOf(jugadoresInfome.get(posicion - 2).getFisico()));
@@ -235,12 +253,41 @@ public class Main {
         TEquipo.selectAllEquipos(equipos);
     return equipos;}
 
-    public static void jugadoresEquipo(String nombre){
-        equipo.setNombre(nombre);
-        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
-        relacionJugadorEquipo();
-    }
-    public static Equipo relacionJugadorEquipo(){
+    public static Equipo getEquipo(){
         return equipo;
     }
+
+    public static void setNombreEquipo(String nombre){
+        equipo.setNombre(nombre);
+    }
+    public static String getNombreEquipo(){
+        return equipo.getNombre();
+    }
+    public static String buscarNombre()
+    {
+        return usuarioInicio.getNombre();
+    }
+
+    public static String buscarCorreo()
+    {
+        return usuarioInicio.getCorreo();
+    }
+
+    public static String buscarContrasena()
+    {
+        return usuarioInicio.getContrasena();
+    }
+
+    public static void actalizarUsuario(Usuario usuarioAntes, Usuario usuarioActual) throws SQLException {
+        TUsuario.updateUsuario(usuarioAntes, usuarioActual);
+    }
+
+    public static Usuario getUsuarioAntes(String nombre, String contrasena){
+        Usuario usuarioAntes=new Usuario();
+        usuarioAntes.setNombre(nombre);
+        usuarioAntes.setContrasena(contrasena);
+        usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
+        return usuarioAntes;
+    }
+}
 }
