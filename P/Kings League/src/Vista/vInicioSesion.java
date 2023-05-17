@@ -94,6 +94,7 @@ public class vInicioSesion {
         Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
         ImageIcon twIcono = new ImageIcon(imgTw);
         fTwitter.setIcon(twIcono);
+        
         bIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,6 +102,7 @@ public class vInicioSesion {
                 try {
                     existe=Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
                     if (existe){
+                        // TODO : poner que dependiendo de si es un usuario normal o un admin tenga que aparecer una ventana u otra
                         Main.generarVentanaPrincipal();
                         tfNombre.setText("");
                         pfContrasena.setText("");
