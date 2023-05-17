@@ -53,7 +53,9 @@ public class vRegistro {
     private boolean correoCorrecto;
     private final String clave="12345";
     private static final String patronEmail = "^[\\w-\\.]+@gmail\\.com$";
-//TODO:LOS RADIOS BUTTON TIENE QUE ESTAR EN UN GRUPOS
+    
+// TODO: LOS RADIO BUTTON TIENEN QUE ESTAR EN GRUPOS
+    
     public vRegistro() throws MalformedURLException {
         pPrincipal = new JPanel(new BorderLayout());
         pPrincipal= new JPanel() {
