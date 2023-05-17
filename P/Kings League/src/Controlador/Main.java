@@ -24,7 +24,8 @@ import java.util.stream.Collectors;
 public class Main {
     public static JFrame actual;
     public static JFrame vInicio;
-    public static JFrame vPrinicpal;
+    public static JFrame vPrinicpalUsuario;
+    public static JFrame vPrinicpalAdmin;
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
@@ -72,7 +73,6 @@ public class Main {
         vInicio.pack();
         vInicio.setVisible(true);
         vInicio.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual.dispose();
     }
 
     public static void generarVentanaRegistro() throws MalformedURLException {
@@ -86,15 +86,27 @@ public class Main {
         vInicio.dispose();
     }
 
-    public static void generarVentanaPrincipal() throws MalformedURLException {
-        vPrinicpal = new JFrame("vPrincipal");
-        vPrinicpal.setContentPane(new vPrincipalUsuario().getpPrincipal());
-        vPrinicpal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vPrinicpal.pack();
-        vPrinicpal.setVisible(true);
-        vPrinicpal.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vPrinicpal;
+    public static void generarVentanaPrincipalUsuario() throws MalformedURLException {
+        vPrinicpalUsuario = new JFrame("vPrincipalUsuario");
+        vPrinicpalUsuario.setContentPane(new vPrincipalUsuario().getpPrincipal());
+        vPrinicpalUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPrinicpalUsuario.pack();
+        vPrinicpalUsuario.setVisible(true);
+        vPrinicpalUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vPrinicpalUsuario;
         vInicio.dispose();
+    }
+
+    public static void generarVentanaPrincipalAdmin() throws MalformedURLException {
+        vPrinicpalAdmin = new JFrame("vPrincipalAdmin");
+        vPrinicpalAdmin.setContentPane(new vPrincipalAdmin().getpPrincipal());
+        vPrinicpalAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPrinicpalAdmin.pack();
+        vPrinicpalAdmin.setVisible(true);
+        vPrinicpalAdmin.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vPrinicpalAdmin;
+        vInicio.dispose();
+
     }
 
     public static void generarVentanaEquipos() throws MalformedURLException {
@@ -107,6 +119,7 @@ public class Main {
         vPrinicpal.setVisible(false);
         actual = vEquipos;
     }
+    
     public static void generarVentanaJugadores() throws MalformedURLException {
         vJugadores= new JFrame("vConsultarJugadores");
         vJugadores.setContentPane(new vConsultarJugadores().getpPrincipal());
@@ -159,11 +172,10 @@ public class Main {
         return insertar;
     }
 
-    public static Equipo setObjetosInformeEquipo(String nombre) {
-        Equipo equipo = new Equipo();
+    public static void setObjetosInformeEquipo(String nombre) {
+        equipo = new Equipo();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
-        return equipo;
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
@@ -175,9 +187,7 @@ public class Main {
         } else {
             persona.put("nombre", jugadoresInfome.get(posicion - 2).getNombre());
             persona.put("img", jugadoresInfome.get(posicion - 2).getImg());
-            if (String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()).equals("WILD-CARD")){
-                persona.put("oficio", "WILD-CARD");
-            }else persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
+            persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
             persona.put("posicion", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoPosicion()));
             persona.put("velocidad", String.valueOf(jugadoresInfome.get(posicion - 2).getVelocidad()));
             persona.put("fisico", String.valueOf(jugadoresInfome.get(posicion - 2).getFisico()));
@@ -243,15 +253,16 @@ public class Main {
         TEquipo.selectAllEquipos(equipos);
     return equipos;}
 
-    public static void jugadoresEquipo(String nombre){
-        equipo.setNombre(nombre);
-        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
-        relacionJugadorEquipo();
-    }
-    public static Equipo relacionJugadorEquipo(){
+    public static Equipo getEquipo(){
         return equipo;
     }
 
+    public static void setNombreEquipo(String nombre){
+        equipo.setNombre(nombre);
+    }
+    public static String getNombreEquipo(){
+        return equipo.getNombre();
+    }
     public static String buscarNombre()
     {
         return usuarioInicio.getNombre();
@@ -278,4 +289,5 @@ public class Main {
         usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
         return usuarioAntes;
     }
+}
 }

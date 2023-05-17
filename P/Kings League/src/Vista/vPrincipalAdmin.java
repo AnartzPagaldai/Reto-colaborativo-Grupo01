@@ -1,7 +1,6 @@
 package Vista;
 
 import Controlador.Main;
-import Modelo.Equipo.Equipo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,98 +10,44 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
-public class vConsultarEquipos {
-
-
-    private ImageIcon imagenInstagram;
-    private ImageIcon imagenTwitter;
-    private ImageIcon imagenTwitch;
-
-    private ImageIcon imagenUsuario;
-
-    private ImageIcon imagenEquipo;
-
-    private ImageIcon LogoKingsLeague;
-
-    private ImageIcon ImagenNoticia;
+public class vPrincipalAdmin {
     private JPanel pPrincipal;
+    private JPanel pDegradado;
     private JPanel pHeader;
     private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
+    private JMenuItem jmiConsultarJugadores;
     private JMenu mPartidos;
-    private JMenuItem jmiVer;
+    private JMenuItem jmiConsultarPartidos;
     private JMenu mClasificacion;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
+    private JPanel pContenido;
     private JPanel pFooter;
     private JLabel fTwitch;
     private JLabel fInstagram;
     private JLabel fTwitter;
-    private JPanel pContenido;
-    private JPanel pDegradado;
-    private JPanel pBotones;
-    private JButton bEquipo1;
-    private JButton bEquipo2;
-    private JButton bEquipo3;
-    private JButton bEquipo4;
-    private JButton bEquipo5;
-    private JButton bEquipo6;
-    private JButton bEquipo7;
-    private JButton bEquipo8;
-    private JButton bEquipo9;
-    private JButton bEquipo10;
-    private JButton bEquipo11;
-    private JButton bEquipo12;
-    private JMenu jmInicio;
-    private JMenu mPrincipal;
-    private JMenuItem jmiPrincipal;
+    private JMenuItem jmiInsertarEquipos;
+    private JMenuItem jmiActualizarEquipos;
+    private JMenuItem jmiBorrarEquipos;
+    private JMenuItem jmiInsertarJugadores;
+    private JMenuItem jmiActualizarJugadores;
+    private JMenuItem jmiBorrararJugadores;
+    private JPanel pLogoKingsLeague;
+    private ImageIcon LogoKingsLeague;
+    private ImageIcon imagenTwitch;
+    private ImageIcon imagenInstagram;
+    private ImageIcon imagenTwitter;
+    private ImageIcon imagenUsuario;
 
 
-    public vConsultarEquipos() throws MalformedURLException {
-        jmInicio.requestFocus();
-        ArrayList<JButton> botones = new ArrayList<>();
-        botones.add(bEquipo1);
-        botones.add(bEquipo2);
-        botones.add(bEquipo3);
-        botones.add(bEquipo4);
-        botones.add(bEquipo5);
-        botones.add(bEquipo6);
-        botones.add(bEquipo7);
-        botones.add(bEquipo8);
-        botones.add(bEquipo9);
-        botones.add(bEquipo10);
-        botones.add(bEquipo11);
-        botones.add(bEquipo12);
+    public vPrincipalAdmin() throws MalformedURLException {
 
-        try {
-            ArrayList<Equipo> listaEquipos = Main.rellenarBotones();
-
-            for (int x = 0; x < botones.size(); x++)
-            {
-                Color colorFondo = Color.decode(listaEquipos.get(x).getColor());
-
-                botones.get(x).setText(listaEquipos.get(x).getNombre());
-
-                imagenEquipo = new ImageIcon(new URL(listaEquipos.get(x).getLogoImg()));
-                Image imgEquipo = imagenEquipo.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-                ImageIcon eqIcono = new ImageIcon(imgEquipo);
-                botones.get(x).setIcon(eqIcono);
-
-                botones.get(x).setBackground(colorFondo);
-
-            }
-        }catch (SQLException e)
-        {
-            JOptionPane.showMessageDialog(null, "Eror de SQL");
-        }
 
         pPrincipal = new JPanel(new BorderLayout());
 
@@ -113,13 +58,12 @@ public class vConsultarEquipos {
 
                 Graphics2D g2d = (Graphics2D) g;
 
-
                 Color colorInicio = new Color(233, 86, 31);
                 Color colorFin = new Color(247, 169, 33);
 
                 GradientPaint gradient = new GradientPaint(
                         0, 0, colorInicio,
-                        getWidth(), getHeight(), colorFin);
+                        0, getHeight(), colorFin);
 
                 g2d.setPaint(gradient);
 
@@ -127,6 +71,7 @@ public class vConsultarEquipos {
             }
         };
 
+        // Agrega pHeader al norte
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
 
@@ -158,6 +103,9 @@ public class vConsultarEquipos {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
+
+
+        // Poner los ":hover" en los elementos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
         mEquipos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -218,162 +166,112 @@ public class vConsultarEquipos {
                 mUsuario.setOpaque(false);
             }
         });
-        jmiPrincipal.addActionListener(new ActionListener() {
+
+
+        // Poner los métodos
+        jmiVerPerfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.Principal();
+                // TODO : poner que aparezca la ventana "vPerfilUsuario"
             }
         });
+
         jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    Main.cerrarSesion();
-            }
-        });
-        bEquipo1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.setNombreEquipo(bEquipo1.getText());
-                    Main.generarVentanaJugadores();
+                    Main.generarVentanaInicio();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
             }
         });
-        bEquipo2.addActionListener(new ActionListener() {
+
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo2.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                // TODO : poner código necesario
             }
         });
-        bEquipo3.addActionListener(new ActionListener() {
+
+        jmiInsertarEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo3.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo4.addActionListener(new ActionListener() {
+
+        jmiActualizarEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo4.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo5.addActionListener(new ActionListener() {
+
+        jmiBorrarEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo5.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo6.addActionListener(new ActionListener() {
+
+        jmiConsultarJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo6.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo7.addActionListener(new ActionListener() {
+
+        jmiInsertarJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo7.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo8.addActionListener(new ActionListener() {
+
+        jmiActualizarJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo8.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo9.addActionListener(new ActionListener() {
+
+        jmiBorrararJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo9.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo10.addActionListener(new ActionListener() {
+
+        jmiConsultarPartidos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo10.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo11.addActionListener(new ActionListener() {
+
+        mClasificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo11.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
-        bEquipo12.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.setNombreEquipo(bEquipo12.getText());
-                    Main.generarVentanaJugadores();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
+
+
+    }
+
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        JFrame frame = new JFrame("vConsultarEquipos");
-        frame.setContentPane(new vConsultarEquipos().pPrincipal);
+        JFrame frame = new JFrame("vPrincipalAdmin");
+        frame.setContentPane(new vPrincipalAdmin().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
 }
