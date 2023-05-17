@@ -305,6 +305,7 @@ public class vClasificacionEquipos {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
 }
