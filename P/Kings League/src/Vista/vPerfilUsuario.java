@@ -50,7 +50,7 @@ public class vPerfilUsuario {
         tfNombre.setText(Main.buscarNombre());
         tfCorreo.setText(Main.buscarCorreo().toLowerCase());
         pfContrasena.setText(Main.buscarContrasena());
-        usuarioAntes =Main.getUsuarioAntes(tfNombre.getText(), tfCorreo.getText());
+        usuarioAntes =Main.getUsuario(tfNombre.getText(), tfCorreo.getText());
 
 
 
@@ -162,7 +162,7 @@ public class vPerfilUsuario {
         bVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.Principal();
+                Main.PrincipalUsuario();
             }
         });
     }
