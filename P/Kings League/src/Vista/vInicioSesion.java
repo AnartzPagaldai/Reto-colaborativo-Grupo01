@@ -103,6 +103,12 @@ public class vInicioSesion {
                     existe=Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
                     if (existe){
                         // TODO : poner que dependiendo de si es un usuario normal o un admin tenga que aparecer una ventana u otra
+                        /*
+                        if(){
+                            Main.generarVentanaPrincipalUsuario();
+                        }
+                        else Main.generarVentanaPrincipalAdmin();
+                        */
                         Main.generarVentanaPrincipal();
                         tfNombre.setText("");
                         pfContrasena.setText("");
