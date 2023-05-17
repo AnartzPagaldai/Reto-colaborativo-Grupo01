@@ -28,9 +28,13 @@ public class Main {
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
+
+    public static JFrame vUsuario;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
+
+    private static Usuario usuarioInicio = new Usuario();
 
     private static Personal[] personalesInfome = new Personal[2];
 
@@ -114,12 +118,26 @@ public class Main {
         actual=vJugadores;
     }
 
+    public static void generarVentanaAjustesUsuario() throws MalformedURLException {
+        vUsuario = new JFrame("vPerfilUsuario");
+        vUsuario.setContentPane(new vPerfilUsuario().getpPrincipal());
+        vUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUsuario.pack();
+        vUsuario.setVisible(true);
+        vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpal.setVisible(false);
+        actual=vUsuario;
+    }
+
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
         u.setNombre(nombre);
         u.setContrasena(contrasena);
         existe = TUsuario.selectUsuario(u);
+        if (existe) {
+            usuarioInicio = TUsuario.selectDatosUsuario(u);
+        }
         return existe;
     };
 
@@ -134,7 +152,10 @@ public class Main {
         existe = TUsuario.selectUsuarioInsertar(u);
         if (existe) {
             insertar = false;
-        } else insertar = TUsuario.insertar(u);
+        } else {
+            insertar = TUsuario.insertar(u);
+            usuarioInicio = u;
+        }
         return insertar;
     }
 
@@ -229,5 +250,32 @@ public class Main {
     }
     public static Equipo relacionJugadorEquipo(){
         return equipo;
+    }
+
+    public static String buscarNombre()
+    {
+        return usuarioInicio.getNombre();
+    }
+
+    public static String buscarCorreo()
+    {
+        return usuarioInicio.getCorreo();
+    }
+
+    public static String buscarContrasena()
+    {
+        return usuarioInicio.getContrasena();
+    }
+
+    public static void actalizarUsuario(Usuario usuarioAntes, Usuario usuarioActual) throws SQLException {
+        TUsuario.updateUsuario(usuarioAntes, usuarioActual);
+    }
+
+    public static Usuario getUsuarioAntes(String nombre, String contrasena){
+        Usuario usuarioAntes=new Usuario();
+        usuarioAntes.setNombre(nombre);
+        usuarioAntes.setContrasena(contrasena);
+        usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
+        return usuarioAntes;
     }
 }

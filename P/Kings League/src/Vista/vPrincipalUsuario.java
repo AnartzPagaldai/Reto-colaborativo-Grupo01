@@ -11,6 +11,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.concurrent.TimeoutException;
 
 public class  vPrincipalUsuario {
     private JPanel pPrincipal;
@@ -214,6 +215,17 @@ public class  vPrincipalUsuario {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openLink(linkYoutube);
+            }
+        });
+
+        jmiVerPerfil.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaAjustesUsuario();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
