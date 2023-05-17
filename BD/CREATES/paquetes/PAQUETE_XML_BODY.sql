@@ -18,7 +18,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
         EQUIPO1 VARCHAR2(50);
         EQUIPO2 VARCHAR2(50);
     BEGIN
-        INFORMES.INFORME_PARTIDOS_POR_JORNADA(C_PARTIDOS);
+        INFORME_PARTIDOS_POR_JORNADA(C_PARTIDOS);
         RESULT := '<?xml version="1.0" encoding="UTF-8"?>
             <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd">';
         
