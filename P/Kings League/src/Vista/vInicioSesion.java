@@ -6,8 +6,9 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import Controlador.Main;
+import Modelo.Usuario.Usuario;
 
-import static Controlador.Main.generarVentanaRegistro;
+import static Controlador.Main.*;
 
 public class vInicioSesion {
     private JPanel pDatos;
@@ -34,6 +35,7 @@ public class vInicioSesion {
     private JLabel fInstagram;
     private JLabel fTwitter;
     private JButton crearCuentaButton;
+    private Usuario usuario;
 
 
 
@@ -101,15 +103,11 @@ public class vInicioSesion {
                 boolean existe=false;
                 try {
                     existe=Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
+                    String tipo=getUsuarioTipo(tfNombre.getText(), pfContrasena.getText());
                     if (existe){
-                        // TODO : poner que dependiendo de si es un usuario normal o un admin tenga que aparecer una ventana u otra
-                        /*
-                        if(){
+                        if(tipo.equalsIgnoreCase("usuario")){
                             Main.generarVentanaPrincipalUsuario();
-                        }
-                        else Main.generarVentanaPrincipalAdmin();
-                        */
-                        Main.generarVentanaPrincipalUsuario();
+                        } else Main.generarVentanaPrincipalAdmin();
                         tfNombre.setText("");
                         pfContrasena.setText("");
                     }else throw new Exception("Usuario o contraseña incorrectos");
@@ -146,4 +144,5 @@ public class vInicioSesion {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
 }

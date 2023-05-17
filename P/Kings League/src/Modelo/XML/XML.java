@@ -1,6 +1,7 @@
 package Modelo.XML;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -78,7 +79,8 @@ public class XML {
                 Element tagEquipo = (Element) listaEquipos.item(i);
                 equipo.put("posicion", tagEquipo.getAttribute("posiscion"));
                 equipo.put("nombre_equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
-                //equipo.put("logoImg", TEquipo.getEquipoPorNombre(equipo.get("nombre")).getLogoImg());
+                Equipo equipo1=TEquipo.getEquipoPorNombre(equipo.get("nombre"));
+                equipo.put("logoImg", equipo1.getLogoImg());
                 equipo.put("victorias", tagEquipo.getElementsByTagName("victorias").item(0).getTextContent());
                 equipo.put("golesAfavor", tagEquipo.getElementsByTagName("goles_a_favor").item(0).getTextContent());
                 equipo.put("golesEnContra", tagEquipo.getElementsByTagName("goles_en_contra").item(0).getTextContent());

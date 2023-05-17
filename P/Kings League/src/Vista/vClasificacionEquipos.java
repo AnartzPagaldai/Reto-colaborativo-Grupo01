@@ -10,6 +10,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class vClasificacionEquipos {
     private JPanel pPrincipal;
@@ -124,11 +126,30 @@ public class vClasificacionEquipos {
     private ImageIcon imagenInstagram;
     private ImageIcon imagenTwitter;
     private ImageIcon imagenUsuario;
+    private ImageIcon logoEquipo;
 
 
     public vClasificacionEquipos() throws MalformedURLException {
-
-
+        HashMap<String, String>[] equipos=Main.getClasificacion();
+        ArrayList<JLabel> logos=new ArrayList<>();
+        logos.add(logo1);
+        logos.add(logo2);
+        logos.add(logo3);
+        logos.add(logo4);
+        logos.add(logo5);
+        logos.add(logo6);
+        logos.add(logo7);
+        logos.add(logo8);
+        logos.add(logo9);
+        logos.add(logo10);
+        logos.add(logo11);
+        logos.add(logo12);
+        for (int x=0; x<logos.size(); x++){
+            logoEquipo = new ImageIcon(new URL(equipos[x].get("logoImg")));
+            Image LogoEqu = logoEquipo.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
+            ImageIcon iconEq = new ImageIcon(LogoEqu);
+            logos.get(x).setIcon(iconEq);
+        }
         pPrincipal = new JPanel(new BorderLayout());
 
         pPrincipal = new JPanel() {
