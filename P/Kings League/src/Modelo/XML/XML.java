@@ -2,6 +2,8 @@ package Modelo.XML;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Equipo.TEquipo;
+import Modelo.Jornada.TJornada;
+import Modelo.Partido.Partido;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -16,6 +18,7 @@ import java.sql.CallableStatement;
 import java.sql.Clob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class XML {
@@ -95,7 +98,14 @@ public class XML {
 
     public static void generarXMlultimaJornada() {
         try {
-           // StringBuilder xml =
+            BaseDeDatos.abrirConexion();
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call PAQUETE_XML.GENERAR_XML_ULTIMA_JORNADA(?)}");
+            Clob clob = BaseDeDatos.getCon().createClob();
+            statement.setClob(1, clob);
+            statement.execute();
+            BaseDeDatos.cerrarConexion();
+            System.out.println(clob);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

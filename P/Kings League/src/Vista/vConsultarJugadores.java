@@ -94,7 +94,7 @@ public class vConsultarJugadores {
         jmiPrincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.Principal();
+                Main.PrincipalUsuario();
             }
         });
 
