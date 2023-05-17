@@ -110,7 +110,3 @@
     END GENERAR_XML_ULTIMA_JORNADA;
 END PAQUETE_XML;
         
-/
-select * from CLASIFICACION;
-
-
