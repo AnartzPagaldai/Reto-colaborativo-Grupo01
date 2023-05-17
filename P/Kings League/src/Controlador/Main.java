@@ -73,7 +73,6 @@ public class Main {
         vInicio.pack();
         vInicio.setVisible(true);
         vInicio.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual.dispose();
     }
 
     public static void generarVentanaRegistro() throws MalformedURLException {
@@ -107,6 +106,7 @@ public class Main {
         vPrinicpalAdmin.setExtendedState(Frame.MAXIMIZED_BOTH);
         actual = vPrinicpalAdmin;
         vInicio.dispose();
+
     }
 
     public static void generarVentanaEquipos() throws MalformedURLException {
@@ -172,11 +172,10 @@ public class Main {
         return insertar;
     }
 
-    public static Equipo setObjetosInformeEquipo(String nombre) {
-        Equipo equipo = new Equipo();
+    public static void setObjetosInformeEquipo(String nombre) {
+        equipo = new Equipo();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
-        return equipo;
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
@@ -188,9 +187,7 @@ public class Main {
         } else {
             persona.put("nombre", jugadoresInfome.get(posicion - 2).getNombre());
             persona.put("img", jugadoresInfome.get(posicion - 2).getImg());
-            if (String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()).equals("WILD-CARD")){
-                persona.put("oficio", "WILD-CARD");
-            }else persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
+            persona.put("oficio", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoJugador()));
             persona.put("posicion", String.valueOf(jugadoresInfome.get(posicion - 2).getTipoPosicion()));
             persona.put("velocidad", String.valueOf(jugadoresInfome.get(posicion - 2).getVelocidad()));
             persona.put("fisico", String.valueOf(jugadoresInfome.get(posicion - 2).getFisico()));
@@ -256,13 +253,15 @@ public class Main {
         TEquipo.selectAllEquipos(equipos);
     return equipos;}
 
-    public static void jugadoresEquipo(String nombre){
-        equipo.setNombre(nombre);
-        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
-        relacionJugadorEquipo();
-    }
-    public static Equipo relacionJugadorEquipo(){
+    public static Equipo getEquipo(){
         return equipo;
+    }
+
+    public static void setNombreEquipo(String nombre){
+        equipo.setNombre(nombre);
+    }
+    public static String getNombreEquipo(){
+        return equipo.getNombre();
     }
     public static String buscarNombre()
     {

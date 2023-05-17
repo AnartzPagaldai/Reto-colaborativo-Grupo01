@@ -54,7 +54,6 @@ public class vConsultarJugadores {
     private JButton bDerecha;
     private JLabel jlNombre;
     private JLabel jlPosicion;
-    private JLabel jlEquipo;
     private JPanel pimagen;
     private JLabel jlImagen;
     private JMenu mPrincipal;
@@ -65,9 +64,7 @@ public class vConsultarJugadores {
     private Equipo equipo;
 
     public vConsultarJugadores() throws MalformedURLException {
-        equipo=Main.relacionJugadorEquipo();
-        jlEquipo.setText(equipo.getNombre());
-        Main.setObjetosInformeEquipo(equipo.getNombre());
+        Main.setObjetosInformeEquipo(Main.getNombreEquipo());
         HashMap<String, String> persona= Main.getPersonaPorPosicion(posicion);
         maximo=Main.getCantidadPersonas();
         mostrarPersona();
@@ -159,7 +156,6 @@ public class vConsultarJugadores {
             taTalento.setVisible(false);
             taTiro.setVisible(false);
             taVelocidad.setVisible(false);
-            jaOficio.setVisible(false);
         }else {
             jlDefensa.setVisible(true);
             jlFisico.setVisible(true);
@@ -174,7 +170,6 @@ public class vConsultarJugadores {
             taTalento.setVisible(true);
             taTiro.setVisible(true);
             taVelocidad.setVisible(true);
-            jaOficio.setVisible(true);
         }
     }
     private void maximoReset(){
@@ -205,7 +200,6 @@ public class vConsultarJugadores {
         Image Logojug = Jugador.getImage().getScaledInstance(456, 642, Image.SCALE_SMOOTH);
         ImageIcon icono = new ImageIcon(Logojug);
         jlImagen.setIcon(icono);
-        jaOficio.setText(persona.get("oficio"));
         taVelocidad.setText(persona.get("velocidad"));
         taTiro.setText(persona.get("tiro"));
         taTalento.setText(persona.get("talento"));
