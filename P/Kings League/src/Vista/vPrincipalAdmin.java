@@ -1,60 +1,52 @@
 package Vista;
 
 import Controlador.Main;
-import java.awt.Desktop;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.concurrent.TimeoutException;
 
-public class  vPrincipalUsuario {
+public class vPrincipalAdmin {
     private JPanel pPrincipal;
-
-    private ImageIcon imagenInstagram;
-    private ImageIcon imagenTwitter;
-    private ImageIcon imagenTwitch;
-
-    private ImageIcon imagenUsuario;
-
-    private ImageIcon LogoKingsLeague;
-
-    private ImageIcon ImagenNoticia;
+    private JPanel pDegradado;
     private JPanel pHeader;
-    private JPanel pImagenNoticia;
-    private JPanel pContenido;
-    private JMenu mEquipos;
     private JMenuBar jmheader;
+    private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
+    private JMenuItem jmiConsultarJugadores;
     private JMenu mPartidos;
-    private JMenuItem jmiVer;
+    private JMenuItem jmiConsultarPartidos;
     private JMenu mClasificacion;
-    private JLabel jlImagen;
-    private JPanel pFooter;
-    private JLabel fTwitch;
-    private JLabel fInstagram;
-    private JLabel fTwitter;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
-    private JLabel jlImagenFran;
-    private JLabel jlImagenDavid;
-    private JButton bGolazos;
-    private JPanel pBotonGolazos;
-    private JButton bTrailer;
-    private JPanel pBotonTrailer;
-    private JPanel pDegradado;
+    private JPanel pContenido;
+    private JPanel pFooter;
+    private JLabel fTwitch;
+    private JLabel fInstagram;
+    private JLabel fTwitter;
+    private JMenuItem jmiInsertarEquipos;
+    private JMenuItem jmiActualizarEquipos;
+    private JMenuItem jmiBorrarEquipos;
+    private JMenuItem jmiInsertarJugadores;
+    private JMenuItem jmiActualizarJugadores;
+    private JMenuItem jmiBorrararJugadores;
+    private JPanel pLogoKingsLeague;
+    private ImageIcon LogoKingsLeague;
+    private ImageIcon imagenTwitch;
+    private ImageIcon imagenInstagram;
+    private ImageIcon imagenTwitter;
+    private ImageIcon imagenUsuario;
 
 
-    public vPrincipalUsuario() throws MalformedURLException {
+    public vPrincipalAdmin() throws MalformedURLException {
 
 
         pPrincipal = new JPanel(new BorderLayout());
@@ -82,25 +74,12 @@ public class  vPrincipalUsuario {
         // Agrega pHeader al norte
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
-        // Poner vídeo de YouTube sobre los golazos
-        String videoId = "k5jRcR6QP4Q";
-        String youtubeLink = generateYouTubeLink(videoId);
-
-        // Poner vídeo de YouTube sobre la Kings League
-        String idVideo = "y1eFrUSam1k";
-        String linkYoutube = generateYouTubeLink(idVideo);
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
-
-        // Poner la imagen de la noticia de actualidad de la Kings League
-        ImagenNoticia = new ImageIcon(new URL("https://s1.abcstatics.com/abc/www/multimedia/deportes/2023/03/24/DIRECTO-FINAL-KINGS-LEAGUE(1)-U16424855837hdU-1200x630@abc.jpg"));
-        Image LogoNoticia = ImagenNoticia.getImage().getScaledInstance(900, 480, Image.SCALE_SMOOTH);
-        ImageIcon NoticiaIcon = new ImageIcon(LogoNoticia);
-        jlImagen.setIcon(NoticiaIcon);
 
         // Poner las imágenes del footer
         imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
@@ -188,71 +167,111 @@ public class  vPrincipalUsuario {
             }
         });
 
-        jmiCerrarSesion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.cerrarSesion();
-            }
-        });
-        bGolazos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openLink(youtubeLink);
-            }
-        });
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaEquipos();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
 
-        bTrailer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openLink(linkYoutube);
-            }
-        });
-
+        // Poner los métodos
         jmiVerPerfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // TODO : poner que aparezca la ventana "vPerfilUsuario"
+            }
+        });
+
+        jmiCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarVentanaAjustesUsuario();
+                    Main.generarVentanaInicio();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
             }
         });
+
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO : poner código necesario
+            }
+        });
+
+        jmiInsertarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiActualizarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiBorrarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiConsultarJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiInsertarJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiActualizarJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiBorrararJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiConsultarPartidos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        mClasificacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
     }
+
 
     public JPanel getpPrincipal() {
         return pPrincipal;
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        JFrame frame = new JFrame("vPrincipal");
-        frame.setContentPane(new vPrincipalUsuario().pPrincipal);
+        JFrame frame = new JFrame("vPrincipalAdmin");
+        frame.setContentPane(new vPrincipalAdmin().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
-    public static String generateYouTubeLink(String videoId) {
-        return "https://youtu.be/" + videoId;
-    }
-
-    public static void openLink(String link) {
-        try {
-            // Utilizar la clase Desktop para abrir el enlace en un navegador web
-            Desktop.getDesktop().browse(new URI(link));
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
 }

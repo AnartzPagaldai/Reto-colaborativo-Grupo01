@@ -24,13 +24,18 @@ import java.util.stream.Collectors;
 public class Main {
     public static JFrame actual;
     public static JFrame vInicio;
-    public static JFrame vPrinicpal;
+    public static JFrame vPrinicpalUsuario;
+    public static JFrame vPrinicpalAdmin;
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
+
+    public static JFrame vUsuario;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
+
+    private static Usuario usuarioInicio = new Usuario();
 
     private static Personal[] personalesInfome = new Personal[2];
 
@@ -81,14 +86,25 @@ public class Main {
         vInicio.dispose();
     }
 
-    public static void generarVentanaPrincipal() throws MalformedURLException {
-        vPrinicpal = new JFrame("vPrincipal");
-        vPrinicpal.setContentPane(new vPrincipalUsuario().getpPrincipal());
-        vPrinicpal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vPrinicpal.pack();
-        vPrinicpal.setVisible(true);
-        vPrinicpal.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vPrinicpal;
+    public static void generarVentanaPrincipalUsuario() throws MalformedURLException {
+        vPrinicpalUsuario = new JFrame("vPrincipalUsuario");
+        vPrinicpalUsuario.setContentPane(new vPrincipalUsuario().getpPrincipal());
+        vPrinicpalUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPrinicpalUsuario.pack();
+        vPrinicpalUsuario.setVisible(true);
+        vPrinicpalUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vPrinicpalUsuario;
+        vInicio.dispose();
+    }
+
+    public static void generarVentanaPrincipalAdmin() throws MalformedURLException {
+        vPrinicpalAdmin = new JFrame("vPrincipalAdmin");
+        vPrinicpalAdmin.setContentPane(new vPrincipalAdmin().getpPrincipal());
+        vPrinicpalAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPrinicpalAdmin.pack();
+        vPrinicpalAdmin.setVisible(true);
+        vPrinicpalAdmin.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vPrinicpalAdmin;
         vInicio.dispose();
 
     }
@@ -103,6 +119,7 @@ public class Main {
         vPrinicpal.setVisible(false);
         actual = vEquipos;
     }
+    
     public static void generarVentanaJugadores() throws MalformedURLException {
         vJugadores= new JFrame("vConsultarJugadores");
         vJugadores.setContentPane(new vConsultarJugadores().getpPrincipal());
@@ -114,12 +131,26 @@ public class Main {
         actual=vJugadores;
     }
 
+    public static void generarVentanaAjustesUsuario() throws MalformedURLException {
+        vUsuario = new JFrame("vPerfilUsuario");
+        vUsuario.setContentPane(new vPerfilUsuario().getpPrincipal());
+        vUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUsuario.pack();
+        vUsuario.setVisible(true);
+        vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpal.setVisible(false);
+        actual=vUsuario;
+    }
+
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
         u.setNombre(nombre);
         u.setContrasena(contrasena);
         existe = TUsuario.selectUsuario(u);
+        if (existe) {
+            usuarioInicio = TUsuario.selectDatosUsuario(u);
+        }
         return existe;
     };
 
@@ -134,7 +165,10 @@ public class Main {
         existe = TUsuario.selectUsuarioInsertar(u);
         if (existe) {
             insertar = false;
-        } else insertar = TUsuario.insertar(u);
+        } else {
+            insertar = TUsuario.insertar(u);
+            usuarioInicio = u;
+        }
         return insertar;
     }
 
@@ -229,4 +263,31 @@ public class Main {
     public static String getNombreEquipo(){
         return equipo.getNombre();
     }
+    public static String buscarNombre()
+    {
+        return usuarioInicio.getNombre();
+    }
+
+    public static String buscarCorreo()
+    {
+        return usuarioInicio.getCorreo();
+    }
+
+    public static String buscarContrasena()
+    {
+        return usuarioInicio.getContrasena();
+    }
+
+    public static void actalizarUsuario(Usuario usuarioAntes, Usuario usuarioActual) throws SQLException {
+        TUsuario.updateUsuario(usuarioAntes, usuarioActual);
+    }
+
+    public static Usuario getUsuarioAntes(String nombre, String contrasena){
+        Usuario usuarioAntes=new Usuario();
+        usuarioAntes.setNombre(nombre);
+        usuarioAntes.setContrasena(contrasena);
+        usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
+        return usuarioAntes;
+    }
+}
 }
