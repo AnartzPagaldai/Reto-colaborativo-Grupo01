@@ -17,9 +17,9 @@ ID_EQUIPO2 NUMBER(2);
 EQUIPO1 VARCHAR2(50);
 EQUIPO2 VARCHAR2(50);
 BEGIN
-    
+
     INFORMES.INFORME_PARTIDOS_POR_JORNADA(C_PARTIDOS);
-    
+
     LOOP
         FETCH C_PARTIDOS INTO TIPO_SPLIT, NUMERO_JORNADA, TIPO_JORNADA,
                                 ID, GOLES_EQUIPO1, GOLES_EQUIPO2, FECHA, LUGAR,
@@ -42,7 +42,6 @@ BEGIN
 END;
 
 /* RESULTADOS
-
 Tipo_split: VERANO, número_jornada: 1, tipo_jornada: NORMAL, id_partido: 1, goles_equipo 1: , goles_equipo 2: , fecha_partido: 07/05/23, lugar_partido: CUPRA ARENA, id_jornada: 85, id_equipo 1: 2, id_equipo 1: 12, nombre_equipo 1: Ultimate Mostoles, nombre_equipo 2: Jijantes FC
 Tipo_split: VERANO, número_jornada: 1, tipo_jornada: NORMAL, id_partido: 2, goles_equipo 1: , goles_equipo 2: , fecha_partido: 07/05/23, lugar_partido: CUPRA ARENA, id_jornada: 85, id_equipo 1: 4, id_equipo 1: 11, nombre_equipo 1: Kunisports, nombre_equipo 2: Porcinos FC
 Tipo_split: VERANO, número_jornada: 1, tipo_jornada: NORMAL, id_partido: 3, goles_equipo 1: , goles_equipo 2: , fecha_partido: 07/05/23, lugar_partido: CUPRA ARENA, id_jornada: 85, id_equipo 1: 1, id_equipo 1: 10, nombre_equipo 1: Saiyans FC, nombre_equipo 2: xBuyer Team
@@ -109,7 +108,5 @@ Tipo_split: VERANO, número_jornada: 11, tipo_jornada: NORMAL, id_partido: 123, 
 Tipo_split: VERANO, número_jornada: 11, tipo_jornada: NORMAL, id_partido: 124, goles_equipo 1: , goles_equipo 2: , fecha_partido: 16/07/23, lugar_partido: CUPRA ARENA, id_jornada: 95, id_equipo 1: 2, id_equipo 1: 7, nombre_equipo 1: Ultimate Mostoles, nombre_equipo 2: Los Troncos FC
 Tipo_split: VERANO, número_jornada: 11, tipo_jornada: NORMAL, id_partido: 125, goles_equipo 1: , goles_equipo 2: , fecha_partido: 16/07/23, lugar_partido: CUPRA ARENA, id_jornada: 95, id_equipo 1: 6, id_equipo 1: 11, nombre_equipo 1: Aniquiladores FC, nombre_equipo 2: Porcinos FC
 Tipo_split: VERANO, número_jornada: 11, tipo_jornada: NORMAL, id_partido: 126, goles_equipo 1: , goles_equipo 2: , fecha_partido: 16/07/23, lugar_partido: CUPRA ARENA, id_jornada: 95, id_equipo 1: 10, id_equipo 1: 12, nombre_equipo 1: xBuyer Team, nombre_equipo 2: Jijantes FC
-
 Procedimiento PL/SQL terminado correctamente.
-
 */
