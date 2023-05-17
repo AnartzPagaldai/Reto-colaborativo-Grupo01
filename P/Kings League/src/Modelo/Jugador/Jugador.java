@@ -13,8 +13,6 @@ public class Jugador implements ResultSetObjeto {
     private int telefono;
     private TipoPosicion tipoPosicion;
 
-
-
     public enum TipoPosicion{
         PORTERO,
         DEFENSA,
@@ -24,8 +22,8 @@ public class Jugador implements ResultSetObjeto {
     private String img;
     private TipoJugador tipoJugador;
     private enum TipoJugador{
-        Draft,
-        WildCard,
+        DRAFT,
+        WILDCARD;
     }
     private int velocidad;
     private int fisico;
@@ -166,7 +164,5 @@ public class Jugador implements ResultSetObjeto {
         pase = resultSet.getInt("pase");
         talento = resultSet.getInt("talento");
         defensa = resultSet.getInt("defensa");
-
     }
-
 }

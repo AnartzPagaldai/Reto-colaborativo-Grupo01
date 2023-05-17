@@ -1,60 +1,132 @@
 package Vista;
 
 import Controlador.Main;
-import java.awt.Desktop;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.concurrent.TimeoutException;
 
-public class  vPrincipalUsuario {
+public class vClasificacionEquipos {
     private JPanel pPrincipal;
-
-    private ImageIcon imagenInstagram;
-    private ImageIcon imagenTwitter;
-    private ImageIcon imagenTwitch;
-
-    private ImageIcon imagenUsuario;
-
-    private ImageIcon LogoKingsLeague;
-
-    private ImageIcon ImagenNoticia;
-    private JPanel pHeader;
-    private JPanel pImagenNoticia;
+    private JPanel pDegradado;
     private JPanel pContenido;
-    private JMenu mEquipos;
+    private JPanel pFooter;
+    private JLabel fTwitch;
+    private JLabel fInstagram;
+    private JLabel fTwitter;
+    private JPanel pHeader;
     private JMenuBar jmheader;
+    private JMenu jmInicio;
+    private JMenuItem jmiPrincipal;
+    private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
     private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
     private JMenu mClasificacion;
-    private JLabel jlImagen;
-    private JPanel pFooter;
-    private JLabel fTwitch;
-    private JLabel fInstagram;
-    private JLabel fTwitter;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
-    private JLabel jlImagenFran;
-    private JLabel jlImagenDavid;
-    private JButton bGolazos;
-    private JPanel pBotonGolazos;
-    private JButton bTrailer;
-    private JPanel pBotonTrailer;
-    private JPanel pDegradado;
+    private JComboBox cbSplit;
+    private JLabel posicion1;
+    private JLabel posicion2;
+    private JLabel posicion3;
+    private JLabel posicion4;
+    private JLabel posicion5;
+    private JLabel posicion6;
+    private JLabel posicion7;
+    private JLabel posicion8;
+    private JLabel posicion9;
+    private JLabel posicion10;
+    private JLabel posicion11;
+    private JLabel posicion12;
+    private JLabel equipo1;
+    private JLabel equipo2;
+    private JLabel equipo3;
+    private JLabel equipo4;
+    private JLabel equipo5;
+    private JLabel equipo6;
+    private JLabel equipo7;
+    private JLabel equipo8;
+    private JLabel equipo9;
+    private JLabel equipo10;
+    private JLabel equipo11;
+    private JLabel equipo12;
+    private JLabel logo1;
+    private JLabel logo2;
+    private JLabel logo3;
+    private JLabel logo4;
+    private JLabel logo5;
+    private JLabel logo6;
+    private JLabel logo7;
+    private JLabel logo8;
+    private JLabel logo9;
+    private JLabel logo10;
+    private JLabel logo11;
+    private JLabel logo12;
+    private JLabel victoria1;
+    private JLabel victoria2;
+    private JLabel victoria3;
+    private JLabel victoria4;
+    private JLabel victoria5;
+    private JLabel victoria6;
+    private JLabel victoria7;
+    private JLabel victoria8;
+    private JLabel victoria9;
+    private JLabel victoria10;
+    private JLabel victoria11;
+    private JLabel victoria12;
+    private JLabel golesFavor1;
+    private JLabel golesFavor2;
+    private JLabel golesFavor3;
+    private JLabel golesFavor4;
+    private JLabel golesFavor5;
+    private JLabel golesFavor6;
+    private JLabel golesFavor7;
+    private JLabel golesFavor8;
+    private JLabel golesFavor9;
+    private JLabel golesFavor10;
+    private JLabel golesFavor11;
+    private JLabel golesFavor12;
+    private JLabel golesContra1;
+    private JLabel golesContra2;
+    private JLabel golesContra3;
+    private JLabel golesContra4;
+    private JLabel golesContra5;
+    private JLabel golesContra6;
+    private JLabel golesContra7;
+    private JLabel golesContra8;
+    private JLabel golesContra9;
+    private JLabel golesContra10;
+    private JLabel golesContra11;
+    private JLabel golesContra12;
+    private JLabel diferencia1;
+    private JLabel diferencia2;
+    private JLabel diferencia3;
+    private JLabel diferencia4;
+    private JLabel diferencia5;
+    private JLabel diferencia6;
+    private JLabel diferencia7;
+    private JLabel diferencia8;
+    private JLabel diferencia9;
+    private JLabel diferencia10;
+    private JLabel diferencia11;
+    private JLabel diferencia12;
+    private ImageIcon LogoKingsLeague;
+    private ImageIcon imagenTwitch;
+    private ImageIcon imagenInstagram;
+    private ImageIcon imagenTwitter;
+    private ImageIcon imagenUsuario;
 
 
-    public vPrincipalUsuario() throws MalformedURLException {
+    public vClasificacionEquipos() throws MalformedURLException {
 
 
         pPrincipal = new JPanel(new BorderLayout());
@@ -82,25 +154,12 @@ public class  vPrincipalUsuario {
         // Agrega pHeader al norte
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
-        // Poner vídeo de YouTube sobre los golazos
-        String videoId = "k5jRcR6QP4Q";
-        String youtubeLink = generateYouTubeLink(videoId);
-
-        // Poner vídeo de YouTube sobre la Kings League
-        String idVideo = "y1eFrUSam1k";
-        String linkYoutube = generateYouTubeLink(idVideo);
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
-
-        // Poner la imagen de la noticia de actualidad de la Kings League
-        ImagenNoticia = new ImageIcon(new URL("https://s1.abcstatics.com/abc/www/multimedia/deportes/2023/03/24/DIRECTO-FINAL-KINGS-LEAGUE(1)-U16424855837hdU-1200x630@abc.jpg"));
-        Image LogoNoticia = ImagenNoticia.getImage().getScaledInstance(900, 480, Image.SCALE_SMOOTH);
-        ImageIcon NoticiaIcon = new ImageIcon(LogoNoticia);
-        jlImagen.setIcon(NoticiaIcon);
 
         // Poner las imágenes del footer
         imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
@@ -188,71 +247,65 @@ public class  vPrincipalUsuario {
             }
         });
 
-        jmiCerrarSesion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.cerrarSesion();
-            }
-        });
-        bGolazos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openLink(youtubeLink);
-            }
-        });
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaEquipos();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
 
-        bTrailer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openLink(linkYoutube);
-            }
-        });
-
+        // Poner los métodos
         jmiVerPerfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // TODO : poner que aparezca la ventana "vPerfilUsuario"
+            }
+        });
+
+        jmiCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarVentanaAjustesUsuario();
+                    Main.generarVentanaInicio();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
             }
         });
+
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO : poner código necesario
+            }
+        });
+
+        mClasificacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        cbSplit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+
+
+
     }
+
 
     public JPanel getpPrincipal() {
         return pPrincipal;
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        JFrame frame = new JFrame("vPrincipal");
-        frame.setContentPane(new vPrincipalUsuario().pPrincipal);
+        JFrame frame = new JFrame("vClasificacionEquipos");
+        frame.setContentPane(new vClasificacionEquipos().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
-    public static String generateYouTubeLink(String videoId) {
-        return "https://youtu.be/" + videoId;
-    }
-
-    public static void openLink(String link) {
-        try {
-            // Utilizar la clase Desktop para abrir el enlace en un navegador web
-            Desktop.getDesktop().browse(new URI(link));
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
 }

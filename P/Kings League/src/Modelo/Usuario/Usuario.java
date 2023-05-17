@@ -7,11 +7,17 @@ public class Usuario {
     private String correo;
     private TipoUsuario tipoUsuario;
     public enum TipoUsuario{
-        Usuario,
-        Admin
+        USUARIO,
+        ADMIN
     }
 
     public Usuario() {
+    }
+
+    public Usuario( String nombre, String contrasena, String correo) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasena = contrasena;
     }
 
     public int getId() {

@@ -18,7 +18,7 @@ public class TEquipo {
     public static ArrayList<Jugador> getInfomeEquipos(Equipo equipo, Personal[] personales) {
         try {
             BaseDeDatos.abrirConexion();
-            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call INFORMES.INFORME_EQUIPO(?,?)}");
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call INFORME_EQUIPO(?,?)}");
             statement.registerOutParameter(1, OracleTypes.CURSOR);
             statement.setString(2, equipo.getNombre());
             statement.execute();
