@@ -63,7 +63,7 @@ public class Main {
 
     public static void Principal() {
         actual.dispose();
-        vPrinicpal.setVisible(true);
+        vPrinicpalUsuario.setVisible(true);
     }
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
@@ -116,7 +116,7 @@ public class Main {
         vEquipos.pack();
         vEquipos.setVisible(true);
         vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpal.setVisible(false);
+        vPrinicpalUsuario.setVisible(false);
         actual = vEquipos;
     }
     
@@ -138,7 +138,7 @@ public class Main {
         vUsuario.pack();
         vUsuario.setVisible(true);
         vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpal.setVisible(false);
+        vPrinicpalUsuario.setVisible(false);
         actual=vUsuario;
     }
 
@@ -289,5 +289,4 @@ public class Main {
         usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
         return usuarioAntes;
     }
-}
 }

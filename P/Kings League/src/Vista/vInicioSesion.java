@@ -109,7 +109,7 @@ public class vInicioSesion {
                         }
                         else Main.generarVentanaPrincipalAdmin();
                         */
-                        Main.generarVentanaPrincipal();
+                        Main.generarVentanaPrincipalUsuario();
                         tfNombre.setText("");
                         pfContrasena.setText("");
                     }else throw new Exception("Usuario o contraseña incorrectos");
