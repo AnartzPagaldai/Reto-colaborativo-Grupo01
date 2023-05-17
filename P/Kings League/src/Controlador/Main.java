@@ -29,7 +29,7 @@ public class Main {
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
-
+    public static JFrame vEquipoActualizar;
     public static JFrame vUsuario;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
@@ -61,9 +61,17 @@ public class Main {
         vInicio.setVisible(true);
     }
 
-    public static void Principal() {
+    public static void PrincipalUsuario() {
         actual.dispose();
-        vPrinicpal.setVisible(true);
+        vPrinicpalUsuario.setVisible(true);
+    }
+    public static void vEquipos() {
+        actual.dispose();
+        vEquipos.setVisible(true);
+    }
+    public static void PrincipalAdmin() {
+        actual.dispose();
+        vPrinicpalUsuario.setVisible(true);
     }
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
@@ -116,7 +124,7 @@ public class Main {
         vEquipos.pack();
         vEquipos.setVisible(true);
         vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpal.setVisible(false);
+        vPrinicpalUsuario.setVisible(false);
         actual = vEquipos;
     }
     
@@ -138,8 +146,18 @@ public class Main {
         vUsuario.pack();
         vUsuario.setVisible(true);
         vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpal.setVisible(false);
+        vPrinicpalUsuario.setVisible(false);
         actual=vUsuario;
+    }
+    public static void generarActualzarEquipos() throws MalformedURLException {
+        vEquipoActualizar= new JFrame("vActualizarEquipo");
+        vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
+        vEquipoActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vEquipoActualizar.pack();
+        vEquipoActualizar.setVisible(true);
+        vEquipoActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual=vEquipoActualizar;
+        vPrinicpalAdmin.setVisible(false);
     }
 
     public static boolean selectUsuario(String nombre, String contrasena) {
@@ -152,7 +170,7 @@ public class Main {
             usuarioInicio = TUsuario.selectDatosUsuario(u);
         }
         return existe;
-    };
+    }
 
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
         boolean existe;
@@ -172,10 +190,15 @@ public class Main {
         return insertar;
     }
 
-    public static void setObjetosInformeEquipo(String nombre) {
+    public static HashMap setObjetosInformeEquipo(String nombre) {
         equipo = new Equipo();
+        HashMap<String, String> equipos=new HashMap<>();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
+        equipos.put("nombre", equipo.getNombre());
+        equipos.put("logo", equipo.getLogoImg());
+        equipos.put("color", equipo.getColor());
+        return equipos;
     }
 
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
@@ -282,12 +305,18 @@ public class Main {
         TUsuario.updateUsuario(usuarioAntes, usuarioActual);
     }
 
-    public static Usuario getUsuarioAntes(String nombre, String contrasena){
+    public static String getUsuarioTipo(String nombre, String contrasena){
         Usuario usuarioAntes=new Usuario();
         usuarioAntes.setNombre(nombre);
         usuarioAntes.setContrasena(contrasena);
         usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
-        return usuarioAntes;
+        return usuarioAntes.getTipoUsuario().toString();
     }
-}
+    public static Usuario getUsuario(String nombre, String contrasena){
+        Usuario usuario=new Usuario();
+        usuario.setNombre(nombre);
+        usuario.setContrasena(contrasena);
+        usuario=TUsuario.selectUsuarioDatos(usuario);
+        return usuario;
+    }
 }

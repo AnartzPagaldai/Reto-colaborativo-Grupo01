@@ -352,7 +352,7 @@
                       <font size="28"/>
                       <foreground color="-16777216"/>
                       <margin top="2" left="2" bottom="2" right="2"/>
-                      <text value="INICIO"/>
+                      <text value="Principal"/>
                     </properties>
                     <border type="none"/>
                     <children>
@@ -362,7 +362,7 @@
                           <background color="-1926088"/>
                           <font size="20"/>
                           <foreground color="-16777216"/>
-                          <text value="VOLVER  INICIO"/>
+                          <text value="Pagina Principal"/>
                         </properties>
                       </component>
                     </children>

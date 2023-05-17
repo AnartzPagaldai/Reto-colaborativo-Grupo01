@@ -1,5 +1,7 @@
 package Vista;
 
+import Controlador.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,6 +23,7 @@ public class vActualizarEquipo {
     private JTextField tfImagen;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
+    private JButton bSalir;
     private ImageIcon LogoKingsLeague;
 
 
@@ -59,6 +62,12 @@ public class vActualizarEquipo {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+        bSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.PrincipalAdmin();
             }
         });
     }

@@ -204,7 +204,11 @@ public class vPrincipalAdmin {
         jmiActualizarEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    Main.generarActualzarEquipos();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
