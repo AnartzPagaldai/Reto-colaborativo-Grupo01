@@ -179,11 +179,7 @@ public class vPrincipalAdmin {
         jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaInicio();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Main.cerrarSesion();
             }
         });
 
@@ -229,7 +225,11 @@ public class vPrincipalAdmin {
         jmiInsertarJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    Main.generarInsertarJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
@@ -243,7 +243,11 @@ public class vPrincipalAdmin {
         jmiBorrararJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    Main.generarBorrarJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 

@@ -4,6 +4,7 @@ import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
 import Modelo.Jugador.Jugador;
+import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
@@ -31,6 +32,8 @@ public class Main {
     public static JFrame vJugadores;
     public static JFrame vEquipoActualizar;
     public static JFrame vUsuario;
+    public static JFrame vInsertarJugadores;
+    public static JDialog vBorrarJugadores;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
@@ -71,7 +74,8 @@ public class Main {
     }
     public static void PrincipalAdmin() {
         actual.dispose();
-        vPrinicpalUsuario.setVisible(true);
+        vPrinicpalAdmin.setVisible(true);
+        vPrinicpalAdmin.setEnabled(true);
     }
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
@@ -159,6 +163,23 @@ public class Main {
         actual=vEquipoActualizar;
         vPrinicpalAdmin.setVisible(false);
     }
+    public static void generarInsertarJugadores() throws MalformedURLException {
+        vInsertarJugadores= new JFrame("vInsertarJugadores");
+        vInsertarJugadores.setContentPane(new vInsertarJugadores().getpPrincipal());
+        vInsertarJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarJugadores.pack();
+        vInsertarJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vInsertarJugadores.setVisible(true);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vInsertarJugadores;
+    }
+    public static void generarBorrarJugadores() throws MalformedURLException {
+        vBorrarJugadores= new vBorrarJugador();
+        vBorrarJugadores.pack();
+        vBorrarJugadores.setVisible(true);
+        vPrinicpalAdmin.setEnabled(false);
+    }
+
 
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
@@ -318,5 +339,31 @@ public class Main {
         usuario.setContrasena(contrasena);
         usuario=TUsuario.selectUsuarioDatos(usuario);
         return usuario;
+    }
+    public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+        boolean insertar;
+        Jugador jugador=new Jugador();
+        jugador.setNombre(nombre);
+        jugador.setApellidos(apellido);
+        jugador.setDni(dni);
+        jugador.setTipoPosicion(Jugador.TipoPosicion.valueOf(posicion.toString()));
+        jugador.setTipoJugador(Jugador.TipoJugador.valueOf(tipo.toString()));
+        jugador.setTelefono(telefono);
+        jugador.setImg(img);
+        jugador.setVelocidad(velocidad);
+        jugador.setFisico(fisico);
+        jugador.setDefensa(defensa);
+        jugador.setPase(pase);
+        jugador.setTiro(tiro);
+        jugador.setTalento(talento);
+        insertar=TJugador.insertar(jugador);
+        return insertar;
+    }
+    public static boolean borrarJugador(String dni){
+        boolean borrar;
+        Jugador jugador=new Jugador();
+        jugador.setDni(dni);
+        borrar=TJugador.eliminar(jugador);
+        return borrar;
     }
 }
