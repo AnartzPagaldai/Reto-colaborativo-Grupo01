@@ -53,8 +53,10 @@ public class BaseDeDatos {
         for (int i = 0; i < argumentos.length; i++) {
             if (argumentos[i] instanceof String) {
                 statement.setString(i + 1, (String) argumentos[i]);
-            } else if (argumentos[i] instanceof Integer) { // todo quiza hay que añadir mas tipos de datos SQLDate
+            } else if (argumentos[i] instanceof Integer) { // todo quiza hay que añadir mas tipos de datos
                 statement.setInt(i + 1, (Integer) argumentos[i]);
+            } else if (argumentos[i] instanceof Date) {
+                statement.setDate(i + 1,(Date) argumentos[i]);
             }
         }
         return statement;

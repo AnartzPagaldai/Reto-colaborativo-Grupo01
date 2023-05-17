@@ -10,6 +10,7 @@ import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
 import Modelo.XML.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
@@ -32,7 +33,7 @@ public class Main {
 
     public static JFrame vUsuario;
     public static Usuario u;
-    public static Equipo equipo=new Equipo();
+    public static Equipo equipo = new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Usuario usuarioInicio = new Usuario();
@@ -56,6 +57,7 @@ public class Main {
             throw new RuntimeException(e);
         }*/
     }
+
     public static void cerrarSesion() {
         actual.dispose();
         vInicio.setVisible(true);
@@ -65,6 +67,7 @@ public class Main {
         actual.dispose();
         vPrinicpal.setVisible(true);
     }
+
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,7 +113,7 @@ public class Main {
     }
 
     public static void generarVentanaEquipos() throws MalformedURLException {
-        vEquipos= new JFrame("vConsultarEquipos");
+        vEquipos = new JFrame("vConsultarEquipos");
         vEquipos.setContentPane(new vConsultarEquipos().getpPrincipal());
         vEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vEquipos.pack();
@@ -119,16 +122,16 @@ public class Main {
         vPrinicpal.setVisible(false);
         actual = vEquipos;
     }
-    
+
     public static void generarVentanaJugadores() throws MalformedURLException {
-        vJugadores= new JFrame("vConsultarJugadores");
+        vJugadores = new JFrame("vConsultarJugadores");
         vJugadores.setContentPane(new vConsultarJugadores().getpPrincipal());
         vJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vJugadores.pack();
         vJugadores.setVisible(true);
         vJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
         vEquipos.setVisible(false);
-        actual=vJugadores;
+        actual = vJugadores;
     }
 
     public static void generarVentanaAjustesUsuario() throws MalformedURLException {
@@ -139,7 +142,7 @@ public class Main {
         vUsuario.setVisible(true);
         vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpal.setVisible(false);
-        actual=vUsuario;
+        actual = vUsuario;
     }
 
     public static boolean selectUsuario(String nombre, String contrasena) {
@@ -152,7 +155,9 @@ public class Main {
             usuarioInicio = TUsuario.selectDatosUsuario(u);
         }
         return existe;
-    };
+    }
+
+    ;
 
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
         boolean existe;
@@ -200,81 +205,83 @@ public class Main {
     }
 
 
-    public static HashMap[] getClasificacion() {
+    public static HashMap<String, String>[] getClasificacion() {
         return XML.getClasificacion();
     }
 
     public static boolean generarJornada() {
-       return TJornada.generarJornadas();
+        return TJornada.generarJornadas();
     }
-    public static HashMap[] getJornadas() throws Exception{
+
+    public static void getJornadas() throws Exception {
         partidos = TJornada.getJornadas();
         if (partidos == null) {
             throw new Exception("error al leer desde jornadas");
         }
-        HashMap[] partidosMap = new HashMap[partidos.size()];
+    }
+
+    public static HashMap<String, String>[] getJornada(int numJornada) {
+        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).toList();
+        return dePartidosAhashmap((ArrayList<Partido>) partidoDeJornada);
+    }
+
+    public static HashMap<String, String>[] getUltimanJornada() {
+        return dePartidosAhashmap(TJornada.getUltimaJornada());
+    }
+
+    private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
+        HashMap<String, String>[] partidosMap = new HashMap[partidos.size()];
         for (int i = 0; i < partidos.size(); i++) {
-            partidosMap[i] = dePartidosAhashmap(partidos.get(i));
+            HashMap<String, String> partidoMap = new HashMap<>();
+            partidoMap.put("numJornada", String.valueOf(partidos.get(i).getJornada().getNumJornada()));
+            partidoMap.put("fecha", partidos.get(i).getFecha().toString());
+            partidoMap.put("nombre_equiop1", partidos.get(i).getEquipo1().getNombre());
+            partidoMap.put("nombre_equiop2", partidos.get(i).getEquipo2().getNombre());
+            partidoMap.put("logoEquipo1", partidos.get(i).getEquipo1().getLogoImg());
+            partidoMap.put("logoEquipo2", partidos.get(i).getEquipo2().getLogoImg());
+            if (partidos.get(i).getFecha().before(new Date())) {
+                partidoMap.put("golesEquipo1", String.valueOf(partidos.get(i).getGolesEquipo1()));
+                partidoMap.put("golesEquipo2", String.valueOf(partidos.get(i).getGolesEquipo2()));
+            } else {
+                partidoMap.put("golesEquipo1", "sin jugar");
+                partidoMap.put("golesEquipo2", "sin jugar");
+            }
+            partidosMap[i] = partidoMap;
         }
+
         return partidosMap;
     }
 
-    public static HashMap[] getJornada(int numJornada) {
-        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toList());
-        HashMap[] partidosMap = new HashMap[partidoDeJornada.size()];
-        for (int i = 0; i < partidoDeJornada.size(); i++) {
-            partidosMap[i] = dePartidosAhashmap(partidoDeJornada.get(i));
-        }
-        return partidosMap;
-    }
-    private static HashMap<String, String> dePartidosAhashmap(Partido partido) {
-        HashMap<String, String> partidoMap = new HashMap<>();
-        partidoMap.put("numJornada", String.valueOf(partido.getJornada().getNumJornada()));
-        partidoMap.put("fecha", partido.getFecha().toString());
-        partidoMap.put("nombre_equiop1", partido.getEquipo1().getNombre());
-        partidoMap.put("nombre_equiop2", partido.getEquipo2().getNombre());
-        partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
-        partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
-        if (partido.getFecha().before(new Date())) {
-            partidoMap.put("golesEquipo1", String.valueOf(partido.getGolesEquipo1()));
-            partidoMap.put("golesEquipo2", String.valueOf(partido.getGolesEquipo2()));
-        } else {
-            partidoMap.put("golesEquipo1", "sin jugar");
-            partidoMap.put("golesEquipo2", "sin jugar");
-        }
-        return partidoMap;
-    }
-    public static int getCantidadPersonas(){
-        return jugadoresInfome.size()+2;
+    public static int getCantidadPersonas() {
+        return jugadoresInfome.size() + 2;
     }
 
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
-        ArrayList equipos = new ArrayList<>();
-        TEquipo.selectAllEquipos(equipos);
-    return equipos;}
+        // no se puede pasar un objeto a la vista
+        return TEquipo.selectAllEquipos();
+    }
 
-    public static Equipo getEquipo(){
+    public static Equipo getEquipo() {
         return equipo;
     }
 
-    public static void setNombreEquipo(String nombre){
+    public static void setNombreEquipo(String nombre) {
         equipo.setNombre(nombre);
     }
-    public static String getNombreEquipo(){
+
+    public static String getNombreEquipo() {
         return equipo.getNombre();
     }
-    public static String buscarNombre()
-    {
+
+    public static String buscarNombre() {
         return usuarioInicio.getNombre();
     }
 
-    public static String buscarCorreo()
-    {
+    public static String buscarCorreo() {
         return usuarioInicio.getCorreo();
     }
 
-    public static String buscarContrasena()
-    {
+    public static String buscarContrasena() {
         return usuarioInicio.getContrasena();
     }
 
@@ -282,11 +289,11 @@ public class Main {
         TUsuario.updateUsuario(usuarioAntes, usuarioActual);
     }
 
-    public static Usuario getUsuarioAntes(String nombre, String contrasena){
-        Usuario usuarioAntes=new Usuario();
+    public static Usuario getUsuarioAntes(String nombre, String contrasena) {
+        Usuario usuarioAntes = new Usuario();
         usuarioAntes.setNombre(nombre);
         usuarioAntes.setContrasena(contrasena);
-        usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
+        usuarioAntes = TUsuario.selectUsuarioDatos(usuarioAntes);
         return usuarioAntes;
     }
 }

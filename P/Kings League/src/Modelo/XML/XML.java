@@ -12,10 +12,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.sql.CallableStatement;
-import java.sql.Clob;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.HashMap;
 
 public class XML {
@@ -27,6 +24,20 @@ public class XML {
     public static void generarXMLclasificacion() {
         generarXML("GENERAR_XML_CLASIFICACION()");
         getXML("xml_clasificacion", "clasificacion.xml");
+    }
+
+    public static void generarXMlultimaJornada() {
+        try {
+            BaseDeDatos.abrirConexion();
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{ call PAQUETE_XML.GENERARA_XML_ULTIMA_JORNADA(?)}");
+            Clob xml = BaseDeDatos.getCon().createClob();
+            statement.setClob(1, xml);
+            statement.execute();
+            escribirXML(xml, "ultimaJornada.xml");
+            BaseDeDatos.cerrarConexion();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static void generarXML(String procedure) {
@@ -47,15 +58,7 @@ public class XML {
             ResultSet resultado = statement.executeQuery();
             if (resultado.next()) {
                 Clob xml = resultado.getClob("resul");
-                BufferedReader reader = new BufferedReader(xml.getCharacterStream());
-                String line;
-                StringBuilder content = new StringBuilder();
-                while ((line = reader.readLine()) != null) {
-                    content.append(line);
-                }
-                BufferedWriter fichero = new BufferedWriter(new FileWriter("src/Modelo/XML/" + archivo));
-                fichero.write(String.valueOf(content));
-                fichero.close();
+                escribirXML(xml, archivo);
             }
             BaseDeDatos.cerrarConexion();
         } catch (Exception e) {
@@ -64,9 +67,21 @@ public class XML {
         }
     }
 
-    public static HashMap[] getClasificacion() {
+    private static void escribirXML(Clob xml, String archivo) throws Exception {
+        BufferedReader reader = new BufferedReader(xml.getCharacterStream());
+        String line;
+        StringBuilder content = new StringBuilder();
+        while ((line = reader.readLine()) != null) {
+            content.append(line);
+        }
+        BufferedWriter fichero = new BufferedWriter(new FileWriter("src/Modelo/XML/" + archivo));
+        fichero.write(String.valueOf(content));
+        fichero.close();
+    }
+
+    public static HashMap<String, String>[] getClasificacion() {
         try {
-            HashMap[] clasificacion = new HashMap[12];
+            HashMap<String, String>[] clasificacion = new HashMap[12];
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document documento = dBuilder.parse(new File("src/Modelo/XML/clasificacion.xml"));
@@ -93,11 +108,5 @@ public class XML {
         }
     }
 
-    public static void generarXMlultimaJornada() { // ultimoma jornada que se alla jugado
-        try {
-           // StringBuilder xml =
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 }

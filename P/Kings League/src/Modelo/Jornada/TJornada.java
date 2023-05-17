@@ -8,7 +8,9 @@ import javax.xml.parsers.DocumentBuilder;
 import Modelo.Equipo.TEquipo;
 import Modelo.Partido.Partido;
 
+import Modelo.Partido.TPartido;
 import Modelo.Split.TSplit;
+import Modelo.XML.XML;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -18,17 +20,40 @@ import java.sql.CallableStatement;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class TJornada {
 
     public static ArrayList<Partido> getJornadas() {
+        return getJornadas("jornadas.xml");
+    }
+
+    public static ArrayList<Partido> getUltimaJornada() {
+        return getJornadas("ultimaJornada.xml");
+    }
+
+    public static boolean generarJornadas() {
         try {
-            Jornada[] jornadas = new Jornada[11];
+            BaseDeDatos.abrirConexion();
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.GENERAR_ENFRENTAMIENTOS");
+            statement.execute();
+            BaseDeDatos.cerrarConexion();
+            return true;
+        } catch (Exception e) {
+            generarJornadas(); // todo especificar el error. Por si el error es que no se a creado split
+        }
+        return false;
+    }
+
+
+    private static ArrayList<Partido> getJornadas(String archivo) {
+        try {
+            Jornada[] jornadas = new Jornada[14];
             ArrayList<Partido> partidos = new ArrayList<>();
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document documento = dBuilder.parse(new File("src/Modelo/XML/jornadas.xml"));
+            Document documento = dBuilder.parse(new File("src/Modelo/XML/" + archivo));
             Element root = documento.getDocumentElement();
 
             NodeList listaJornada = root.getElementsByTagName("jornada");
@@ -67,17 +92,26 @@ public class TJornada {
         return null;
     }
 
-    public static boolean generarJornadas() {
-        try {
-            BaseDeDatos.abrirConexion();
-            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.GENERAR_ENFRENTAMIENTOS");
-            statement.execute();
-            BaseDeDatos.cerrarConexion();
-            return true;
-        } catch (Exception e) {
-            generarJornadas(); // todo especificar el error. Por si el error es que no se a creado split
+    public static boolean insertarJornada(Jornada jornada) {
+        return BaseDeDatos.executeUpdate("insert into jornadas (num_jornada, tipo, id_spit) values (?,?,?)",
+                new Object[]{jornada.getNumJornada(), jornada.getTipoJornada(), jornada.getSplit().getId()});
+    }
+
+    public static void crearPlayOff() throws Exception {
+        Partido partido = getUltimaJornada().get(0);
+        if (partido.getJornada().getNumJornada() < 11) {
+            throw new Exception("no se puede crear playoff sin que se alla jugado la ultima jornada normal");
         }
-        return false;
+        HashMap<String, String>[] equipos = XML.getClasificacion();
+        if (insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.valueOf("PLAYOFF"), partido.getJornada().getSplit())))
+            throw new Exception("no se a insertado la jornada");
+        for (int i = 0, f = equipos.length - 1; i < f; i++, f--) {
+            if (TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partido.getFecha().toLocalDate().plusDays(7)),
+                    "Cupra Arena",
+                    TEquipo.getEquipoPorNombre(equipos[i].get("nombre_equipo")),
+                    TEquipo.getEquipoPorNombre(equipos[f].get("nombre_equipo")))))
+                throw new Exception("no se an podido insertar todo los partido");
+        }
     }
 
 }
