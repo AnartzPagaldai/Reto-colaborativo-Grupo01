@@ -5,6 +5,7 @@ import Modelo.BaseDeDatos.BaseDeDatos;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 
+import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Partido.Partido;
 
@@ -99,18 +100,43 @@ public class TJornada {
 
     public static void crearPlayOff() throws Exception {
         Partido partido = getUltimaJornada().get(0);
-        if (partido.getJornada().getNumJornada() < 11) {
-            throw new Exception("no se puede crear playoff sin que se alla jugado la ultima jornada normal");
-        }
+        conprbarEinsertarJornadaPlayoff(partido);
         HashMap<String, String>[] equipos = XML.getClasificacion();
-        if (insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.valueOf("PLAYOFF"), partido.getJornada().getSplit())))
-            throw new Exception("no se a insertado la jornada");
         for (int i = 0, f = equipos.length - 1; i < f; i++, f--) {
             if (TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partido.getFecha().toLocalDate().plusDays(7)),
                     "Cupra Arena",
                     TEquipo.getEquipoPorNombre(equipos[i].get("nombre_equipo")),
                     TEquipo.getEquipoPorNombre(equipos[f].get("nombre_equipo")))))
                 throw new Exception("no se an podido insertar todo los partido");
+        }
+    }
+
+    public static void crearSiguienteJornadaPlayoff() throws Exception {
+        ArrayList<Partido> partidos = getUltimaJornada();
+        conprbarEinsertarJornadaPlayoff(partidos.get(0));
+        for (int i = 0; i < partidos.size() - 1; i++) {
+            Equipo ganador1 = setGanador(partidos.get(i));
+            Equipo ganador2 = setGanador(partidos.get(i + 1));
+            if (TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partidos.get(i).getFecha().toLocalDate().plusDays(7)),
+                    "Cupra Arena",ganador1, ganador2)))
+                throw new Exception("no se an podido insertar todo los partido");
+        }
+
+    }
+
+    private static void conprbarEinsertarJornadaPlayoff(Partido partido) throws Exception {
+        if (partido.getJornada().getNumJornada() < 11)
+            throw new Exception("no se puede crear playoff sin que se alla jugado la ultima jornada normal");
+
+        if (insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.valueOf("PLAYOFF"), partido.getJornada().getSplit())))
+            throw new Exception("no se a insertado la jornada");
+    }
+
+    private static Equipo setGanador(Partido partido) {
+        if (partido.getGolesEquipo1() > partido.getGolesEquipo2()) {
+            return partido.getEquipo1();
+        } else {
+            return partido.getEquipo2();
         }
     }
 
