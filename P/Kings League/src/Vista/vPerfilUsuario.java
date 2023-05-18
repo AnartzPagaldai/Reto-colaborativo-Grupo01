@@ -24,11 +24,7 @@ public class vPerfilUsuario {
 
     private JPanel pPrincipal;
     private JPanel pDegradado;
-    private JLabel fTwitch;
-    private JLabel fInstagram;
-    private JLabel fTwitter;
     private JLabel jlImagenUsuario;
-    private JLabel jlLogoKingsLeague;
     private JTextField tfNombre;
     private JTextField tfCorreo;
     private JPasswordField pfContrasena;
@@ -52,9 +48,7 @@ public class vPerfilUsuario {
         pfContrasena.setText(Main.buscarContrasena());
         usuarioAntes =Main.getUsuario(tfNombre.getText(), tfCorreo.getText());
 
-
-
-
+            // Poner fondo degradado
             pPrincipal = new JPanel() {
                 @Override
                 protected void paintComponent(Graphics g) {
@@ -77,37 +71,22 @@ public class vPerfilUsuario {
 
 
                 }
-            }
-
-            ;
+            };
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
-            // Poner la imagen del usuario
-            imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
-            Image imgUsuario = imagenUsuario.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-            ImageIcon UsuIcono = new ImageIcon(imgUsuario);
-            jlImagenUsuario.setIcon(UsuIcono);
-
-
-
-
-
-
 
         // Poner la imagen del usuario
-        /*
-        imagenIbai = new ImageIcon(new URL("https://kingsleague.pro/wp-content/uploads/2022/12/IBAI-LLANOS-PORCINOS-FC.png"));
-        Image imgIbai = imagenIbai.getImage().getScaledInstance(416, 600, Image.SCALE_SMOOTH);
-        ImageIcon ibaiicono = new ImageIcon(imgIbai);
-        JLIbai.setIcon(ibaiicono);
+        imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
+        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
+        jlImagenUsuario.setIcon(UsuIcono);
 
-        Poner la imagen en un botón, y cuando se le clique que aparezcan posibles opciones diferentes abajo [+ la actual]
-        (al clicar cada imagen la de arriba se cambiará. Todas son sacadas con enlace de google)
-         */
+
+
 
         bAceptarCambios.addActionListener(new ActionListener() {
             @Override
@@ -117,14 +96,14 @@ public class vPerfilUsuario {
                 try {
                 if (!correoCorrecto){
                     try {
-                        throw new Exception("El correo no es valido");
+                        throw new Exception("El correo no es válido.");
                     } catch (Exception exc) {
                         throw new RuntimeException(exc);
                     }
                 }
                     if (tfCorreo.getText().isEmpty() || tfNombre.getText().isEmpty()|| pfContrasena.getText().isEmpty()){
                         try {
-                            throw new Exception("No pueden haber campos vacios");
+                            throw new Exception("No puede haber campos vacíos.");
                         } catch (Exception exc) {
                             throw new RuntimeException(exc);
                         }
@@ -135,12 +114,12 @@ public class vPerfilUsuario {
                         pfContrasena.setText(usuarioActu.getContrasena());
                         tfNombre.setBackground(new Color(255, 233, 176));
                         tfCorreo.setBackground(new Color(255, 233, 176));
-                        JOptionPane.showMessageDialog(null, "Usuario actualizado correctamente");
+                        JOptionPane.showMessageDialog(null, "Usuario actualizado correctamente.");
                     }else {
                         tfNombre.setBackground(Color.red);
                         tfCorreo.setBackground(Color.red);
                         try {
-                            throw new Exception("Ya hay un usuario con el mismo nombre o email");
+                            throw new Exception("Ya hay un usuario con el mismo nombre o email.");
                         } catch (Exception exc) {
                             throw new RuntimeException(exc);
                         }
@@ -167,20 +146,30 @@ public class vPerfilUsuario {
         });
     }
 
+    public void validarCorreo(){
+        Pattern pattern = Pattern.compile(PATRONEMAIL);
+        Matcher matcher = pattern.matcher(tfCorreo.getText());
+        if (!matcher.matches()){
+            correoCorrecto=false;
+            tfCorreo.setBackground(Color.red);
+        }else {
+            tfCorreo.setBackground(Color.green);
+            correoCorrecto=true;
+        }
+    }
+
+
     public JPanel getpPrincipal() {
         return pPrincipal;
     }
-    public void validarCorreo(){
-            Pattern pattern = Pattern.compile(PATRONEMAIL);
-            Matcher matcher = pattern.matcher(tfCorreo.getText());
-            if (!matcher.matches()){
-                correoCorrecto=false;
-                tfCorreo.setBackground(Color.red);
-            }else {
-                tfCorreo.setBackground(Color.green);
-                correoCorrecto=true;
-            }
-        }
 
+    public static void main(String[] args) throws MalformedURLException {
+        JFrame frame = new JFrame("vPerfilUsuario");
+        frame.setContentPane(new vPerfilUsuario().pPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
+}
