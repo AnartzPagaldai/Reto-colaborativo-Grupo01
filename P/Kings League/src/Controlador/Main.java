@@ -34,6 +34,7 @@ public class Main {
     public static JFrame vUsuario;
     public static JFrame vInsertarJugadores;
     public static JDialog vBorrarJugadores;
+    public static JFrame vClasificacion;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
@@ -179,6 +180,16 @@ public class Main {
         vBorrarJugadores.setVisible(true);
         vPrinicpalAdmin.setEnabled(false);
     }
+    public static void generarVentanaClasificacion() throws MalformedURLException {
+        vClasificacion= new JFrame("vClasificacionEquipos");
+        vClasificacion.setContentPane(new vClasificacionEquipos().getpPrincipal());
+        vClasificacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vClasificacion.pack();
+        vClasificacion.setVisible(true);
+        vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalUsuario.setVisible(false);
+        actual=vClasificacion;
+    }
 
 
     public static boolean selectUsuario(String nombre, String contrasena) {
@@ -295,7 +306,8 @@ public class Main {
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
         ArrayList equipos = new ArrayList<>();
         TEquipo.selectAllEquipos(equipos);
-    return equipos;}
+        return equipos;
+    }
 
     public static Equipo getEquipo(){
         return equipo;

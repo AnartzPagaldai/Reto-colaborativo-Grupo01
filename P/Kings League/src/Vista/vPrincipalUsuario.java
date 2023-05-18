@@ -228,6 +228,16 @@ public class  vPrincipalUsuario {
                 }
             }
         });
+        mClasificacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaClasificacion();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
     public JPanel getpPrincipal() {
