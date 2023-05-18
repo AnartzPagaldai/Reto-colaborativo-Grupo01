@@ -32,7 +32,6 @@ public class  vPrincipalUsuario {
     private JMenuBar jmheader;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
     private JMenu mClasificacion;
@@ -43,6 +42,7 @@ public class  vPrincipalUsuario {
     private JLabel fTwitter;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiClasi;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
     private JLabel jlImagenFran;
@@ -139,18 +139,7 @@ public class  vPrincipalUsuario {
                 mEquipos.setOpaque(false);
             }
         });
-        mJugadores.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mJugadores.setBackground(Color.orange);
-                mJugadores.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mJugadores.setBackground(UIManager.getColor("Menu.background"));
-                mJugadores.setOpaque(false);
-            }
-        });
+
         mClasificacion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -223,6 +212,16 @@ public class  vPrincipalUsuario {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.generarVentanaAjustesUsuario();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        jmiClasi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaClasificacion();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }

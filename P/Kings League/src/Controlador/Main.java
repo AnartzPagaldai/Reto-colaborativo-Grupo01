@@ -5,6 +5,7 @@ import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
 import Modelo.Jugador.Jugador;
+import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
@@ -33,6 +34,9 @@ public class Main {
     public static JFrame vJugadores;
     public static JFrame vEquipoActualizar;
     public static JFrame vUsuario;
+    public static JFrame vInsertarJugadores;
+    public static JDialog vBorrarJugadores;
+    public static JFrame vClasificacion;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
@@ -44,7 +48,8 @@ public class Main {
     private static ArrayList<Partido> partidos;
 
     public static void main(String[] args) throws MalformedURLException {
-        //generarVentanaInicio();
+        generarVentanaInicio();
+        //TJornada.generarJornadas();
         /*try {
             HashMap[] mp = getJornadas();
             for (HashMap hashMap : mp) {
@@ -75,9 +80,8 @@ public class Main {
     public static void PrincipalAdmin() {
         actual.dispose();
         vPrinicpalAdmin.setVisible(true);
+        vPrinicpalAdmin.setEnabled(true);
     }
-
-    // Crear ventanas
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -164,8 +168,34 @@ public class Main {
         actual=vEquipoActualizar;
         vPrinicpalAdmin.setVisible(false);
     }
+    public static void generarInsertarJugadores() throws MalformedURLException {
+        vInsertarJugadores= new JFrame("vInsertarJugadores");
+        vInsertarJugadores.setContentPane(new vInsertarJugadores().getpPrincipal());
+        vInsertarJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarJugadores.pack();
+        vInsertarJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vInsertarJugadores.setVisible(true);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vInsertarJugadores;
+    }
+    public static void generarBorrarJugadores() throws MalformedURLException {
+        vBorrarJugadores= new vBorrarJugador();
+        vBorrarJugadores.pack();
+        vBorrarJugadores.setVisible(true);
+        vPrinicpalAdmin.setEnabled(false);
+    }
+    public static void generarVentanaClasificacion() throws MalformedURLException {
+        vClasificacion= new JFrame("vClasificacionEquipos");
+        vClasificacion.setContentPane(new vClasificacionEquipos().getpPrincipal());
+        vClasificacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vClasificacion.pack();
+        vClasificacion.setVisible(true);
+        vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalUsuario.setVisible(false);
+        actual=vClasificacion;
+    }
 
-    // Crear métodos para CRUD
+
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
@@ -234,14 +264,13 @@ public class Main {
     }
 
     public static boolean generarJornada() {
-        // todo: verificar que se ha creado split
-        return TJornada.generarJornadas();
+       return TJornada.generarJornadas();
     }
     public static ArrayList<Integer> getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
-            throw new Exception("Error al leer desde jornadas.");
+            throw new Exception("error al leer desde jornadas");
         }
         for (int x = 0; x< partidos.size(); x += 6) {
             NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
@@ -280,13 +309,11 @@ public class Main {
     }
 
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
-        // no se pueden pasar objetos a la vista
-        return TEquipo.selectAllEquipos();
-   }
+        ArrayList equipos = new ArrayList<>();
+        TEquipo.selectAllEquipos(equipos);
+        return equipos;
+    }
 
-   public static void crearPlayOff() throws Exception {
-        TJornada.crearPlayOff();
-   }
     public static Equipo getEquipo(){
         return equipo;
     }
@@ -329,6 +356,32 @@ public class Main {
         usuario.setContrasena(contrasena);
         usuario=TUsuario.selectUsuarioDatos(usuario);
         return usuario;
+    }
+    public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+        boolean insertar;
+        Jugador jugador=new Jugador();
+        jugador.setNombre(nombre);
+        jugador.setApellidos(apellido);
+        jugador.setDni(dni);
+        jugador.setTipoPosicion(Jugador.TipoPosicion.valueOf(posicion.toString()));
+        jugador.setTipoJugador(Jugador.TipoJugador.valueOf(tipo.toString()));
+        jugador.setTelefono(telefono);
+        jugador.setImg(img);
+        jugador.setVelocidad(velocidad);
+        jugador.setFisico(fisico);
+        jugador.setDefensa(defensa);
+        jugador.setPase(pase);
+        jugador.setTiro(tiro);
+        jugador.setTalento(talento);
+        insertar=TJugador.insertar(jugador);
+        return insertar;
+    }
+    public static boolean borrarJugador(String dni){
+        boolean borrar;
+        Jugador jugador=new Jugador();
+        jugador.setDni(dni);
+        borrar=TJugador.eliminar(jugador);
+        return borrar;
     }
             public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2)
             {

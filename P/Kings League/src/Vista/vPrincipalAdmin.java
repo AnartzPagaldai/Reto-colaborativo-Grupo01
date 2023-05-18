@@ -177,6 +177,88 @@ public class vPrincipalAdmin {
 
 
 
+        jmiCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.cerrarSesion();
+            }
+        });
+
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO : poner código necesario
+            }
+        });
+
+        jmiInsertarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiActualizarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarActualzarEquipos();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jmiBorrarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiConsultarJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiInsertarJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarInsertarJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jmiActualizarJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jmiBorrararJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarBorrarJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jmiConsultarPartidos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
         mClasificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

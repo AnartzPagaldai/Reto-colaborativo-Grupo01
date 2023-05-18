@@ -87,28 +87,29 @@ public class XML {
 
     public static HashMap<String, String>[] getClasificacion() {
         try {
-            HashMap<String, String>[] clasificacion = new HashMap[12];
+            HashMap<String, String>[] clasificacion = new HashMap[13];
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document documento = dBuilder.parse(new File("src/Modelo/XML/clasificacion.xml"));
             Element root = documento.getDocumentElement();
-
+            HashMap<String, String>split = new HashMap<>();
+            split.put("split", root.getAttribute("split"));
+            clasificacion[0]=split;
             NodeList listaEquipos = root.getElementsByTagName("equipo");
             for (int i = 0; i < listaEquipos.getLength(); i++) {
                 HashMap<String, String> equipo = new HashMap<>();
                 Element tagEquipo = (Element) listaEquipos.item(i);
                 equipo.put("posicion", tagEquipo.getAttribute("posicion"));
                 equipo.put("nombre_equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
-                Equipo equipo1 = TEquipo.getEquipoPorNombre(equipo.get("nombre_equipo"));
-                System.out.println(equipo.get("nombre_equipo"));
-                equipo.put("logoImg", equipo1.getLogoImg());
+                equipo.put("logoImg", TEquipo.getEquipoPorNombre(equipo.get("nombre_equipo")).getLogoImg());
                 equipo.put("victorias", tagEquipo.getElementsByTagName("victorias").item(0).getTextContent());
                 equipo.put("golesAfavor", tagEquipo.getElementsByTagName("goles_a_favor").item(0).getTextContent());
                 equipo.put("golesEnContra", tagEquipo.getElementsByTagName("goles_en_contra").item(0).getTextContent());
                 equipo.put("diferenciaDeGoles", tagEquipo.getElementsByTagName("diferencia_de_goles").item(0).getTextContent());
 
-                clasificacion[i] = equipo;
+                clasificacion[i+1] = equipo;
             }
+
             return clasificacion;
         } catch (Exception e) {
             e.printStackTrace();

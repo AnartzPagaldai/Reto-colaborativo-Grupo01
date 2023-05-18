@@ -52,11 +52,10 @@ public class TEquipo {
     }
 
 
-    public static ArrayList<Equipo> selectAllEquipos() throws SQLException {
+    public static ArrayList<Equipo> selectAllEquipos(ArrayList equipos) throws SQLException {
         BaseDeDatos.abrirConexion();
         PreparedStatement ps = BaseDeDatos.getCon().prepareStatement("select nombre, logo_img, color from equipos");
         ResultSet resul = ps.executeQuery();
-        ArrayList<Equipo> equipos = new ArrayList<>();
         while (resul.next()) {
             Equipo equipo = new Equipo();
             equipo.setNombre(resul.getString("nombre"));

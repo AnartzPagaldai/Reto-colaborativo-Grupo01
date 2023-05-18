@@ -121,6 +121,9 @@ public class vClasificacionEquipos {
     private JLabel diferencia10;
     private JLabel diferencia11;
     private JLabel diferencia12;
+    private JLabel lSplit;
+    private JPanel pSplit;
+    private JMenuItem jmiClasi;
     private ImageIcon LogoKingsLeague;
     private ImageIcon imagenTwitch;
     private ImageIcon imagenInstagram;
@@ -144,11 +147,58 @@ public class vClasificacionEquipos {
         logos.add(logo10);
         logos.add(logo11);
         logos.add(logo12);
-        for (int x=0; x<logos.size(); x++){
-            logoEquipo = new ImageIcon(new URL(equipos[x].get("logoImg")));
-            Image LogoEqu = logoEquipo.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
+
+        ArrayList<JLabel> posicion=new ArrayList<>();
+        posicion.add(posicion1);
+        posicion.add(posicion2);
+        posicion.add(posicion3);
+        posicion.add(posicion4);
+        posicion.add(posicion5);
+        posicion.add(posicion6);
+        posicion.add(posicion7);
+        posicion.add(posicion8);
+        posicion.add(posicion9);
+        posicion.add(posicion10);
+        posicion.add(posicion11);
+        posicion.add(posicion12);
+
+        ArrayList<JLabel> nombres=new ArrayList<>();
+        nombres.add(equipo1);
+        nombres.add(equipo2);
+        nombres.add(equipo3);
+        nombres.add(equipo4);
+        nombres.add(equipo5);
+        nombres.add(equipo6);
+        nombres.add(equipo7);
+        nombres.add(equipo8);
+        nombres.add(equipo9);
+        nombres.add(equipo10);
+        nombres.add(equipo11);
+        nombres.add(equipo12);
+
+        ArrayList<JLabel> victorias=new ArrayList<>();
+        victorias.add(victoria1);
+        victorias.add(victoria2);
+        victorias.add(victoria3);
+        victorias.add(victoria4);
+        victorias.add(victoria5);
+        victorias.add(victoria6);
+        victorias.add(victoria7);
+        victorias.add(victoria8);
+        victorias.add(victoria9);
+        victorias.add(victoria10);
+        victorias.add(victoria11);
+        victorias.add(victoria12);
+
+        lSplit.setText(equipos[0].get("split"));
+        for (int x=0; x<equipos.length-1; x++){
+            posicion.get(x).setText(equipos[x+1].get("posicion"));
+            logoEquipo = new ImageIcon(new URL(equipos[x+1].get("logoImg")));
+            Image LogoEqu = logoEquipo.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
             ImageIcon iconEq = new ImageIcon(LogoEqu);
             logos.get(x).setIcon(iconEq);
+            nombres.get(x).setText(equipos[x+1].get("nombre_equipo"));
+            victorias.get(x).setText(equipos[x+1].get("victorias"));
         }
         pPrincipal = new JPanel(new BorderLayout());
 
@@ -273,18 +323,18 @@ public class vClasificacionEquipos {
         jmiVerPerfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO : poner que aparezca la ventana "vPerfilUsuario"
+                try {
+                    Main.generarVentanaAjustesUsuario();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
         jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaInicio();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Main.cerrarSesion();
             }
         });
 
@@ -302,10 +352,10 @@ public class vClasificacionEquipos {
             }
         });
 
-        cbSplit.addActionListener(new ActionListener() {
+        jmiPrincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Main.PrincipalUsuario();
             }
         });
 

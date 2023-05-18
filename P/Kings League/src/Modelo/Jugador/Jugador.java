@@ -10,7 +10,7 @@ public class Jugador implements ResultSetObjeto {
     private String nombre;
     private String apellidos;
     private String dni;
-    private int telefono;
+    private String telefono;
     private TipoPosicion tipoPosicion;
 
     public enum TipoPosicion{
@@ -21,7 +21,7 @@ public class Jugador implements ResultSetObjeto {
     }
     private String img;
     private TipoJugador tipoJugador;
-    private enum TipoJugador{
+    public enum TipoJugador{
         DRAFT,
         WILDCARD;
     }
@@ -67,11 +67,11 @@ public class Jugador implements ResultSetObjeto {
         this.dni = dni;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
