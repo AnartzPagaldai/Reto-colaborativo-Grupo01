@@ -71,8 +71,10 @@ public class Main {
     }
     public static void PrincipalAdmin() {
         actual.dispose();
-        vPrinicpalUsuario.setVisible(true);
+        vPrinicpalAdmin.setVisible(true);
     }
+
+    // Crear ventanas
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -160,6 +162,7 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
     }
 
+    // Crear métodos para CRUD
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
@@ -228,13 +231,13 @@ public class Main {
     }
 
     public static boolean generarJornada() {
-        // todo verivicar que se a creado split
+        // todo: verificar que se ha creado split
         return TJornada.generarJornadas();
     }
     public static HashMap[] getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
         if (partidos == null) {
-            throw new Exception("error al leer desde jornadas");
+            throw new Exception("Error al leer desde jornadas.");
         }
         HashMap[] partidosMap = new HashMap[partidos.size()];
         for (int i = 0; i < partidos.size(); i++) {
@@ -323,4 +326,5 @@ public class Main {
         usuario=TUsuario.selectUsuarioDatos(usuario);
         return usuario;
     }
+
 }
