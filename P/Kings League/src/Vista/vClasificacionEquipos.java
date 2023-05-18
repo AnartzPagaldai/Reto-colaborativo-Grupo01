@@ -28,7 +28,6 @@ public class vClasificacionEquipos {
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
     private JMenu mClasificacion;
@@ -269,18 +268,6 @@ public class vClasificacionEquipos {
                 mEquipos.setOpaque(false);
             }
         });
-        mJugadores.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mJugadores.setBackground(Color.orange);
-                mJugadores.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mJugadores.setBackground(UIManager.getColor("Menu.background"));
-                mJugadores.setOpaque(false);
-            }
-        });
         mClasificacion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -303,6 +290,18 @@ public class vClasificacionEquipos {
             public void mouseExited(MouseEvent e) {
                 mPartidos.setBackground(UIManager.getColor("Menu.background"));
                 mPartidos.setOpaque(false);
+            }
+        });
+        jmInicio.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+               jmInicio.setBackground(Color.orange);
+               jmInicio.setOpaque(true);
+            }
+            @Override
+            public void mouseExited(MouseEvent e) {
+                jmInicio.setBackground(UIManager.getColor("Menu.background"));
+                jmInicio.setOpaque(false);
             }
         });
         mUsuario.addMouseListener(new MouseAdapter() {
@@ -341,7 +340,7 @@ public class vClasificacionEquipos {
         jmiConsultarEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO : poner código necesario
+                Main.vEquipos();
             }
         });
 

@@ -383,18 +383,16 @@ public class Main {
         borrar=TJugador.eliminar(jugador);
         return borrar;
     }
-            public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2)
-            {
-                Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
-                Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
-                Partido elPartido = new Partido();
-                elPartido.setEquipo1(equ1);
-                elPartido.setEquipo2(equ2);
-                elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
-                elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
-                TPartido.actualizarPartido(elPartido);
-
-                boolean valido = true;
-
-                return valido;}
+    public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2) {
+        Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
+        Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
+        Partido elPartido = new Partido();
+        elPartido.setEquipo1(equ1);
+        elPartido.setEquipo2(equ2);
+        elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
+        elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
+        TPartido.actualizarPartido(elPartido);
+        boolean valido = true;
+        return valido;
+    }
 }
