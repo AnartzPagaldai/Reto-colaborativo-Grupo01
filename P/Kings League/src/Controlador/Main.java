@@ -47,6 +47,7 @@ public class Main {
 
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
+        //TJornada.generarJornadas();
         /*try {
             HashMap[] mp = getJornadas();
             for (HashMap hashMap : mp) {

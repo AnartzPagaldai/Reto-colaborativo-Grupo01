@@ -123,6 +123,7 @@ public class vClasificacionEquipos {
     private JLabel diferencia12;
     private JLabel lSplit;
     private JPanel pSplit;
+    private JMenuItem jmiClasi;
     private ImageIcon LogoKingsLeague;
     private ImageIcon imagenTwitch;
     private ImageIcon imagenInstagram;
