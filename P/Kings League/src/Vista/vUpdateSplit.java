@@ -71,6 +71,10 @@ public class vUpdateSplit {
     }
 
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
+    
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vUpdateSplit");
         frame.setContentPane(new vUpdateSplit().pPrincipal);

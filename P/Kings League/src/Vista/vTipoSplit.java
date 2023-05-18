@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class vTipoSplit extends JDialog {
-    private JPanel contentPane;
+    private JPanel pPrincipal;
     private JButton buttonOK;
     private JRadioButton rbInvierno;
     private JRadioButton rbVerano;
@@ -12,7 +12,7 @@ public class vTipoSplit extends JDialog {
     private JButton buttonCancel;
 
     public vTipoSplit() {
-        setContentPane(contentPane);
+        setContentPane(pPrincipal);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
@@ -37,7 +37,7 @@ public class vTipoSplit extends JDialog {
         });
 
         // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
+        pPrincipal.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -46,12 +46,16 @@ public class vTipoSplit extends JDialog {
 
     private void onOK() {
         // add your code here
-        dispose();
+
     }
 
     private void onCancel() {
-        // add your code here if necessary
         dispose();
+    }
+
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
     }
 
     public static void main(String[] args) {
