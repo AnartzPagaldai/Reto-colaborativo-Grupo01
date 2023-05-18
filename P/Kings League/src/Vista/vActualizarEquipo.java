@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -61,6 +63,14 @@ public class vActualizarEquipo {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
+
+        tfNombre.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                // TODO: poner que compruebe si existe el nombre y si existe; rellenar los otros campos con los datos existentes
+            }
+        });
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,6 +89,7 @@ public class vActualizarEquipo {
                 Main.PrincipalAdmin();
             }
         });
+
     }
 
 

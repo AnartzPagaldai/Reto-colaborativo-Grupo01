@@ -1,5 +1,7 @@
 package Vista;
 
+import Controlador.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -77,12 +79,11 @@ public class vBorrarEquipo extends JDialog {
 
 
     private void onOK() {
-        // add your code here
-
+        // todo: validar que existe el equipo y borrarlo + si va bien sacar mensaje
     }
 
     private void onCancel() {
-        dispose();
+        Main.PrincipalAdmin();
     }
 
     public JPanel getpPrincipal() {
