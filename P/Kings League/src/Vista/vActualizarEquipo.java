@@ -25,9 +25,12 @@ public class vActualizarEquipo {
     private JLabel fLogoKingsLeague;
     private JButton bSalir;
     private ImageIcon LogoKingsLeague;
+    private boolean correcto;
 
 
     public vActualizarEquipo() throws MalformedURLException {
+
+        // Poner fondo degradado
         pPrincipal = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -61,6 +64,12 @@ public class vActualizarEquipo {
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // todo: validar datos
+                if (correcto){
+                    tfNombre.setText("");
+                    tfPresupuesto.setText("");
+                    tfImagen.setText("");
+                }
 
             }
         });
