@@ -9,6 +9,7 @@ import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
+import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
@@ -281,8 +282,8 @@ public class Main {
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
-        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).toList();
-        return dePartidosAhashmap((ArrayList<Partido>) partidoDeJornada);
+        ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
+        return dePartidosAhashmap(partidoDeJornada);
     }
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
         ArrayList<HashMap<String, String>> partidosMap = new ArrayList<>();
@@ -383,16 +384,35 @@ public class Main {
         borrar=TJugador.eliminar(jugador);
         return borrar;
     }
-    public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2) {
-        Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
-        Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
-        Partido elPartido = new Partido();
-        elPartido.setEquipo1(equ1);
-        elPartido.setEquipo2(equ2);
-        elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
-        elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
-        TPartido.actualizarPartido(elPartido);
-        boolean valido = true;
-        return valido;
+            public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2)
+            {
+                Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
+                Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
+                Partido elPartido = new Partido();
+                elPartido.setEquipo1(equ1);
+                elPartido.setEquipo2(equ2);
+                elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
+                elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
+                TPartido.actualizarPartido(elPartido);
+
+                boolean valido = true;
+
+                return valido;}
+
+    public static void crearSplit(String tipoSlit) {
+        TSplit.crearSplit(tipoSlit);
+    }
+
+    public static void generarXml() {
+        XML.generarXMLjornadas();
+        //XML.generarXml
+    }
+
+    public static void crearPlayOff() throws Exception {
+        TJornada.crearPlayOff();
+    }
+
+    public static void crearJornadaPlayOff(boolean semifinal) throws Exception {
+        TJornada.crearJornadaPlayOff(semifinal);
     }
 }

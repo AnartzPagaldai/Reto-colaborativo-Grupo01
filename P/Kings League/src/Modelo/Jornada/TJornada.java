@@ -100,9 +100,9 @@ public class TJornada {
 
     public static void crearPlayOff() throws Exception {
         Partido partido = getUltimaJornada().get(0);
-        conprbarEinsertarJornadaPlayoff(partido, 11);
+        comprbarEinsertarJornadaPlayoff(partido, 11);
         HashMap<String, String>[] equipos = XML.getClasificacion();
-        for (int i = 0, f = equipos.length - 1; i < f; i++, f--) {
+        for (int i = 0, f = 7; i < f; i++, f--) {
             if (TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partido.getFecha().toLocalDate().plusDays(7)),
                     "Cupra Arena",
                     TEquipo.getEquipoPorNombre(equipos[i].get("nombre_equipo")),
@@ -111,9 +111,13 @@ public class TJornada {
         }
     }
 
-    public static void crearSiguienteJornadaPlayoff() throws Exception {
+    public static void crearJornadaPlayOff(boolean semifinal) throws Exception {
         ArrayList<Partido> partidos = getUltimaJornada();
-        conprbarEinsertarJornadaPlayoff(partidos.get(0), 12);
+        if (semifinal) {
+            comprbarEinsertarJornadaPlayoff(partidos.get(0), 12);
+        } else {
+           comprobarJornada(partidos.get(0), 13);
+        }
         for (int i = 0; i < partidos.size() - 1; i++) {
             Equipo ganador1 = setGanador(partidos.get(i));
             Equipo ganador2 = setGanador(partidos.get(i + 1));
@@ -121,13 +125,14 @@ public class TJornada {
                     "Cupra Arena", ganador1, ganador2)))
                 throw new Exception("no se an podido insertar todo los partido");
         }
-
     }
 
-    private static void conprbarEinsertarJornadaPlayoff(Partido partido, int numJornadaAnterior) throws Exception {
+    private static void comprobarJornada(Partido partido, int numJornadaAnterior) throws Exception {
         if (partido.getJornada().getNumJornada() < numJornadaAnterior)
             throw new Exception("no se puede crear playoff sin abaer jugado la jornada anterior");
-
+    }
+    private static void comprbarEinsertarJornadaPlayoff(Partido partido, int numJornadaAnterior) throws Exception {
+        comprobarJornada(partido, numJornadaAnterior);
         if (insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.valueOf("PLAYOFF"), partido.getJornada().getSplit())))
             throw new Exception("no se a insertado la jornada");
     }

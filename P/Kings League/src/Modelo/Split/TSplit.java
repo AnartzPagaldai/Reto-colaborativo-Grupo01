@@ -12,11 +12,11 @@ public class TSplit {
 
     public static Split ConsultarSplitDeJorada(Jornada jornada) {
         Split split = new Split();
-        BaseDeDatos.cosultaObjeto(split, "select s.* from split s, jornadas j where s.id = j.id_split and j.id = ?", new Object[]{jornada.getId()});
+        BaseDeDatos.cosultaObjeto(split, "select s.* from splits s, jornadas j where s.id = j.id_split and j.id = ?", new Object[]{jornada.getId()});
         return split;
     }
 
-    public static boolean crearSpit(String tipo) {
+    public static boolean crearSplit(String tipo) {
         try {
             // VERIFICAR QUE SE AN INTRODUCIDO LOS PLAYOFS ANTES DE QUE SE INTORDUCCAN EN NUEVAS JORNADAS EN EL SIGUIENTE SPLIT
             BaseDeDatos.abrirConexion();

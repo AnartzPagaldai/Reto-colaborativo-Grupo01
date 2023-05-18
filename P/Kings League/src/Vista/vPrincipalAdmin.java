@@ -52,6 +52,10 @@ public class vPrincipalAdmin {
     private JButton bDeleteContratosPersonal;
     private JButton bEmparejar;
     private JButton bActualizarXML;
+    private JButton bPOCuartos;
+    private JButton bPOSemi;
+    private JButton bPOFinal;
+    private JButton bGenerarPlayOff;
     private JMenuItem jmiInsertarEquipos;
     private JMenuItem jmiActualizarEquipos;
     private JMenuItem jmiBorrarEquipos;
@@ -190,7 +194,42 @@ public class vPrincipalAdmin {
         });
 
 
+        bGenerarPlayOff.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+        bPOCuartos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.crearPlayOff();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bPOSemi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.crearJornadaPlayOff(true);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bPOFinal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.crearJornadaPlayOff(false);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
 

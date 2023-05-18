@@ -60,7 +60,7 @@ public class Split implements ResultSetObjeto {
     public void resultSetObjeto(ResultSet resultSet) throws SQLException {
         id = resultSet.getInt("id");
         anio = resultSet.getDate("anio");
-        tipoSplit = TipoSplit.valueOf(resultSet.getString("tipo"));
+        tipoSplit = TipoSplit.valueOf(resultSet.getString("tipo").toUpperCase());
         estadoSplit = EstadoSplit.valueOf(resultSet.getString("estado"));
     }
 }
