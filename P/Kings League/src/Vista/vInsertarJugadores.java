@@ -66,6 +66,7 @@ public class vInsertarJugadores {
     private Jugador.TipoJugador tipoJugador;
     private Jugador.TipoPosicion TipoPosicion;
     public vInsertarJugadores() throws MalformedURLException {
+
         JSpinner sVelocidad = new JSpinner(modelVelocidad);
         pVelocidad.add(sVelocidad);
         JSpinner sTiro = new JSpinner(modelTiro);

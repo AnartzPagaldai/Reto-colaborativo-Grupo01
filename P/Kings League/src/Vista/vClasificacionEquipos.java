@@ -189,6 +189,48 @@ public class vClasificacionEquipos {
         victorias.add(victoria11);
         victorias.add(victoria12);
 
+        ArrayList<JLabel> goles_a_favor=new ArrayList<>();
+        goles_a_favor.add(golesFavor1);
+        goles_a_favor.add(golesFavor2);
+        goles_a_favor.add(golesFavor3);
+        goles_a_favor.add(golesFavor4);
+        goles_a_favor.add(golesFavor5);
+        goles_a_favor.add(golesFavor6);
+        goles_a_favor.add(golesFavor7);
+        goles_a_favor.add(golesFavor8);
+        goles_a_favor.add(golesFavor9);
+        goles_a_favor.add(golesFavor10);
+        goles_a_favor.add(golesFavor11);
+        goles_a_favor.add(golesFavor12);
+
+        ArrayList<JLabel> goles_en_contra=new ArrayList<>();
+        goles_en_contra.add(golesContra1);
+        goles_en_contra.add(golesContra2);
+        goles_en_contra.add(golesContra3);
+        goles_en_contra.add(golesContra4);
+        goles_en_contra.add(golesContra5);
+        goles_en_contra.add(golesContra6);
+        goles_en_contra.add(golesContra7);
+        goles_en_contra.add(golesContra8);
+        goles_en_contra.add(golesContra9);
+        goles_en_contra.add(golesContra10);
+        goles_en_contra.add(golesContra11);
+        goles_en_contra.add(golesContra12);
+
+        ArrayList<JLabel> diferencia=new ArrayList<>();
+        diferencia.add(diferencia1);
+        diferencia.add(diferencia2);
+        diferencia.add(diferencia3);
+        diferencia.add(diferencia4);
+        diferencia.add(diferencia5);
+        diferencia.add(diferencia6);
+        diferencia.add(diferencia7);
+        diferencia.add(diferencia8);
+        diferencia.add(diferencia9);
+        diferencia.add(diferencia10);
+        diferencia.add(diferencia11);
+        diferencia.add(diferencia12);
+
         lSplit.setText(equipos[0].get("split"));
         for (int x=0; x<equipos.length-1; x++){
             posicion.get(x).setText(equipos[x+1].get("posicion"));
@@ -198,6 +240,9 @@ public class vClasificacionEquipos {
             logos.get(x).setIcon(iconEq);
             nombres.get(x).setText(equipos[x+1].get("nombre_equipo"));
             victorias.get(x).setText(equipos[x+1].get("victorias"));
+            goles_a_favor.get(x).setText(equipos[x+1].get("golesAfavor"));
+            goles_en_contra.get(x).setText(equipos[x+1].get("golesEnContra"));
+            diferencia.get(x).setText(equipos[x+1].get("diferenciaDeGoles"));
         }
         pPrincipal = new JPanel(new BorderLayout());
 
