@@ -3,18 +3,24 @@ package Modelo.XML;
 import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
+import oracle.jdbc.OracleTypes;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
+import java.nio.CharBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.WritableByteChannel;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.HashMap;
+import java.util.StringJoiner;
 
 public class XML {
     public static void generarXMLjornadas() {
@@ -30,10 +36,10 @@ public class XML {
     public static void generarXMlultimaJornada() {
         try {
             BaseDeDatos.abrirConexion();
-            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{ call PAQUETE_XML.GENERARA_XML_ULTIMA_JORNADA(?)}");
-            Clob xml = BaseDeDatos.getCon().createClob();
-            statement.setClob(1, xml);
+            CallableStatement statement = BaseDeDatos.getCon().prepareCall("{ call PAQUETE_XML.GENERAR_XML_ULTIMA_JORNADA(?)}");
+            statement.registerOutParameter(1, OracleTypes.CLOB);
             statement.execute();
+            Clob xml = statement.getClob(1);
             escribirXML(xml, "ultimaJornada.xml");
             BaseDeDatos.cerrarConexion();
         } catch (Exception e) {
@@ -69,15 +75,14 @@ public class XML {
     }
 
     private static void escribirXML(Clob xml, String archivo) throws Exception {
-        BufferedReader reader = new BufferedReader(xml.getCharacterStream());
-        String line;
-        StringBuilder content = new StringBuilder();
-        while ((line = reader.readLine()) != null) {
-            content.append(line);
+        try (BufferedReader reader = new BufferedReader(xml.getCharacterStream());
+             Writer writer = new FileWriter("src/Modelo/XML/" + archivo)) {
+            char[] buffer = new char[4096];
+            int bytesRead;
+            while ((bytesRead = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, bytesRead);
+            }
         }
-        BufferedWriter fichero = new BufferedWriter(new FileWriter("src/Modelo/XML/" + archivo));
-        fichero.write(String.valueOf(content));
-        fichero.close();
     }
 
     public static HashMap<String, String>[] getClasificacion() {
@@ -92,9 +97,10 @@ public class XML {
             for (int i = 0; i < listaEquipos.getLength(); i++) {
                 HashMap<String, String> equipo = new HashMap<>();
                 Element tagEquipo = (Element) listaEquipos.item(i);
-                equipo.put("posicion", tagEquipo.getAttribute("posiscion"));
+                equipo.put("posicion", tagEquipo.getAttribute("posicion"));
                 equipo.put("nombre_equipo", tagEquipo.getElementsByTagName("nombre").item(0).getTextContent());
-                Equipo equipo1=TEquipo.getEquipoPorNombre(equipo.get("nombre"));
+                Equipo equipo1 = TEquipo.getEquipoPorNombre(equipo.get("nombre_equipo"));
+                System.out.println(equipo.get("nombre_equipo"));
                 equipo.put("logoImg", equipo1.getLogoImg());
                 equipo.put("victorias", tagEquipo.getElementsByTagName("victorias").item(0).getTextContent());
                 equipo.put("golesAfavor", tagEquipo.getElementsByTagName("goles_a_favor").item(0).getTextContent());
