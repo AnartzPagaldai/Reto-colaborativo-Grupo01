@@ -220,6 +220,11 @@ public class vPartidosPorJornada {
         });
     }
 
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
+
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("vPartidosPorJornada");
         frame.setContentPane(new vPartidosPorJornada().pPrincipal);
