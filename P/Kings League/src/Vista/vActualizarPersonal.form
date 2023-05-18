@@ -187,7 +187,7 @@
                     </constraints>
                     <properties>
                       <font size="20"/>
-                      <text value="Escibe el nombre del miembro del personal y pulsa &quot;Enter&quot; para cambiar sus datos:"/>
+                      <text value="Escibe el DNI del miembro del personal y pulsa &quot;Enter&quot; para cambiar sus datos:"/>
                     </properties>
                   </component>
                   <component id="587b0" class="javax.swing.JLabel">

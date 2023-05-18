@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -20,6 +21,7 @@ public class vBorrarPersonal extends JDialog {
     private JFormattedTextField ftfDni;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private static boolean existe;
 
     public vBorrarPersonal() {
 
@@ -57,6 +59,9 @@ public class vBorrarPersonal extends JDialog {
 
     private void onOK() {
         // TODO: comprobar que existe el dni y si es así; borrarlo
+        //Main.buscarDniPersonal(ftfDni.getText());
+        //if (existe)
+            //TPersonal.borrar(ftfDni.getText());
     }
 
     private void onCancel() {
