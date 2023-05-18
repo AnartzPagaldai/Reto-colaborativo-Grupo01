@@ -228,7 +228,8 @@ public class Main {
     }
 
     public static boolean generarJornada() {
-       return TJornada.generarJornadas();
+        // todo verivicar que se a creado split
+        return TJornada.generarJornadas();
     }
     public static HashMap[] getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
@@ -272,10 +273,13 @@ public class Main {
     }
 
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
-        ArrayList equipos = new ArrayList<>();
-        TEquipo.selectAllEquipos(equipos);
-    return equipos;}
+        // no se pueden pasar objetos a la vista
+        return TEquipo.selectAllEquipos();
+   }
 
+   public static void crearPlayOff() throws Exception {
+        TJornada.crearPlayOff();
+   }
     public static Equipo getEquipo(){
         return equipo;
     }
