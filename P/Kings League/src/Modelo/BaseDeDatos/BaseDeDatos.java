@@ -68,6 +68,8 @@ public class BaseDeDatos {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 objeto.resultSetObjeto(resultSet);
+            } else {
+                objeto = null;
             }
         } catch (SQLException e) {
             e.printStackTrace();

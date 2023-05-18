@@ -31,7 +31,12 @@ public class vBorrarPersonal extends JDialog {
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                try {
+                    onOK();
+                    Main.borrarPersonal(jlDni.getText());
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
             }
         });
 
@@ -57,11 +62,17 @@ public class vBorrarPersonal extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void onOK() {
+    private void onOK() throws Exception {
         // TODO: comprobar que existe el dni y si es así; borrarlo
-        //Main.buscarDniPersonal(ftfDni.getText());
-        //if (existe)
-            //TPersonal.borrar(ftfDni.getText());
+        boolean borrar;
+        if (jlDni.getText().isEmpty()) {
+            throw new Exception("No puede estar el campo vacio");
+        }
+        borrar = Main.borrarJugador(jlDni.getText());
+        if (borrar) {
+            JOptionPane.showMessageDialog(null, "¡Jugador borrado con exito!");
+            jlDni.setText("");
+        }
     }
 
     private void onCancel() {
@@ -71,8 +82,7 @@ public class vBorrarPersonal extends JDialog {
     private void createUIComponents() throws Exception {
         try {
             ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
-        }
-        catch (ParseException e){
+        } catch (ParseException e) {
             throw new Exception("El DNI no cumple con el formato establecido.");
         }
     }

@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,13 +34,13 @@ public class vInsertarPersonal {
     private JTextField tfApellidos;
     private JFormattedTextField ftfDni;
     private JFormattedTextField ftfTelefono;
-    private JComboBox cbOficio;
+    private JComboBox<String> cbOficio;
     private JTextField tfImagen;
     private JButton bCrear;
     private JButton bAtras;
     private JPanel pBotones;
     private ImageIcon LogoKingsLeague;
-    private static boolean correcto;
+    private static boolean correcto = true;
 
 
     public vInsertarPersonal() throws MalformedURLException {
@@ -65,7 +66,8 @@ public class vInsertarPersonal {
             }
         };
 
-
+        cbOficio.addItem("Presidente");
+        cbOficio.addItem("Entrenador");
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
 
@@ -79,22 +81,23 @@ public class vInsertarPersonal {
         bCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 validarNombre(tfNombre.getText());
                 validarApellidos(tfApellidos.getText());
                 validarOficio(cbOficio.getSelectedIndex());
                 validarImagen(tfImagen.getText());
-                // TODO: si todo correcto insertar datos
-                if (correcto){
-                    //Main.buscarDniPersonal(ftfDni.getText());
-                    //Main.crearPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), cbOficio.getSelectedItem(), tfImagen.getText());
+                validarDni(ftfDni.getText());
+
+                if (correcto) {
+                    Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), String.valueOf(cbOficio.getSelectedItem()), tfImagen.getText());
                     tfNombre.setText("");
                     tfApellidos.setText("");
                     ftfDni.setText("");
                     ftfTelefono.setText("");
                     cbOficio.setSelectedIndex(1);
                     tfImagen.setText("");
+                    JOptionPane.showMessageDialog(null, "personal insetado");
                 }
+
             }
         });
         bAtras.addActionListener(new ActionListener() {
@@ -106,62 +109,68 @@ public class vInsertarPersonal {
 
     }
 
+    private void validarDni(String dni) {
+        Matcher encaja;
+        Pattern pat = Pattern.compile("[0-9][A-Z a-z]");
+        encaja = pat.matcher(dni);
+        if (!encaja.matches()) {
+            JOptionPane.showMessageDialog(null, "el dni no es correcto");
+            correcto = false;
+        } else
+            correcto = true;
+        if (!Main.buscarDni(ftfDni.getText())) {
+            JOptionPane.showMessageDialog(null, "ya hay una persona con este dni");
+            correcto = false;
+        }
+    }
+
     private void createUIComponents() throws Exception {
         try {
             ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
             ftfTelefono = new JFormattedTextField((new MaskFormatter("#########")));
-        }
-        catch (ParseException e){
+        } catch (ParseException e) {
             throw new Exception("Algún campo no cumple con el formato establecido.");
         }
     }
-    public static boolean validarNombre(String nombre){
+
+    public static void validarNombre(String nombre) {
         Matcher encaja;
         Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
         encaja = pat.matcher(nombre);
-        if (!encaja.matches()){
-            JOptionPane.showMessageDialog(null,"El nombre debe empezar por una mayúscula y seguir con minúsculas.");
-            correcto=false;
+        if (!encaja.matches()) {
+            JOptionPane.showMessageDialog(null, "El nombre debe empezar por una mayúscula y seguir con minúsculas.");
+            correcto = false;
         }
-        else
-            correcto=true;
-        return correcto;
     }
-    public static boolean validarApellidos(String apellidos){
+
+    public static void validarApellidos(String apellidos) {
         Matcher encaja;
         Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
         encaja = pat.matcher(apellidos);
-        if (!encaja.matches()){
-            JOptionPane.showMessageDialog(null,"Los apellidos deben empezar por una mayúscula y seguir con minúsculas.");
-            correcto=false;
+        if (!encaja.matches()) {
+            JOptionPane.showMessageDialog(null, "Los apellidos deben empezar por una mayúscula y seguir con minúsculas.");
+            correcto = false;
         }
-        else
-            correcto=true;
-        return correcto;
     }
-    public static boolean validarOficio(int opcion) {
 
-        if (opcion==0){
-            JOptionPane.showMessageDialog(null,"El oficio debe ser 'presidente' o 'entrenador'.");
-            correcto=false;
+    public static void validarOficio(int opcion) {
+
+        if (opcion == 0) {
+            JOptionPane.showMessageDialog(null, "El oficio debe ser 'presidente' o 'entrenador'.");
+            correcto = false;
         }
-        else
-            correcto=true;
-        return correcto;
     }
-    public static boolean validarImagen(String imagen){
+
+    public static void validarImagen(String imagen) {
 
         Matcher encaja;
         // TODO: poner patrón correcto
         Pattern pat = Pattern.compile("^$");
         encaja = pat.matcher(imagen);
-        if (!encaja.matches()){
-            JOptionPane.showMessageDialog(null,"La imagen debe empezar por 'https' y terminar con '.png'.");
-            correcto=false;
+        if (!encaja.matches()) {
+            JOptionPane.showMessageDialog(null, "La imagen debe empezar por 'https' y terminar con '.png'.");
+            correcto = false;
         }
-        else
-            correcto=true;
-        return correcto;
     }
 
 

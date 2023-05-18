@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
@@ -9,10 +10,13 @@ import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
+import Modelo.Personal.TPersonal;
+import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
 import Modelo.XML.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
@@ -21,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class Main {
@@ -46,7 +49,7 @@ public class Main {
     public static JFrame vInsertarResultados;
     public static JFrame vInsertarEquipos;
     public static Usuario u;
-    public static Equipo equipo=new Equipo();
+    public static Equipo equipo = new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Usuario usuarioInicio = new Usuario();
@@ -71,7 +74,9 @@ public class Main {
             throw new RuntimeException(e);
         }*/
         XML.generarXMlultimaJornada();
+        TJornada.getUltimaJornada();
     }
+
     public static void cerrarSesion() {
         actual.dispose();
         vInicio.setVisible(true);
@@ -81,10 +86,12 @@ public class Main {
         actual.dispose();
         vPrinicpalUsuario.setVisible(true);
     }
+
     public static void vEquipos() {
         actual.dispose();
         vEquipos.setVisible(true);
     }
+
     public static void PrincipalAdmin() {
         actual.dispose();
         vPrinicpalAdmin.setVisible(true);
@@ -137,7 +144,7 @@ public class Main {
     }
 
     public static void generarVentanaEquipos() throws MalformedURLException {
-        vEquipos= new JFrame("vConsultarEquipos");
+        vEquipos = new JFrame("vConsultarEquipos");
         vEquipos.setContentPane(new vConsultarEquipos().getpPrincipal());
         vEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vEquipos.pack();
@@ -146,16 +153,16 @@ public class Main {
         vPrinicpalUsuario.setVisible(false);
         actual = vEquipos;
     }
-    
+
     public static void generarVentanaJugadores() throws MalformedURLException {
-        vJugadores= new JFrame("vConsultarJugadores");
+        vJugadores = new JFrame("vConsultarJugadores");
         vJugadores.setContentPane(new vConsultarJugadores().getpPrincipal());
         vJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vJugadores.pack();
         vJugadores.setVisible(true);
         vJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
         vEquipos.setVisible(false);
-        actual=vJugadores;
+        actual = vJugadores;
     }
 
     public static void generarVentanaAjustesUsuario() throws MalformedURLException {
@@ -166,8 +173,9 @@ public class Main {
         vUsuario.setVisible(true);
         vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalUsuario.setVisible(false);
-        actual=vUsuario;
+        actual = vUsuario;
     }
+
     public static void generarActualizarEquipo() throws MalformedURLException {
         vEquipoActualizar = new JFrame("vActualizarEquipo");
         vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
@@ -175,9 +183,10 @@ public class Main {
         vEquipoActualizar.pack();
         vEquipoActualizar.setVisible(true);
         vEquipoActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual=vEquipoActualizar;
+        actual = vEquipoActualizar;
         vPrinicpalAdmin.setVisible(false);
     }
+
     public static void generarInsertarJugadores() throws MalformedURLException {
         vInsertarJugadores = new JFrame("vInsertarJugadores");
         vInsertarJugadores.setContentPane(new vInsertarJugadores().getpPrincipal());
@@ -186,14 +195,16 @@ public class Main {
         vInsertarJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
         vInsertarJugadores.setVisible(true);
         vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarJugadores;
+        actual = vInsertarJugadores;
     }
+
     public static void generarBorrarJugadores() throws MalformedURLException {
         vBorrarJugadores = new vBorrarJugador();
         vBorrarJugadores.pack();
         vBorrarJugadores.setVisible(true);
         vPrinicpalAdmin.setEnabled(false);
     }
+
     public static void generarVentanaClasificacion() throws MalformedURLException {
         vClasificacion = new JFrame("vClasificacionEquipos");
         vClasificacion.setContentPane(new vClasificacionEquipos().getpPrincipal());
@@ -202,8 +213,9 @@ public class Main {
         vClasificacion.setVisible(true);
         vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalUsuario.setVisible(false);
-        actual=vClasificacion;
+        actual = vClasificacion;
     }
+
     public static void generarActualizarPersonal() throws MalformedURLException {
         vPersonalActualizar = new JFrame("vActualizarPersonal");
         vPersonalActualizar.setContentPane(new vActualizarPersonal().getpPrincipal());
@@ -211,21 +223,24 @@ public class Main {
         vPersonalActualizar.pack();
         vPersonalActualizar.setVisible(true);
         vPersonalActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual=vPersonalActualizar;
+        actual = vPersonalActualizar;
         vPrinicpalAdmin.setVisible(false);
     }
+
     public static void generarBorrarEquipos() throws MalformedURLException {
         vBorrarEquipos = new vBorrarEquipo();
         vBorrarEquipos.pack();
         vBorrarEquipos.setVisible(true);
         vPrinicpalAdmin.setEnabled(false);
     }
+
     public static void generarBorrarPersonales() throws MalformedURLException {
         vBorrarPersonales = new vBorrarPersonal();
         vBorrarPersonales.pack();
         vBorrarPersonales.setVisible(true);
         vPrinicpalAdmin.setEnabled(false);
     }
+
     public static void generarBorrarSplits() throws MalformedURLException {
         vBorrarSplits = new JFrame("vDeleteSplit");
         vBorrarSplits.setContentPane(new vDeleteSplit().getpPrincipal());
@@ -234,8 +249,9 @@ public class Main {
         vBorrarSplits.setVisible(true);
         vBorrarSplits.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
-        actual=vBorrarSplits;
+        actual = vBorrarSplits;
     }
+
     public static void generarBorrarUsuarios() throws MalformedURLException {
         vBorrarUsuarios = new JFrame("vDeleteusuarios");
         vBorrarUsuarios.setContentPane(new vDeleteusuarios().getpPrincipal());
@@ -244,8 +260,9 @@ public class Main {
         vBorrarUsuarios.setVisible(true);
         vBorrarUsuarios.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
-        actual=vBorrarUsuarios;
+        actual = vBorrarUsuarios;
     }
+
     public static void generarInsertarPersonal() throws MalformedURLException {
         vInsertarPersonal = new JFrame("vInsertarPersonal");
         vInsertarPersonal.setContentPane(new vInsertarPersonal().getpPrincipal());
@@ -254,8 +271,9 @@ public class Main {
         vInsertarPersonal.setVisible(true);
         vInsertarPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarPersonal;
+        actual = vInsertarPersonal;
     }
+
     public static void generarInsertarResultados() throws Exception {
         vInsertarResultados = new JFrame("vInsertarResultados");
         vInsertarResultados.setContentPane(new vInsertarResultados().getpPrincipal());
@@ -264,8 +282,9 @@ public class Main {
         vInsertarResultados.setVisible(true);
         vInsertarResultados.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarResultados;
+        actual = vInsertarResultados;
     }
+
     public static void generarInsertarEquipos() throws Exception {
         vInsertarEquipos = new JFrame("vInsertEquipos");
         vInsertarEquipos.setContentPane(new vInsertEquipos().getpPrincipal());
@@ -274,7 +293,7 @@ public class Main {
         vInsertarEquipos.setVisible(true);
         vInsertarEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarEquipos;
+        actual = vInsertarEquipos;
     }
 
 
@@ -310,7 +329,7 @@ public class Main {
 
     public static HashMap setObjetosInformeEquipo(String nombre) {
         equipo = new Equipo();
-        HashMap<String, String> equipos=new HashMap<>();
+        HashMap<String, String> equipos = new HashMap<>();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
         equipos.put("nombre", equipo.getNombre());
@@ -346,18 +365,21 @@ public class Main {
     }
 
     public static boolean generarJornada() {
-       return TJornada.generarJornadas();
+        return TJornada.generarJornadas();
     }
-    public static ArrayList<Integer> getJornadas() throws Exception{
+
+    public static ArrayList<Integer> getJornadas() throws Exception {
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
             throw new Exception("error al leer desde jornadas");
         }
-        for (int x = 0; x< partidos.size(); x += 6) {
+        for (int x = 0; x < partidos.size(); x += 6) {
             NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
         }
-        return NumJornadas;}
+        return NumJornadas;
+    }
+
     public static HashMap<String, String>[] getUltimaJornada() {
         return dePartidosAhashmap(TJornada.getUltimaJornada());
     }
@@ -366,6 +388,7 @@ public class Main {
         List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).toList();
         return dePartidosAhashmap((ArrayList<Partido>) partidoDeJornada);
     }
+
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
         ArrayList<HashMap<String, String>> partidosMap = new ArrayList<>();
         for (int i = 0; i < partidos.size(); i++) {
@@ -385,9 +408,11 @@ public class Main {
             }
             partidosMap.add(partidoMap);
         }
-    return partidosMap.toArray(new HashMap[partidosMap.size()]);}
-    public static int getCantidadPersonas(){
-        return jugadoresInfome.size()+2;
+        return partidosMap.toArray(new HashMap[partidosMap.size()]);
+    }
+
+    public static int getCantidadPersonas() {
+        return jugadoresInfome.size() + 2;
     }
 
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
@@ -396,28 +421,27 @@ public class Main {
         return equipos;
     }
 
-    public static Equipo getEquipo(){
+    public static Equipo getEquipo() {
         return equipo;
     }
 
-    public static void setNombreEquipo(String nombre){
+    public static void setNombreEquipo(String nombre) {
         equipo.setNombre(nombre);
     }
-    public static String getNombreEquipo(){
+
+    public static String getNombreEquipo() {
         return equipo.getNombre();
     }
-    public static String buscarNombre()
-    {
+
+    public static String buscarNombre() {
         return usuarioInicio.getNombre();
     }
 
-    public static String buscarCorreo()
-    {
+    public static String buscarCorreo() {
         return usuarioInicio.getCorreo();
     }
 
-    public static String buscarContrasena()
-    {
+    public static String buscarContrasena() {
         return usuarioInicio.getContrasena();
     }
 
@@ -425,23 +449,25 @@ public class Main {
         TUsuario.updateUsuario(usuarioAntes, usuarioActual);
     }
 
-    public static String getUsuarioTipo(String nombre, String contrasena){
-        Usuario usuarioAntes=new Usuario();
+    public static String getUsuarioTipo(String nombre, String contrasena) {
+        Usuario usuarioAntes = new Usuario();
         usuarioAntes.setNombre(nombre);
         usuarioAntes.setContrasena(contrasena);
-        usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
+        usuarioAntes = TUsuario.selectUsuarioDatos(usuarioAntes);
         return usuarioAntes.getTipoUsuario().toString();
     }
-    public static Usuario getUsuario(String nombre, String contrasena){
-        Usuario usuario=new Usuario();
+
+    public static Usuario getUsuario(String nombre, String contrasena) {
+        Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setContrasena(contrasena);
-        usuario=TUsuario.selectUsuarioDatos(usuario);
+        usuario = TUsuario.selectUsuarioDatos(usuario);
         return usuario;
     }
-    public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+
+    public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento) {
         boolean insertar;
-        Jugador jugador=new Jugador();
+        Jugador jugador = new Jugador();
         jugador.setNombre(nombre);
         jugador.setApellidos(apellido);
         jugador.setDni(dni);
@@ -455,30 +481,32 @@ public class Main {
         jugador.setPase(pase);
         jugador.setTiro(tiro);
         jugador.setTalento(talento);
-        insertar=TJugador.insertar(jugador);
+        insertar = TJugador.insertar(jugador);
         return insertar;
     }
-    public static boolean borrarJugador(String dni){
+
+    public static boolean borrarJugador(String dni) {
         boolean borrar;
-        Jugador jugador=new Jugador();
+        Jugador jugador = new Jugador();
         jugador.setDni(dni);
-        borrar=TJugador.eliminar(jugador);
+        borrar = TJugador.eliminar(jugador);
         return borrar;
     }
-            public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2)
-            {
-                Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
-                Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
-                Partido elPartido = new Partido();
-                elPartido.setEquipo1(equ1);
-                elPartido.setEquipo2(equ2);
-                elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
-                elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
-                TPartido.actualizarPartido(elPartido);
 
-                boolean valido = true;
+    public static boolean ActualizarPartido(String equipo1, String equipo2, String golesEq1, String golesEq2) {
+        Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
+        Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
+        Partido elPartido = new Partido();
+        elPartido.setEquipo1(equ1);
+        elPartido.setEquipo2(equ2);
+        elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
+        elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
+        TPartido.actualizarPartido(elPartido);
 
-                return valido;}
+        boolean valido = true;
+
+        return valido;
+    }
 
     public static void crearSplit(String tipoSlit) {
         TSplit.crearSplit(tipoSlit);
@@ -495,5 +523,26 @@ public class Main {
 
     public static void crearJornadaPlayOff(boolean semifinal) throws Exception {
         TJornada.crearJornadaPlayOff(semifinal);
+    }
+
+    public static void insertarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
+        TPersonal.insertar(new Personal(nombre, apellido, dni, Integer.parseInt(telefono), TipoPersonal.valueOf(oficio), img));
+    }
+
+
+    public static boolean buscarDni(String dni) {
+        if (TPersonal.consutlarPorDni(dni)) return true;
+        return TJugador.consultarPorDni(dni);
+    }
+    public static boolean actualizarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
+        return TPersonal.actualizarPersonal(new Personal(nombre, apellido, dni, Integer.parseInt(telefono), TipoPersonal.valueOf(oficio), img));
+    }
+
+    public static boolean buscarDniPersoal(String dni) {
+        return TPersonal.consutlarPorDni(dni);
+    }
+
+    public static boolean borrarPersonal(String dni) {
+        return TPersonal.borrarPersonal(dni);
     }
 }

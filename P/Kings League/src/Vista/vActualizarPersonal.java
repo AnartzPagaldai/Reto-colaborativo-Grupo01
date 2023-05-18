@@ -75,6 +75,8 @@ public class vActualizarPersonal {
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
+        cbOficio.addItem("Presidente");
+        cbOficio.addItem("Entrenador");
 
 
         bAceptar.addActionListener(new ActionListener() {
@@ -85,8 +87,11 @@ public class vActualizarPersonal {
                 validarOficio(cbOficio.getSelectedIndex());
                 validarImagen(tfImagen.getText());
                 // TODO: si todo correcto actualizar datos
-                //if (correcto)
-                    //TPersonal.actualizar(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), cbOficio.getSelectedItem(), tfImagen.getText());
+                if (correcto)
+                    if (Main.actualizarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), String.valueOf(cbOficio.getSelectedItem()), tfImagen.getText()))
+                        JOptionPane.showMessageDialog(null, "se a insertado el personal");
+                    else
+                        JOptionPane.showMessageDialog(null, "no se a insertado el parsonal");
             }
         });
         bAtras.addActionListener(new ActionListener() {
@@ -100,11 +105,25 @@ public class vActualizarPersonal {
             @Override
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
-                // TODO: poner que busque el dni y se pongan los demás datos
-                //Main.buscarDniPersonal(ftfDni.getText());
+                validarDni(ftfDni.getText());
 
             }
         });
+    }
+
+    private void validarDni(String dni) {
+        Matcher encaja;
+        Pattern pat = Pattern.compile("[0-9][A-Z a-z]");
+        encaja = pat.matcher(dni);
+        if (!encaja.matches()) {
+            JOptionPane.showMessageDialog(null, "el dni no es correcto");
+            correcto = false;
+        } else
+            correcto = true;
+        if (Main.buscarDniPersoal(ftfDni.getText())) {
+            JOptionPane.showMessageDialog(null, "no esite nadie con ese dni");
+            correcto = false;
+        }
     }
 
 

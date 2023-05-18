@@ -16,4 +16,20 @@ public class TPersonal {
     public static void ConsultarPersonal(Personal personal) {
         BaseDeDatos.cosultaObjeto(personal,"select * from personales where id = ?", new Object[]{personal.getId()});
     }
+
+
+    public static boolean consutlarPorDni(String dni) {
+        Personal personal = new Personal();
+        BaseDeDatos.cosultaObjeto(personal, "select * from personales wehre dni = ?", new Object[]{dni});
+        return personal != null;
+    }
+
+    public static boolean actualizarPersonal(Personal personal) {
+        return BaseDeDatos.executeUpdate( "update personales set nombre = ?, apellidos = ?, telefono = ?, oficio = ?, img = ? where upper(dni) = upper(?)",
+                new Object[]{personal.getNombre(), personal.getApellidos(), personal.getTelefono(), String.valueOf(personal.getOficio()), personal.getDni()});
+    }
+
+    public static boolean borrarPersonal(String dni) {
+        return BaseDeDatos.executeUpdate("deletro from personales where dni = ?", new Object[]{dni});
+    }
 }

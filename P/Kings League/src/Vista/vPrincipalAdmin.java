@@ -205,8 +205,10 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearPlayOff();
+                    JOptionPane.showMessageDialog(null, "se a creado playoff");
                 } catch (Exception ex) {
-                    throw new RuntimeException(ex);
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         });
@@ -215,8 +217,10 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearJornadaPlayOff(true);
+                    JOptionPane.showMessageDialog(null, "se a creado la semifinal");
                 } catch (Exception ex) {
-                    throw new RuntimeException(ex);
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         });
@@ -225,7 +229,39 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearJornadaPlayOff(false);
+                    JOptionPane.showMessageDialog(null, "se a creado la final");
                 } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+        bInsertarPersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarInsertarPersonal();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bUpdatePersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarActualizarPersonal();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bDeletePersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarBorrarPersonales();
+                } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
             }

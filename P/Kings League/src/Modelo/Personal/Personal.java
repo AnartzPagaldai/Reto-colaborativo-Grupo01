@@ -23,6 +23,15 @@ public class Personal implements ResultSetObjeto {
         this.oficio = oficio;
     }
 
+    public Personal(String nombre, String apellidos, String dni, int telefono, TipoPersonal oficio, String img) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.oficio = oficio;
+        this.img = img;
+    }
+
     public int getId() {
         return id;
     }
