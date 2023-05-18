@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
@@ -8,6 +9,8 @@ import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
+import Modelo.Personal.TPersonal;
+import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
