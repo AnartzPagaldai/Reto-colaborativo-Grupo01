@@ -71,7 +71,6 @@ public class vConsultarJugadores {
     public vConsultarJugadores() throws MalformedURLException {
         HashMap<String, String> equipos= Main.setObjetosInformeEquipo(Main.getNombreEquipo());
 
-        // Poner la imagen del logo oficial de la Kings League
         logoEquipo = new ImageIcon(new URL(equipos.get("logo")));
         Image LogoEqu = logoEquipo.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
         ImageIcon iconEq = new ImageIcon(LogoEqu);

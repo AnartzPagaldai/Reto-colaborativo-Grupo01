@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
@@ -235,8 +236,10 @@ public class Main {
         // todo: verificar que se ha creado split
         return TJornada.generarJornadas();
     }
+    public static ArrayList<Integer> getJornadas() throws Exception{
     public static void getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
+        ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
             throw new Exception("Error al leer desde jornadas.");
         }
@@ -268,6 +271,34 @@ public class Main {
                 partidoMap.put("golesEquipo2", "sin jugar");
             }
             partidosMap.add(partidoMap);
+        for (int x = 0; x< partidos.size(); x += 6) {
+            NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
+        }
+        return NumJornadas;
+    }
+
+    public static HashMap[] getJornada(int numJornada) {
+        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toList());
+        HashMap[] partidosMap = new HashMap[partidoDeJornada.size()];
+        for (int i = 0; i < partidoDeJornada.size(); i++) {
+            partidosMap[i] = dePartidosAhashmap(partidoDeJornada.get(i));
+        }
+        return partidosMap;
+    }
+    private static HashMap<String, String> dePartidosAhashmap(Partido partido) {
+        HashMap<String, String> partidoMap = new HashMap<>();
+        partidoMap.put("numJornada", String.valueOf(partido.getJornada().getNumJornada()));
+        partidoMap.put("fecha", partido.getFecha().toString());
+        partidoMap.put("nombre_equiop1", partido.getEquipo1().getNombre());
+        partidoMap.put("nombre_equiop2", partido.getEquipo2().getNombre());
+        partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
+        partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
+        if (partido.getFecha().before(new Date())) {
+            partidoMap.put("golesEquipo1", String.valueOf(partido.getGolesEquipo1()));
+            partidoMap.put("golesEquipo2", String.valueOf(partido.getGolesEquipo2()));
+        } else {
+            partidoMap.put("golesEquipo1", "SIN");
+            partidoMap.put("golesEquipo2", "JUGAR");
         }
 
         return partidosMap.toArray(new HashMap[partidosMap.size()]);
@@ -327,5 +358,17 @@ public class Main {
         usuario=TUsuario.selectUsuarioDatos(usuario);
         return usuario;
     }
+            public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2)
+            {
+                Equipo equip1 = TEquipo.getEquipoPorNombre(equipo1);
+                Equipo equip2 = TEquipo.getEquipoPorNombre(equipo2);
+                Partido partidoActu = new Partido();
+                partidoActu.setEquipo1(equip1);
+                partidoActu.setEquipo2(equip2);
+                partidoActu.setGolesEquipo1(Integer.parseInt(golesEq1));
+                partidoActu.setGolesEquipo1(Integer.parseInt(golesEq2));
 
+                boolean valido = true;
+
+                return valido;}
 }

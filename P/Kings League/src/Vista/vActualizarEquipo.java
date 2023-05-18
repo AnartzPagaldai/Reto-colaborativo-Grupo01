@@ -26,6 +26,17 @@ public class vActualizarEquipo {
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private JButton bSalir;
+    private JMenuBar jmheader;
+    private JMenu mEquipos;
+    private JMenuItem jmiConsultarEquipos;
+    private JMenu mJugadores;
+    private JMenuItem jmiSeleccionar;
+    private JMenu mPartidos;
+    private JMenuItem jmiVer;
+    private JMenu mClasificacion;
+    private JMenu mUsuario;
+    private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiCerrarSesion;
     private ImageIcon LogoKingsLeague;
     private boolean correcto;
 
@@ -71,6 +82,11 @@ public class vActualizarEquipo {
                 // TODO: poner que compruebe si existe el nombre y si existe; rellenar los otros campos con los datos existentes
             }
         });
+        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
+        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
+        mUsuario.setIcon(UsuIcono);
+
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
