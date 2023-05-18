@@ -3,6 +3,7 @@ package Vista;
 import Controlador.Main;
 
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,27 +11,35 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.ParseException;
 
-public class vActualizarEquipo {
+public class vActualizarPersonal {
     private JPanel pPrincipal;
     private JPanel pDegradado;
-    private JButton bAceptar;
     private JPanel pDatos;
     private JPanel pIniciarSesion;
-    private JTextField tfNombre;
-    private JLabel jlPresupuesto;
-    private JLabel jlNombre;
-    private JTextField tfPresupuesto;
+    private JLabel jlApellidos;
+    private JLabel jlDni;
+    private JLabel jlTelefono;
+    private JLabel jlOficio;
     private JLabel jlImagen;
     private JTextField tfImagen;
+    private JTextField tfApellidos;
+    private JTextField tfNombre;
+    private JFormattedTextField ftfDni;
+    private JFormattedTextField ftfTelefono;
+    private JComboBox cbOficio;
+    private JLabel jlNombre;
+    private JLabel JLThegrefg;
+    private JLabel JLIbai;
+    private JPanel pBotones;
+    private JButton bAceptar;
+    private JButton bAtras;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
-    private JButton bSalir;
     private ImageIcon LogoKingsLeague;
-    private boolean correcto;
 
-
-    public vActualizarEquipo() throws MalformedURLException {
+    public vActualizarPersonal() throws MalformedURLException {
 
         // Poner fondo degradado
         pPrincipal = new JPanel() {
@@ -68,28 +77,32 @@ public class vActualizarEquipo {
             @Override
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
-                // TODO: poner que compruebe si existe el nombre y si existe; rellenar los otros campos con los datos existentes
+                // TODO: poner que busque el nombre y se pongan los demás datos
             }
         });
+
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // todo: validar datos
-                if (correcto){
-                    tfNombre.setText("");
-                    tfPresupuesto.setText("");
-                    tfImagen.setText("");
-                }
-
+                // TODO: validar y actualizar datos
             }
         });
-        bSalir.addActionListener(new ActionListener() {
+        bAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.PrincipalAdmin();
             }
         });
+    }
 
+    private void createUIComponents() throws Exception {
+        try {
+            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
+            ftfTelefono = new JFormattedTextField((new MaskFormatter("#########")));
+        }
+        catch (ParseException e){
+            throw new Exception("Algún campo no cumple con el formato establecido.");
+        }
     }
 
 
@@ -98,11 +111,12 @@ public class vActualizarEquipo {
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        JFrame frame = new JFrame("vActualizarEquipo");
-        frame.setContentPane(new vActualizarEquipo().pPrincipal);
+        JFrame frame = new JFrame("vActualizarPersonal");
+        frame.setContentPane(new vActualizarPersonal().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
 }
