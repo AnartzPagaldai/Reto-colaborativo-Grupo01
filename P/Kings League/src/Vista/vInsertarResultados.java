@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Partido.TPartido;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,46 +12,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class vPartidosPorJornada {
+public class vInsertarResultados {
     private JPanel pPrincipal;
     private JPanel pDegradado;
+
     private ImageIcon escudoEquipo1;
 
     private ImageIcon escudoEquipo2;
-
-
-
-    private ImageIcon LogoKingsLeague;
-    private JLabel fLogoKingsLeague;
-    private JLabel fTwitch;
-    private JLabel fInstagram;
-    private JLabel fTwitter;
-    private JLabel jlEquipo1;
-    private JLabel jlGoles2Par1;
-    private JLabel jlEquipo2;
-    private JLabel jlEquipo2Par2;
-    private JLabel jlGoles2Par2;
-    private JLabel jlGoles1Par1;
-    private JLabel jlGoles1Par2;
-    private JLabel jlEquipo1Par2;
-    private JLabel jlEquipo1Par3;
-    private JLabel jlGoles1Par3;
-    private JLabel jlGoles2Par3;
-    private JLabel jlEquipo2Par3;
-    private JLabel jlEquipo1Par4;
-    private JLabel jlEquipo2Par4;
-    private JLabel jlGoles2Par4;
-    private JLabel jlGoles1Par4;
-    private JLabel jlEquipo1Par5;
-    private JLabel jlEquipo2Par5;
-    private JLabel jlGoles1Par5;
-    private JLabel jlGoles2Par5;
-    private JLabel jlEquipo1Par6;
-    private JLabel jlGoles1Par6;
-    private JLabel jlGoles2Par6;
-    private JLabel jlEquipo2Par6;
-    private JPanel pCompleto;
-    private JComboBox cbJornada;
     private JPanel pHeader;
     private JMenuBar jmheader;
     private JMenu mEquipos;
@@ -63,12 +31,39 @@ public class vPartidosPorJornada {
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
+    private JLabel fLogoKingsLeague;
     private JPanel pContenido;
     private JPanel pTocho;
     private JPanel pTocho2;
-    private JLabel jlBarra;
+    private JLabel jlEquipo1;
+    private JLabel jlEquipo2;
+    private JLabel jlEquipo1Par2;
+    private JLabel jlEquipo1Par3;
+    private JLabel jlEquipo1Par4;
+    private JLabel jlEquipo1Par5;
+    private JLabel jlEquipo1Par6;
+    private JLabel jlEquipo2Par2;
+    private JLabel jlEquipo2Par3;
+    private JLabel jlEquipo2Par4;
+    private JLabel jlEquipo2Par5;
+    private JLabel jlEquipo2Par6;
+    private JComboBox cbJornada;
+    private JTextField tfGoles1Par1;
+    private JTextField tfGoles2Par1;
+    private JTextField tfGoles1Par2;
+    private JTextField tfGoles2Par2;
+    private JTextField tfGoles1Par3;
+    private JTextField tfGoles2Par3;
+    private JTextField tfGoles1Par4;
+    private JTextField tfGoles2Par4;
+    private JTextField tfGoles1Par6;
+    private JTextField tfGoles2Par6;
+    private JTextField tfGoles1Par5;
+    private JTextField tfGoles2Par5;
+    private JButton bConfirmar;
 
-    public vPartidosPorJornada() throws Exception {
+
+    public vInsertarResultados() throws Exception {
 
         ArrayList<JLabel> nombresEquipos1 = new ArrayList<>();
 
@@ -88,37 +83,37 @@ public class vPartidosPorJornada {
         nombresEquipos2.add(jlEquipo2Par5);
         nombresEquipos2.add(jlEquipo2Par6);
 
-        ArrayList<JLabel> golesEquipos1 = new ArrayList<>();
+        ArrayList<JTextField> golesEq1 = new ArrayList<>();
 
-        golesEquipos1.add(jlGoles1Par1);
-        golesEquipos1.add(jlGoles1Par2);
-        golesEquipos1.add(jlGoles1Par3);
-        golesEquipos1.add(jlGoles1Par4);
-        golesEquipos1.add(jlGoles1Par5);
-        golesEquipos1.add(jlGoles1Par6);
+        golesEq1.add(tfGoles1Par1);
+        golesEq1.add(tfGoles1Par2);
+        golesEq1.add(tfGoles1Par3);
+        golesEq1.add(tfGoles1Par4);
+        golesEq1.add(tfGoles1Par5);
+        golesEq1.add(tfGoles1Par6);
 
-        ArrayList<JLabel> golesEquipos2 = new ArrayList<>();
+        ArrayList<JTextField> golesEq2 = new ArrayList<>();
 
-        golesEquipos2.add(jlGoles2Par1);
-        golesEquipos2.add(jlGoles2Par2);
-        golesEquipos2.add(jlGoles2Par3);
-        golesEquipos2.add(jlGoles2Par4);
-        golesEquipos2.add(jlGoles2Par5);
-        golesEquipos2.add(jlGoles2Par6);
+        golesEq2.add(tfGoles2Par1);
+        golesEq2.add(tfGoles2Par2);
+        golesEq2.add(tfGoles2Par3);
+        golesEq2.add(tfGoles2Par4);
+        golesEq2.add(tfGoles2Par5);
+        golesEq2.add(tfGoles2Par6);
 
 
-       ArrayList<Integer> numJornadas =  Main.getJornadas();
+        ArrayList<Integer> numJornadas =  Main.getJornadas();
 
         if (numJornadas.size() == 0)
         {
             pContenido.setVisible(false);
         }
-       for (int x = 0; x < numJornadas.size(); x++)
-       {
-           cbJornada.addItem(numJornadas.get(x));
-       }
-        HashMap <String, String> [] partidos = Main.getJornada(cbJornada.getItemCount());
-       cbJornada.setSelectedIndex(cbJornada.getItemCount()-1);
+        for (int x = 0; x < numJornadas.size(); x++)
+        {
+            cbJornada.addItem(numJornadas.get(x));
+        }
+        HashMap<String, String>[] partidos = Main.getJornada(cbJornada.getItemCount());
+        cbJornada.setSelectedIndex(cbJornada.getItemCount()-1);
 
         for (int x = 0; x < nombresEquipos1.size(); x++) {
 
@@ -136,8 +131,10 @@ public class vPartidosPorJornada {
             ImageIcon iconoEquipo = new ImageIcon(LogoEquipo);
             nombresEquipos2.get(x).setIcon(iconoEquipo);
 
-                golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
-            golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
+            golesEq1.get(x).setText(partidos[x].get("golesEquipo1"));
+            golesEq2.get(x).setText(partidos[x].get("golesEquipo2"));
+
+
 
 
         }
@@ -170,7 +167,7 @@ public class vPartidosPorJornada {
 
 
         // Poner la imagen del logo oficial de la Kings League
-        LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
+        ImageIcon LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
@@ -180,7 +177,6 @@ public class vPartidosPorJornada {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
-
 
         cbJornada.addActionListener(new ActionListener() {
             @Override
@@ -211,18 +207,30 @@ public class vPartidosPorJornada {
                     Image LogoEquipo = escudoEquipo2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
                     ImageIcon iconoEquipo = new ImageIcon(LogoEquipo);
                     nombresEquipos2.get(x).setIcon(iconoEquipo);
-                    golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
-                    golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
+                    golesEq1.get(x).setText(partidos[x].get("golesEquipo1"));
+                    golesEq2.get(x).setText(partidos[x].get("golesEquipo2"));
 
 
                 }
             }
         });
+
+
+        bConfirmar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (int x = 0; x<=golesEq1.size(); x++)
+                {
+                   Main.ActualizarPartido(nombresEquipos1.get(x).getText(), nombresEquipos2.get(x).getText(), golesEq1.get(x).getText(), golesEq2.get(x).getText());
+                }
+            }
+        });
     }
 
+
     public static void main(String[] args) throws Exception {
-        JFrame frame = new JFrame("vPartidosPorJornada");
-        frame.setContentPane(new vPartidosPorJornada().pPrincipal);
+        JFrame frame = new JFrame("vInsertarResultados");
+        frame.setContentPane(new vInsertarResultados().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
