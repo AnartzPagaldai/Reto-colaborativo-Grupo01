@@ -35,15 +35,13 @@ public class BaseDeDatos {
     }
 
 
-    public static boolean insert(String insert, Object[] argumentos) {
+    public static boolean executeUpdate(String insert, Object[] argumentos) {
         try {
-            abrirConexion();
             PreparedStatement statement = rellenarStatemet(insert, argumentos);
             int resultado = statement.executeUpdate();
             cerrarConexion();
             return resultado != 0;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -55,14 +53,16 @@ public class BaseDeDatos {
         for (int i = 0; i < argumentos.length; i++) {
             if (argumentos[i] instanceof String) {
                 statement.setString(i + 1, (String) argumentos[i]);
-            } else if (argumentos[i] instanceof Integer) { // todo quiza hay que añadir mas tipos de datos SQLDate
+            } else if (argumentos[i] instanceof Integer) { // todo quiza hay que añadir mas tipos de datos
                 statement.setInt(i + 1, (Integer) argumentos[i]);
+            } else if (argumentos[i] instanceof Date) {
+                statement.setDate(i + 1,(Date) argumentos[i]);
             }
         }
         return statement;
     }
 
-    public static <T extends ResultSetObjeto> void cosultaObjeto(T objeto, String consulta, Object[] argumentos) {
+    public static void cosultaObjeto(ResultSetObjeto objeto, String consulta, Object[] argumentos) {
         try {
             PreparedStatement statement = rellenarStatemet(consulta, argumentos);
             ResultSet resultSet = statement.executeQuery();

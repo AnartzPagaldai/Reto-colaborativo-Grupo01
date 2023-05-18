@@ -52,30 +52,12 @@ public class TEquipo {
     }
 
 
-    public static ArrayList<Equipo> selectAllEquipos (ArrayList<Equipo> equipos) throws SQLException {
+    public static ArrayList<Equipo> selectAllEquipos() throws SQLException {
         BaseDeDatos.abrirConexion();
-
         PreparedStatement ps = BaseDeDatos.getCon().prepareStatement("select nombre, logo_img, color from equipos");
         ResultSet resul = ps.executeQuery();
-        while (resul.next())
-        {
-            Equipo equipo = new Equipo();
-            equipo.setNombre(resul.getString("nombre"));
-            equipo.setLogoImg(resul.getString("logo_img"));
-            equipo.setColor(resul.getString("color"));
-            equipos.add(equipo);
-        }
-        BaseDeDatos.cerrarConexion();
-    return equipos;
-
-    }
-
-    public static ArrayList<Equipo> selectNombreEquipos (ArrayList<Equipo> equipos) throws SQLException {
-        BaseDeDatos.abrirConexion();
-        PreparedStatement ps = BaseDeDatos.getCon().prepareStatement("select nombre from equipos");
-        ResultSet resul = ps.executeQuery();
-        while (resul.next())
-        {
+        ArrayList<Equipo> equipos = new ArrayList<>();
+        while (resul.next()) {
             Equipo equipo = new Equipo();
             equipo.setNombre(resul.getString("nombre"));
             equipo.setLogoImg(resul.getString("logo_img"));
@@ -84,7 +66,6 @@ public class TEquipo {
         }
         BaseDeDatos.cerrarConexion();
         return equipos;
-
     }
 
 
