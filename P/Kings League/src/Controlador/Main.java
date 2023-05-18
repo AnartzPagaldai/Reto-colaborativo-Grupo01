@@ -9,7 +9,6 @@ import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
-import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
@@ -34,10 +33,18 @@ public class Main {
     public static JFrame vRegistro;
     public static JFrame vJugadores;
     public static JFrame vEquipoActualizar;
+    public static JFrame vPersonalActualizar;
     public static JFrame vUsuario;
     public static JFrame vInsertarJugadores;
     public static JDialog vBorrarJugadores;
     public static JFrame vClasificacion;
+    public static JDialog vBorrarEquipos;
+    public static JDialog vBorrarPersonales;
+    public static JFrame vBorrarSplits;
+    public static JFrame vBorrarUsuarios;
+    public static JFrame vInsertarPersonal;
+    public static JFrame vInsertarResultados;
+    public static JFrame vInsertarEquipos;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
@@ -83,6 +90,8 @@ public class Main {
         vPrinicpalAdmin.setVisible(true);
         vPrinicpalAdmin.setEnabled(true);
     }
+
+    // Crear ventanas
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -159,8 +168,8 @@ public class Main {
         vPrinicpalUsuario.setVisible(false);
         actual=vUsuario;
     }
-    public static void generarActualzarEquipos() throws MalformedURLException {
-        vEquipoActualizar= new JFrame("vActualizarEquipo");
+    public static void generarActualizarEquipo() throws MalformedURLException {
+        vEquipoActualizar = new JFrame("vActualizarEquipo");
         vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
         vEquipoActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vEquipoActualizar.pack();
@@ -170,7 +179,7 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
     }
     public static void generarInsertarJugadores() throws MalformedURLException {
-        vInsertarJugadores= new JFrame("vInsertarJugadores");
+        vInsertarJugadores = new JFrame("vInsertarJugadores");
         vInsertarJugadores.setContentPane(new vInsertarJugadores().getpPrincipal());
         vInsertarJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vInsertarJugadores.pack();
@@ -180,13 +189,13 @@ public class Main {
         actual=vInsertarJugadores;
     }
     public static void generarBorrarJugadores() throws MalformedURLException {
-        vBorrarJugadores= new vBorrarJugador();
+        vBorrarJugadores = new vBorrarJugador();
         vBorrarJugadores.pack();
         vBorrarJugadores.setVisible(true);
         vPrinicpalAdmin.setEnabled(false);
     }
     public static void generarVentanaClasificacion() throws MalformedURLException {
-        vClasificacion= new JFrame("vClasificacionEquipos");
+        vClasificacion = new JFrame("vClasificacionEquipos");
         vClasificacion.setContentPane(new vClasificacionEquipos().getpPrincipal());
         vClasificacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vClasificacion.pack();
@@ -194,6 +203,78 @@ public class Main {
         vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalUsuario.setVisible(false);
         actual=vClasificacion;
+    }
+    public static void generarActualizarPersonal() throws MalformedURLException {
+        vPersonalActualizar = new JFrame("vActualizarPersonal");
+        vPersonalActualizar.setContentPane(new vActualizarPersonal().getpPrincipal());
+        vPersonalActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPersonalActualizar.pack();
+        vPersonalActualizar.setVisible(true);
+        vPersonalActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual=vPersonalActualizar;
+        vPrinicpalAdmin.setVisible(false);
+    }
+    public static void generarBorrarEquipos() throws MalformedURLException {
+        vBorrarEquipos = new vBorrarEquipo();
+        vBorrarEquipos.pack();
+        vBorrarEquipos.setVisible(true);
+        vPrinicpalAdmin.setEnabled(false);
+    }
+    public static void generarBorrarPersonales() throws MalformedURLException {
+        vBorrarPersonales = new vBorrarPersonal();
+        vBorrarPersonales.pack();
+        vBorrarPersonales.setVisible(true);
+        vPrinicpalAdmin.setEnabled(false);
+    }
+    public static void generarBorrarSplits() throws MalformedURLException {
+        vBorrarSplits = new JFrame("vDeleteSplit");
+        vBorrarSplits.setContentPane(new vDeleteSplit().getpPrincipal());
+        vBorrarSplits.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vBorrarSplits.pack();
+        vBorrarSplits.setVisible(true);
+        vBorrarSplits.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vBorrarSplits;
+    }
+    public static void generarBorrarUsuarios() throws MalformedURLException {
+        vBorrarUsuarios = new JFrame("vDeleteusuarios");
+        vBorrarUsuarios.setContentPane(new vDeleteusuarios().getpPrincipal());
+        vBorrarUsuarios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vBorrarUsuarios.pack();
+        vBorrarUsuarios.setVisible(true);
+        vBorrarUsuarios.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vBorrarUsuarios;
+    }
+    public static void generarInsertarPersonal() throws MalformedURLException {
+        vInsertarPersonal = new JFrame("vInsertarPersonal");
+        vInsertarPersonal.setContentPane(new vInsertarPersonal().getpPrincipal());
+        vInsertarPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarPersonal.pack();
+        vInsertarPersonal.setVisible(true);
+        vInsertarPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vInsertarPersonal;
+    }
+    public static void generarInsertarResultados() throws Exception {
+        vInsertarResultados = new JFrame("vInsertarResultados");
+        vInsertarResultados.setContentPane(new vInsertarResultados().getpPrincipal());
+        vInsertarResultados.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarResultados.pack();
+        vInsertarResultados.setVisible(true);
+        vInsertarResultados.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vInsertarResultados;
+    }
+    public static void generarInsertarEquipos() throws Exception {
+        vInsertarEquipos = new JFrame("vInsertEquipos");
+        vInsertarEquipos.setContentPane(new vInsertEquipos().getpPrincipal());
+        vInsertarEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarEquipos.pack();
+        vInsertarEquipos.setVisible(true);
+        vInsertarEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vInsertarEquipos;
     }
 
 
@@ -282,8 +363,8 @@ public class Main {
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
-        ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
-        return dePartidosAhashmap(partidoDeJornada);
+        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).toList();
+        return dePartidosAhashmap((ArrayList<Partido>) partidoDeJornada);
     }
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
         ArrayList<HashMap<String, String>> partidosMap = new ArrayList<>();
