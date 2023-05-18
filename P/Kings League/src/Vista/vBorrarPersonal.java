@@ -1,35 +1,41 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
-import java.awt.*;
+import javax.swing.text.MaskFormatter;
 import java.awt.event.*;
+import java.text.ParseException;
 
-public class vBorrarEquipo extends JDialog {
+public class vBorrarPersonal extends JDialog {
     private JPanel pPrincipal;
-    private JButton bAceptar;
-    private JButton bCancelar;
     private JPanel pDegradado;
     private JPanel pDatos;
     private JPanel pIniciarSesion;
-    private JTextField tfNombre;
-    private JLabel jlNombre;
+    private JLabel jlDni;
     private JPanel pFooter;
     private JPanel pBotones;
+    private JButton bAceptar;
+    private JButton bCancelar;
+    private JFormattedTextField ftfDni;
+    private JButton buttonOK;
+    private JButton buttonCancel;
+    private static boolean existe;
 
-    public vBorrarEquipo() {
+    public vBorrarPersonal() {
+
         setContentPane(pPrincipal);
         setModal(true);
-        getRootPane().setDefaultButton(bAceptar);
+        getRootPane().setDefaultButton(buttonOK);
 
-        bAceptar.addActionListener(new ActionListener() {
+        buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
         });
 
-        bCancelar.addActionListener(new ActionListener() {
+        buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -49,51 +55,38 @@ public class vBorrarEquipo extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-/*
-        pPrincipal = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                Graphics2D g2d = (Graphics2D) g;
-
-                Color colorInicio = new Color(239, 122, 14);
-                Color colorFin = new Color(253, 214, 44);
-
-                GradientPaint gradient = new GradientPaint(
-                        0, 0, colorInicio,
-                        0, getHeight(), colorFin);
-
-                g2d.setPaint(gradient);
-
-                g2d.fillRect(0, 0, getWidth(), getHeight());
-            }
-        };
-
-
-        pPrincipal.add(pDegradado, BorderLayout.CENTER);
-*/
-
     }
 
-
     private void onOK() {
-        // todo: validar que existe el equipo y borrarlo + si va bien sacar mensaje
+        // TODO: comprobar que existe el dni y si es así; borrarlo
+        //Main.buscarDniPersonal(ftfDni.getText());
+        //if (existe)
+            //TPersonal.borrar(ftfDni.getText());
     }
 
     private void onCancel() {
         Main.PrincipalAdmin();
     }
 
+    private void createUIComponents() throws Exception {
+        try {
+            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
+        }
+        catch (ParseException e){
+            throw new Exception("El DNI no cumple con el formato establecido.");
+        }
+    }
+
+
     public JPanel getpPrincipal() {
         return pPrincipal;
     }
 
     public static void main(String[] args) {
-        vBorrarEquipo dialog = new vBorrarEquipo();
+        vBorrarPersonal dialog = new vBorrarPersonal();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
     }
+
 }

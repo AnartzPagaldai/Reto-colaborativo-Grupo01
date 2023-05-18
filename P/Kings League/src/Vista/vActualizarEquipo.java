@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -24,6 +26,17 @@ public class vActualizarEquipo {
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private JButton bSalir;
+    private JMenuBar jmheader;
+    private JMenu mEquipos;
+    private JMenuItem jmiConsultarEquipos;
+    private JMenu mJugadores;
+    private JMenuItem jmiSeleccionar;
+    private JMenu mPartidos;
+    private JMenuItem jmiVer;
+    private JMenu mClasificacion;
+    private JMenu mUsuario;
+    private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiCerrarSesion;
     private ImageIcon LogoKingsLeague;
     private boolean correcto;
 
@@ -61,6 +74,19 @@ public class vActualizarEquipo {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
+
+        tfNombre.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                // TODO: poner que compruebe si existe el nombre y si existe; rellenar los otros campos con los datos existentes
+            }
+        });
+        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
+        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
+        mUsuario.setIcon(UsuIcono);
+
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,6 +105,7 @@ public class vActualizarEquipo {
                 Main.PrincipalAdmin();
             }
         });
+
     }
 
 

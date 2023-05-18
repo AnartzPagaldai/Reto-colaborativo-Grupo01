@@ -205,7 +205,7 @@
                   <background color="-5712"/>
                   <font name="DejaVu Sans Mono" size="18"/>
                   <foreground color="-16777216"/>
-                  <text value="ATRAS"/>
+                  <text value="ATRÁS"/>
                 </properties>
               </component>
               <grid id="add06" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

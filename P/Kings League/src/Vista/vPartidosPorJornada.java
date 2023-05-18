@@ -4,11 +4,14 @@ import Controlador.Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class vPartidos {
+public class vPartidosPorJornada {
     private JPanel pPrincipal;
     private JPanel pDegradado;
     private ImageIcon escudoEquipo1;
@@ -18,23 +21,10 @@ public class vPartidos {
 
 
     private ImageIcon LogoKingsLeague;
-    private JPanel pHeader;
-    private JMenuBar jmheader;
-    private JMenu mEquipos;
-    private JMenuItem jmiConsultarEquipos;
-    private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
-    private JMenu mPartidos;
-    private JMenuItem jmiVer;
-    private JMenu mClasificacion;
-    private JMenu mUsuario;
-    private JMenuItem jmiVerPerfil;
-    private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
     private JLabel fTwitch;
     private JLabel fInstagram;
     private JLabel fTwitter;
-    private JPanel pContenido;
     private JLabel jlEquipo1;
     private JLabel jlGoles2Par1;
     private JLabel jlEquipo2;
@@ -59,10 +49,26 @@ public class vPartidos {
     private JLabel jlGoles1Par6;
     private JLabel jlGoles2Par6;
     private JLabel jlEquipo2Par6;
+    private JPanel pCompleto;
+    private JComboBox cbJornada;
+    private JPanel pHeader;
+    private JMenuBar jmheader;
+    private JMenu mEquipos;
+    private JMenuItem jmiConsultarEquipos;
+    private JMenu mJugadores;
+    private JMenuItem jmiSeleccionar;
+    private JMenu mPartidos;
+    private JMenuItem jmiVer;
+    private JMenu mClasificacion;
+    private JMenu mUsuario;
+    private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiCerrarSesion;
+    private JPanel pContenido;
     private JPanel pTocho;
     private JPanel pTocho2;
+    private JLabel jlBarra;
 
-    public vPartidos() throws Exception {
+    public vPartidosPorJornada() throws Exception {
 
         ArrayList<JLabel> nombresEquipos1 = new ArrayList<>();
 
@@ -101,8 +107,18 @@ public class vPartidos {
         golesEquipos2.add(jlGoles2Par6);
 
 
-        Main.getJornadas();
-        HashMap <String, String> [] partidos = Main.getJornada(1);
+       ArrayList<Integer> numJornadas =  Main.getJornadas();
+
+        if (numJornadas.size() == 0)
+        {
+            pContenido.setVisible(false);
+        }
+       for (int x = 0; x < numJornadas.size(); x++)
+       {
+           cbJornada.addItem(numJornadas.get(x));
+       }
+        HashMap <String, String> [] partidos = Main.getJornada(cbJornada.getItemCount());
+       cbJornada.setSelectedIndex(cbJornada.getItemCount()-1);
 
         for (int x = 0; x < nombresEquipos1.size(); x++) {
 
@@ -120,7 +136,7 @@ public class vPartidos {
             ImageIcon iconoEquipo = new ImageIcon(LogoEquipo);
             nombresEquipos2.get(x).setIcon(iconoEquipo);
 
-            golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
+                golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
             golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
 
 
@@ -166,11 +182,47 @@ public class vPartidos {
         mUsuario.setIcon(UsuIcono);
 
 
+        cbJornada.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                HashMap <String, String> [] partidos = Main.getJornada((Integer) cbJornada.getSelectedItem());
+
+                for (int x = 0; x < nombresEquipos1.size(); x++) {
+
+                    nombresEquipos1.get(x).setText(partidos[x].get("nombre_equiop1"));
+
+                    try {
+                        escudoEquipo1 = new ImageIcon(new URL(partidos[x].get("logoEquipo1")));
+                    } catch (MalformedURLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    Image LogoNuevo = escudoEquipo1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                    ImageIcon newIcon = new ImageIcon(LogoNuevo);
+                    nombresEquipos1.get(x).setIcon(newIcon);
+
+                    nombresEquipos2.get(x).setText(partidos[x].get("nombre_equiop2"));
+
+                    try {
+                        escudoEquipo2 = new ImageIcon(new URL(partidos[x].get("logoEquipo2")));
+                    } catch (MalformedURLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    Image LogoEquipo = escudoEquipo2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                    ImageIcon iconoEquipo = new ImageIcon(LogoEquipo);
+                    nombresEquipos2.get(x).setIcon(iconoEquipo);
+                    golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
+                    golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
+
+
+                }
+            }
+        });
     }
 
     public static void main(String[] args) throws Exception {
-        JFrame frame = new JFrame("vPartidos");
-        frame.setContentPane(new vPartidos().pPrincipal);
+        JFrame frame = new JFrame("vPartidosPorJornada");
+        frame.setContentPane(new vPartidosPorJornada().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
