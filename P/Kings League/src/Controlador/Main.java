@@ -7,6 +7,7 @@ import Modelo.Jornada.TJornada;
 import Modelo.Jugador.Jugador;
 import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
+import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
@@ -266,14 +267,15 @@ public class Main {
        return TJornada.generarJornadas();
     }
     public static ArrayList<Integer> getJornadas() throws Exception{
-    public static void getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
             throw new Exception("error al leer desde jornadas");
         }
-
-    }
+        for (int x = 0; x< partidos.size(); x += 6) {
+            NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
+        }
+        return NumJornadas;}
     public static HashMap<String, String>[] getUltimaJornada() {
         return dePartidosAhashmap(TJornada.getUltimaJornada());
     }
@@ -300,38 +302,8 @@ public class Main {
                 partidoMap.put("golesEquipo2", "sin jugar");
             }
             partidosMap.add(partidoMap);
-        for (int x = 0; x< partidos.size(); x += 6) {
-            NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
         }
-        return NumJornadas;
-    }
-
-    public static HashMap[] getJornada(int numJornada) {
-        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toList());
-        HashMap[] partidosMap = new HashMap[partidoDeJornada.size()];
-        for (int i = 0; i < partidoDeJornada.size(); i++) {
-            partidosMap[i] = dePartidosAhashmap(partidoDeJornada.get(i));
-        }
-        return partidosMap;
-    }
-    private static HashMap<String, String> dePartidosAhashmap(Partido partido) {
-        HashMap<String, String> partidoMap = new HashMap<>();
-        partidoMap.put("numJornada", String.valueOf(partido.getJornada().getNumJornada()));
-        partidoMap.put("fecha", partido.getFecha().toString());
-        partidoMap.put("nombre_equiop1", partido.getEquipo1().getNombre());
-        partidoMap.put("nombre_equiop2", partido.getEquipo2().getNombre());
-        partidoMap.put("logoEquipo1", partido.getEquipo1().getLogoImg());
-        partidoMap.put("logoEquipo2", partido.getEquipo2().getLogoImg());
-        if (partido.getFecha().before(new Date())) {
-            partidoMap.put("golesEquipo1", String.valueOf(partido.getGolesEquipo1()));
-            partidoMap.put("golesEquipo2", String.valueOf(partido.getGolesEquipo2()));
-        } else {
-            partidoMap.put("golesEquipo1", "SIN");
-            partidoMap.put("golesEquipo2", "JUGAR");
-        }
-
-        return partidosMap.toArray(new HashMap[partidosMap.size()]);
-    }
+    return partidosMap.toArray(new HashMap[partidosMap.size()]);}
     public static int getCantidadPersonas(){
         return jugadoresInfome.size()+2;
     }
@@ -413,13 +385,14 @@ public class Main {
     }
             public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2)
             {
-                Equipo equip1 = TEquipo.getEquipoPorNombre(equipo1);
-                Equipo equip2 = TEquipo.getEquipoPorNombre(equipo2);
-                Partido partidoActu = new Partido();
-                partidoActu.setEquipo1(equip1);
-                partidoActu.setEquipo2(equip2);
-                partidoActu.setGolesEquipo1(Integer.parseInt(golesEq1));
-                partidoActu.setGolesEquipo1(Integer.parseInt(golesEq2));
+                Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
+                Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
+                Partido elPartido = new Partido();
+                elPartido.setEquipo1(equ1);
+                elPartido.setEquipo2(equ2);
+                elPartido.setGolesEquipo1(Integer.parseInt(golesEq1));
+                elPartido.setGolesEquipo2(Integer.parseInt(golesEq2));
+                TPartido.actualizarPartido(elPartido);
 
                 boolean valido = true;
 
