@@ -17,7 +17,7 @@ public class Jugador implements ResultSetObjeto {
         PORTERO,
         DEFENSA,
         MEDIO,
-        DELANTERO
+        DELANTERO;
     }
     private String img;
     private TipoJugador tipoJugador;

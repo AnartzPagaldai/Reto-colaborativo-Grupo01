@@ -73,7 +73,7 @@
                         <constraints/>
                         <properties>
                           <font size="18"/>
-                          <text value="                                                           "/>
+                          <text value="                                                                                                         "/>
                         </properties>
                       </component>
                       <grid id="18006" class="javax.swing.JMenu" binding="mEquipos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">

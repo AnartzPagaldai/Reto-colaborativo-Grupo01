@@ -1,11 +1,17 @@
 package Vista;
 
+import Controlador.Main;
+import Modelo.Enumeraciones.TipoSueldo;
+import Modelo.Jugador.Jugador;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class vInsertEquipos {
     private JPanel pDegradado;
@@ -19,18 +25,20 @@ public class vInsertEquipos {
     private JLabel fLogoKingsLeague;
     private JPanel pPrincipal;
     private JLabel jlImagen;
-    private JTextField tfPresupuesto;
     private JTextField tfImagen;
-    private JMenuBar jmheader;
-    private JMenu mEquipos;
-    private JMenuItem jmiConsultarEquipos;
-    private JMenu mPartidos;
-    private JMenuItem jmiVer;
-    private JMenu mClasificacion;
+    private JButton bAtras;
+    private JLabel lColor;
+    private JTextField tfColor;
+    private JTextField tfSueldo;
+    private JComboBox cbPresupuesto;
     private JMenu mUsuario;
-    private JMenuItem jmiVerPerfil;
-    private JMenuItem jmiCerrarSesion;
     private ImageIcon LogoKingsLeague;
+    private static final String patronLogo = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
+    private static final String patronColor = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
+    private static final String numeros= "^[0-9]+$";
+    private boolean numerosCorrectos;
+    private boolean enlaceCorrecto;
+    private boolean colorCorrecto;
 
 
     public vInsertEquipos() throws MalformedURLException {
@@ -53,10 +61,7 @@ public class vInsertEquipos {
                 g2d.fillRect(0, 0, getWidth(), getHeight());
             }
         };
-
-
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
-
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
@@ -64,17 +69,31 @@ public class vInsertEquipos {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
-        // Poner la imagen del usuario
-        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
-        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
-        mUsuario.setIcon(UsuIcono);
-
 
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO : validar todo y guardar datos
+                boolean insertar;
+                try {
+                    enlaceCorrecto();
+                    colorCorrecto();
+                    numerosCorrectos();
+                    if (enlaceCorrecto && colorCorrecto && numerosCorrectos){
+                        insertar= Main.insertarEquipo(tfNombre.getText(), Double.parseDouble(tfSueldo.getText()), tfImagen.getText(), tfColor.getText());
+                        if (insertar){
+                            JOptionPane.showMessageDialog(null, "¡Equipo creado con exito!");
+                        }
+                    }else throw new Exception("Introduzca bien los datos, por favor");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+
+            }
+        });
+        bAtras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.PrincipalAdmin();
             }
         });
     }
@@ -92,5 +111,39 @@ public class vInsertEquipos {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+    public void enlaceCorrecto(){
+        Pattern pattern = Pattern.compile(patronLogo);
+        Matcher matcher = pattern.matcher(tfImagen.getText());
+        if (!matcher.matches()){
+            enlaceCorrecto=false;
+            tfImagen.setBackground(Color.red);
+        }else {
+            tfImagen.setBackground(Color.green);
+            enlaceCorrecto=true;
+        }
+    }
 
+    public void colorCorrecto(){
+        Pattern pattern = Pattern.compile(patronColor);
+        Matcher matcher = pattern.matcher(tfColor.getText());
+        if (!matcher.matches()){
+            colorCorrecto=false;
+            tfColor.setBackground(Color.red);
+        }else {
+            tfColor.setBackground(Color.green);
+            colorCorrecto=true;
+        }
+    }
+
+    public void numerosCorrectos(){
+        Pattern pattern = Pattern.compile(numeros);
+        Matcher matcher = pattern.matcher(tfSueldo.getText());
+        if (!matcher.matches()){
+            numerosCorrectos=false;
+            tfSueldo.setBackground(Color.red);
+        }else {
+            tfSueldo.setBackground(Color.green);
+            numerosCorrectos=true;
+        }
+    }
 }

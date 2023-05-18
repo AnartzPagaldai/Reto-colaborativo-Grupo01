@@ -1,10 +1,12 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Equipo.Equipo;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class vBorrarEquipo extends JDialog {
     private JPanel pPrincipal;
@@ -13,15 +15,43 @@ public class vBorrarEquipo extends JDialog {
     private JPanel pDegradado;
     private JPanel pDatos;
     private JPanel pIniciarSesion;
-    private JTextField tfNombre;
     private JLabel jlNombre;
     private JPanel pFooter;
     private JPanel pBotones;
+    private JComboBox cbNombres;
+    private Equipo equipo;
 
     public vBorrarEquipo() {
+        ArrayList<String> nombres=Main.selectNombresEquipos();
+        for (int x=0; x<nombres.size();x++){
+            cbNombres.addItem(nombres.get(x));
+        }
+        pPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                Graphics2D g2d = (Graphics2D) g;
+
+                Color colorInicio = new Color(239, 122, 14);
+                Color colorFin = new Color(253, 214, 44);
+
+                GradientPaint gradient = new GradientPaint(
+                        0, 0, colorInicio,
+                        0, getHeight(), colorFin);
+
+                g2d.setPaint(gradient);
+
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+
+
+        pPrincipal.add(pDegradado, BorderLayout.CENTER);
         setContentPane(pPrincipal);
         setModal(true);
         getRootPane().setDefaultButton(bAceptar);
+
 
         bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -49,37 +79,25 @@ public class vBorrarEquipo extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-/*
-        pPrincipal = new JPanel() {
+        cbNombres.addActionListener(new ActionListener() {
             @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                Graphics2D g2d = (Graphics2D) g;
-
-                Color colorInicio = new Color(239, 122, 14);
-                Color colorFin = new Color(253, 214, 44);
-
-                GradientPaint gradient = new GradientPaint(
-                        0, 0, colorInicio,
-                        0, getHeight(), colorFin);
-
-                g2d.setPaint(gradient);
-
-                g2d.fillRect(0, 0, getWidth(), getHeight());
+            public void actionPerformed(ActionEvent e) {
+                if (cbNombres.getSelectedIndex()==0){
+                    JOptionPane.showMessageDialog(null, "Seleccione un nombre correcto");
+                }else {
+                    equipo = Main.equipoPorNombre(cbNombres.getSelectedItem().toString());
+                }
             }
-        };
-
-
-        pPrincipal.add(pDegradado, BorderLayout.CENTER);
-*/
-
+        });
     }
 
 
     private void onOK() {
-        // todo: validar que existe el equipo y borrarlo + si va bien sacar mensaje
+        boolean delete;
+        delete=Main.deleteEquipo(equipo.getNombre());
+        if (delete){
+            JOptionPane.showMessageDialog(null, "¡Equipo borrado con exito!");
+        }else JOptionPane.showMessageDialog(null, "Problemas al eliminar");
     }
 
     private void onCancel() {

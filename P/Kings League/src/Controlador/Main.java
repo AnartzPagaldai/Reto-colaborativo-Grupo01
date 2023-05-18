@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Enumeraciones.TipoSueldo;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
@@ -37,7 +38,10 @@ public class Main {
     public static JFrame vInsertarJugadores;
     public static JDialog vBorrarJugadores;
     public static JFrame vClasificacion;
+    public static JFrame vUpdateJugadores;
+    public static JFrame vInsertEquipos;
     public static Usuario u;
+
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
 
@@ -62,7 +66,7 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }*/
-        XML.generarXMlultimaJornada();
+        //XML.generarXMlultimaJornada();
     }
     public static void cerrarSesion() {
         actual.dispose();
@@ -178,6 +182,16 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
         actual=vInsertarJugadores;
     }
+    public static void generarActualizarJugadores() throws MalformedURLException {
+        vUpdateJugadores= new JFrame("vUpdateJugadores");
+        vUpdateJugadores.setContentPane(new vUpdateJugadores().getpPrincipal());
+        vUpdateJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdateJugadores.pack();
+        vUpdateJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vUpdateJugadores.setVisible(true);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vUpdateJugadores;
+    }
     public static void generarBorrarJugadores() throws MalformedURLException {
         vBorrarJugadores= new vBorrarJugador();
         vBorrarJugadores.pack();
@@ -193,6 +207,16 @@ public class Main {
         vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalUsuario.setVisible(false);
         actual=vClasificacion;
+    }
+    public static void generarVentanaInsertarEquipos() throws MalformedURLException {
+        vInsertEquipos= new JFrame("vInsertEquipos");
+        vInsertEquipos.setContentPane(new vInsertEquipos().getpPrincipal());
+        vInsertEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertEquipos.pack();
+        vInsertEquipos.setVisible(true);
+        vInsertEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalUsuario.setVisible(false);
+        actual=vInsertEquipos;
     }
 
 
@@ -394,5 +418,91 @@ public class Main {
         TPartido.actualizarPartido(elPartido);
         boolean valido = true;
         return valido;
+    }
+    public static ArrayList<String> selectDNI(){
+        ArrayList<String> dnis=new ArrayList<>();
+        dnis=TJugador.selectDNI(dnis);
+        return dnis;
+    }
+    public static Jugador jugadorPorDNI(String dni){
+        Jugador jugador =new Jugador();
+        jugador.setDni(dni);
+        jugador=TJugador.getJugadorPorDNI(jugador);
+        return jugador;
+    }
+    public static boolean updateJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+        boolean update;
+        Jugador jugador=new Jugador();
+        jugador.setNombre(nombre);
+        jugador.setApellidos(apellido);
+        jugador.setDni(dni);
+        jugador.setTipoPosicion(Jugador.TipoPosicion.valueOf(posicion.toString()));
+        jugador.setTipoJugador(Jugador.TipoJugador.valueOf(tipo.toString()));
+        jugador.setTelefono(telefono);
+        jugador.setImg(img);
+        jugador.setVelocidad(velocidad);
+        jugador.setFisico(fisico);
+        jugador.setDefensa(defensa);
+        jugador.setPase(pase);
+        jugador.setTiro(tiro);
+        jugador.setTalento(talento);
+        update=TJugador.update(jugador);
+        return update;
+    }
+
+    public static boolean insertarEquipo(String nombre, double presupuesto, String imagen, String color) {
+        boolean insertar;
+        boolean existe;
+        Equipo equipo=new Equipo();
+        equipo.setNombre(nombre);
+        equipo.setPresupuestoAnual(presupuesto);
+        equipo.setLogoImg(imagen);
+        equipo.setColor(color);
+        existe=TEquipo.selectEquipoInsertar(equipo);
+        if (existe){
+            insertar=false;
+        }else{
+            insertar=TEquipo.insertar(equipo);
+        }
+        return insertar;
+    }
+
+    public static ArrayList<String> selectNombresEquipos(){
+        ArrayList<String> nombres=new ArrayList<>();
+        nombres=TEquipo.selectNombre(nombres);
+        return nombres;
+    }
+
+    public static Equipo equipoPorNombre(String nombre) {
+        Equipo equipo =new Equipo();
+        equipo.setNombre(nombre);
+        equipo=TEquipo.getEquipoPorNombreDavid(equipo);
+        return equipo;
+    }
+
+    public static boolean updateEquipos(String nombre, double presupuesto, String imagen, String color) {
+        boolean update;
+        boolean existe;
+        Equipo equipo=new Equipo();
+        equipo.setNombre(nombre);
+        equipo.setPresupuestoAnual(presupuesto);
+        equipo.setLogoImg(imagen);
+        equipo.setColor(color);
+        existe=TEquipo.selectEquipoInsertar(equipo);
+        if (existe){
+            update=false;
+        }else{
+            update=TEquipo.update(equipo);
+        }
+        return update;
+    }
+
+    public static boolean deleteEquipo(String nombre) {
+        boolean delete;
+        Equipo equipo =new Equipo();
+        equipo.setNombre(nombre);
+        equipo=equipoPorNombre(equipo.getNombre());
+        delete=TEquipo.delete(equipo);
+        return delete;
     }
 }
