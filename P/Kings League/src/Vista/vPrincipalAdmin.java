@@ -14,8 +14,6 @@ import java.net.URL;
 public class vPrincipalAdmin {
     private JPanel pPrincipal;
     private JPanel pDegradado;
-    private JPanel pHeader;
-    private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
@@ -27,18 +25,39 @@ public class vPrincipalAdmin {
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
     private JLabel fLogoKingsLeague;
-    private JPanel pContenido;
-    private JPanel pFooter;
     private JLabel fTwitch;
     private JLabel fInstagram;
     private JLabel fTwitter;
+    private JPanel pHeader;
+    private JMenuBar jmheader;
+    private JMenuItem jmiVer;
+    private JPanel pContenido;
+    private JPanel pCrudEquipos;
+    private JButton bInsertarEquipos;
+    private JButton bUpdateEquipos;
+    private JButton bDeleteEquipos;
+    private JButton bInsertarJugadores;
+    private JButton bUpdateJugadores;
+    private JButton bDeleteJugadores;
+    private JPanel pJugadores;
+    private JPanel pPersonal;
+    private JButton bInsertarPersonal;
+    private JButton bUpdatePersonal;
+    private JButton bDeletePersonal;
+    private JButton bInsertarContratoJugadores;
+    private JButton bUpdateContratoJugadores;
+    private JButton bDeleteContratoJugadores;
+    private JButton bInsertarContratosPersonal;
+    private JButton bUpdateContratosPersonal;
+    private JButton bDeleteContratosPersonal;
+    private JButton bEmparejar;
+    private JButton bActualizarXML;
     private JMenuItem jmiInsertarEquipos;
     private JMenuItem jmiActualizarEquipos;
     private JMenuItem jmiBorrarEquipos;
     private JMenuItem jmiInsertarJugadores;
     private JMenuItem jmiActualizarJugadores;
     private JMenuItem jmiBorrararJugadores;
-    private JPanel pLogoKingsLeague;
     private ImageIcon LogoKingsLeague;
     private ImageIcon imagenTwitch;
     private ImageIcon imagenInstagram;
@@ -63,7 +82,7 @@ public class vPrincipalAdmin {
 
                 GradientPaint gradient = new GradientPaint(
                         0, 0, colorInicio,
-                        0, getHeight(), colorFin);
+                        getWidth(), getHeight(), colorFin);
 
                 g2d.setPaint(gradient);
 
@@ -118,18 +137,7 @@ public class vPrincipalAdmin {
                 mEquipos.setOpaque(false);
             }
         });
-        mJugadores.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mJugadores.setBackground(Color.orange);
-                mJugadores.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mJugadores.setBackground(UIManager.getColor("Menu.background"));
-                mJugadores.setOpaque(false);
-            }
-        });
+
         mClasificacion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -168,13 +176,6 @@ public class vPrincipalAdmin {
         });
 
 
-        // Poner los métodos
-        jmiVerPerfil.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO : poner que aparezca la ventana "vPerfilUsuario"
-            }
-        });
 
         jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
@@ -264,6 +265,7 @@ public class vPrincipalAdmin {
 
             }
         });
+
 
 
     }

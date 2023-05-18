@@ -34,6 +34,17 @@ public class vUpdateJugadores {
     private JLabel fTwitter;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
+    private JMenuBar jmheader;
+    private JMenu mEquipos;
+    private JMenuItem jmiConsultarEquipos;
+    private JMenu mJugadores;
+    private JMenuItem jmiSeleccionar;
+    private JMenu mPartidos;
+    private JMenuItem jmiVer;
+    private JMenu mClasificacion;
+    private JMenu mUsuario;
+    private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiCerrarSesion;
 
     public vUpdateJugadores() throws MalformedURLException {
         pPrincipal = new JPanel() {
@@ -86,6 +97,12 @@ public class vUpdateJugadores {
         Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
         ImageIcon twIcono = new ImageIcon(imgTw);
         fTwitter.setIcon(twIcono);
+
+        // Poner la imagen del usuario
+        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
+        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
+        mUsuario.setIcon(UsuIcono);
 
     }
 

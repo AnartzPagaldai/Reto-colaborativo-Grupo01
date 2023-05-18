@@ -38,7 +38,17 @@ public class vInsertarJugadores {
     private JLabel fLogoKingsLeague;
     private JPanel pEstadisticas;
     private JButton bAtras;
-    private JTextField tfApellido;
+    private JMenuBar jmheader;
+    private JMenu mEquipos;
+    private JMenuItem jmiConsultarEquipos;
+    private JMenu mJugadores;
+    private JMenuItem jmiSeleccionar;
+    private JMenu mPartidos;
+    private JMenuItem jmiVer;
+    private JMenu mClasificacion;
+    private JMenu mUsuario;
+    private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiCerrarSesion;
 
     private JFormattedTextField ftTelefono;
     private JTextField tfIMG;
@@ -79,26 +89,19 @@ public class vInsertarJugadores {
         JSpinner sDefensa = new JSpinner(modelDefensa);
         pDefensa.add(sDefensa);
 
-        ArrayList<String> posiciones= new ArrayList<>();
-        posiciones.add("SELECCIONE UNA OPCION");
-        posiciones.add("PORTERO");
-        posiciones.add("DEFENSA");
-        posiciones.add("MEDIO");
-        posiciones.add("DELANTERO");
+    public vInsertarJugadores() throws MalformedURLException {
 
-        for (int x=0;x<posiciones.size(); x++){
-            cbPosicion.addItem(posiciones.get(x));
-        }
+        // Poner la imagen del logo oficial de la Kings League
+        LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
+        Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
+        ImageIcon newIcon = new ImageIcon(LogoNuevo);
+        fLogoKingsLeague.setIcon(newIcon);
 
-        ArrayList<String> tipo= new ArrayList<>();
-        tipo.add("SELECCIONE UNA OPCION");
-        tipo.add("DRAFT");
-        tipo.add("WILD-CARD");
-
-        for (int x=0;x<tipo.size(); x++){
-            cbTipo.addItem(tipo.get(x));
-        }
-
+        // Poner la imagen del usuario
+        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
+        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
+        mUsuario.setIcon(UsuIcono);
         pPrincipal = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -123,73 +126,26 @@ public class vInsertarJugadores {
 
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
-        // Poner la imagen del logo oficial de la Kings League
-        LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
-        Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
-        ImageIcon newIcon = new ImageIcon(LogoNuevo);
-        fLogoKingsLeague.setIcon(newIcon);
 
 
-        bCrear.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                boolean insertarJugador;
-                try {
-                    if (cbPosicion.getSelectedIndex()==0 || cbTipo.getSelectedIndex()==0){
-                        throw new Exception("Por favor, seleccione una posicion o tipo valido");
-                    }enlaceCorrecto();
-                    if (!enlaceCorrecto){
-                        throw new Exception("El enlace no es valido");
-                    }
-                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||ftTelefono.getText().isEmpty()){
-                        throw new Exception("No pueden haber campos vacios");
-                    }
-                    if (cbPosicion.getSelectedIndex()==1){
-                        posicion= TipoPosicion.PORTERO.toString();
-                    }
-                    if (cbPosicion.getSelectedIndex()==2){
-                        posicion= TipoPosicion.DEFENSA.toString();
-                    }
-                    if (cbPosicion.getSelectedIndex()==3){
-                        posicion= TipoPosicion.MEDIO.toString();
-                    }
-                    if (cbPosicion.getSelectedIndex()==4){
-                        posicion= TipoPosicion.DELANTERO.toString();
-                    }
-                    if (cbTipo.getSelectedIndex()==1){
-                        tipoJugadorString= tipoJugador.DRAFT.toString();
-                    }else tipoJugadorString=tipoJugador.WILDCARD.toString();
-                    insertarJugador= Main.insertarJugador(tfNombre.getText(), tfApellido.getText(), tfDNI.getText(),
-                            ftTelefono.getText(), Jugador.TipoPosicion.valueOf(posicion), Jugador.TipoJugador.valueOf(tipoJugadorString) ,tfIMG.getText(), Integer.parseInt(sVelocidad.getValue().toString()),
-                            Integer.parseInt(sFisico.getValue().toString()), Integer.parseInt(sDefensa.getValue().toString()),
-                            Integer.parseInt(sPase.getValue().toString()),Integer.parseInt(sTiro.getValue().toString()),Integer.parseInt(sTalento.getValue().toString()));
-                    if (insertarJugador){
-                        JOptionPane.showMessageDialog(null, "¡Jugador creado con exito!");
-                        tfNombre.setText("");
-                        tfIMG.setText("");
-                        tfApellido.setText("");
-                        tfDNI.setText("");
-                        sDefensa.setValue(0);
-                        sFisico.setValue(0);
-                        sPase.setValue(0);
-                        sTalento.setValue(0);
-                        sTiro.setValue(0);
-                        sVelocidad.setValue(0);
-                        cbTipo.setSelectedIndex(0);
-                        cbPosicion.setSelectedIndex(0);
-                        ftTelefono.setText("");
-                    }
-                }catch (Exception ex){
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
-                }
-            }
-        });
-        bAtras.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.PrincipalAdmin();
-            }
-        });
+
+
+        // Poner las imágenes del footer
+        imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
+        Image imgTwitch = imagenTwitch.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
+        ImageIcon twitchIcono = new ImageIcon(imgTwitch);
+        fTwitch.setIcon(twitchIcono);
+
+        imagenInstagram = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/02/instagram-icone-noir.png"));
+        Image imgIg = imagenInstagram.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
+        ImageIcon igIcono = new ImageIcon(imgIg);
+        fInstagram.setIcon(igIcono);
+
+        imagenTwitter = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/02/icones-twitter-noires.png"));
+        Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
+        ImageIcon twIcono = new ImageIcon(imgTw);
+        fTwitter.setIcon(twIcono);
+
     }
 
     public static void main(String[] args) throws MalformedURLException {
@@ -199,6 +155,7 @@ public class vInsertarJugadores {
         frame.pack();
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         frame.setVisible(true);
+        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
     public JPanel getpPrincipal() {

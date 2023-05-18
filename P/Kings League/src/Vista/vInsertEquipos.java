@@ -21,6 +21,15 @@ public class vInsertEquipos {
     private JLabel jlImagen;
     private JTextField tfPresupuesto;
     private JTextField tfImagen;
+    private JMenuBar jmheader;
+    private JMenu mEquipos;
+    private JMenuItem jmiConsultarEquipos;
+    private JMenu mPartidos;
+    private JMenuItem jmiVer;
+    private JMenu mClasificacion;
+    private JMenu mUsuario;
+    private JMenuItem jmiVerPerfil;
+    private JMenuItem jmiCerrarSesion;
     private ImageIcon LogoKingsLeague;
 
 
@@ -54,6 +63,12 @@ public class vInsertEquipos {
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
+
+        // Poner la imagen del usuario
+        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
+        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
+        mUsuario.setIcon(UsuIcono);
 
 
         bAceptar.addActionListener(new ActionListener() {

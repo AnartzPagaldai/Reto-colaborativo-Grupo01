@@ -3,12 +3,12 @@
   <grid id="27dc6" binding="pPrincipal" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1660" height="381"/>
+      <xy x="20" y="20" width="2132" height="1229"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="70ea9" binding="pDegradado" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="6504b" binding="pDegradado" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -18,7 +18,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="a9dfa" binding="pHeader" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="d9bc" binding="pHeader" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -29,210 +29,10 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="f22d9" class="javax.swing.JMenuBar" binding="jmheader" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1585287"/>
-                  <foreground color="-16777216"/>
-                  <opaque value="false"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="35b13" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <font size="18"/>
-                      <text value="                                                           "/>
-                    </properties>
-                  </component>
-                  <grid id="2bd52" class="javax.swing.JMenu" binding="mEquipos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <margin top="2" left="2" bottom="2" right="2"/>
-                      <text value="Equipos"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="20582" class="javax.swing.JMenuItem" binding="jmiConsultarEquipos">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Consultar"/>
-                        </properties>
-                      </component>
-                      <component id="e5815" class="javax.swing.JMenuItem" binding="jmiInsertarEquipos">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Insertar"/>
-                        </properties>
-                      </component>
-                      <component id="7a7ee" class="javax.swing.JMenuItem" binding="jmiActualizarEquipos">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Actualizar"/>
-                        </properties>
-                      </component>
-                      <component id="8929e" class="javax.swing.JMenuItem" binding="jmiBorrarEquipos">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Borrar"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                  <component id="d2358" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <text value="               "/>
-                    </properties>
-                  </component>
-                  <grid id="7f236" class="javax.swing.JMenu" binding="mJugadores" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <text value="Jugadores"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="d95fa" class="javax.swing.JMenuItem" binding="jmiConsultarJugadores">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Consultar"/>
-                        </properties>
-                      </component>
-                      <component id="28ad4" class="javax.swing.JMenuItem" binding="jmiInsertarJugadores">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Insertar"/>
-                        </properties>
-                      </component>
-                      <component id="51a55" class="javax.swing.JMenuItem" binding="jmiActualizarJugadores">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Actualizar"/>
-                        </properties>
-                      </component>
-                      <component id="602be" class="javax.swing.JMenuItem" binding="jmiBorrararJugadores">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Borrar"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                  <component id="b765" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <text value="               "/>
-                    </properties>
-                  </component>
-                  <grid id="24439" class="javax.swing.JMenu" binding="mPartidos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <text value="Partidos"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="d51a" class="javax.swing.JMenuItem" binding="jmiConsultarPartidos">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Ver resultados partidos"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                  <component id="288c1" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <text value="               "/>
-                    </properties>
-                  </component>
-                  <grid id="f97af" class="javax.swing.JMenu" binding="mClasificacion" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="34" vgap="-1">
-                    <margin top="0" left="0" bottom="0" right="0"/>
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <text value="Ver clasificación"/>
-                    </properties>
-                    <border type="none"/>
-                    <children/>
-                  </grid>
-                  <component id="ea558" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <opaque value="false"/>
-                      <text value="                                                       "/>
-                    </properties>
-                  </component>
-                  <grid id="71bb3" class="javax.swing.JMenu" binding="mUsuario" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="2">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-11991040"/>
-                      <horizontalAlignment value="0"/>
-                      <horizontalTextPosition value="2"/>
-                      <label value=""/>
-                      <margin top="2" left="50" bottom="2" right="2"/>
-                      <text value=""/>
-                      <verticalAlignment value="0"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="4f921" class="javax.swing.JMenuItem" binding="jmiVerPerfil">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Ver perfil"/>
-                        </properties>
-                      </component>
-                      <component id="55c5" class="javax.swing.JMenuItem" binding="jmiCerrarSesion">
-                        <constraints/>
-                        <properties>
-                          <font size="20"/>
-                          <text value="Cerrar sesión"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                </children>
-              </grid>
-              <grid id="5d4c4" binding="pLogoKingsLeague" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="b8833" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-545995"/>
@@ -240,7 +40,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="bc09f" class="javax.swing.JLabel" binding="fLogoKingsLeague">
+                  <component id="64af6" class="javax.swing.JLabel" binding="fLogoKingsLeague">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -249,7 +49,7 @@
                       <text value=""/>
                     </properties>
                   </component>
-                  <component id="33bcd" class="javax.swing.JLabel">
+                  <component id="c6bd7" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -258,9 +58,150 @@
                       <text value=" "/>
                     </properties>
                   </component>
+                  <grid id="fd8cf" class="javax.swing.JMenuBar" binding="jmheader" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1585287"/>
+                      <foreground color="-16777216"/>
+                      <opaque value="false"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="af093" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="18"/>
+                          <text value="                                                           "/>
+                        </properties>
+                      </component>
+                      <grid id="18006" class="javax.swing.JMenu" binding="mEquipos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="28"/>
+                          <foreground color="-16777216"/>
+                          <margin top="2" left="2" bottom="2" right="2"/>
+                          <text value="Equipos"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="bdcda" class="javax.swing.JMenuItem" binding="jmiConsultarEquipos">
+                            <constraints/>
+                            <properties>
+                              <background color="-545995"/>
+                              <font size="20"/>
+                              <text value="Consultar"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <component id="3ccf1" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="26"/>
+                          <foreground color="-1585287"/>
+                          <text value="               "/>
+                        </properties>
+                      </component>
+                      <grid id="2fde5" class="javax.swing.JMenu" binding="mPartidos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="28"/>
+                          <foreground color="-16777216"/>
+                          <text value="Partidos"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="4f21c" class="javax.swing.JMenuItem" binding="jmiVer">
+                            <constraints/>
+                            <properties>
+                              <background color="-545995"/>
+                              <font size="20"/>
+                              <text value="Ver resultados Partidos"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <component id="c390" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="26"/>
+                          <foreground color="-1585287"/>
+                          <text value="               "/>
+                        </properties>
+                      </component>
+                      <grid id="e605c" class="javax.swing.JMenu" binding="mClasificacion" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="34" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="28"/>
+                          <foreground color="-16777216"/>
+                          <text value="Ver clasificación"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <hspacer id="c05dd">
+                        <constraints/>
+                      </hspacer>
+                      <component id="b9e14" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="26"/>
+                          <foreground color="-1585287"/>
+                          <opaque value="false"/>
+                          <text value="                                                       "/>
+                        </properties>
+                      </component>
+                      <grid id="15a53" class="javax.swing.JMenu" binding="mUsuario" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="2">
+                        <constraints/>
+                        <properties>
+                          <background color="-1585287"/>
+                          <font size="28"/>
+                          <foreground color="-11991040"/>
+                          <horizontalAlignment value="0"/>
+                          <horizontalTextPosition value="2"/>
+                          <label value=""/>
+                          <margin top="2" left="50" bottom="2" right="2"/>
+                          <text value=""/>
+                          <verticalAlignment value="0"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="d855e" class="javax.swing.JMenuItem" binding="jmiVerPerfil">
+                            <constraints/>
+                            <properties>
+                              <background color="-545995"/>
+                              <font size="20"/>
+                              <text value="Ver perfil"/>
+                            </properties>
+                          </component>
+                          <component id="82936" class="javax.swing.JMenuItem" binding="jmiCerrarSesion">
+                            <constraints/>
+                            <properties>
+                              <background color="-545995"/>
+                              <enabled value="true"/>
+                              <font size="20"/>
+                              <text value="Cerrar sesion"/>
+                            </properties>
+                          </component>
+                          <hspacer id="74a7b">
+                            <constraints/>
+                          </hspacer>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
                 </children>
               </grid>
-              <component id="4f7e8" class="javax.swing.JLabel">
+              <component id="fc63f" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -269,111 +210,814 @@
                   <text value=" "/>
                 </properties>
               </component>
-            </children>
-          </grid>
-          <grid id="3aae7" binding="pContenido" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="40" left="40" bottom="40" right="40"/>
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-              <opaque value="false"/>
-            </properties>
-            <border type="none"/>
-            <children/>
-          </grid>
-          <grid id="71ae4" binding="pFooter" layout-manager="GridLayoutManager" row-count="4" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="20" right="0"/>
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-5947103"/>
-              <opaque value="false"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="e33d6" class="javax.swing.JLabel">
+              <grid id="911ab" binding="pContenido" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="40" left="40" bottom="40" right="40"/>
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-293106"/>
-                  <font size="10"/>
-                  <foreground color="-545995"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <grid id="a0d5d" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="11" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-5947103"/>
+                  <background color="-1"/>
                   <opaque value="false"/>
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="661bb" class="javax.swing.JLabel" binding="fTwitch">
+                  <grid id="97a0b" binding="pCrudEquipos" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value=""/>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
                     </properties>
-                  </component>
-                  <component id="44876" class="javax.swing.JLabel" binding="fInstagram">
+                    <border type="line" title="CRUD EQUIPOS" title-justification="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <component id="a9eb" class="javax.swing.JButton" binding="bUpdateEquipos">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <focusable value="true"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="UPDATE"/>
+                        </properties>
+                      </component>
+                      <component id="759e5" class="javax.swing.JButton" binding="bDeleteEquipos">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <focusable value="true"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="DELETE"/>
+                        </properties>
+                      </component>
+                      <grid id="ec3e7" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="d6534" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="4ac5d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="914aa" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="33aa" class="javax.swing.JButton" binding="bInsertarEquipos">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <focusable value="true"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="INSERTAR"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="13eeb" binding="pJugadores" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
                     <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="2" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value=""/>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
                     </properties>
-                  </component>
-                  <component id="b1cc0" class="javax.swing.JLabel" binding="fTwitter">
+                    <border type="line" title="CRUD JUGADORES" title-justification="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <component id="8a8da" class="javax.swing.JButton" binding="bUpdateJugadores">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="UPDATE"/>
+                        </properties>
+                      </component>
+                      <component id="4f015" class="javax.swing.JButton" binding="bDeleteJugadores">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="DELETE"/>
+                        </properties>
+                      </component>
+                      <component id="84fa4" class="javax.swing.JButton" binding="bInsertarJugadores">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="INSERTAR"/>
+                        </properties>
+                      </component>
+                      <grid id="ba019" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="dae5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="4121f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="66f77" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="86c27" binding="pPersonal" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
                     <constraints>
-                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="4" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value=""/>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
                     </properties>
-                  </component>
+                    <border type="line" title="CRUD PERSONAL" title-justification="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <component id="abdf9" class="javax.swing.JButton" binding="bInsertarPersonal">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="INSERTAR"/>
+                        </properties>
+                      </component>
+                      <component id="99919" class="javax.swing.JButton" binding="bUpdatePersonal">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="UPDATE"/>
+                        </properties>
+                      </component>
+                      <component id="3b863" class="javax.swing.JButton" binding="bDeletePersonal">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="DELETE"/>
+                        </properties>
+                      </component>
+                      <grid id="f499f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="dcfb9" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="e8cb5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="5b5f6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="63493" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
+                    </properties>
+                    <border type="line" title="BASE DE DATOS" title-justification="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <component id="ef3ad" class="javax.swing.JButton" binding="bEmparejar">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="EMPAREJAR"/>
+                        </properties>
+                      </component>
+                      <grid id="ff37c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="4160e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="73250" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="1d121" class="javax.swing.JButton" binding="bActualizarXML">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="ACTUALIZAR XML"/>
+                        </properties>
+                      </component>
+                      <grid id="f02d6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="e2034" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="GENERAR SPLIT"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="2776f" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
+                    <constraints>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
+                    </properties>
+                    <border type="line" title="CRUD CONTRATOS JUGADORES" title-justification="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <component id="ed806" class="javax.swing.JButton" binding="bInsertarContratoJugadores">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="INSERTAR"/>
+                        </properties>
+                      </component>
+                      <component id="ff0cf" class="javax.swing.JButton" binding="bUpdateContratoJugadores">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="UPDATE"/>
+                        </properties>
+                      </component>
+                      <component id="5177b" class="javax.swing.JButton" binding="bDeleteContratoJugadores">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="DELETE"/>
+                        </properties>
+                      </component>
+                      <grid id="d934c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="ebfe9" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="9b717" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="42b95" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="cd629" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
+                    <constraints>
+                      <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
+                    </properties>
+                    <border type="line" title="CRUD CONTRATOS PERSONAL" title-justification="2" title-position="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <component id="fcbf5" class="javax.swing.JButton" binding="bInsertarContratosPersonal">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="INSERTAR"/>
+                        </properties>
+                      </component>
+                      <component id="aabd8" class="javax.swing.JButton" binding="bUpdateContratosPersonal">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="UPDATE"/>
+                        </properties>
+                      </component>
+                      <component id="82585" class="javax.swing.JButton" binding="bDeleteContratosPersonal">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="DELETE"/>
+                        </properties>
+                      </component>
+                      <grid id="b2aab" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="46134" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="bde51" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="18577" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="28e86" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="20" bottom="0" right="20"/>
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <font size="28"/>
+                      <opaque value="false"/>
+                    </properties>
+                    <border type="line" title="PARTIDOS" title-justification="2">
+                      <font size="24"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <grid id="b27c2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <grid id="b49c2" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <minimum-size width="30" height="30"/>
+                            <preferred-size width="30" height="30"/>
+                            <maximum-size width="30" height="30"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16038732"/>
+                          <enabled value="true"/>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children/>
+                      </grid>
+                      <component id="ab6b6" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="AÑADIR RESULTADOS"/>
+                        </properties>
+                      </component>
+                      <component id="d952d" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="VER PARTIDOS"/>
+                        </properties>
+                      </component>
+                      <component id="f9e0d" class="javax.swing.JButton">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-5712"/>
+                          <font size="18"/>
+                          <foreground color="-16777216"/>
+                          <text value="PLAY-OFF"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
                 </children>
               </grid>
-              <grid id="7ba11" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="11" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-16777216"/>
-                  <opaque value="true"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="4b274" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <font size="3"/>
-                      <iconTextGap value="2"/>
-                      <text value=" "/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
-              <component id="9ba56" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="10"/>
-                  <text value=" "/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>
