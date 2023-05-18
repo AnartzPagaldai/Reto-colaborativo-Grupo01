@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -80,18 +81,19 @@ public class vInsertarPersonal {
             public void actionPerformed(ActionEvent e) {
 
                 validarNombre(tfNombre.getText());
-                validarApellido(tfApellidos.getText());
+                validarApellidos(tfApellidos.getText());
+                validarOficio(cbOficio.getSelectedIndex());
                 validarImagen(tfImagen.getText());
-                // TODO: si valida insertar personal
-
+                // TODO: si todo correcto insertar datos
                 if (correcto){
+                    //Main.buscarDniPersonal(ftfDni.getText());
+                    //Main.crearPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), cbOficio.getSelectedItem(), tfImagen.getText());
                     tfNombre.setText("");
                     tfApellidos.setText("");
                     ftfDni.setText("");
                     ftfTelefono.setText("");
                     cbOficio.setSelectedIndex(1);
                     tfImagen.setText("");
-
                 }
             }
         });
@@ -125,12 +127,22 @@ public class vInsertarPersonal {
             correcto=true;
         return correcto;
     }
-    public static boolean validarApellido(String apellidos){
+    public static boolean validarApellidos(String apellidos){
         Matcher encaja;
         Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
         encaja = pat.matcher(apellidos);
         if (!encaja.matches()){
             JOptionPane.showMessageDialog(null,"Los apellidos deben empezar por una mayúscula y seguir con minúsculas.");
+            correcto=false;
+        }
+        else
+            correcto=true;
+        return correcto;
+    }
+    public static boolean validarOficio(int opcion) {
+
+        if (opcion==0){
+            JOptionPane.showMessageDialog(null,"El oficio debe ser 'presidente' o 'entrenador'.");
             correcto=false;
         }
         else

@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -12,6 +13,8 @@ import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class vActualizarPersonal {
     private JPanel pPrincipal;
@@ -38,6 +41,7 @@ public class vActualizarPersonal {
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private ImageIcon LogoKingsLeague;
+    private static boolean correcto;
 
     public vActualizarPersonal() throws MalformedURLException {
 
@@ -73,18 +77,16 @@ public class vActualizarPersonal {
         fLogoKingsLeague.setIcon(newIcon);
 
 
-        tfNombre.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                // TODO: poner que busque el nombre y se pongan los demás datos
-            }
-        });
-
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: validar y actualizar datos
+                validarNombre(tfNombre.getText());
+                validarApellidos(tfApellidos.getText());
+                validarOficio(cbOficio.getSelectedIndex());
+                validarImagen(tfImagen.getText());
+                // TODO: si todo correcto actualizar datos
+                //if (correcto)
+                    //TPersonal.actualizar(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), cbOficio.getSelectedItem(), tfImagen.getText());
             }
         });
         bAtras.addActionListener(new ActionListener() {
@@ -93,6 +95,66 @@ public class vActualizarPersonal {
                 Main.PrincipalAdmin();
             }
         });
+
+        ftfDni.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                // TODO: poner que busque el dni y se pongan los demás datos
+                //Main.buscarDniPersonal(ftfDni.getText());
+
+            }
+        });
+    }
+
+
+    public static boolean validarNombre(String nombre){
+        Matcher encaja;
+        Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
+        encaja = pat.matcher(nombre);
+        if (!encaja.matches()){
+            JOptionPane.showMessageDialog(null,"El nombre debe empezar por una mayúscula y seguir con minúsculas.");
+            correcto=false;
+        }
+        else
+            correcto=true;
+        return correcto;
+    }
+    public static boolean validarApellidos(String apellidos){
+        Matcher encaja;
+        Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
+        encaja = pat.matcher(apellidos);
+        if (!encaja.matches()){
+            JOptionPane.showMessageDialog(null,"Los apellidos deben empezar por una mayúscula y seguir con minúsculas.");
+            correcto=false;
+        }
+        else
+            correcto=true;
+        return correcto;
+    }
+    public static boolean validarOficio(int opcion) {
+
+        if (opcion==0){
+            JOptionPane.showMessageDialog(null,"El oficio debe ser 'presidente' o 'entrenador'.");
+            correcto=false;
+        }
+        else
+            correcto=true;
+        return correcto;
+    }
+    public static boolean validarImagen(String imagen){
+
+        Matcher encaja;
+        // TODO: poner patrón correcto
+        Pattern pat = Pattern.compile("^$");
+        encaja = pat.matcher(imagen);
+        if (!encaja.matches()){
+            JOptionPane.showMessageDialog(null,"La imagen debe empezar por 'https' y terminar con '.png'.");
+            correcto=false;
+        }
+        else
+            correcto=true;
+        return correcto;
     }
 
     private void createUIComponents() throws Exception {
