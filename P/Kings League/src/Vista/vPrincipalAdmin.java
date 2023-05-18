@@ -100,21 +100,6 @@ public class vPrincipalAdmin {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
-        // Poner las imágenes del footer
-        imagenTwitch = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-noir.png"));
-        Image imgTwitch = imagenTwitch.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
-        ImageIcon twitchIcono = new ImageIcon(imgTwitch);
-        fTwitch.setIcon(twitchIcono);
-
-        imagenInstagram = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/02/instagram-icone-noir.png"));
-        Image imgIg = imagenInstagram.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
-        ImageIcon igIcono = new ImageIcon(imgIg);
-        fInstagram.setIcon(igIcono);
-
-        imagenTwitter = new ImageIcon(new URL("https://icones.pro/wp-content/uploads/2021/02/icones-twitter-noires.png"));
-        Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
-        ImageIcon twIcono = new ImageIcon(imgTw);
-        fTwitter.setIcon(twIcono);
 
         // Poner la imagen del usuario
         imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
@@ -175,8 +160,6 @@ public class vPrincipalAdmin {
             }
         });
 
-
-
         jmiCerrarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -184,46 +167,7 @@ public class vPrincipalAdmin {
             }
         });
 
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO : poner código necesario
-            }
-        });
-
-        jmiInsertarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        jmiActualizarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarActualzarEquipos();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
-
-        jmiBorrarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        jmiConsultarJugadores.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        jmiInsertarJugadores.addActionListener(new ActionListener() {
+        bInsertarJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -234,14 +178,7 @@ public class vPrincipalAdmin {
             }
         });
 
-        jmiActualizarJugadores.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        jmiBorrararJugadores.addActionListener(new ActionListener() {
+        bDeleteJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -249,20 +186,6 @@ public class vPrincipalAdmin {
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
-            }
-        });
-
-        jmiConsultarPartidos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        mClasificacion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
             }
         });
 
