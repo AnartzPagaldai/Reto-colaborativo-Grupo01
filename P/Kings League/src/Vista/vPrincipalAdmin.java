@@ -67,6 +67,7 @@ public class vPrincipalAdmin {
     private ImageIcon imagenInstagram;
     private ImageIcon imagenTwitter;
     private ImageIcon imagenUsuario;
+    private JComboBox cbDNIS;
 
 
     public vPrincipalAdmin() throws MalformedURLException {
@@ -170,6 +171,16 @@ public class vPrincipalAdmin {
                 Main.cerrarSesion();
             }
         });
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaEquipos();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
 
         bInsertarJugadores.addActionListener(new ActionListener() {
             @Override
@@ -261,6 +272,38 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.generarBorrarPersonales();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bUpdateJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarActualizarJugadores();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        bInsertarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarVentanaInsertarEquipos();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            }
+        });
+        bUpdateEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarActualzarEquipos();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }

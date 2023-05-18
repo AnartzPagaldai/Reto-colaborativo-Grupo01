@@ -1,12 +1,10 @@
 package Vista;
 
-import Controlador.Main;
-
 import javax.swing.*;
 import java.awt.event.*;
 
 public class vTipoSplit extends JDialog {
-    private JPanel contentPane;
+    private JPanel pPrincipal;
     private JButton buttonOK;
     private JRadioButton rbInvierno;
     private JRadioButton rbVerano;
@@ -14,7 +12,7 @@ public class vTipoSplit extends JDialog {
     private JButton buttonCancel;
 
     public vTipoSplit() {
-        setContentPane(contentPane);
+        setContentPane(pPrincipal);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
@@ -23,22 +21,47 @@ public class vTipoSplit extends JDialog {
                 onOK();
             }
         });
+
+        buttonCancel.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        });
+
+        // call onCancel() when cross is clicked
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                onCancel();
+            }
+        });
+
+        // call onCancel() on ESCAPE
+        pPrincipal.registerKeyboardAction(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
     private void onOK() {
-        if (rbInvierno.isSelected()) {
-            Main.crearSplit("invierno");
-        } else if (rbVerano.isSelected()) {
-            Main.crearSplit("verano");
-        }
+        // add your code here
+
+    }
+
+    private void onCancel() {
         dispose();
     }
 
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 
     public static void main(String[] args) {
         vTipoSplit dialog = new vTipoSplit();
         dialog.pack();
         dialog.setVisible(true);
+        System.exit(0);
     }
 }

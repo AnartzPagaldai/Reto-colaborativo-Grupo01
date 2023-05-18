@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Equipo.Equipo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,10 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class vActualizarEquipo {
     private JPanel pPrincipal;
@@ -26,6 +31,9 @@ public class vActualizarEquipo {
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private JButton bSalir;
+    private JComboBox cbNombres;
+    private JPanel pDatosEquipo;
+    private JTextField tfColor;
     private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
@@ -39,9 +47,16 @@ public class vActualizarEquipo {
     private JMenuItem jmiCerrarSesion;
     private ImageIcon LogoKingsLeague;
     private boolean correcto;
+    private Equipo equipo;
+    private static final String patronLogo = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
+    private static final String patronColor = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
+    private static final String numeros= "^[0-9]+$";
+    private boolean numerosCorrectos;
+    private boolean enlaceCorrecto;
+    private boolean colorCorrecto;
 
 
-    public vActualizarEquipo() throws MalformedURLException {
+    public vActualizarEquipo() throws MalformedURLException{
 
         // Poner fondo degradado
         pPrincipal = new JPanel() {
@@ -64,9 +79,12 @@ public class vActualizarEquipo {
             }
         };
 
-
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
+        ArrayList<String> nombres=Main.selectNombresEquipos();
+        for (int x=0; x<nombres.size();x++){
+            cbNombres.addItem(nombres.get(x));
+        }
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
@@ -75,13 +93,6 @@ public class vActualizarEquipo {
         fLogoKingsLeague.setIcon(newIcon);
 
 
-        tfNombre.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                // TODO: poner que compruebe si existe el nombre y si existe; rellenar los otros campos con los datos existentes
-            }
-        });
         ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
@@ -90,12 +101,21 @@ public class vActualizarEquipo {
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // todo: validar datos
-                if (correcto){
-                    tfNombre.setText("");
-                    tfPresupuesto.setText("");
-                    tfImagen.setText("");
+                boolean update;
+                try {
+                    enlaceCorrecto();
+                    colorCorrecto();
+                    numerosCorrectos();
+                    if (enlaceCorrecto && colorCorrecto && numerosCorrectos){
+                        update= Main.updateEquipos(tfNombre.getText(), Double.parseDouble(tfPresupuesto.getText()), tfImagen.getText(), tfColor.getText());
+                        if (update){
+                            JOptionPane.showMessageDialog(null, "¡Equipo modificado con exito!");
+                        }else throw new Exception("Error al actualizar");
+                    }else throw new Exception("Introduzca bien los datos, por favor");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+
 
             }
         });
@@ -106,6 +126,23 @@ public class vActualizarEquipo {
             }
         });
 
+        cbNombres.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (cbNombres.getSelectedIndex()==0){
+                    pDatosEquipo.setVisible(false);
+                    bAceptar.setVisible(false);
+                }else {
+                    pDatosEquipo.setVisible(true);
+                    bAceptar.setVisible(true);
+                    equipo = Main.equipoPorNombre(cbNombres.getSelectedItem().toString());
+                    tfNombre.setText(equipo.getNombre());
+                    tfImagen.setText(equipo.getLogoImg());
+                    tfPresupuesto.setText(String.valueOf(equipo.getPresupuestoAnual()));
+                    tfColor.setText(equipo.getColor());
+                }
+            }
+        });
     }
 
 
@@ -120,5 +157,40 @@ public class vActualizarEquipo {
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+    }
+    public void enlaceCorrecto(){
+        Pattern pattern = Pattern.compile(patronLogo);
+        Matcher matcher = pattern.matcher(tfImagen.getText());
+        if (!matcher.matches()){
+            enlaceCorrecto=false;
+            tfImagen.setBackground(Color.red);
+        }else {
+            tfImagen.setBackground(Color.green);
+            enlaceCorrecto=true;
+        }
+    }
+
+    public void colorCorrecto(){
+        Pattern pattern = Pattern.compile(patronColor);
+        Matcher matcher = pattern.matcher(tfColor.getText());
+        if (!matcher.matches()){
+            colorCorrecto=false;
+            tfColor.setBackground(Color.red);
+        }else {
+            tfColor.setBackground(Color.green);
+            colorCorrecto=true;
+        }
+    }
+
+    public void numerosCorrectos(){
+        Pattern pattern = Pattern.compile(numeros);
+        Matcher matcher = pattern.matcher(tfPresupuesto.getText());
+        if (!matcher.matches()){
+            numerosCorrectos=false;
+            tfPresupuesto.setBackground(Color.red);
+        }else {
+            tfPresupuesto.setBackground(Color.green);
+            numerosCorrectos=true;
+        }
     }
 }

@@ -5,6 +5,7 @@ import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Jugador.Jugador;
 import Modelo.Personal.Personal;
 import Modelo.Personal.TPersonal;
+import Modelo.Usuario.Usuario;
 import oracle.jdbc.OracleTypes;
 
 import java.sql.CallableStatement;
@@ -66,6 +67,116 @@ public class TEquipo {
         BaseDeDatos.cerrarConexion();
         return equipos;
     }
+    public static ArrayList<String> selectNombre(ArrayList<String> nombres) {
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select distinct nombre from equipos");
+            ResultSet resulatdo=ps.executeQuery();
+            nombres.add("Seleccione un nombre");
+            while (resulatdo.next()){
+                nombres.add(resulatdo.getString("nombre"));
+            }
+            return nombres;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return null;
+        }
+    }
 
+    public static boolean insertar(Equipo equipo) {
+        boolean insertar=false;
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("INSERT INTO EQUIPOS (NOMBRE, PRESUPUESTO_ANUAL, LOGO_IMG, COLOR) VALUES (initcap(?),?,?,?)");
+            ps.setString(1, equipo.getNombre());
+            ps.setDouble(2, equipo.getPresupuestoAnual());
+            ps.setString(3, equipo.getLogoImg());
+            ps.setString(4, equipo.getColor());
+            ResultSet resultado= ps.executeQuery();
+            if (resultado.next()){
+                insertar=true;
+            }
+            BaseDeDatos.cerrarConexion();
+            return insertar;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return false;
+        }
+    }
+    public static boolean selectEquipoInsertar(Equipo equipo){
+        boolean existe = false;
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from equipos where nombre=?");
+            ps.setString(1, equipo.getNombre());
+            ResultSet resultado= ps.executeQuery();
+            if (resultado.next()){
+                existe=true;
+            }
+            BaseDeDatos.cerrarConexion();
+            return existe;
+        }catch (Exception e){
+            return false;
+        }
+    }
+    public static boolean update(Equipo equipo){
+        boolean update=false;
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE JUGADORES SET NOMBRE=? AND PRESUPUESTO_ANUAL=? AND LOGO_IMG=? AND COLOR=? WHERE id=?");
+            ps.setString(1, equipo.getNombre());
+            ps.setDouble(2, equipo.getPresupuestoAnual());
+            ps.setString(3, equipo.getLogoImg());
+            ps.setString(4, equipo.getColor());
+            int resultado= ps.executeUpdate();
+            if (resultado==1){
+                update=true;
+            }
+            BaseDeDatos.cerrarConexion();
+            return update;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return false;
+        }
+    }
+    public static Equipo getEquipoPorNombreDavid(Equipo equipo){
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from equipos where nombre=?");
+            ps.setString(1, equipo.getNombre());
+            ResultSet resulatdo=ps.executeQuery();
+            if (resulatdo.next()){
+                equipo.setId(resulatdo.getInt("id"));
+                equipo.setNombre(resulatdo.getString("nombre"));
+                equipo.setPresupuestoAnual(resulatdo.getDouble("presupuesto_anual"));
+                equipo.setLogoImg(resulatdo.getString("logo_img"));
+                equipo.setColor(resulatdo.getString("color"));
+            }
+            return equipo;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return null;
+        }
+    }
 
+    public static boolean delete(Equipo equipo) {
+        boolean borrar = false;
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("delete equipos where id=?");
+            ps.setInt(1, equipo.getId());
+            int resul= ps.executeUpdate();
+            System.out.println(resul +" Fila eliminada en Jugadores");
+            ResultSet resulatdo=ps.executeQuery();
+            if (resulatdo.next()){
+                borrar=true;
+            }
+            System.out.println();
+            return borrar;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return false;
+        }
+
+    }
 }
