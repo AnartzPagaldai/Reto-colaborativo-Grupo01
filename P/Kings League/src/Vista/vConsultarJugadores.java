@@ -10,11 +10,15 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class vConsultarJugadores {
 
     private ImageIcon imagenInstagram;
     private ImageIcon imagenTwitch;
+
+    private ImageIcon logoEquipo;
+
     private ImageIcon imagenTwitter;
     private ImageIcon imagenUsuario;
     private ImageIcon LogoKingsLeague;
@@ -58,13 +62,22 @@ public class vConsultarJugadores {
     private JLabel jlImagen;
     private JMenu mPrincipal;
     private JMenuItem jmiPrincipal;
+    private JLabel lImg;
     private JLabel jaOficio;
     private int posicion=0;
     private int maximo;
     private Equipo equipo;
 
     public vConsultarJugadores() throws MalformedURLException {
-        Main.setObjetosInformeEquipo(Main.getNombreEquipo());
+        HashMap<String, String> equipos= Main.setObjetosInformeEquipo(Main.getNombreEquipo());
+
+        // Poner la imagen del logo oficial de la Kings League
+        logoEquipo = new ImageIcon(new URL(equipos.get("logo")));
+        Image LogoEqu = logoEquipo.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
+        ImageIcon iconEq = new ImageIcon(LogoEqu);
+        lImg.setIcon(iconEq);
+
+
         HashMap<String, String> persona= Main.getPersonaPorPosicion(posicion);
         maximo=Main.getCantidadPersonas();
         mostrarPersona();
@@ -125,6 +138,12 @@ public class vConsultarJugadores {
                 posicion++;
                 maximoReset();
                 mostrarPersona();
+            }
+        });
+        jmiConsultarEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.vEquipos();
             }
         });
     }

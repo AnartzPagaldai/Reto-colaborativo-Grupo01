@@ -18,6 +18,13 @@ public class Partido {
     public Partido() {
     }
 
+    public Partido(Date fecha, String lugar, Equipo equipo1, Equipo equipo2) {
+        this.fecha = fecha;
+        this.lugar = lugar;
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
+    }
+
     public int getId() {
         return id;
     }

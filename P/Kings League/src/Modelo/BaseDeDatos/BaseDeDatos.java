@@ -35,15 +35,13 @@ public class BaseDeDatos {
     }
 
 
-    public static boolean insert(String insert, Object[] argumentos) {
+    public static boolean executeUpdate(String insert, Object[] argumentos) {
         try {
-            abrirConexion();
             PreparedStatement statement = rellenarStatemet(insert, argumentos);
             int resultado = statement.executeUpdate();
             cerrarConexion();
             return resultado != 0;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
             return false;
         }
@@ -58,7 +56,7 @@ public class BaseDeDatos {
             } else if (argumentos[i] instanceof Integer) { // todo quiza hay que añadir mas tipos de datos
                 statement.setInt(i + 1, (Integer) argumentos[i]);
             } else if (argumentos[i] instanceof Date) {
-                statement.setDate(i + 1, (Date) argumentos[i]);
+                statement.setDate(i + 1,(Date) argumentos[i]);
             }
         }
         return statement;
