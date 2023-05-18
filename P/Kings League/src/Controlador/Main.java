@@ -43,6 +43,11 @@ public class Main {
     public static JFrame vInsertarPersonal;
     public static JFrame vInsertarResultados;
     public static JFrame vInsertarEquipos;
+    public static JFrame vPartidos;
+    public static JFrame vPartidosPorJornada;
+    public static JDialog vTipoSplit;
+    public static JFrame vUpdateJugadores;
+    public static JFrame vUpdateSplit;
     public static Usuario u;
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
@@ -268,6 +273,51 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
         actual=vInsertarEquipos;
     }
+    public static void generarPartidos() throws Exception {
+        vPartidos = new JFrame("vPartidos");
+        vPartidos.setContentPane(new vPartidos().getpPrincipal());
+        vPartidos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPartidos.pack();
+        vPartidos.setVisible(true);
+        vPartidos.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vPartidos;
+    }
+    public static void generarPartidosPorJornada() throws Exception {
+        vPartidosPorJornada = new JFrame("vPartidosPorJornada");
+        vPartidosPorJornada.setContentPane(new vPartidosPorJornada().getpPrincipal());
+        vPartidosPorJornada.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPartidosPorJornada.pack();
+        vPartidosPorJornada.setVisible(true);
+        vPartidosPorJornada.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vPartidosPorJornada;
+    }
+    public static void generarTipoSplit() throws MalformedURLException {
+        vTipoSplit = new vBorrarPersonal();
+        vTipoSplit.pack();
+        vTipoSplit.setVisible(true);
+        vPrinicpalAdmin.setEnabled(false);
+    }
+    public static void generarUpdateJugadores() throws Exception {
+        vUpdateJugadores = new JFrame("vUpdateJugadores");
+        vUpdateJugadores.setContentPane(new vUpdateJugadores().getpPrincipal());
+        vUpdateJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdateJugadores.pack();
+        vUpdateJugadores.setVisible(true);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vUpdateJugadores;
+    }
+    public static void generarUpdateSplit() throws MalformedURLException {
+        vUpdateSplit = new JFrame("vUpdateSplit");
+        vUpdateSplit.setContentPane(new vUpdateSplit().getpPrincipal());
+        vUpdateSplit.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdateSplit.pack();
+        vUpdateSplit.setVisible(true);
+        vUpdateSplit.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vUpdateSplit;
+    }
 
     // Métodos para los CRUD
     public static boolean selectUsuario(String nombre, String contrasena) {
@@ -344,7 +394,7 @@ public class Main {
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
-            throw new Exception("error al leer desde jornadas");
+            throw new Exception("Error al leer desde jornadas.");
         }
         for (int x = 0; x< partidos.size(); x += 6) {
             NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
