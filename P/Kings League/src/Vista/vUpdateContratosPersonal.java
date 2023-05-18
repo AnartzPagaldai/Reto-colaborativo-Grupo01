@@ -7,16 +7,24 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class vDeleteSplit {
-    private JPanel pPrincipal;
+public class vUpdateContratosPersonal {
     private JPanel pDegradado;
     private JPanel pDatos;
     private JPanel pIniciarSesion;
+    private JLabel jlPresupuesto;
+    private JLabel jlNombre;
     private JButton bAceptar;
-    private JLabel jlImagen;
+    private JComboBox cbEquipos;
+    private JComboBox cbPersonal;
+    private JRadioButton rb10m;
+    private JRadioButton rb105m;
+    private JRadioButton rb15m;
+    private JRadioButton rb225m;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private JMenuBar jmheader;
+    private JMenu jmInicio;
+    private JMenuItem jmiPrincipal;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mPartidos;
@@ -25,15 +33,12 @@ public class vDeleteSplit {
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
-    private JComboBox comboBox1;
+    private JPanel pPrincipal;
+
+    // Poner fondo degradado
 
 
-    public vDeleteSplit() throws MalformedURLException {
-
-
-
-        pPrincipal = new JPanel(new BorderLayout());
-
+    public vUpdateContratosPersonal() throws MalformedURLException {
         pPrincipal = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -41,12 +46,12 @@ public class vDeleteSplit {
 
                 Graphics2D g2d = (Graphics2D) g;
 
-                Color colorInicio = new Color(233, 86, 31);
-                Color colorFin = new Color(247, 169, 33);
+                Color colorInicio = new Color(239, 122, 14);
+                Color colorFin = new Color(253, 214, 44);
 
                 GradientPaint gradient = new GradientPaint(
                         0, 0, colorInicio,
-                        getWidth(), getHeight(), colorFin);
+                        0, getHeight(), colorFin);
 
                 g2d.setPaint(gradient);
 
@@ -54,7 +59,7 @@ public class vDeleteSplit {
             }
         };
 
-        // Agrega pHeader al norte
+
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
 
@@ -72,15 +77,11 @@ public class vDeleteSplit {
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        JFrame frame = new JFrame("vDeleteSplit");
-        frame.setContentPane(new vDeleteSplit().pPrincipal);
+        JFrame frame = new JFrame("vUpdateContratosPersonal");
+        frame.setContentPane(new vUpdateContratosPersonal().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
-    }
-
-    public JPanel getpPrincipal() {
-        return pPrincipal;
     }
 }

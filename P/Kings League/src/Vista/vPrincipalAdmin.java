@@ -225,7 +225,7 @@ public class vPrincipalAdmin {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarActualzarEquipos();
+                    Main.generarActualizarEquipos();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
                 }
