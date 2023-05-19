@@ -1,7 +1,6 @@
 package Vista;
 
 import Controlador.Main;
-import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -60,21 +59,14 @@ public class vBorrarPersonal extends JDialog {
     private void onOK() {
         // TODO: comprobar que existe el dni y si es así; borrarlo
         //Main.buscarDniPersonal(ftfDni.getText());
-        //if (existe)
+        if (existe){
             //TPersonal.borrar(ftfDni.getText());
+            JOptionPane.showMessageDialog(null,"Personal borrado correctamente.");
+        }
     }
 
     private void onCancel() {
         Main.PrincipalAdmin();
-    }
-
-    private void createUIComponents() throws Exception {
-        try {
-            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
-        }
-        catch (ParseException e){
-            throw new Exception("El DNI no cumple con el formato establecido.");
-        }
     }
 
 
@@ -89,4 +81,12 @@ public class vBorrarPersonal extends JDialog {
         System.exit(0);
     }
 
+    private void createUIComponents() throws Exception {
+        try {
+            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
+        }
+        catch (ParseException e){
+            throw new Exception("El DNI no cumple con el formato establecido.");
+        }
+    }
 }

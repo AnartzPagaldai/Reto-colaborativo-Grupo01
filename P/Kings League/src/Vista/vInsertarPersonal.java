@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
@@ -84,15 +85,18 @@ public class vInsertarPersonal {
                 validarApellidos(tfApellidos.getText());
                 validarOficio(cbOficio.getSelectedIndex());
                 validarImagen(tfImagen.getText());
-                // TODO: si todo correcto insertar datos
                 if (correcto){
-                    //Main.buscarDniPersonal(ftfDni.getText());
-                    //Main.crearPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), cbOficio.getSelectedItem(), tfImagen.getText());
+                    try {
+                        Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), Integer.parseInt(ftfTelefono.getText()), (TipoPersonal) cbOficio.getSelectedItem(), tfImagen.getText());
+                        JOptionPane.showMessageDialog(null, "Personal insertado correctamente.");
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
                     tfNombre.setText("");
                     tfApellidos.setText("");
                     ftfDni.setText("");
                     ftfTelefono.setText("");
-                    cbOficio.setSelectedIndex(1);
+                    cbOficio.setSelectedIndex(0);
                     tfImagen.setText("");
                 }
             }
@@ -152,8 +156,7 @@ public class vInsertarPersonal {
     public static boolean validarImagen(String imagen){
 
         Matcher encaja;
-        // TODO: poner patrón correcto
-        Pattern pat = Pattern.compile("^$");
+        Pattern pat = Pattern.compile("^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$");
         encaja = pat.matcher(imagen);
         if (!encaja.matches()){
             JOptionPane.showMessageDialog(null,"La imagen debe empezar por 'https' y terminar con '.png'.");

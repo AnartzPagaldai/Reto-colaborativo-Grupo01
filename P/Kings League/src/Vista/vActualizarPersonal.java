@@ -1,7 +1,7 @@
 package Vista;
 
 import Controlador.Main;
-import Modelo.Personal.TPersonal;
+import Modelo.Enumeraciones.TipoPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -40,6 +40,9 @@ public class vActualizarPersonal {
     private JButton bAtras;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
+    private JLabel jlId2;
+    private JTextField tfId;
+    private JLabel jlId1;
     private ImageIcon LogoKingsLeague;
     private static boolean correcto;
 
@@ -77,6 +80,16 @@ public class vActualizarPersonal {
         fLogoKingsLeague.setIcon(newIcon);
 
 
+        tfId.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                // TODO: poner que busque el dni y se pongan los demás datos
+                //Main.buscarDniPersonal(ftfDni.getText());
+
+            }
+        });
+
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -84,9 +97,8 @@ public class vActualizarPersonal {
                 validarApellidos(tfApellidos.getText());
                 validarOficio(cbOficio.getSelectedIndex());
                 validarImagen(tfImagen.getText());
-                // TODO: si todo correcto actualizar datos
-                //if (correcto)
-                    //TPersonal.actualizar(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), cbOficio.getSelectedItem(), tfImagen.getText());
+                if (correcto)
+                    Main.actualizarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), Integer.parseInt(ftfTelefono.getText()), (TipoPersonal) cbOficio.getSelectedItem(), tfImagen.getText());
             }
         });
         bAtras.addActionListener(new ActionListener() {
@@ -96,15 +108,6 @@ public class vActualizarPersonal {
             }
         });
 
-        ftfDni.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                // TODO: poner que busque el dni y se pongan los demás datos
-                //Main.buscarDniPersonal(ftfDni.getText());
-
-            }
-        });
     }
 
 
@@ -145,8 +148,7 @@ public class vActualizarPersonal {
     public static boolean validarImagen(String imagen){
 
         Matcher encaja;
-        // TODO: poner patrón correcto
-        Pattern pat = Pattern.compile("^$");
+        Pattern pat = Pattern.compile("^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$");
         encaja = pat.matcher(imagen);
         if (!encaja.matches()){
             JOptionPane.showMessageDialog(null,"La imagen debe empezar por 'https' y terminar con '.png'.");

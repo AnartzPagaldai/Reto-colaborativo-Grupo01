@@ -54,10 +54,10 @@
                       <background color="-1"/>
                       <font name="DejaVu Sans Mono" size="18" style="1"/>
                       <foreground color="-16777216"/>
-                      <text value="Escribe el dni del miembro del personal que quieras borrar:"/>
+                      <text value="Escribe el DNI del miembro del personal que quieras borrar:"/>
                     </properties>
                   </component>
-                  <component id="943f0" class="javax.swing.JFormattedTextField" binding="ftfDni" custom-create="true">
+                  <component id="676b3" class="javax.swing.JFormattedTextField" binding="ftfDni" custom-create="true">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
