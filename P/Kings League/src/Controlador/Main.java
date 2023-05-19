@@ -1,15 +1,20 @@
 package Controlador;
 
 import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Enumeraciones.TipoSueldo;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
+import Modelo.Jugador.ContratoJugador;
 import Modelo.Jugador.Jugador;
+import Modelo.Jugador.TContratosJugador;
 import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
+import Modelo.Personal.TPersonal;
+import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
@@ -22,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Main {
@@ -380,8 +386,8 @@ public class Main {
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
-        List<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).toList();
-        return dePartidosAhashmap((ArrayList<Partido>) partidoDeJornada);
+            ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));;
+        return dePartidosAhashmap(partidoDeJornada);
     }
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
         ArrayList<HashMap<String, String>> partidosMap = new ArrayList<>();
@@ -393,12 +399,12 @@ public class Main {
             partidoMap.put("nombre_equiop2", partidos.get(i).getEquipo2().getNombre());
             partidoMap.put("logoEquipo1", partidos.get(i).getEquipo1().getLogoImg());
             partidoMap.put("logoEquipo2", partidos.get(i).getEquipo2().getLogoImg());
-            if (partidos.get(i).getFecha().before(new Date())) {
+            if (partidos.get(i).getFecha().before(new Date()) || partidos.get(i).getGolesEquipo1() != 0 || partidos.get(i).getGolesEquipo2() != 0) {
                 partidoMap.put("golesEquipo1", String.valueOf(partidos.get(i).getGolesEquipo1()));
                 partidoMap.put("golesEquipo2", String.valueOf(partidos.get(i).getGolesEquipo2()));
             } else {
-                partidoMap.put("golesEquipo1", "sin jugar");
-                partidoMap.put("golesEquipo2", "sin jugar");
+                partidoMap.put("golesEquipo1", "sin");
+                partidoMap.put("golesEquipo2", "jugar");
             }
             partidosMap.add(partidoMap);
         }
@@ -501,7 +507,8 @@ public class Main {
 
     public static void generarXml() {
         XML.generarXMLjornadas();
-        //XML.generarXml
+        XML.generarXMlultimaJornada();
+        XML.generarXMLclasificacion();
     }
 
     public static void crearPlayOff() throws Exception {
@@ -513,7 +520,7 @@ public class Main {
     }
 
     public static void insertarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
-        TPersonal.insertar(new Personal(nombre, apellido, dni, Integer.parseInt(telefono), TipoPersonal.valueOf(oficio), img));
+        TPersonal.insertar(new Personal(nombre, apellido, dni, Integer.parseInt(telefono), TipoPersonal.ENTRENADOR.valueOf(oficio), img));
     }
 
 
@@ -620,7 +627,7 @@ public class Main {
     }
     public static ArrayList<String> getDNISinContrato(){
         ArrayList<String> dnis=new ArrayList<>();
-        dnis=TContratosJugador.getDNIJugadoresSinContratos(dnis);
+        dnis= TContratosJugador.getDNIJugadoresSinContratos(dnis);
         return dnis;
     }
     public static java.sql.Date fechaActual(){

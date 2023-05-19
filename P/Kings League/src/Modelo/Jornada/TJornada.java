@@ -76,8 +76,14 @@ public class TJornada {
                     partidos.get(ultimo).setJornada(jornadas[i]);
                     partidos.get(ultimo).setEquipo1(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo1").item(0).getTextContent()));
                     partidos.get(ultimo).setEquipo2(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo2").item(0).getTextContent()));
-                    String golesEquipo1 = String.valueOf(partido.getElementsByTagName("goles_equipo1").item(0));
-                    if (golesEquipo1.equals("")) {
+                    String golesEquipo1 = "";
+                    try {
+                        golesEquipo1 = partido.getElementsByTagName("goles_equipo1").item(0).getTextContent();
+                    } catch (Exception ex) {
+
+                    }
+                    if (!golesEquipo1.equals("")) {
+                        System.out.println(golesEquipo1);
                         partidos.get(ultimo).setGolesEquipo1(Integer.parseInt(golesEquipo1));
                         partidos.get(ultimo).setGolesEquipo2(Integer.parseInt(partido.getElementsByTagName("goles_equipo2").item(0).getTextContent()));
                     }
@@ -94,8 +100,8 @@ public class TJornada {
     }
 
     public static boolean insertarJornada(Jornada jornada) {
-        return BaseDeDatos.executeUpdate("insert into jornadas (num_jornada, tipo, id_spit) values (?,?,?)",
-                new Object[]{jornada.getNumJornada(), jornada.getTipoJornada(), jornada.getSplit().getId()});
+        return BaseDeDatos.executeUpdate("insert into jornadas (num_jornada, tipo, ID_SPLIT) values (?,?,?)",
+                new Object[]{jornada.getNumJornada(), jornada.getTipoJornada().getValor(), jornada.getSplit().getId()});
     }
 
     public static void crearPlayOff() throws Exception {
@@ -103,7 +109,7 @@ public class TJornada {
         comprbarEinsertarJornadaPlayoff(partido, 11);
         HashMap<String, String>[] equipos = XML.getClasificacion();
         for (int i = 0, f = 7; i < f; i++, f--) {
-            if (TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partido.getFecha().toLocalDate().plusDays(7)),
+            if (!TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partido.getFecha().toLocalDate().plusDays(7)),
                     "Cupra Arena",
                     TEquipo.getEquipoPorNombre(equipos[i].get("nombre_equipo")),
                     TEquipo.getEquipoPorNombre(equipos[f].get("nombre_equipo")))))
@@ -133,8 +139,8 @@ public class TJornada {
     }
     private static void comprbarEinsertarJornadaPlayoff(Partido partido, int numJornadaAnterior) throws Exception {
         comprobarJornada(partido, numJornadaAnterior);
-        if (insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.valueOf("PLAYOFF"), partido.getJornada().getSplit())))
-            throw new Exception("no se a insertado la jornada");
+        if (!insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.PLAYOFF, partido.getJornada().getSplit())))
+            throw new Exception("no se a insertado la jornada ");
     }
 
     private static Equipo setGanador(Partido partido) {

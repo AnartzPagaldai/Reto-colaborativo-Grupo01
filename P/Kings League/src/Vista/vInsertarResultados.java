@@ -219,7 +219,7 @@ public class vInsertarResultados {
         bConfirmar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (int x = 0; x<=golesEq1.size(); x++)
+                for (int x = 0; x<golesEq1.size(); x++)
                 {
                    Main.ActualizarPartido(nombresEquipos1.get(x).getText(), nombresEquipos2.get(x).getText(), golesEq1.get(x).getText(), golesEq2.get(x).getText());
                 }
@@ -228,9 +228,6 @@ public class vInsertarResultados {
     }
 
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
 
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("vInsertarResultados");

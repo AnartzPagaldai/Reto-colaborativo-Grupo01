@@ -68,9 +68,6 @@ public class vDeleteusuarios {
     }
 
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vDeleteusuarios");

@@ -68,6 +68,7 @@ public class vPrincipalAdmin {
     private ImageIcon imagenTwitter;
     private ImageIcon imagenUsuario;
     private JComboBox cbDNIS;
+    private JButton bgenerarSplit;
 
 
     public vPrincipalAdmin() throws MalformedURLException {
@@ -205,18 +206,12 @@ public class vPrincipalAdmin {
         });
 
 
-        bGenerarPlayOff.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
         bPOCuartos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearPlayOff();
-                    JOptionPane.showMessageDialog(null, "se a creado playoff");
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -302,11 +297,17 @@ public class vPrincipalAdmin {
         bUpdateEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
+                /*try {
                     Main.generarActualizarEquipos();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
-                }
+                }*/
+            }
+        });
+        bActualizarXML.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.generarXml();
             }
         });
     }
