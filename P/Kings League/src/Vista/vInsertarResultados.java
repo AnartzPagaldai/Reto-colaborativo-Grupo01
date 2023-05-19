@@ -240,4 +240,8 @@ public class vInsertarResultados {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 }

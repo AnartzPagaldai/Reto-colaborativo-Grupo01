@@ -80,4 +80,8 @@ public class vDeleteusuarios {
         frame.setVisible(true);
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 }

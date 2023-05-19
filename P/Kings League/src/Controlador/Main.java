@@ -1,6 +1,7 @@
 package Controlador;
 
-import Modelo.Enumeraciones.TipoPersonal;
+import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Enumeraciones.TipoSueldo;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
@@ -9,8 +10,6 @@ import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
-import Modelo.Personal.TPersonal;
-import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
@@ -39,6 +38,8 @@ public class Main {
     public static JFrame vInsertarJugadores;
     public static JDialog vBorrarJugadores;
     public static JFrame vClasificacion;
+    public static JFrame vUpdateJugadores;
+    public static JFrame vInsertEquipos;
     public static JDialog vBorrarEquipos;
     public static JDialog vBorrarPersonales;
     public static JFrame vBorrarSplits;
@@ -47,6 +48,7 @@ public class Main {
     public static JFrame vInsertarResultados;
     public static JFrame vInsertarEquipos;
     public static Usuario u;
+
     public static Equipo equipo=new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
 
@@ -71,7 +73,7 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }*/
-        XML.generarXMlultimaJornada();
+        //XML.generarXMlultimaJornada();
     }
     public static void cerrarSesion() {
         actual.dispose();
@@ -615,5 +617,30 @@ public class Main {
         equipo=equipoPorNombre(equipo.getNombre());
         delete=TEquipo.delete(equipo);
         return delete;
+    }
+    public static ArrayList<String> getDNISinContrato(){
+        ArrayList<String> dnis=new ArrayList<>();
+        dnis=TContratosJugador.getDNIJugadoresSinContratos(dnis);
+        return dnis;
+    }
+    public static java.sql.Date fechaActual(){
+        Date fechaActual = new Date();
+        java.sql.Date fechaSQL = new java.sql.Date(fechaActual.getTime());
+        return fechaSQL;
+    }
+    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, String sueldo) {
+        boolean insertar;
+        ContratoJugador contratoJugador=new ContratoJugador();
+        Equipo equipo=equipoPorNombre(nombreEquipo);
+        Jugador jugador=jugadorPorDNI(dniJugador);
+        contratoJugador.setJugador(jugador);
+        contratoJugador.setEquipo(equipo);
+        contratoJugador.setFechaInicio(fechaActual());
+        contratoJugador.setFechaFin(java.sql.Date.valueOf(fecha_fin));
+        contratoJugador.setClausula(Double.parseDouble(clausula));
+        contratoJugador.setDorsal(dorsal);
+        contratoJugador.setTipoSueldo(TipoSueldo.valueOf(sueldo));
+        insertar=TContratosJugador.insertar(contratoJugador);
+        return insertar;
     }
 }
