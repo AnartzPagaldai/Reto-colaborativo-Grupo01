@@ -9,7 +9,7 @@ public enum TipoSueldo {
     TipoSueldo(int valor) {
         this.valor = valor;
     }
-    public int getValor() {
+    public int getValor(){
         return valor;
     }
 }

@@ -13,11 +13,6 @@ public class vUpdatecontratosjugadores {
     private JTextField tfClausula;
     private JTextField tfDorsal;
     private JComboBox cbEquipos;
-    private JComboBox cbJugadores;
-    private JRadioButton rb10m;
-    private JRadioButton rb105m;
-    private JRadioButton rb15m;
-    private JRadioButton rb225m;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private JMenuBar jmheader;
@@ -31,4 +26,5 @@ public class vUpdatecontratosjugadores {
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
+    private JComboBox cbSueldo;
 }

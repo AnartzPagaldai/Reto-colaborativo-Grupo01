@@ -39,11 +39,17 @@ public class vInsertarContratosJugadores {
     private JRadioButton rb105m;
     private JRadioButton rb15m;
     private JRadioButton rb225m;
-    private static final String patronFecha="\\d{2}/\\d{2}/\\d{4}";
+    private static final String patronFecha="\\d{4}-\\d{2}-\\d{2}";
     private boolean fechaCorrecta;
     private boolean dorsalCorrecto;
     private boolean clasulaCorrecta;
 
+    private TipoSueldo sueldo;
+
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 
     public vInsertarContratosJugadores() throws MalformedURLException, SQLException {
 
@@ -93,11 +99,6 @@ public class vInsertarContratosJugadores {
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
 
-        // Poner la imagen del usuario
-        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
-        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
-        mUsuario.setIcon(UsuIcono);
 
         bAceptar.addActionListener(new ActionListener() {
             @Override
@@ -107,10 +108,31 @@ public class vInsertarContratosJugadores {
                     fechaCorrecta();
                     dorsalCorrecto();
                     clasulaCorrecto();
+
+                    if (cbSueldo.getSelectedIndex()==0){
+                        sueldo=TipoSueldo.DIEZ_MILLONES;
+                    }
+                    if(cbSueldo.getSelectedIndex()==1){
+                        sueldo=TipoSueldo.DIEZ_MILLONES_MEDIO;
+                    }
+                    if(cbSueldo.getSelectedIndex()==2){
+                        sueldo=TipoSueldo.QUINCE_MILLONES;
+                    }
+                    if(cbSueldo.getSelectedIndex()==3){
+                        sueldo=TipoSueldo.VEINTIDOS_MILLONES_MEDIO;
+                    }
                     if (fechaCorrecta && dorsalCorrecto && clasulaCorrecta) {
-                        insertar = Main.insertarContratoJugadores(cbNombres.getSelectedItem().toString(), cbJugadores.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), cbSueldo.getSelectedItem().toString());
+                        insertar = Main.insertarContratoJugadores(cbNombres.getSelectedItem().toString(), cbJugadores.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), sueldo);
                         if (insertar) {
                             JOptionPane.showMessageDialog(null, "¡Contrato hecho con exito!");
+                            tfDorsal.setText("");
+                            tfClausula.setText("");
+                            tfFechaFin.setText("");
+                            cbSueldo.setSelectedIndex(0);
+                            cbJugadores.setSelectedIndex(0);
+                            cbNombres.setSelectedIndex(0);
+                            tfClausula.setBackground(new Color(255, 233, 176));
+                            tfFechaFin.setBackground(new Color(255, 233, 176));
                         } else throw new Exception("Fallos al insertar el contrato");
                     }
                 } catch (Exception ex) {

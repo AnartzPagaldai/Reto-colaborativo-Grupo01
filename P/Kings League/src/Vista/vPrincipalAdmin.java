@@ -10,6 +10,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
 
 public class vPrincipalAdmin {
     private JPanel pPrincipal;
@@ -227,6 +228,28 @@ public class vPrincipalAdmin {
                 try {
                     Main.generarActualizarEquipos();
                 } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bDeleteEquipos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarBorrarEquipos();
+                } catch (MalformedURLException ex) {
+
+                }
+            }
+        });
+        bInsertarContratoJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarInsertarContratosJugador();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
             }

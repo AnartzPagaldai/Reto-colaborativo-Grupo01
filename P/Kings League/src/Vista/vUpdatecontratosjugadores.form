@@ -3,7 +3,7 @@
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1622" height="654"/>
+      <xy x="20" y="20" width="1622" height="743"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -30,7 +30,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="5b8a2" binding="pIniciarSesion" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="30" vgap="30">
+              <grid id="5b8a2" binding="pIniciarSesion" layout-manager="GridLayoutManager" row-count="8" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="30" vgap="30">
                 <margin top="50" left="40" bottom="40" right="40"/>
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -52,7 +52,7 @@
                 <children>
                   <component id="3b80" class="javax.swing.JLabel" binding="jlPresupuesto">
                     <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font name="DejaVu Sans Mono" size="18" style="1"/>
@@ -62,7 +62,7 @@
                   </component>
                   <component id="77c88" class="javax.swing.JLabel" binding="jlNombre">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-1"/>
@@ -73,7 +73,7 @@
                   </component>
                   <component id="4587d" class="javax.swing.JButton" binding="bAceptar">
                     <constraints>
-                      <grid row="5" column="0" row-span="2" col-span="6" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="6" column="0" row-span="2" col-span="6" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <autoscrolls value="true"/>
@@ -86,7 +86,7 @@
                   </component>
                   <component id="baa6a" class="javax.swing.JLabel" binding="jlClausula">
                     <constraints>
-                      <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font name="DejaVu Sans Mono" size="18" style="1"/>
@@ -95,28 +95,6 @@
                     </properties>
                   </component>
                   <component id="524f8" class="javax.swing.JTextField" binding="tfClausula">
-                    <constraints>
-                      <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="-1"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-5712"/>
-                      <font name="DejaVu Sans Mono" size="18" style="0"/>
-                      <foreground color="-16777216"/>
-                    </properties>
-                  </component>
-                  <component id="60018" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <font name="DejaVu Sans Mono" size="18" style="1"/>
-                      <foreground color="-16777216"/>
-                      <text value="DORSAL:"/>
-                    </properties>
-                  </component>
-                  <component id="ee083" class="javax.swing.JTextField" binding="tfDorsal">
                     <constraints>
                       <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
@@ -128,9 +106,31 @@
                       <foreground color="-16777216"/>
                     </properties>
                   </component>
-                  <component id="22aa1" class="javax.swing.JLabel">
+                  <component id="60018" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="DejaVu Sans Mono" size="18" style="1"/>
+                      <foreground color="-16777216"/>
+                      <text value="DORSAL:"/>
+                    </properties>
+                  </component>
+                  <component id="ee083" class="javax.swing.JTextField" binding="tfDorsal">
+                    <constraints>
+                      <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-5712"/>
+                      <font name="DejaVu Sans Mono" size="18" style="0"/>
+                      <foreground color="-16777216"/>
+                    </properties>
+                  </component>
+                  <component id="22aa1" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font name="DejaVu Sans Mono" size="18" style="1"/>
@@ -140,52 +140,41 @@
                   </component>
                   <component id="be0f4" class="javax.swing.JComboBox" binding="cbEquipos">
                     <constraints>
-                      <grid row="0" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-5712"/>
                       <foreground color="-16777216"/>
                     </properties>
                   </component>
-                  <component id="67b15" class="javax.swing.JComboBox" binding="cbJugadores">
+                  <component id="c4cbe" class="javax.swing.JComboBox" binding="cbSueldo">
                     <constraints>
-                      <grid row="1" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-5712"/>
                       <foreground color="-16777216"/>
                     </properties>
                   </component>
-                  <component id="e55f0" class="javax.swing.JRadioButton" binding="rb10m">
+                  <component id="4c243" class="javax.swing.JComboBox">
                     <constraints>
-                      <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="10000000"/>
+                      <background color="-5712"/>
+                      <foreground color="-16777216"/>
                     </properties>
                   </component>
-                  <component id="6291" class="javax.swing.JRadioButton" binding="rb105m">
+                  <component id="9287d" class="javax.swing.JTextField">
                     <constraints>
-                      <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="10500000"/>
-                    </properties>
-                  </component>
-                  <component id="f4fd1" class="javax.swing.JRadioButton" binding="rb15m">
-                    <constraints>
-                      <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="15000000"/>
-                    </properties>
-                  </component>
-                  <component id="86ae" class="javax.swing.JRadioButton" binding="rb225m">
-                    <constraints>
-                      <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="22500000"/>
+                      <background color="-5712"/>
+                      <font name="DejaVu Sans Mono" size="18" style="0"/>
+                      <foreground color="-16777216"/>
                     </properties>
                   </component>
                 </children>

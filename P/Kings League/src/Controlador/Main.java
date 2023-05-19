@@ -1,22 +1,20 @@
 package Controlador;
 
-import Modelo.Enumeraciones.TipoSueldo;
-import Modelo.Equipo.Equipo;
-import Modelo.Equipo.TEquipo;
-import Modelo.Jornada.TJornada;
+
+import Modelo.Enumeraciones.*;
 import Modelo.Jugador.*;
-import Modelo.Partido.Partido;
-import Modelo.Partido.TPartido;
-import Modelo.Personal.Personal;
-import Modelo.Usuario.TUsuario;
-import Modelo.Usuario.Usuario;
+import Modelo.XML.*;
+import Modelo.Equipo.*;
+import Modelo.Partido.*;
+import Modelo.Personal.*;
+import Modelo.Usuario.*;
+import Modelo.Jornada.*;
 import Vista.*;
 import Modelo.XML.*;
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -46,6 +44,7 @@ public class Main {
     public static JFrame vInsertarPersonal;
     public static JFrame vInsertarResultados;
     public static JFrame vInsertarEquipos;
+    public static JFrame vInsertarContratosJugadores;
     public static Usuario u;
 
     public static Equipo equipo=new Equipo();
@@ -282,7 +281,16 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
         actual=vInsertarResultados;
     }
-
+public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException {
+    vInsertarContratosJugadores= new JFrame("vInsertarContratosJugadores");
+    vInsertarContratosJugadores.setContentPane(new vInsertarContratosJugadores().getpPrincipal());
+    vInsertarContratosJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    vInsertarContratosJugadores.pack();
+    vInsertarContratosJugadores.setVisible(true);
+    vInsertarContratosJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+    vPrinicpalAdmin.setVisible(false);
+    actual=vInsertarContratosJugadores;
+}
     // Métodos para los CRUD
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
@@ -571,7 +579,7 @@ public class Main {
     }
     public static ArrayList<String> getDNISinContrato(){
         ArrayList<String> dnis=new ArrayList<>();
-        dnis=TContratosJugador.getDNIJugadoresSinContratos(dnis);
+        dnis= TContratosJugador.getDNIJugadoresSinContratos(dnis);
         return dnis;
     }
     public static java.sql.Date fechaActual(){
@@ -579,7 +587,7 @@ public class Main {
         java.sql.Date fechaSQL = new java.sql.Date(fechaActual.getTime());
         return fechaSQL;
     }
-    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, String sueldo) {
+    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, TipoSueldo sueldo) {
         boolean insertar;
         ContratoJugador contratoJugador=new ContratoJugador();
         Equipo equipo=equipoPorNombre(nombreEquipo);
@@ -590,8 +598,9 @@ public class Main {
         contratoJugador.setFechaFin(java.sql.Date.valueOf(fecha_fin));
         contratoJugador.setClausula(Double.parseDouble(clausula));
         contratoJugador.setDorsal(dorsal);
-        contratoJugador.setTipoSueldo(TipoSueldo.valueOf(sueldo));
-        insertar=TContratosJugador.insertar(contratoJugador);
+        contratoJugador.setTipoSueldo(sueldo);
+        insertar= TContratosJugador.insertar(contratoJugador);
+        System.out.println(insertar);
         return insertar;
     }
 }
