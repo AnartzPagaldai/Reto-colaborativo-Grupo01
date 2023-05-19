@@ -81,7 +81,4 @@ public class vDeleteusuarios {
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
 }

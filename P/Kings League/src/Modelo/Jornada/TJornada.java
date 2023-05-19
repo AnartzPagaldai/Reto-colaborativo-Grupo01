@@ -11,7 +11,7 @@ import Modelo.Partido.Partido;
 
 import Modelo.Partido.TPartido;
 import Modelo.Split.TSplit;
-import Modelo.XML.XML;
+import Modelo.XML.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -22,6 +22,8 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static jdk.internal.util.xml.impl.Parser.*;
 
 
 public class TJornada {
@@ -126,10 +128,10 @@ public class TJornada {
 
     private static void conprbarEinsertarJornadaPlayoff(Partido partido, int numJornadaAnterior) throws Exception {
         if (partido.getJornada().getNumJornada() < numJornadaAnterior)
-            throw new Exception("no se puede crear playoff sin abaer jugado la jornada anterior");
+            throw new Exception("no se puede crear playoff sin haber jugado la jornada anterior");
 
         if (insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.valueOf("PLAYOFF"), partido.getJornada().getSplit())))
-            throw new Exception("no se a insertado la jornada");
+            throw new Exception("no se ha insertado la jornada");
     }
 
     private static Equipo setGanador(Partido partido) {

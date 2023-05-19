@@ -93,11 +93,6 @@ public class vActualizarEquipo {
         fLogoKingsLeague.setIcon(newIcon);
 
 
-        ImageIcon imagenUsuario = new ImageIcon(new URL("https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"));
-        Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-        ImageIcon UsuIcono = new ImageIcon(imgUsuario);
-        mUsuario.setIcon(UsuIcono);
-
         bAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
