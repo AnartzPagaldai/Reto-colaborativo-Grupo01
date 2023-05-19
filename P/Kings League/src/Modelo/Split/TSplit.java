@@ -16,7 +16,7 @@ public class TSplit {
         return split;
     }
 
-    public static boolean crearSpit(String tipo) {
+    public static boolean crearSplit(String tipo) {
         try {
             // VERIFICAR QUE SE AN INTRODUCIDO LOS PLAYOFS ANTES DE QUE SE INTORDUCCAN EN NUEVAS JORNADAS EN EL SIGUIENTE SPLIT
             BaseDeDatos.abrirConexion();

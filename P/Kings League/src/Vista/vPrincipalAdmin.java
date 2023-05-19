@@ -53,6 +53,10 @@ public class vPrincipalAdmin {
     private JButton bDeleteContratosPersonal;
     private JButton bEmparejar;
     private JButton bActualizarXML;
+    private JButton bPOCuartos;
+    private JButton bPOSemi;
+    private JButton bPOFinal;
+    private JButton bGenerarPlayOff;
     private JMenuItem jmiInsertarEquipos;
     private JMenuItem jmiActualizarEquipos;
     private JMenuItem jmiBorrarEquipos;
@@ -65,6 +69,7 @@ public class vPrincipalAdmin {
     private ImageIcon imagenTwitter;
     private ImageIcon imagenUsuario;
     private JComboBox cbDNIS;
+    private JButton bgenerarSplit;
 
 
     public vPrincipalAdmin() throws MalformedURLException {
@@ -200,6 +205,74 @@ public class vPrincipalAdmin {
                 }
             }
         });
+
+
+
+        bPOCuartos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.crearPlayOff();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+        bPOSemi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.crearJornadaPlayOff(true);
+                    JOptionPane.showMessageDialog(null, "se a creado la semifinal");
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+        bPOFinal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.crearJornadaPlayOff(false);
+                    JOptionPane.showMessageDialog(null, "se a creado la final");
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+        bInsertarPersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarInsertarPersonal();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bUpdatePersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarActualizarPersonal();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bDeletePersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarBorrarPersonales();
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
         bUpdateJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -225,11 +298,17 @@ public class vPrincipalAdmin {
         bUpdateEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
+                /*try {
                     Main.generarActualizarEquipos();
                 } catch (MalformedURLException ex) {
                     throw new RuntimeException(ex);
-                }
+                }*/
+            }
+        });
+        bActualizarXML.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.generarXml();
             }
         });
         bDeleteEquipos.addActionListener(new ActionListener() {

@@ -32,7 +32,6 @@ public class Personal implements ResultSetObjeto {
         this.img = img;
     }
 
-
     public int getId() {
         return id;
     }

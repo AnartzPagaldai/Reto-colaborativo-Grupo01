@@ -35,12 +35,14 @@ public class BaseDeDatos {
     }
 
 
-    public static boolean executeUpdate(String insert, Object[] argumentos) {
+    public static boolean executeUpdate(String sentencia, Object[] argumentos) {
         try {
-            PreparedStatement statement = rellenarStatemet(insert, argumentos);
-            int resultado = statement.executeUpdate();
+            PreparedStatement statement = rellenarStatemet(sentencia, argumentos);
+            ResultSet resultado = statement.executeQuery();
+            boolean resul = resultado.next();
             cerrarConexion();
-            return resultado != 0;
+            return  resul;
+            //return resultado != 0;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -68,6 +70,8 @@ public class BaseDeDatos {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 objeto.resultSetObjeto(resultSet);
+            } else {
+                objeto = null;
             }
         } catch (SQLException e) {
             e.printStackTrace();

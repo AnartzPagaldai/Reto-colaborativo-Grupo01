@@ -89,6 +89,12 @@ public class TJugador {
         }
     }
 
+    public static boolean consultarPorDni(String dni) {
+        Jugador jugador = new Jugador();
+        BaseDeDatos.cosultaObjeto(jugador, "select * from jugador where dni = ?", new Object[]{dni});
+        return jugador != null;
+    }
+
     public static ArrayList<String> selectDNI(ArrayList<String> dni){
         try {
             BaseDeDatos.abrirConexion();

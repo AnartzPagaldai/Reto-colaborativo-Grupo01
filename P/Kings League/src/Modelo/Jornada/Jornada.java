@@ -11,8 +11,16 @@ public class Jornada {
     private Split split;
 
     public enum TipoJornada {
-        NORMAL,
-        PLAYOFF
+        NORMAL("NORMAL"),
+        PLAYOFF("PLAY-OFF");
+        private final String valor;
+
+       TipoJornada(String valor){
+           this.valor=valor;
+       }
+       public String getValor(){
+           return valor;
+       }
     }
 
 

@@ -49,7 +49,10 @@ public class vBorrarJugador extends JDialog {
 
         bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+
+                    onOK();
+
+
             }
         });
 
@@ -75,26 +78,24 @@ public class vBorrarJugador extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-
-
-
     }
 
     private void onOK() {
         // add your code here
-        boolean borrar;
         try {
-            if (tfDni.getText().isEmpty()){
+            boolean borrar;
+            if (tfDni.getText().isEmpty()) {
                 throw new Exception("No puede estar el campo vacio");
             }
-            borrar=Main.borrarJugador(tfDni.getText());
-            if (borrar){
+            borrar = Main.borrarJugador(tfDni.getText());
+            if (borrar) {
                 JOptionPane.showMessageDialog(null, "¡Jugador borrado con exito!");
                 tfDni.setText("");
             }
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e.getMessage());
         }
+
     }
 
     private void onCancel() {
