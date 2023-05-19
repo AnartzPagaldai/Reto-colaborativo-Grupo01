@@ -1,20 +1,26 @@
 package Controlador;
 
 
-import Modelo.Enumeraciones.*;
+import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Enumeraciones.TipoPersonal;
+import Modelo.Enumeraciones.TipoSueldo;
+import Modelo.Equipo.Equipo;
+import Modelo.Equipo.TEquipo;
+import Modelo.Jornada.TJornada;
 import Modelo.Jugador.*;
-import Modelo.XML.*;
-import Modelo.Equipo.*;
-import Modelo.Partido.*;
-import Modelo.Personal.*;
-import Modelo.Usuario.*;
-import Modelo.Jornada.*;
+import Modelo.Partido.Partido;
+import Modelo.Partido.TPartido;
+import Modelo.Personal.Personal;
+import Modelo.Personal.TPersonal;
+import Modelo.Usuario.TUsuario;
+import Modelo.Usuario.Usuario;
 import Vista.*;
 import Modelo.XML.*;
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -43,8 +49,6 @@ public class Main {
     public static JFrame vBorrarUsuarios;
     public static JFrame vInsertarPersonal;
     public static JFrame vInsertarResultados;
-    public static JFrame vInsertarEquipos;
-    public static JFrame vInsertarContratosJugadores;
     public static Usuario u;
 
     public static Equipo equipo=new Equipo();
@@ -55,7 +59,7 @@ public class Main {
     private static Personal[] personalesInfome = new Personal[2];
 
     private static ArrayList<Partido> partidos;
-    //TODO HACER LA PROGRAMACION DE CONTRATOS PERSONAL Y JUGADOR(UPDATE Y DELETE)
+    //TODO: HACER LA PROGRAMACION DE CONTRATOS PERSONAL Y JUGADOR(UPDATE Y DELETE)
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
         //TJornada.generarJornadas();
@@ -281,16 +285,8 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
         actual=vInsertarResultados;
     }
-public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException {
-    vInsertarContratosJugadores= new JFrame("vInsertarContratosJugadores");
-    vInsertarContratosJugadores.setContentPane(new vInsertarContratosJugadores().getpPrincipal());
-    vInsertarContratosJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    vInsertarContratosJugadores.pack();
-    vInsertarContratosJugadores.setVisible(true);
-    vInsertarContratosJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
-    vPrinicpalAdmin.setVisible(false);
-    actual=vInsertarContratosJugadores;
-}
+    
+
     // Métodos para los CRUD
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
@@ -579,7 +575,7 @@ public static void generarInsertarContratosJugador() throws MalformedURLExceptio
     }
     public static ArrayList<String> getDNISinContrato(){
         ArrayList<String> dnis=new ArrayList<>();
-        dnis= TContratosJugador.getDNIJugadoresSinContratos(dnis);
+        dnis=TContratosJugador.getDNIJugadoresSinContratos(dnis);
         return dnis;
     }
     public static java.sql.Date fechaActual(){
@@ -587,7 +583,7 @@ public static void generarInsertarContratosJugador() throws MalformedURLExceptio
         java.sql.Date fechaSQL = new java.sql.Date(fechaActual.getTime());
         return fechaSQL;
     }
-    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, TipoSueldo sueldo) {
+    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, String sueldo) {
         boolean insertar;
         ContratoJugador contratoJugador=new ContratoJugador();
         Equipo equipo=equipoPorNombre(nombreEquipo);
@@ -598,9 +594,25 @@ public static void generarInsertarContratosJugador() throws MalformedURLExceptio
         contratoJugador.setFechaFin(java.sql.Date.valueOf(fecha_fin));
         contratoJugador.setClausula(Double.parseDouble(clausula));
         contratoJugador.setDorsal(dorsal);
-        contratoJugador.setTipoSueldo(sueldo);
-        insertar= TContratosJugador.insertar(contratoJugador);
-        System.out.println(insertar);
+        contratoJugador.setTipoSueldo(TipoSueldo.valueOf(sueldo));
+        insertar=TContratosJugador.insertar(contratoJugador);
         return insertar;
     }
+    public static Personal insertarPersonal(String nombre, String apellidos, String dni, int telefono, TipoPersonal oficio, String imagen) {
+        // TODO: poner que compruebe si existe el personal para no volver a insertarlo
+        Personal p = new Personal(nombre, apellidos, dni, telefono, oficio, imagen);
+        TPersonal.insertar(p);
+        return p;
+    }
+    /*
+    public static Personal buscarDniPersonal(String dni){
+
+    }
+    */
+    public static Personal actualizarPersonal(String nombre, String apellidos, String dni, int telefono, TipoPersonal oficio, String imagen) {
+        Personal p = new Personal(nombre, apellidos, dni, telefono, oficio, imagen);
+        TPersonal.actualizar(p);
+        return p;
+    }
+
 }
