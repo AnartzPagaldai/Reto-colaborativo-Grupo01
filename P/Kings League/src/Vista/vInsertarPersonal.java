@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
@@ -87,13 +88,18 @@ public class vInsertarPersonal {
                 validarImagen(tfImagen.getText());
                 validarDni(ftfDni.getText());
 
-                if (correcto) {
-                    Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), String.valueOf(cbOficio.getSelectedItem()), tfImagen.getText());
+                if (correcto){
+                    try {
+                        Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), Integer.parseInt(ftfTelefono.getText()), (TipoPersonal) cbOficio.getSelectedItem(), tfImagen.getText());
+                        JOptionPane.showMessageDialog(null, "Personal insertado correctamente.");
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
                     tfNombre.setText("");
                     tfApellidos.setText("");
                     ftfDni.setText("");
                     ftfTelefono.setText("");
-                    cbOficio.setSelectedIndex(1);
+                    cbOficio.setSelectedIndex(0);
                     tfImagen.setText("");
                     JOptionPane.showMessageDialog(null, "personal insetado");
                 }
@@ -164,8 +170,7 @@ public class vInsertarPersonal {
     public static void validarImagen(String imagen) {
 
         Matcher encaja;
-        // TODO: poner patrón correcto
-        Pattern pat = Pattern.compile("^$");
+        Pattern pat = Pattern.compile("^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$");
         encaja = pat.matcher(imagen);
         if (!encaja.matches()) {
             JOptionPane.showMessageDialog(null, "La imagen debe empezar por 'https' y terminar con '.png'.");

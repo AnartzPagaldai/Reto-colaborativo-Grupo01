@@ -81,7 +81,4 @@ public class vDeleteSplit {
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
 }

@@ -11,7 +11,7 @@ import Modelo.Partido.Partido;
 
 import Modelo.Partido.TPartido;
 import Modelo.Split.TSplit;
-import Modelo.XML.XML;
+import Modelo.XML.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -22,6 +22,8 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static jdk.internal.util.xml.impl.Parser.*;
 
 
 public class TJornada {

@@ -1,7 +1,6 @@
 package Vista;
 
 import Controlador.Main;
-import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -72,6 +71,7 @@ public class vBorrarPersonal extends JDialog {
         if (borrar) {
             JOptionPane.showMessageDialog(null, "¡Jugador borrado con exito!");
             jlDni.setText("");
+
         }
     }
 
@@ -87,7 +87,6 @@ public class vBorrarPersonal extends JDialog {
         }
     }
 
-
     public JPanel getpPrincipal() {
         return pPrincipal;
     }
@@ -99,4 +98,12 @@ public class vBorrarPersonal extends JDialog {
         System.exit(0);
     }
 
+    private void createUIComponents() throws Exception {
+        try {
+            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
+        }
+        catch (ParseException e){
+            throw new Exception("El DNI no cumple con el formato establecido.");
+        }
+    }
 }
