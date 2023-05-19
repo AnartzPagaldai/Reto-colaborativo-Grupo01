@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TJugador {
-
     public static boolean insertar(Jugador jugador){
       boolean insertar=false;
       try {

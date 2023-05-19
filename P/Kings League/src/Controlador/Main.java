@@ -1,12 +1,10 @@
 package Controlador;
 
-import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Enumeraciones.TipoSueldo;
 import Modelo.Equipo.Equipo;
 import Modelo.Equipo.TEquipo;
 import Modelo.Jornada.TJornada;
-import Modelo.Jugador.Jugador;
-import Modelo.Jugador.TJugador;
+import Modelo.Jugador.*;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
 import Modelo.Personal.Personal;
@@ -18,6 +16,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -57,7 +56,7 @@ public class Main {
     private static Personal[] personalesInfome = new Personal[2];
 
     private static ArrayList<Partido> partidos;
-
+    //TODO HACER LA PROGRAMACION DE CONTRATOS PERSONAL Y JUGADOR(UPDATE Y DELETE)
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
         //TJornada.generarJornadas();
@@ -165,7 +164,7 @@ public class Main {
         vPrinicpalUsuario.setVisible(false);
         actual=vUsuario;
     }
-    public static void generarActualizarEquipo() throws MalformedURLException {
+    public static void generarActualizarEquipos() throws MalformedURLException {
         vEquipoActualizar = new JFrame("vActualizarEquipo");
         vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
         vEquipoActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -282,16 +281,6 @@ public class Main {
         vInsertarResultados.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
         actual=vInsertarResultados;
-    }
-    public static void generarInsertarEquipos() throws Exception {
-        vInsertarEquipos = new JFrame("vInsertEquipos");
-        vInsertarEquipos.setContentPane(new vInsertEquipos().getpPrincipal());
-        vInsertarEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vInsertarEquipos.pack();
-        vInsertarEquipos.setVisible(true);
-        vInsertarEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarEquipos;
     }
 
     // Métodos para los CRUD
@@ -579,5 +568,30 @@ public class Main {
         equipo=equipoPorNombre(equipo.getNombre());
         delete=TEquipo.delete(equipo);
         return delete;
+    }
+    public static ArrayList<String> getDNISinContrato(){
+        ArrayList<String> dnis=new ArrayList<>();
+        dnis=TContratosJugador.getDNIJugadoresSinContratos(dnis);
+        return dnis;
+    }
+    public static java.sql.Date fechaActual(){
+        Date fechaActual = new Date();
+        java.sql.Date fechaSQL = new java.sql.Date(fechaActual.getTime());
+        return fechaSQL;
+    }
+    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, String sueldo) {
+        boolean insertar;
+        ContratoJugador contratoJugador=new ContratoJugador();
+        Equipo equipo=equipoPorNombre(nombreEquipo);
+        Jugador jugador=jugadorPorDNI(dniJugador);
+        contratoJugador.setJugador(jugador);
+        contratoJugador.setEquipo(equipo);
+        contratoJugador.setFechaInicio(fechaActual());
+        contratoJugador.setFechaFin(java.sql.Date.valueOf(fecha_fin));
+        contratoJugador.setClausula(Double.parseDouble(clausula));
+        contratoJugador.setDorsal(dorsal);
+        contratoJugador.setTipoSueldo(TipoSueldo.valueOf(sueldo));
+        insertar=TContratosJugador.insertar(contratoJugador);
+        return insertar;
     }
 }
