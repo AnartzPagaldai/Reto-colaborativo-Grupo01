@@ -23,8 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static jdk.internal.util.xml.impl.Parser.*;
-
 
 public class TJornada {
 
@@ -67,7 +65,9 @@ public class TJornada {
                 jornadas[i] = new Jornada();
                 jornadas[i].setId(Integer.parseInt(jornada.getAttribute("id_jornada")));
                 jornadas[i].setNumJornada(Integer.parseInt(jornada.getAttribute("num_jornada")));
-                jornadas[i].setTipoJornada(Jornada.TipoJornada.valueOf(jornada.getElementsByTagName("tipo_jornada").item(0).getTextContent()));
+                jornadas[i].setTipoJornada(
+                        (jornada.getElementsByTagName("tipo_jornada").item(0).getTextContent().equals("NORMAL")) ?
+                                Jornada.TipoJornada.NORMAL : Jornada.TipoJornada.PLAYOFF);
                 jornadas[i].setSplit(TSplit.ConsultarSplitDeJorada(jornadas[i]));
                 NodeList listaPartidos = jornada.getElementsByTagName("partido");
                 for (int e = 0; e < listaPartidos.getLength(); e++) {
@@ -78,17 +78,8 @@ public class TJornada {
                     partidos.get(ultimo).setJornada(jornadas[i]);
                     partidos.get(ultimo).setEquipo1(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo1").item(0).getTextContent()));
                     partidos.get(ultimo).setEquipo2(TEquipo.getEquipoPorNombre(partido.getElementsByTagName("equipo2").item(0).getTextContent()));
-                    String golesEquipo1 = "";
-                    try {
-                        golesEquipo1 = partido.getElementsByTagName("goles_equipo1").item(0).getTextContent();
-                    } catch (Exception ex) {
-
-                    }
-                    if (!golesEquipo1.equals("")) {
-                        System.out.println(golesEquipo1);
-                        partidos.get(ultimo).setGolesEquipo1(Integer.parseInt(golesEquipo1));
-                        partidos.get(ultimo).setGolesEquipo2(Integer.parseInt(partido.getElementsByTagName("goles_equipo2").item(0).getTextContent()));
-                    }
+                    partidos.get(ultimo).setGolesEquipo1(Integer.parseInt(partido.getElementsByTagName("goles_equipo1").item(0).getTextContent()));
+                    partidos.get(ultimo).setGolesEquipo2(Integer.parseInt(partido.getElementsByTagName("goles_equipo2").item(0).getTextContent()));
                     Date date = new SimpleDateFormat("dd/MM/yy").parse(jornada.getElementsByTagName("fecha_partido").item(0).getTextContent());
                     partidos.get(ultimo).setFecha(new java.sql.Date(date.getTime()));
                     partidos.get(ultimo).setLugar(partido.getElementsByTagName("lugar_partido").item(0).getTextContent());
@@ -110,7 +101,7 @@ public class TJornada {
         Partido partido = getUltimaJornada().get(0);
         comprbarEinsertarJornadaPlayoff(partido, 11);
         HashMap<String, String>[] equipos = XML.getClasificacion();
-        for (int i = 0, f = 7; i < f; i++, f--) {
+        for (int i = 1, f = 8; i < f; i++, f--) {
             if (!TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partido.getFecha().toLocalDate().plusDays(7)),
                     "Cupra Arena",
                     TEquipo.getEquipoPorNombre(equipos[i].get("nombre_equipo")),
@@ -124,12 +115,12 @@ public class TJornada {
         if (semifinal) {
             comprbarEinsertarJornadaPlayoff(partidos.get(0), 12);
         } else {
-           comprobarJornada(partidos.get(0), 13);
+            comprobarJornada(partidos.get(0), 13);
         }
-        for (int i = 0; i < partidos.size() - 1; i++) {
+        for (int i = 0; i < partidos.size(); i += 2) {
             Equipo ganador1 = setGanador(partidos.get(i));
             Equipo ganador2 = setGanador(partidos.get(i + 1));
-            if (TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partidos.get(i).getFecha().toLocalDate().plusDays(7)),
+            if (!TPartido.insertarPartido(new Partido(java.sql.Date.valueOf(partidos.get(i).getFecha().toLocalDate().plusDays(7)),
                     "Cupra Arena", ganador1, ganador2)))
                 throw new Exception("no se an podido insertar todo los partido");
         }
@@ -139,6 +130,7 @@ public class TJornada {
         if (partido.getJornada().getNumJornada() < numJornadaAnterior)
             throw new Exception("no se puede crear playoff sin abaer jugado la jornada anterior");
     }
+
     private static void comprbarEinsertarJornadaPlayoff(Partido partido, int numJornadaAnterior) throws Exception {
         comprobarJornada(partido, numJornadaAnterior);
         if (!insertarJornada(new Jornada(partido.getJornada().getNumJornada() + 1, Jornada.TipoJornada.PLAYOFF, partido.getJornada().getSplit())))

@@ -221,7 +221,7 @@ public class vConsultarEquipos {
         jmiPrincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.PrincipalUsuario();
+                Main.Principal();
             }
         });
         jmiCerrarSesion.addActionListener(new ActionListener() {

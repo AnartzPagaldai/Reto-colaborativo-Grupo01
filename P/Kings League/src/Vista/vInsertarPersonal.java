@@ -90,7 +90,7 @@ public class vInsertarPersonal {
 
                 if (correcto){
                     try {
-                        Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), Integer.parseInt(ftfTelefono.getText()), (TipoPersonal) cbOficio.getSelectedItem(), tfImagen.getText());
+                        Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), String.valueOf(cbOficio.getSelectedItem()), tfImagen.getText());
                         JOptionPane.showMessageDialog(null, "Personal insertado correctamente.");
                     } catch (Exception ex) {
                         throw new RuntimeException(ex);

@@ -79,7 +79,9 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }*/
-        //XML.generarXMlultimaJornada();
+        //crearSplit("verano");
+        //generarJornada();
+        //generarXml();
     }
     public static void cerrarSesion() {
         actual.dispose();
@@ -89,6 +91,14 @@ public class Main {
     public static void PrincipalUsuario() {
         actual.dispose();
         vPrinicpalUsuario.setVisible(true);
+    }
+
+    public static void Principal() {
+        actual.dispose();
+        if (vPrinicpalUsuario != null)
+           vPrinicpalUsuario.setVisible(true);
+        else
+            vPrinicpalAdmin.setVisible(true);
     }
     public static void vEquipos() {
         actual.dispose();
@@ -148,7 +158,10 @@ public class Main {
         vEquipos.pack();
         vEquipos.setVisible(true);
         vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalUsuario.setVisible(false);
+        if (vPrinicpalUsuario != null)
+            vPrinicpalUsuario.setVisible(false);
+        else
+            vPrinicpalAdmin.setVisible(false);
         actual = vEquipos;
     }
     public static void generarVentanaJugadores() throws MalformedURLException {
@@ -651,4 +664,7 @@ public class Main {
         return insertar;
     }
 
+    public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException{
+        // todo
+    }
 }

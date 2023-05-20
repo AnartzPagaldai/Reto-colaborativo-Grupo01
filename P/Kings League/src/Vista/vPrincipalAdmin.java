@@ -213,6 +213,7 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearPlayOff();
+                    JOptionPane.showMessageDialog(null, "se a credo el playoff");
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
