@@ -228,6 +228,9 @@ public class vInsertarResultados {
     }
 
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("vInsertarResultados");

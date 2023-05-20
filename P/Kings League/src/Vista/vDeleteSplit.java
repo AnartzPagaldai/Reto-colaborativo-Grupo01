@@ -72,6 +72,10 @@ public class vDeleteSplit {
     }
 
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
+
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vDeleteSplit");
         frame.setContentPane(new vDeleteSplit().pPrincipal);
