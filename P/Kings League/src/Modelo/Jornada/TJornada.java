@@ -18,6 +18,7 @@ import org.w3c.dom.NodeList;
 
 import java.io.File;
 import java.sql.CallableStatement;
+import java.sql.SQLException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,15 +35,18 @@ public class TJornada {
         return getJornadas("ultimaJornada.xml");
     }
 
-    public static boolean generarJornadas() {
+    public static boolean generarJornadas() throws Exception {
         try {
             BaseDeDatos.abrirConexion();
+            if (TSplit.comprobarSplit()) {
+                throw new Exception("se deve insertar el split antes de generar los emfrentamientos");
+            }
             CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.GENERAR_ENFRENTAMIENTOS");
             statement.execute();
             BaseDeDatos.cerrarConexion();
             return true;
-        } catch (Exception e) {
-            generarJornadas(); // todo especificar el error. Por si el error es que no se a creado split
+        } catch (SQLException e) {
+            generarJornadas();
         }
         return false;
     }

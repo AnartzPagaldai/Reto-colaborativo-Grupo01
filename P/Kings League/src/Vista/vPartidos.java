@@ -116,9 +116,7 @@ public class vPartidos {
         barras.add(barra6);
 
 
-        Main.getJornadas();
         HashMap <String, String> [] partidos = Main.getUltimaJornada();
-
         for (int x = 0; x < partidos.length; x++) {
 
             nombresEquipos1.get(x).setText(partidos[x].get("nombre_equiop1"));

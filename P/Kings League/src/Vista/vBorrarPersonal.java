@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Jornada.Jornada;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -28,18 +29,21 @@ public class vBorrarPersonal extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        buttonOK.addActionListener(new ActionListener() {
+        bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
                     onOK();
-                    Main.borrarPersonal(jlDni.getText());
+                    if (!Main.borrarPersonal(jlDni.getText()))
+                        throw new Exception("no se eleminado ");
+
+                    JOptionPane.showMessageDialog(null, "se a eliminado");
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         });
 
-        buttonCancel.addActionListener(new ActionListener() {
+        bCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }

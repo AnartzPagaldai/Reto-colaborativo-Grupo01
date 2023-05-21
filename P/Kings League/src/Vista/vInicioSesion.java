@@ -1,10 +1,14 @@
 package Vista;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import Controlador.Main;
 import Modelo.Usuario.Usuario;
 
@@ -38,29 +42,28 @@ public class vInicioSesion {
     private Usuario usuario;
 
 
-
     public vInicioSesion() throws MalformedURLException {
 
         pPrincipal = new JPanel(new BorderLayout());
-        pPrincipal= new JPanel() {
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
+        pPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
 
-            Graphics2D g2d = (Graphics2D) g;
+                Graphics2D g2d = (Graphics2D) g;
 
-            Color colorInicio = new Color(239, 122, 14);
-            Color colorFin = new Color(253, 214, 44);
+                Color colorInicio = new Color(239, 122, 14);
+                Color colorFin = new Color(253, 214, 44);
 
-            GradientPaint gradient = new GradientPaint(
-                    0, 0, colorInicio,
-                    0, getHeight(), colorFin);
+                GradientPaint gradient = new GradientPaint(
+                        0, 0, colorInicio,
+                        0, getHeight(), colorFin);
 
-            g2d.setPaint(gradient);
+                g2d.setPaint(gradient);
 
-            g2d.fillRect(0, 0, getWidth(), getHeight());
-        }
-    };
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
 
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
         // Poner la imagen del logo oficial de la Kings League
@@ -96,24 +99,11 @@ public class vInicioSesion {
         Image imgTw = imagenTwitter.getImage().getScaledInstance(38, 39, Image.SCALE_SMOOTH);
         ImageIcon twIcono = new ImageIcon(imgTw);
         fTwitter.setIcon(twIcono);
-        
+
         bIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                boolean existe=false;
-                try {
-                    existe=Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
-                    String tipo=getUsuarioTipo(tfNombre.getText(), pfContrasena.getText());
-                    if (existe){
-                        if(tipo.equalsIgnoreCase("usuario")){
-                            Main.generarVentanaPrincipalUsuario();
-                        } else Main.generarVentanaPrincipalAdmin();
-                        tfNombre.setText("");
-                        pfContrasena.setText("");
-                    }else throw new Exception("Usuario o contraseña incorrectos");
-                }catch (Exception ex){
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
-                }
+                entrar();
             }
         });
         crearCuentaButton.addActionListener(new ActionListener() {
@@ -126,6 +116,32 @@ public class vInicioSesion {
                 }
             }
         });
+        pfContrasena.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if (e.getKeyCode() == 10) {
+                    entrar();
+                }
+            }
+        });
+    }
+
+    private void entrar() {
+        boolean existe = false;
+        try {
+            existe = Main.selectUsuario(tfNombre.getText().toUpperCase(), pfContrasena.getText().toUpperCase());
+            String tipo = getUsuarioTipo(tfNombre.getText(), pfContrasena.getText());
+            if (existe) {
+                if (tipo.equalsIgnoreCase("usuario")) {
+                    Main.generarVentanaPrincipalUsuario();
+                } else Main.generarVentanaPrincipalAdmin();
+                tfNombre.setText("");
+                pfContrasena.setText("");
+            } else throw new Exception("Usuario o contraseña incorrectos");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }
 
     public JPanel getpPrincipal() {

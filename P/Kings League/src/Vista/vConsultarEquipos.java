@@ -85,7 +85,7 @@ public class vConsultarEquipos {
         try {
             ArrayList<Equipo> listaEquipos = Main.rellenarBotones();
 
-            for (int x = 0; x < botones.size(); x++)
+            for (int x = 0; x < listaEquipos.size(); x++)
             {
                 Color colorFondo = Color.decode(listaEquipos.get(x).getColor());
 
