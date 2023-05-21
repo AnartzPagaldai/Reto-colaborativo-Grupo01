@@ -1,25 +1,31 @@
 package Vista;
 
+import Controlador.Main;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.net.URL;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class vDeleteContratosjugadores {
     private JPanel pPrincipal;
     private JPanel pDegradado;
     private JPanel pDatos;
     private JPanel pIniciarSesion;
-    private JTextField tfID;
     private JLabel jlNombre;
     private JPanel pFooter;
     private JPanel pBotones;
     private JButton bAceptar;
     private JButton bCancelar;
+    private JComboBox cbID;
 
 
     public vDeleteContratosjugadores() {
+        ArrayList<String> id= Main.getIDContratosJugadores();
+        for (int x=0; x<id.size();x++){
+            cbID.addItem(id.get(x));
+        }
         // Poner fondo degradado
         pPrincipal = new JPanel() {
             @Override
@@ -45,6 +51,26 @@ public class vDeleteContratosjugadores {
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
 
+        bCancelar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.PrincipalAdmin();
+            }
+        });
+        bAceptar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    boolean delete;
+                    delete=Main.deleteContratosJugadores(cbID.getSelectedItem().toString());
+                    if (delete){
+                        JOptionPane.showMessageDialog(null, "Contrato eliminado");
+                    }else JOptionPane.showMessageDialog(null, "Problemas eliminando");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
