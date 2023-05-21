@@ -12,7 +12,7 @@ public class TSplit {
 
     public static Split ConsultarSplitDeJorada(Jornada jornada) {
         Split split = new Split();
-        BaseDeDatos.cosultaObjeto(split, "select s.* from splits s, jornadas j where s.id = j.id_split and j.id = ?", new Object[]{jornada.getId()});
+        BaseDeDatos.consultaObjeto(split, "select s.* from splits s, jornadas j where s.id = j.id_split and j.id = ?", new Object[]{jornada.getId()});
         return split;
     }
 
@@ -29,5 +29,13 @@ public class TSplit {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static boolean comprobarSplit() {
+        Split split = new Split();
+        BaseDeDatos.consultaObjeto(split,
+                "select * from splits where id >all (select max(id_split) from jornadas) or  \n" +
+                        "not exists (select 'x' from jornadas);", new Object[]{});
+        return split != null;
     }
 }

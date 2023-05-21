@@ -13,7 +13,7 @@ public class TPartido {
     }
 
     public static boolean insertarPartido(Partido partido) {
-        return BaseDeDatos.executeUpdate("insert into partidos (id_jornada, fecha, lugar, id_equipo1, id_equipo2) values ((select max(id) from jornadas),?,?,?,?) ",
-                new Object[]{partido.getFecha(), partido.getLugar(), partido.getEquipo1(), partido.getEquipo2()});
+        return BaseDeDatos.executeUpdate("insert into partidos (id, id_jornada, fecha, lugar, id_equipo1, id_equipo2) values ((select max(id) from partidos) + 1, (select max(id) from jornadas),?,?,?,?) ",
+                new Object[]{partido.getFecha(), partido.getLugar(), partido.getEquipo1().getId(), partido.getEquipo2().getId()});
     }
 }

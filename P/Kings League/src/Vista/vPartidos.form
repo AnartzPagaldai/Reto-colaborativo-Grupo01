@@ -302,7 +302,7 @@
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
                               <opaque value="false"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
                           <component id="9717" class="javax.swing.JLabel" binding="jlGoles2Par1">
@@ -313,10 +313,10 @@
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
                               <opaque value="false"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
-                          <component id="2db84" class="javax.swing.JLabel">
+                          <component id="2db84" class="javax.swing.JLabel" binding="barra1">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -324,7 +324,7 @@
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
                               <opaque value="false"/>
-                              <text value="-"/>
+                              <text value=""/>
                             </properties>
                           </component>
                         </children>
@@ -350,7 +350,7 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
                           <component id="de3a0" class="javax.swing.JLabel" binding="jlGoles2Par2">
@@ -360,17 +360,17 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
-                          <component id="300f2" class="javax.swing.JLabel">
+                          <component id="300f2" class="javax.swing.JLabel" binding="barra2">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <font size="28"/>
                               <foreground color="-16777216"/>
-                              <text value="-"/>
+                              <text value=""/>
                             </properties>
                           </component>
                         </children>
@@ -396,7 +396,7 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
                           <component id="e9f61" class="javax.swing.JLabel" binding="jlGoles2Par3">
@@ -406,17 +406,17 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
-                          <component id="65cb9" class="javax.swing.JLabel">
+                          <component id="65cb9" class="javax.swing.JLabel" binding="barra3">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <font size="28"/>
                               <foreground color="-16777216"/>
-                              <text value="-"/>
+                              <text value=""/>
                             </properties>
                           </component>
                         </children>
@@ -442,7 +442,7 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
                           <component id="8607f" class="javax.swing.JLabel" binding="jlGoles2Par4">
@@ -452,17 +452,17 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
-                          <component id="173d1" class="javax.swing.JLabel">
+                          <component id="173d1" class="javax.swing.JLabel" binding="barra4">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <font size="28"/>
                               <foreground color="-16777216"/>
-                              <text value="-"/>
+                              <text value=""/>
                             </properties>
                           </component>
                         </children>
@@ -488,7 +488,7 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
                           <component id="4192d" class="javax.swing.JLabel" binding="jlGoles2Par5">
@@ -498,17 +498,17 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
-                          <component id="b8d53" class="javax.swing.JLabel">
+                          <component id="b8d53" class="javax.swing.JLabel" binding="barra5">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <font size="28"/>
                               <foreground color="-16777216"/>
-                              <text value="-"/>
+                              <text value=""/>
                             </properties>
                           </component>
                         </children>
@@ -534,7 +534,7 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
                           <component id="925d1" class="javax.swing.JLabel" binding="jlGoles2Par6">
@@ -544,17 +544,17 @@
                             <properties>
                               <font name="DejaVu Sans Mono" size="26"/>
                               <foreground color="-16777216"/>
-                              <text value="Label"/>
+                              <text value=""/>
                             </properties>
                           </component>
-                          <component id="4f3be" class="javax.swing.JLabel">
+                          <component id="4f3be" class="javax.swing.JLabel" binding="barra6">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <font size="28"/>
                               <foreground color="-16777216"/>
-                              <text value="-"/>
+                              <text value=""/>
                             </properties>
                           </component>
                         </children>
@@ -567,7 +567,7 @@
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
                           <opaque value="false"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="8f538" class="javax.swing.JLabel" binding="jlEquipo2">
@@ -580,7 +580,7 @@
                           <horizontalAlignment value="10"/>
                           <horizontalTextPosition value="2"/>
                           <opaque value="false"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="2d463" class="javax.swing.JLabel" binding="jlEquipo1Par2">
@@ -590,7 +590,7 @@
                         <properties>
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="758c1" class="javax.swing.JLabel" binding="jlEquipo1Par3">
@@ -600,7 +600,7 @@
                         <properties>
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="77c39" class="javax.swing.JLabel" binding="jlEquipo1Par4">
@@ -610,7 +610,7 @@
                         <properties>
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="8be0d" class="javax.swing.JLabel" binding="jlEquipo1Par5">
@@ -620,7 +620,7 @@
                         <properties>
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="dba3f" class="javax.swing.JLabel" binding="jlEquipo1Par6">
@@ -630,7 +630,7 @@
                         <properties>
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="fb7fc" class="javax.swing.JLabel" binding="jlEquipo2Par2">
@@ -641,7 +641,7 @@
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
                           <horizontalTextPosition value="2"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="b0f3e" class="javax.swing.JLabel" binding="jlEquipo2Par3">
@@ -652,7 +652,7 @@
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
                           <horizontalTextPosition value="2"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="8a9fd" class="javax.swing.JLabel" binding="jlEquipo2Par4">
@@ -663,7 +663,7 @@
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
                           <horizontalTextPosition value="2"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="6c5e4" class="javax.swing.JLabel" binding="jlEquipo2Par5">
@@ -674,7 +674,7 @@
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
                           <horizontalTextPosition value="2"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                       <component id="63013" class="javax.swing.JLabel" binding="jlEquipo2Par6">
@@ -685,7 +685,7 @@
                           <font name="DejaVu Sans Mono" size="36"/>
                           <foreground color="-16777216"/>
                           <horizontalTextPosition value="2"/>
-                          <text value="Label"/>
+                          <text value=""/>
                         </properties>
                       </component>
                     </children>

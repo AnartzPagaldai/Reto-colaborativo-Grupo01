@@ -227,6 +227,17 @@ public class  vPrincipalUsuario {
                 }
             }
         });
+
+        jmiVer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                   Main.generarVerPartido();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
     public JPanel getpPrincipal() {

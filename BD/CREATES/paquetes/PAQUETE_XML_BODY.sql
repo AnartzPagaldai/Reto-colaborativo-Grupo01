@@ -39,9 +39,9 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
             RESULT := RESULT ||
                       '<partido id_partido="'|| ID ||'">
                 <equipo1>'|| EQUIPO1 || '</equipo1>
-                <goles_equipo1>' || GOLES_EQUIPO1 || '</goles_equipo1>
+                <goles_equipo1>' || NVL(GOLES_EQUIPO1, 0) || '</goles_equipo1>
                 <equipo2>'|| EQUIPO2 || '</equipo2>
-                <goles_equipo2>'|| GOLES_EQUIPO2 || '</goles_equipo2>
+                <goles_equipo2>'|| NVL(GOLES_EQUIPO2, 0) || '</goles_equipo2>
                 <fecha_partido>' || FECHA || '</fecha_partido>
                 <lugar_partido>' || LUGAR || '</lugar_partido>
             </partido>';
@@ -64,9 +64,9 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
                            '<equipo posicion="' || FILA.POSICION || '">
                 <nombre>' || FILA.EQUIPO || '</nombre>
                 <victorias>' || FILA.VICTORIAS || '</victorias>
-                <goles_a_favor>' || FILA.GOLES_A_FAVOR || '</goles_a_favor>
-                <goles_en_contra>' || FILA.GOLES_EN_CONTRA ||'</goles_en_contra>
-                <diferencia_de_goles>' || FILA.BALANCE_GOLES || '</diferencia_de_goles>
+                <goles_a_favor>' || NVL(FILA.GOLES_A_FAVOR, 0) || '</goles_a_favor>
+                <goles_en_contra>' || NVL(FILA.GOLES_EN_CONTRA, 0) ||'</goles_en_contra>
+                <diferencia_de_goles>' || NVL(FILA.BALANCE_GOLES, 0) || '</diferencia_de_goles>
             </equipo>';
             END LOOP;
         RESULT := RESULT || '</clasificacion>';
@@ -87,7 +87,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
             WHERE S.ID=J.ID_SPLIT AND J.ID=P.ID_JORNADA
             AND ID_EQUIPO1 = E1.ID AND ID_EQUIPO2 = E2.ID
             AND S.ID=(SELECT MAX(ID) FROM SPLITS) AND J.ID = (SELECT MAX(JORNADAS.ID) FROM JORNADAS, PARTIDOS WHERE FECHA < SYSDATE AND PARTIDOS.ID_JORNADA = JORNADAS.ID)
-            ORDER BY P.ID;
+            ORDER BY J.ID, P.ID;
         JORNADA NUMBER(1) := 0;
     BEGIN
         XML := XML || '<?xml version="1.0" encoding="UTF-8"?>
@@ -102,9 +102,9 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
                 XML := XML ||
                        '<partido id_partido="'|| FILA.ID ||'">
             <equipo1>'|| FILA.EQUIPO1 || '</equipo1>
-            <goles_equipo1>' || FILA.GOLES_EQUIPO1 || '</goles_equipo1>
+            <goles_equipo1>' || NVL(FILA.GOLES_EQUIPO1, 0) || '</goles_equipo1>
             <equipo2>'|| FILA.EQUIPO2 || '</equipo2>
-            <goles_equipo2>'|| FILA.GOLES_EQUIPO2 || '</goles_equipo2>
+            <goles_equipo2>'|| NVL(FILA.GOLES_EQUIPO2, 0) || '</goles_equipo2>
             <fecha_partido>' || FILA.FECHA || '</fecha_partido>
             <lugar_partido>' || FILA.LUGAR || '</lugar_partido>
             </partido>';
