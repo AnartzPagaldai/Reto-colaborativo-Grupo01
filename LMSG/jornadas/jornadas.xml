@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE jornadas SYSTEM "jornadas.dtd">
 <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd">
-<jornada num_jornada="1">
+<jornada num_jornada="1" id_jornada="1">
   <tipo_split> VERANO</tipo_split>
   <tipo_jornada>NORMAL</tipo_jornada>
   <partido id_partido="1">

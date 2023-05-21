@@ -85,7 +85,7 @@ public class vConsultarEquipos {
         try {
             ArrayList<Equipo> listaEquipos = Main.rellenarBotones();
 
-            for (int x = 0; x < botones.size(); x++)
+            for (int x = 0; x < listaEquipos.size(); x++)
             {
                 Color colorFondo = Color.decode(listaEquipos.get(x).getColor());
 
@@ -221,7 +221,7 @@ public class vConsultarEquipos {
         jmiPrincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.PrincipalUsuario();
+                Main.Principal();
             }
         });
         jmiCerrarSesion.addActionListener(new ActionListener() {

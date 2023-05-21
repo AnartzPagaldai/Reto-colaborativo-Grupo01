@@ -61,6 +61,12 @@ public class vPartidos {
     private JLabel jlEquipo2Par6;
     private JPanel pTocho;
     private JPanel pTocho2;
+    private JLabel barra1;
+    private JLabel barra2;
+    private JLabel barra3;
+    private JLabel barra4;
+    private JLabel barra5;
+    private JLabel barra6;
 
     public vPartidos() throws Exception {
 
@@ -100,11 +106,18 @@ public class vPartidos {
         golesEquipos2.add(jlGoles2Par5);
         golesEquipos2.add(jlGoles2Par6);
 
+        ArrayList<JLabel> barras = new ArrayList<>();
 
-        Main.getJornadas();
-        HashMap <String, String> [] partidos = Main.getJornada(1);
+        barras.add(barra1);
+        barras.add(barra2);
+        barras.add(barra3);
+        barras.add(barra4);
+        barras.add(barra5);
+        barras.add(barra6);
 
-        for (int x = 0; x < nombresEquipos1.size(); x++) {
+
+        HashMap <String, String> [] partidos = Main.getUltimaJornada();
+        for (int x = 0; x < partidos.length; x++) {
 
             nombresEquipos1.get(x).setText(partidos[x].get("nombre_equiop1"));
 
@@ -122,6 +135,8 @@ public class vPartidos {
 
             golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
             golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
+
+            barras.get(x).setText("-");
 
 
         }

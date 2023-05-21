@@ -53,6 +53,8 @@ public class Main {
     public static JFrame vInsertarPersonal;
     public static JFrame vInsertarResultados;
     public static JFrame vInsertarEquipos;
+
+    public static JFrame vPartido;
     public static Usuario u;
 
     public static Equipo equipo=new Equipo();
@@ -79,7 +81,9 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }*/
-        //XML.generarXMlultimaJornada();
+        //crearSplit("verano");
+        //generarJornada();
+        //generarXml();
     }
     public static void cerrarSesion() {
         actual.dispose();
@@ -89,6 +93,14 @@ public class Main {
     public static void PrincipalUsuario() {
         actual.dispose();
         vPrinicpalUsuario.setVisible(true);
+    }
+
+    public static void Principal() {
+        actual.dispose();
+        if (vPrinicpalUsuario != null)
+           vPrinicpalUsuario.setVisible(true);
+        else
+            vPrinicpalAdmin.setVisible(true);
     }
     public static void vEquipos() {
         actual.dispose();
@@ -148,7 +160,10 @@ public class Main {
         vEquipos.pack();
         vEquipos.setVisible(true);
         vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalUsuario.setVisible(false);
+        if (vPrinicpalUsuario != null)
+            vPrinicpalUsuario.setVisible(false);
+        else
+            vPrinicpalAdmin.setVisible(false);
         actual = vEquipos;
     }
     public static void generarVentanaJugadores() throws MalformedURLException {
@@ -300,6 +315,20 @@ public class Main {
         actual=vInsertarEquipos;
     }
 
+    public static void generarVerPartido() throws Exception {
+        vPartido = new JFrame("vParido");
+        vPartido.setContentPane(new vPartidos().getpPrincipal());
+        vPartido.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPartido.pack();
+        vPartido.setVisible(true);
+        vPartido.setExtendedState(Frame.MAXIMIZED_BOTH);
+        if (vPrinicpalUsuario != null )
+            vPrinicpalUsuario.setVisible(false);
+        else
+            vPrinicpalAdmin.setVisible(false);
+        actual=vPartido;
+    }
+
     // Métodos para los CRUD
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
@@ -368,9 +397,7 @@ public class Main {
         return XML.getClasificacion();
     }
 
-    public static boolean generarJornada() {
-       return TJornada.generarJornadas();
-    }
+
     public static ArrayList<Integer> getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
@@ -651,4 +678,7 @@ public class Main {
         return insertar;
     }
 
+    public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException{
+        // todo
+    }
 }
