@@ -44,6 +44,7 @@ public class Main {
     public static JFrame vInsertarJugadores;
     public static JDialog vBorrarJugadores;
     public static JFrame vClasificacion;
+    public static JFrame vContratosJ;
     public static JFrame vUpdateJugadores;
     public static JFrame vInsertEquipos;
     public static JDialog vBorrarEquipos;
@@ -263,6 +264,16 @@ public class Main {
         vBorrarPersonales.pack();
         vBorrarPersonales.setVisible(true);
         vPrinicpalAdmin.setEnabled(false);
+    }
+    public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException {
+        vContratosJ = new JFrame("vDeleteSplit");
+        vContratosJ.setContentPane(new vInsertarContratosJugadores().getpPrincipal());
+        vContratosJ.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vContratosJ.pack();
+        vContratosJ.setVisible(true);
+        vContratosJ.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vContratosJ;
     }
     public static void generarBorrarSplits() throws MalformedURLException {
         vBorrarSplits = new JFrame("vDeleteSplit");
@@ -546,8 +557,8 @@ public class Main {
         TJornada.crearJornadaPlayOff(semifinal);
     }
 
-    public static void insertarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
-        TPersonal.insertar(new Personal(nombre, apellido, dni, Integer.parseInt(telefono), TipoPersonal.ENTRENADOR.valueOf(oficio), img));
+    public static void insertarPersonal() {
+
     }
 
 
@@ -662,7 +673,7 @@ public class Main {
         java.sql.Date fechaSQL = new java.sql.Date(fechaActual.getTime());
         return fechaSQL;
     }
-    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, String sueldo) {
+    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, TipoSueldo sueldo) {
         boolean insertar;
         ContratoJugador contratoJugador=new ContratoJugador();
         Equipo equipo=equipoPorNombre(nombreEquipo);
@@ -673,12 +684,40 @@ public class Main {
         contratoJugador.setFechaFin(java.sql.Date.valueOf(fecha_fin));
         contratoJugador.setClausula(Double.parseDouble(clausula));
         contratoJugador.setDorsal(dorsal);
-        contratoJugador.setTipoSueldo(TipoSueldo.valueOf(sueldo));
+        contratoJugador.setTipoSueldo(sueldo);
         insertar=TContratosJugador.insertar(contratoJugador);
         return insertar;
     }
+    public static ArrayList<String> getIDContratosJugadores(){
+        ArrayList<String> id=new ArrayList<>();
+        id=TContratosJugador.getID(id);
+        return id;
+    }
+    public static boolean deleteContratosJugadores(String id){
+        boolean delete;
+        delete=TContratosJugador.delete(id);
+        return delete;
+    }
 
-    public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException{
-        // todo
+    public static ContratoJugador contratosJugadorPorID(String id){
+        ContratoJugador contratoJugador=new ContratoJugador();
+        contratoJugador.setId(Integer.parseInt(id));
+        contratoJugador=TContratosJugador.datosContratoPorId(contratoJugador);
+        return contratoJugador;
+    }
+
+    public static boolean updateContratosJugadores(String nombre, String fechaFin, String clausula, String dorsal, TipoSueldo sueldo) {
+        boolean update;
+        ContratoJugador contratoJugador=new ContratoJugador();
+        Equipo equipo=new Equipo();
+        equipo.setNombre(nombre);
+        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
+        contratoJugador.setEquipo(equipo);
+        contratoJugador.setFechaFin(java.sql.Date.valueOf(fechaFin));
+        contratoJugador.setClausula(Double.parseDouble(clausula));
+        contratoJugador.setDorsal(dorsal);
+        contratoJugador.setTipoSueldo(sueldo);
+        update= TContratosJugador.update(contratoJugador);
+        return update;
     }
 }

@@ -101,5 +101,4 @@ public class vBorrarPersonal extends JDialog {
         dialog.setVisible(true);
         System.exit(0);
     }
-
 }

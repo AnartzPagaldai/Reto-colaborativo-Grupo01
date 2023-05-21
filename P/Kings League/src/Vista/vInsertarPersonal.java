@@ -87,10 +87,9 @@ public class vInsertarPersonal {
                 validarOficio(cbOficio.getSelectedIndex());
                 validarImagen(tfImagen.getText());
                 validarDni(ftfDni.getText());
-
                 if (correcto){
                     try {
-                        Main.insertarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), String.valueOf(cbOficio.getSelectedItem()), tfImagen.getText());
+
                         JOptionPane.showMessageDialog(null, "Personal insertado correctamente.");
                     } catch (Exception ex) {
                         throw new RuntimeException(ex);

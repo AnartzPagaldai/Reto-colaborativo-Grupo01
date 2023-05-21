@@ -58,9 +58,8 @@ public class Equipo implements ResultSetObjeto {
         this.color = color;
     }
 
-    private int contarJugadores() {
+    private void contarJugadores() {
 
-        return 0;
     }
 
     private void ficharJugador() {
