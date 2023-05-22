@@ -70,6 +70,7 @@ public class vPrincipalAdmin {
     private ImageIcon imagenUsuario;
     private JComboBox cbDNIS;
     private JButton bgenerarSplit;
+    private JButton bInsertarResul;
 
 
     public vPrincipalAdmin() throws MalformedURLException {
@@ -342,6 +343,33 @@ public class vPrincipalAdmin {
                     Main.generarVerPartido();
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
+                }
+            }
+        });
+        bgenerarSplit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.crearVentanaSplit();
+            }
+        });
+        bEmparejar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarJornadas();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error al generar los emparejamientos" + ex.getMessage());
+                    ex.printStackTrace();
+                }
+            }
+        });
+        bInsertarResul.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarInsertarResultados();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error al abrir la ventana");
                 }
             }
         });

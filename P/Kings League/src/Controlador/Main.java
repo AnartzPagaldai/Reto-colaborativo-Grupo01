@@ -38,6 +38,8 @@ public class Main {
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
+
+    public static JFrame vInsertSplit;
     public static JFrame vEquipoActualizar;
     public static JFrame vPersonalActualizar;
     public static JFrame vUsuario;
@@ -85,6 +87,10 @@ public class Main {
         //crearSplit("verano");
         //generarJornada();
         //generarXml();
+    }
+
+    public static void generarJornadas () throws Exception  {
+        TJornada.generarJornadas();
     }
     public static void cerrarSesion() {
         actual.dispose();
@@ -141,6 +147,18 @@ public class Main {
         vPrinicpalUsuario.setVisible(true);
         vPrinicpalUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
         actual = vPrinicpalUsuario;
+        vInicio.dispose();
+    }
+
+    public static void crearVentanaSplit ()
+    {
+         vInsertSplit = new JFrame("vCrearSplit");
+        vInsertSplit.setContentPane(new vCrearSplit().getpPrincipal());
+        vInsertSplit.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertSplit.pack();
+        vInsertSplit.setVisible(true);
+        vInsertSplit.setLocationRelativeTo(null);
+        actual = vInsertSplit;
         vInicio.dispose();
     }
     public static void generarVentanaPrincipalAdmin() throws MalformedURLException {
