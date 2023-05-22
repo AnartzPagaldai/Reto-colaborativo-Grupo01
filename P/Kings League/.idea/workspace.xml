@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="informe body">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TJugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TJugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Partido/TPartido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Partido/TPartido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TContratosPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TContratosPersonal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/XML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInicioSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInicioSesion.java" afterDir="false" />
-    </list>
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="informe body" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +36,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;4&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/1GDAW04/Desktop/Reto-colaborativo-Grupo01/P/Kings League/src/Modelo/XML&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lorena/Desktop/RETO/P/Kings League&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -84,6 +74,10 @@
       <workItem from="1684316081622" duration="5786000" />
       <workItem from="1684321896876" duration="631000" />
       <workItem from="1684322573078" duration="11000" />
+      <workItem from="1684426020818" duration="4773000" />
+      <workItem from="1684566282330" duration="759000" />
+      <workItem from="1684699548144" duration="354000" />
+      <workItem from="1684783509832" duration="2555000" />
     </task>
     <task id="LOCAL-00001" summary="xml generacion y get">
       <created>1683800631820</created>

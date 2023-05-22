@@ -111,7 +111,6 @@ public class vBorrarJugador extends JDialog {
     }
 
     private void createUIComponents() throws ParseException {
-        // TODO: place custom component creation code here
         tfDni = new JFormattedTextField(new MaskFormatter("########U"));
     }
     private void generarCombo(){

@@ -138,7 +138,6 @@ public class vActualizarPersonal {
         frame.setVisible(true);
     }
     private void createUIComponents() throws ParseException {
-        // TODO: place custom component creation code here
         tfTelefono = new JFormattedTextField(new MaskFormatter("#########"));
         tfDNI = new JFormattedTextField(new MaskFormatter("########U"));
     }

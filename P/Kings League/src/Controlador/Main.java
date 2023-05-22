@@ -360,6 +360,14 @@ public class Main {
     }
 
     // Métodos para los CRUD
+
+    /**
+     * Comprobar si existe el usuario indicado.
+     *
+     * @param nombre
+     * @param contrasena
+     * @return boolean
+     */
     public static boolean selectUsuario(String nombre, String contrasena) {
         boolean existe;
         u = new Usuario();
@@ -372,6 +380,15 @@ public class Main {
         return existe;
     }
 
+    /**
+     * Crear un nuevo usuario.
+     *
+     * @param nombre
+     * @param correo
+     * @param contrasena
+     * @param tipo
+     * @return boolean
+     */
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
         boolean existe;
         boolean insertar;
@@ -432,7 +449,7 @@ public class Main {
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
-            throw new Exception("error al leer desde jornadas");
+            throw new Exception("Error al leer desde jornadas.");
         }
         for (int x = 1; x <= partidos.get(partidos.size() - 1).getJornada().getNumJornada(); x++) {
             NumJornadas.add(x);
@@ -501,6 +518,13 @@ public class Main {
         return usuarioInicio.getContrasena();
     }
 
+    /**
+     * Actualizar los datos del perfil del usuario.
+     *
+     * @param usuarioAntes
+     * @param usuarioActual
+     * @throws SQLException
+     */
     public static void actalizarUsuario(Usuario usuarioAntes, Usuario usuarioActual) throws SQLException {
         TUsuario.updateUsuario(usuarioAntes, usuarioActual);
     }
@@ -519,6 +543,25 @@ public class Main {
         usuario=TUsuario.selectUsuarioDatos(usuario);
         return usuario;
     }
+
+    /**
+     * Insertar un nuevo jugador.
+     *
+     * @param nombre
+     * @param apellido
+     * @param dni
+     * @param telefono
+     * @param posicion
+     * @param tipo
+     * @param img
+     * @param velocidad
+     * @param fisico
+     * @param defensa
+     * @param pase
+     * @param tiro
+     * @param talento
+     * @return boolean
+     */
     public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
         boolean insertar;
         Jugador jugador=new Jugador();
@@ -538,6 +581,13 @@ public class Main {
         insertar=TJugador.insertar(jugador);
         return insertar;
     }
+
+    /**
+     * Borrar datos de un jugador.
+     *
+     * @param dni
+     * @return boolean
+     */
     public static boolean borrarJugador(String dni){
         boolean borrar;
         Jugador jugador=new Jugador();
@@ -545,6 +595,16 @@ public class Main {
         borrar=TJugador.eliminar(jugador);
         return borrar;
     }
+
+    /**
+     * Actualizar datos de un partido.
+     *
+     * @param equipo1
+     * @param equipo2
+     * @param golesEq1
+     * @param golesEq2
+     * @return boolean
+     */
     public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2) {
         Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
         Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
@@ -576,6 +636,17 @@ public class Main {
         TJornada.crearJornadaPlayOff(semifinal);
     }
 
+    /**
+     * Insertar un nuevo miembro del personal.
+     *
+     * @param nombre
+     * @param apellido
+     * @param dni
+     * @param telefono
+     * @param oficio
+     * @param img
+     * @return boolean
+     */
     public static boolean insertarPersonal(String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
         boolean insertar;
         Personal personal=new Personal();
@@ -610,6 +681,12 @@ public class Main {
         dnis=TJugador.selectDNI(dnis);
         return dnis;
     }
+
+    /**
+     * Mostrar todos los DNIs de los miembros del personal.
+     *
+     * @return ArrayList
+     */
     public static ArrayList<String> selectDNIPersonal(){
         ArrayList<String> dnis=new ArrayList<>();
         dnis=TPersonal.selectDNI(dnis);

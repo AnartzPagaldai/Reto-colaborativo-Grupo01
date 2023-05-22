@@ -244,7 +244,6 @@ public class vUpdateJugadores {
     }
 
     private void createUIComponents() throws ParseException {
-        // TODO: place custom component creation code here
         ftTelefono = new JFormattedTextField(new MaskFormatter("#########"));
         tfDNI = new JFormattedTextField(new MaskFormatter("########U"));
     }
