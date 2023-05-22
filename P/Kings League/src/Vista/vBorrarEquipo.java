@@ -18,14 +18,10 @@ public class vBorrarEquipo extends JDialog {
     private JLabel jlNombre;
     private JPanel pFooter;
     private JPanel pBotones;
-    private JComboBox cbNombres;
-    private Equipo equipo;
+    private  JComboBox cbNombres;
 
     public vBorrarEquipo() {
-        ArrayList<String> nombres=Main.selectNombresEquipos();
-        for (int x=0; x<nombres.size();x++){
-            cbNombres.addItem(nombres.get(x));
-        }
+        generarCombo();
         pPrincipal = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -82,11 +78,6 @@ public class vBorrarEquipo extends JDialog {
         cbNombres.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (cbNombres.getSelectedIndex()==0){
-                    JOptionPane.showMessageDialog(null, "Seleccione un nombre correcto");
-                }else {
-                    equipo = Main.equipoPorNombre(cbNombres.getSelectedItem().toString());
-                }
             }
         });
     }
@@ -94,14 +85,19 @@ public class vBorrarEquipo extends JDialog {
 
     private void onOK() {
         boolean delete;
-        delete=Main.deleteEquipo(equipo.getNombre());
+        delete=Main.deleteEquipo(cbNombres.getSelectedItem().toString());
+        if (cbNombres.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(null, "Seleccione un nombre correcto");
+        }
         if (delete){
             JOptionPane.showMessageDialog(null, "¡Equipo borrado con exito!");
+            cbNombres.removeAllItems();
+            generarCombo();
         }else JOptionPane.showMessageDialog(null, "Problemas al eliminar");
     }
 
     private void onCancel() {
-        Main.PrincipalAdmin();
+        this.dispose();
     }
 
     public JPanel getpPrincipal() {
@@ -113,5 +109,11 @@ public class vBorrarEquipo extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+    }
+    private void generarCombo(){
+        ArrayList<String> nombres=Main.selectNombresEquipos();
+        for (int x=0; x<nombres.size();x++){
+            cbNombres.addItem(nombres.get(x));
+        }
     }
 }

@@ -52,6 +52,7 @@ public class Main {
     public static JFrame vBorrarSplits;
     public static JFrame vBorrarUsuarios;
     public static JFrame vInsertarPersonal;
+    private static JFrame vUpdatecontratosjugadores;
     public static JFrame vInsertarResultados;
     public static JFrame vInsertarEquipos;
 
@@ -324,6 +325,16 @@ public class Main {
         vInsertarEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
         vPrinicpalAdmin.setVisible(false);
         actual=vInsertarEquipos;
+    }
+    public static void generarUpdateContratosJugadores() throws Exception {
+        vUpdatecontratosjugadores= new JFrame("vUpdatecontratosjugadores");
+        vUpdatecontratosjugadores.setContentPane(new vUpdatecontratosjugadores().getpPrincipal());
+        vUpdatecontratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdatecontratosjugadores.pack();
+        vUpdatecontratosjugadores.setVisible(true);
+        vUpdatecontratosjugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vPrinicpalAdmin.setVisible(false);
+        actual=vUpdatecontratosjugadores;
     }
 
     public static void generarVerPartido() throws Exception {

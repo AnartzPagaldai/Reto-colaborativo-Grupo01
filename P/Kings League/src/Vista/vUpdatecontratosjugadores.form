@@ -173,7 +173,7 @@
                     </constraints>
                     <properties>
                       <background color="-5712"/>
-                      <editable value="false"/>
+                      <editable value="true"/>
                       <enabled value="true"/>
                       <font name="DejaVu Sans Mono" size="18" style="0"/>
                       <foreground color="-16777216"/>

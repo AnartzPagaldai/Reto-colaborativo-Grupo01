@@ -345,6 +345,16 @@ public class vPrincipalAdmin {
                 }
             }
         });
+        bUpdateContratoJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarUpdateContratosJugadores();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
 

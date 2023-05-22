@@ -167,9 +167,8 @@ public class TEquipo {
             PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("delete equipos where id=?");
             ps.setInt(1, equipo.getId());
             int resul= ps.executeUpdate();
-            System.out.println(resul +" Fila eliminada en Jugadores");
-            ResultSet resulatdo=ps.executeQuery();
-            if (resulatdo.next()){
+            System.out.println(resul +" Fila eliminada en Equipos");
+            if (resul==1){
                 borrar=true;
             }
             System.out.println();
