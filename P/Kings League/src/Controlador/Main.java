@@ -244,16 +244,6 @@ public class Main {
         vPrinicpalUsuario.setVisible(false);
         actual=vInsertEquipos;
     }
-    public static void generarActualizarPersonal() throws MalformedURLException {
-        vPersonalActualizar = new JFrame("vActualizarPersonal");
-        vPersonalActualizar.setContentPane(new vActualizarPersonal().getpPrincipal());
-        vPersonalActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vPersonalActualizar.pack();
-        vPersonalActualizar.setVisible(true);
-        vPersonalActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual=vPersonalActualizar;
-        vPrinicpalAdmin.setVisible(false);
-    }
     public static void generarBorrarEquipos() throws MalformedURLException {
         vBorrarEquipos = new vBorrarEquipo();
         vBorrarEquipos.pack();
@@ -568,8 +558,17 @@ public class Main {
         TJornada.crearJornadaPlayOff(semifinal);
     }
 
-    public static void insertarPersonal() {
-
+    public static boolean insertarPersonal(String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
+        boolean insertar;
+        Personal personal=new Personal();
+        personal.setNombre(nombre);
+        personal.setApellidos(apellido);
+        personal.setDni(dni);
+        personal.setTelefono(telefono);
+        personal.setOficio(oficio);
+        personal.setImg(img);
+        insertar=TPersonal.insertar(personal);
+        return insertar;
     }
 
 
@@ -578,7 +577,7 @@ public class Main {
         return TJugador.consultarPorDni(dni);
     }
     public static boolean actualizarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
-        return TPersonal.actualizarPersonal(new Personal(nombre, apellido, dni, Integer.parseInt(telefono), TipoPersonal.valueOf(oficio), img));
+        return TPersonal.actualizarPersonal(new Personal(nombre, apellido, dni, telefono, TipoPersonal.valueOf(oficio), img));
     }
 
     public static boolean buscarDniPersoal(String dni) {
@@ -593,15 +592,21 @@ public class Main {
         dnis=TJugador.selectDNI(dnis);
         return dnis;
     }
+    public static ArrayList<String> selectDNIPersonal(){
+        ArrayList<String> dnis=new ArrayList<>();
+        dnis=TPersonal.selectDNI(dnis);
+        return dnis;
+    }
     public static Jugador jugadorPorDNI(String dni){
         Jugador jugador =new Jugador();
         jugador.setDni(dni);
         jugador=TJugador.getJugadorPorDNI(jugador);
         return jugador;
     }
-    public static boolean updateJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+    public static boolean updateJugador(int id,String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
         boolean update;
         Jugador jugador=new Jugador();
+        jugador.setId(id);
         jugador.setNombre(nombre);
         jugador.setApellidos(apellido);
         jugador.setDni(dni);
@@ -729,6 +734,27 @@ public class Main {
         contratoJugador.setDorsal(dorsal);
         contratoJugador.setTipoSueldo(sueldo);
         update= TContratosJugador.update(contratoJugador);
+        return update;
+    }
+
+    public static Personal personalPorDNI(String dni) {
+        Personal personal = new Personal();
+        personal.setDni(dni);
+        personal=TPersonal.getPersonalPorDNI(personal);
+        return personal;
+    }
+
+    public static boolean updatePersonal(int id, String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
+        boolean update;
+        Personal personal=new Personal();
+        personal.setId(id);
+        personal.setNombre(nombre);
+        personal.setApellidos(apellido);
+        personal.setDni(dni);
+        personal.setTelefono(telefono);
+        personal.setOficio(oficio);
+        personal.setImg(img);
+        update=TPersonal.update(personal);
         return update;
     }
 }

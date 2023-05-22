@@ -2,17 +2,17 @@ package Vista;
 
 import Controlador.Main;
 import Modelo.Enumeraciones.TipoPersonal;
+import Modelo.Personal.Personal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,35 +20,29 @@ public class vActualizarPersonal {
     private JPanel pPrincipal;
     private JPanel pDegradado;
     private JPanel pDatos;
-    private JPanel pIniciarSesion;
-    private JLabel jlApellidos;
-    private JLabel jlDni;
-    private JLabel jlTelefono;
-    private JLabel jlOficio;
-    private JLabel jlImagen;
-    private JTextField tfImagen;
-    private JTextField tfApellidos;
-    private JTextField tfNombre;
-    private JFormattedTextField ftfDni;
-    private JFormattedTextField ftfTelefono;
-    private JComboBox cbOficio;
+    private JPanel pCrearJugador;
+    private ImageIcon LogoKingsLeague;
+    private JButton bCrear;
+    private JPanel pDatosPersonales;
     private JLabel jlNombre;
+    private JTextField tfNombre;
+    private JTextField tfApellido;
+    private JLabel jlContrasena;
+    private JTextField tfIMG;
+    private JComboBox cbOficio;
+    private JFormattedTextField tfTelefono;
+    private JFormattedTextField tfDNI;
+    private JButton bAtras;
+    private JComboBox cbDNIS;
     private JLabel JLThegrefg;
     private JLabel JLIbai;
-    private JPanel pBotones;
-    private JButton bAceptar;
-    private JButton bAtras;
     private JPanel pHeader;
+    private Personal personal;
     private JLabel fLogoKingsLeague;
-    private JLabel jlId2;
-    private JTextField tfId;
-    private JLabel jlId1;
-    private ImageIcon LogoKingsLeague;
-    private static boolean correcto;
-
-    public vActualizarPersonal() throws MalformedURLException {
-
-        // Poner fondo degradado
+    private static final String patronEnlace = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
+    private boolean enlaceCorrecto;
+    private TipoPersonal tipoPersonal;
+    public vActualizarPersonal() throws MalformedURLException{
         pPrincipal = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -56,8 +50,10 @@ public class vActualizarPersonal {
 
                 Graphics2D g2d = (Graphics2D) g;
 
-                Color colorInicio = new Color(239, 122, 14);
-                Color colorFin = new Color(253, 214, 44);
+
+
+                Color colorInicio = new Color(253, 214, 44);
+                Color colorFin = new Color(239, 122, 14);
 
                 GradientPaint gradient = new GradientPaint(
                         0, 0, colorInicio,
@@ -69,149 +65,92 @@ public class vActualizarPersonal {
             }
         };
 
-
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
-
 
         // Poner la imagen del logo oficial de la Kings League
         LogoKingsLeague = new ImageIcon(new URL("https://seeklogo.com/images/K/kings-league-logo-CEDD6AED72-seeklogo.com.png"));
         Image LogoNuevo = LogoKingsLeague.getImage().getScaledInstance(300, 122, Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(LogoNuevo);
         fLogoKingsLeague.setIcon(newIcon);
-        cbOficio.addItem("Presidente");
-        cbOficio.addItem("Entrenador");
 
+        ArrayList<String> oficios= new ArrayList<>();
+        oficios.add("SELECCIONE UNA OPCION");
+        oficios.add("ENTRENADOR");
+        oficios.add("PRESIDENTE");
 
-        tfId.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                // TODO: poner que busque el dni y se pongan los demás datos
-                //Main.buscarDniPersonal(ftfDni.getText());
-
-            }
-        });
-
-        bAceptar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                validarNombre(tfNombre.getText());
-                validarApellidos(tfApellidos.getText());
-                validarOficio(cbOficio.getSelectedIndex());
-                validarImagen(tfImagen.getText());
-                // TODO: si todo correcto actualizar datos
-                if (correcto)
-                    if (Main.actualizarPersonal(tfNombre.getText(), tfApellidos.getText(), ftfDni.getText(), ftfTelefono.getText(), String.valueOf(cbOficio.getSelectedItem()), tfImagen.getText()))
-                        JOptionPane.showMessageDialog(null, "se a insertado el personal");
-                    else
-                        JOptionPane.showMessageDialog(null, "no se a insertado el parsonal");
-
-            }
-        });
-        bAtras.addActionListener(new ActionListener() {
+        for (int x=0;x<oficios.size(); x++){
+            cbOficio.addItem(oficios.get(x));
+        }
+        ArrayList<String> dni= Main.selectDNIPersonal();
+        for (int x=0; x<dni.size();x++){
+            cbDNIS.addItem(dni.get(x));
+        }
+        cbDNIS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.PrincipalAdmin();
+                if (cbDNIS.getSelectedIndex()==0){
+                    pDatosPersonales.setVisible(false);
+                }else{
+                    pDatosPersonales.setVisible(true);
+                    personal=Main.personalPorDNI(cbDNIS.getSelectedItem().toString());
+                    tfNombre.setText(personal.getNombre());
+                    tfApellido.setText(personal.getApellidos());
+                    tfDNI.setText(personal.getDni());
+                    tfIMG.setText(personal.getImg());
+                    tfTelefono.setText(personal.getTelefono());
+                    cbDNIS.setToolTipText(personal.getOficio().toString());
+                }
             }
         });
-
-        ftfDni.addFocusListener(new FocusAdapter() {
+        bCrear.addActionListener(new ActionListener() {
             @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                validarDni(ftfDni.getText());
-
+            public void actionPerformed(ActionEvent e) {
+                boolean update;
+                try {
+                    enlaceCorrecto();
+                    if (cbOficio.getSelectedIndex()==0){
+                        throw new Exception("Por favor, seleccione un oficios correcto");
+                    }
+                    if (!enlaceCorrecto){
+                        throw new Exception("El enlace es incorrecto");
+                    }
+                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||tfTelefono.getText().isEmpty() || tfIMG.getText().isEmpty()){
+                        throw new Exception("No pueden haber campos vacios");
+                    }
+                    if (cbOficio.getSelectedIndex()==1){
+                        tipoPersonal=TipoPersonal.ENTRENADOR;
+                    }else tipoPersonal=TipoPersonal.PRESIDENTE;
+                    update= Main.updatePersonal(personal.getId(),tfNombre.getText(), tfApellido.getText(), tfDNI.getText(), tfTelefono.getText(), tipoPersonal, tfIMG.getText());
+                    if (update){
+                        JOptionPane.showMessageDialog(null, "¡Personal actualizado con exito!");
+                    }
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
             }
         });
-
     }
-
-    private void validarDni(String dni) {
-        Matcher encaja;
-        Pattern pat = Pattern.compile("[0-9][A-Z a-z]");
-        encaja = pat.matcher(dni);
-        if (!encaja.matches()) {
-            JOptionPane.showMessageDialog(null, "el dni no es correcto");
-            correcto = false;
-        } else
-            correcto = true;
-        if (Main.buscarDniPersoal(ftfDni.getText())) {
-            JOptionPane.showMessageDialog(null, "no esite nadie con ese dni");
-            correcto = false;
-        }
-    }
-
-
-    public static boolean validarNombre(String nombre){
-        Matcher encaja;
-        Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
-        encaja = pat.matcher(nombre);
-        if (!encaja.matches()){
-            JOptionPane.showMessageDialog(null,"El nombre debe empezar por una mayúscula y seguir con minúsculas.");
-            correcto=false;
-        }
-        else
-            correcto=true;
-        return correcto;
-    }
-    public static boolean validarApellidos(String apellidos){
-        Matcher encaja;
-        Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
-        encaja = pat.matcher(apellidos);
-        if (!encaja.matches()){
-            JOptionPane.showMessageDialog(null,"Los apellidos deben empezar por una mayúscula y seguir con minúsculas.");
-            correcto=false;
-        }
-        else
-            correcto=true;
-        return correcto;
-    }
-    public static boolean validarOficio(int opcion) {
-
-        if (opcion==0){
-            JOptionPane.showMessageDialog(null,"El oficio debe ser 'presidente' o 'entrenador'.");
-            correcto=false;
-        }
-        else
-            correcto=true;
-        return correcto;
-    }
-    public static boolean validarImagen(String imagen){
-
-        Matcher encaja;
-        Pattern pat = Pattern.compile("^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$");
-        encaja = pat.matcher(imagen);
-        if (!encaja.matches()){
-            JOptionPane.showMessageDialog(null,"La imagen debe empezar por 'https' y terminar con '.png'.");
-            correcto=false;
-        }
-        else
-            correcto=true;
-        return correcto;
-    }
-
-    private void createUIComponents() throws Exception {
-        try {
-            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
-            ftfTelefono = new JFormattedTextField((new MaskFormatter("#########")));
-        }
-        catch (ParseException e){
-            throw new Exception("Algún campo no cumple con el formato establecido.");
-        }
-    }
-
-
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
-
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vActualizarPersonal");
         frame.setContentPane(new vActualizarPersonal().pPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
-
+    private void createUIComponents() throws ParseException {
+        // TODO: place custom component creation code here
+        tfTelefono = new JFormattedTextField(new MaskFormatter("#########"));
+        tfDNI = new JFormattedTextField(new MaskFormatter("########U"));
+    }
+    public void enlaceCorrecto(){
+        Pattern pattern = Pattern.compile(patronEnlace);
+        Matcher matcher = pattern.matcher(tfIMG.getText());
+        if (!matcher.matches()){
+            enlaceCorrecto=false;
+            tfIMG.setBackground(Color.red);
+        }else {
+            tfIMG.setBackground(Color.green);
+            enlaceCorrecto=true;
+        }
+    }
 }

@@ -257,11 +257,7 @@ public class vPrincipalAdmin {
         bUpdatePersonal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarActualizarPersonal();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
         bDeletePersonal.addActionListener(new ActionListener() {

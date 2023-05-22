@@ -7,6 +7,7 @@ import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 public class vBorrarJugador extends JDialog {
     private JPanel pPrincipal;
@@ -18,6 +19,7 @@ public class vBorrarJugador extends JDialog {
     private JButton bCancelar;
     private JPanel pFooter;
     private JPanel pBotones;
+    private JComboBox cbDNIS;
     private JFormattedTextField tfDni;
 
 
@@ -42,17 +44,14 @@ public class vBorrarJugador extends JDialog {
             }
         };
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
-
+        generarCombo();
         setContentPane(pPrincipal);
         setModal(true);
         getRootPane().setDefaultButton(bAceptar);
 
         bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                     onOK();
-
-
             }
         });
 
@@ -84,13 +83,11 @@ public class vBorrarJugador extends JDialog {
         // add your code here
         try {
             boolean borrar;
-            if (tfDni.getText().isEmpty()) {
-                throw new Exception("No puede estar el campo vacio");
-            }
-            borrar = Main.borrarJugador(tfDni.getText());
+            borrar = Main.borrarJugador(cbDNIS.getSelectedItem().toString());
             if (borrar) {
                 JOptionPane.showMessageDialog(null, "¡Jugador borrado con exito!");
-                tfDni.setText("");
+                cbDNIS.removeAllItems();
+                generarCombo();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
@@ -116,5 +113,11 @@ public class vBorrarJugador extends JDialog {
     private void createUIComponents() throws ParseException {
         // TODO: place custom component creation code here
         tfDni = new JFormattedTextField(new MaskFormatter("########U"));
+    }
+    private void generarCombo(){
+        ArrayList<String> dni=Main.selectDNI();
+        for (int x=0; x<dni.size();x++){
+            cbDNIS.addItem(dni.get(x));
+        }
     }
 }

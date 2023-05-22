@@ -95,7 +95,7 @@ public class TContratosJugador {
                 contratoJugador.setFechaFin(resulatdo.getDate("fecha_fin"));
                 contratoJugador.setClausula(resulatdo.getInt("clausula"));
                 contratoJugador.setDorsal(resulatdo.getString("dorsal"));
-                contratoJugador.setTipoSueldo(contratoJugador.getTipoSueldo());
+                contratoJugador.setTipoSueldo(TipoSueldo.valueOf((resulatdo.getString("sueldo"))));
             }
             return contratoJugador;
         }catch (Exception e){

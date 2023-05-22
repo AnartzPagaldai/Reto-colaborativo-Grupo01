@@ -1,12 +1,13 @@
 package Vista;
 
 import Controlador.Main;
-import Modelo.Jornada.Jornada;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
+import java.awt.*;
 import java.awt.event.*;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 public class vBorrarPersonal extends JDialog {
     private JPanel pPrincipal;
@@ -18,12 +19,35 @@ public class vBorrarPersonal extends JDialog {
     private JPanel pBotones;
     private JButton bAceptar;
     private JButton bCancelar;
+    private JComboBox cbDNIS;
     private JFormattedTextField ftfDni;
     private JButton buttonOK;
     private JButton buttonCancel;
     private static boolean existe;
 
     public vBorrarPersonal() {
+        pPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                Graphics2D g2d = (Graphics2D) g;
+
+                Color colorInicio = new Color(239, 122, 14);
+                Color colorFin = new Color(253, 214, 44);
+
+                GradientPaint gradient = new GradientPaint(
+                        0, 0, colorInicio,
+                        0, getHeight(), colorFin);
+
+                g2d.setPaint(gradient);
+
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        pPrincipal.add(pDegradado, BorderLayout.CENTER);
+
+        generarCombo();
 
         setContentPane(pPrincipal);
         setModal(true);
@@ -31,13 +55,15 @@ public class vBorrarPersonal extends JDialog {
 
         bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                boolean borrar;
                 try {
-                    onOK();
-                    if (!Main.borrarPersonal(jlDni.getText()))
-                        throw new Exception("no se eleminado ");
-
-                    JOptionPane.showMessageDialog(null, "se a eliminado");
-                } catch (Exception ex) {
+                    borrar=Main.borrarPersonal(cbDNIS.getSelectedItem().toString());
+                    if (borrar){
+                        JOptionPane.showMessageDialog(null,"¡Personal borrado con exito!");
+                        cbDNIS.removeAllItems();
+                        generarCombo();
+                    }
+                }catch (Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
@@ -100,5 +126,11 @@ public class vBorrarPersonal extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+    }
+    public void generarCombo(){
+        ArrayList<String> dni= Main.selectDNIPersonal();
+        for (int x=0; x<dni.size();x++){
+            cbDNIS.addItem(dni.get(x));
+        }
     }
 }
