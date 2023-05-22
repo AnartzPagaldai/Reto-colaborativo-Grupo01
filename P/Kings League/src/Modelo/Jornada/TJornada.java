@@ -54,7 +54,7 @@ public class TJornada {
 
     private static ArrayList<Partido> getJornadas(String archivo) {
         try {
-            Jornada[] jornadas = new Jornada[14];
+            Jornada[] jornadas = new Jornada[13];
             ArrayList<Partido> partidos = new ArrayList<>();
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();

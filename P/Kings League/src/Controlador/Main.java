@@ -38,6 +38,8 @@ public class Main {
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
+
+    public static JFrame vInsertSplit;
     public static JFrame vEquipoActualizar;
     public static JFrame vPersonalActualizar;
     public static JFrame vUsuario;
@@ -66,7 +68,7 @@ public class Main {
 
     private static Personal[] personalesInfome = new Personal[2];
 
-    private static ArrayList<Partido> partidos;
+    public static ArrayList<Partido> partidos;
 
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
@@ -86,6 +88,10 @@ public class Main {
         //crearSplit("verano");
         //generarJornada();
         //generarXml();
+    }
+
+    public static void generarJornadas () throws Exception  {
+        TJornada.generarJornadas();
     }
     public static void cerrarSesion() {
         actual.dispose();
@@ -142,6 +148,18 @@ public class Main {
         vPrinicpalUsuario.setVisible(true);
         vPrinicpalUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
         actual = vPrinicpalUsuario;
+        vInicio.dispose();
+    }
+
+    public static void crearVentanaSplit ()
+    {
+         vInsertSplit = new JFrame("vCrearSplit");
+        vInsertSplit.setContentPane(new vCrearSplit().getpPrincipal());
+        vInsertSplit.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertSplit.pack();
+        vInsertSplit.setVisible(true);
+        vInsertSplit.setLocationRelativeTo(null);
+        actual = vInsertSplit;
         vInicio.dispose();
     }
     public static void generarVentanaPrincipalAdmin() throws MalformedURLException {
@@ -416,8 +434,8 @@ public class Main {
         if (partidos == null) {
             throw new Exception("error al leer desde jornadas");
         }
-        for (int x = 0; x< partidos.size(); x += 6) {
-            NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
+        for (int x = 1; x <= partidos.get(partidos.size() - 1).getJornada().getNumJornada(); x++) {
+            NumJornadas.add(x);
         }
         return NumJornadas;}
     public static HashMap<String, String>[] getUltimaJornada() {
@@ -425,7 +443,7 @@ public class Main {
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
-            ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));;
+            ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
         return dePartidosAhashmap(partidoDeJornada);
     }
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {

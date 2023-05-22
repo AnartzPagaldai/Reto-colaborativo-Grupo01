@@ -8,7 +8,7 @@ import Modelo.Equipo.TEquipo;
 public class TPartido {
 
     public static boolean actualizarPartido(Partido partido) {
-        return BaseDeDatos.executeUpdate("update partidos set GOLES_EQUIPO1 = ?, GOLES_EQUIPO2 = ? where ID_EQUIPO1 = ? and  ID_EQUIPO2 = ?  ",
+        return BaseDeDatos.executeUpdate("update partidos set GOLES_EQUIPO1 = ?, GOLES_EQUIPO2 = ? where ID_EQUIPO1 = ? and  ID_EQUIPO2 = ?",
                 new Object[]{partido.getGolesEquipo1(), partido.getGolesEquipo2(), partido.getEquipo1().getId(), partido.getEquipo2().getId()});
     }
 
