@@ -67,7 +67,7 @@ public class Main {
 
     private static Personal[] personalesInfome = new Personal[2];
 
-    private static ArrayList<Partido> partidos;
+    public static ArrayList<Partido> partidos;
 
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
@@ -433,8 +433,8 @@ public class Main {
         if (partidos == null) {
             throw new Exception("error al leer desde jornadas");
         }
-        for (int x = 0; x< partidos.size(); x += 6) {
-            NumJornadas.add(partidos.get(x).getJornada().getNumJornada());
+        for (int x = 1; x <= partidos.get(partidos.size() - 1).getJornada().getNumJornada(); x++) {
+            NumJornadas.add(x);
         }
         return NumJornadas;}
     public static HashMap<String, String>[] getUltimaJornada() {
@@ -442,7 +442,7 @@ public class Main {
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
-            ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));;
+            ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
         return dePartidosAhashmap(partidoDeJornada);
     }
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
@@ -737,5 +737,9 @@ public class Main {
         contratoJugador.setTipoSueldo(sueldo);
         update= TContratosJugador.update(contratoJugador);
         return update;
+    }
+
+    public static void generarActualizarEquipos() {
+        // todo
     }
 }

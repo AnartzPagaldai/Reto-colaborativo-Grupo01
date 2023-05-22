@@ -2,75 +2,75 @@
         <!DOCTYPE clasificacion SYSTEM "clasificacion.dtd">
         <clasificacion split="1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="clasificacion.xsd">
         <fecha>22/05/23</fecha><equipo posicion="1">
-                <nombre>El Barrio</nombre>
-                <victorias>2</victorias>
-                <goles_a_favor>6</goles_a_favor>
-                <goles_en_contra>2</goles_en_contra>
-                <diferencia_de_goles>4</diferencia_de_goles>
-            </equipo><equipo posicion="2">
-                <nombre>Aniquiladores FC</nombre>
-                <victorias>2</victorias>
-                <goles_a_favor>5</goles_a_favor>
-                <goles_en_contra>2</goles_en_contra>
-                <diferencia_de_goles>3</diferencia_de_goles>
-            </equipo><equipo posicion="3">
-                <nombre>Kunisports</nombre>
-                <victorias>2</victorias>
-                <goles_a_favor>5</goles_a_favor>
-                <goles_en_contra>3</goles_en_contra>
-                <diferencia_de_goles>2</diferencia_de_goles>
-            </equipo><equipo posicion="4">
-                <nombre>PIO FC</nombre>
-                <victorias>1</victorias>
-                <goles_a_favor>5</goles_a_favor>
-                <goles_en_contra>4</goles_en_contra>
-                <diferencia_de_goles>1</diferencia_de_goles>
-            </equipo><equipo posicion="5">
                 <nombre>Rayo de Barcelona</nombre>
                 <victorias>1</victorias>
                 <goles_a_favor>5</goles_a_favor>
-                <goles_en_contra>5</goles_en_contra>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>5</diferencia_de_goles>
+            </equipo><equipo posicion="2">
+                <nombre>El Barrio</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="3">
+                <nombre>Kunisports</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="4">
+                <nombre>PIO FC</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="5">
+                <nombre>Ultimate Mostoles</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
                 <diferencia_de_goles>0</diferencia_de_goles>
             </equipo><equipo posicion="6">
                 <nombre>Los Troncos FC</nombre>
-                <victorias>1</victorias>
-                <goles_a_favor>3</goles_a_favor>
-                <goles_en_contra>3</goles_en_contra>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
                 <diferencia_de_goles>0</diferencia_de_goles>
             </equipo><equipo posicion="7">
-                <nombre>Porcinos FC</nombre>
-                <victorias>1</victorias>
-                <goles_a_favor>3</goles_a_favor>
-                <goles_en_contra>3</goles_en_contra>
-                <diferencia_de_goles>0</diferencia_de_goles>
-            </equipo><equipo posicion="8">
-                <nombre>xBuyer Team</nombre>
-                <victorias>1</victorias>
-                <goles_a_favor>3</goles_a_favor>
-                <goles_en_contra>4</goles_en_contra>
-                <diferencia_de_goles>-1</diferencia_de_goles>
-            </equipo><equipo posicion="9">
-                <nombre>1K FC</nombre>
-                <victorias>1</victorias>
-                <goles_a_favor>5</goles_a_favor>
-                <goles_en_contra>7</goles_en_contra>
-                <diferencia_de_goles>-2</diferencia_de_goles>
-            </equipo><equipo posicion="10">
-                <nombre>Saiyans FC</nombre>
-                <victorias>0</victorias>
-                <goles_a_favor>3</goles_a_favor>
-                <goles_en_contra>5</goles_en_contra>
-                <diferencia_de_goles>-2</diferencia_de_goles>
-            </equipo><equipo posicion="11">
                 <nombre>Jijantes FC</nombre>
                 <victorias>0</victorias>
-                <goles_a_favor>2</goles_a_favor>
-                <goles_en_contra>4</goles_en_contra>
-                <diferencia_de_goles>-2</diferencia_de_goles>
-            </equipo><equipo posicion="12">
-                <nombre>Ultimate Mostoles</nombre>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="8">
+                <nombre>Porcinos FC</nombre>
                 <victorias>0</victorias>
-                <goles_a_favor>2</goles_a_favor>
-                <goles_en_contra>5</goles_en_contra>
-                <diferencia_de_goles>-3</diferencia_de_goles>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="9">
+                <nombre>xBuyer Team</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="10">
+                <nombre>Aniquiladores FC</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="11">
+                <nombre>Saiyans FC</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>0</goles_a_favor>
+                <goles_en_contra>0</goles_en_contra>
+                <diferencia_de_goles>0</diferencia_de_goles>
+            </equipo><equipo posicion="12">
+                <nombre>1K FC</nombre>
+                <victorias>0</victorias>
+                <goles_a_favor>9</goles_a_favor>
+                <goles_en_contra>18</goles_en_contra>
+                <diferencia_de_goles>-9</diferencia_de_goles>
             </equipo></clasificacion>

@@ -215,6 +215,7 @@ public class vPrincipalAdmin {
                 try {
                     Main.crearPlayOff();
                     JOptionPane.showMessageDialog(null, "se a credo el playoff");
+                    Main.generarXml();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -227,6 +228,7 @@ public class vPrincipalAdmin {
                 try {
                     Main.crearJornadaPlayOff(true);
                     JOptionPane.showMessageDialog(null, "se a creado la semifinal");
+                    Main.generarXml();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -239,6 +241,7 @@ public class vPrincipalAdmin {
                 try {
                     Main.crearJornadaPlayOff(false);
                     JOptionPane.showMessageDialog(null, "se a creado la final");
+                    Main.generarXml();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -300,17 +303,18 @@ public class vPrincipalAdmin {
         bUpdateEquipos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*try {
+                try {
                     Main.generarActualizarEquipos();
-                } catch (MalformedURLException ex) {
+                } catch (Exception ex) {
                     throw new RuntimeException(ex);
-                }*/
+                }
             }
         });
         bActualizarXML.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.generarXml();
+                JOptionPane.showMessageDialog(null, "xml actualizado");
             }
         });
         bDeleteEquipos.addActionListener(new ActionListener() {
@@ -357,6 +361,7 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.generarJornadas();
+                    JOptionPane.showMessageDialog(null, "emparejamientos creados");
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error al generar los emparejamientos" + ex.getMessage());
                     ex.printStackTrace();
