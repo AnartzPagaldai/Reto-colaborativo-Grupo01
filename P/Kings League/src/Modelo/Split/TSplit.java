@@ -33,9 +33,17 @@ public class TSplit {
 
     public static boolean comprobarSplit() {
         Split split = new Split();
-        BaseDeDatos.consultaObjeto(split,
-                "select * from splits where id >all (select max(id_split) from jornadas) or  \n" +
-                        "not exists (select 'x' from jornadas);", new Object[]{});
-        return split != null;
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement statement = BaseDeDatos.getCon().prepareStatement("select * from splits where id >all (select max(id_split) from jornadas) or not exists (select 'x' from jornadas);");
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

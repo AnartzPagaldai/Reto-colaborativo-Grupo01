@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-            <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd"></jornada></jornadas>
+            <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd"><jornada num_jornada="13" id_jornada="33">
+                    <tipo_split>INVIERNO</tipo_split>
+                    <tipo_jornada>PLAY-OFF</tipo_jornada><partido id_partido="71">
+            <equipo1>Rayo de Barcelona</equipo1>
+            <goles_equipo1>5</goles_equipo1>
+            <equipo2>1K FC</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>21/05/23</fecha_partido>
+            <lugar_partido>Cupra Arena</lugar_partido>
+            </partido><partido id_partido="72">
+            <equipo1>Saiyans FC</equipo1>
+            <goles_equipo1>0</goles_equipo1>
+            <equipo2>Aniquiladores FC</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>21/05/23</fecha_partido>
+            <lugar_partido>Cupra Arena</lugar_partido>
+            </partido><partido id_partido="73">
+            <equipo1>1K FC</equipo1>
+            <goles_equipo1>9</goles_equipo1>
+            <equipo2>Aniquiladores FC</equipo2>
+            <goles_equipo2>18</goles_equipo2>
+            <fecha_partido>28/05/23</fecha_partido>
+            <lugar_partido>Cupra Arena</lugar_partido>
+            </partido></jornada></jornadas>

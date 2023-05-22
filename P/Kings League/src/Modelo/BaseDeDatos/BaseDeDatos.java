@@ -9,9 +9,10 @@ public class BaseDeDatos {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
-            String url = "jdbc:oracle:thin:@SrvOracle:1521:orcl";
+            /*String url = "jdbc:oracle:thin:@SrvOracle:1521:orcl";
             String user = "eqdaw01";
-            String passwd = "eqdaw01";
+            String passwd = "eqdaw01";*/
+            String url = "jdbc:oracle:thin:@localhost:1521:XE", user = "JAVA_USER", passwd = "JAVA_USER";
             con = DriverManager.getConnection(url, user, passwd);
         } catch (Exception e) {
             System.out.println("Problemas con la base de datos " + e.getMessage() + " " + e.getClass());
@@ -38,11 +39,9 @@ public class BaseDeDatos {
     public static boolean executeUpdate(String sentencia, Object[] argumentos) {
         try {
             PreparedStatement statement = rellenarStatemet(sentencia, argumentos);
-            ResultSet resultado = statement.executeQuery();
-            boolean resul = resultado.next();
+            int resul = statement.executeUpdate();
             cerrarConexion();
-            return  resul;
-            //return resultado != 0;
+            return  resul != 0;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -64,7 +63,7 @@ public class BaseDeDatos {
         return statement;
     }
 
-    public static void cosultaObjeto(ResultSetObjeto objeto, String consulta, Object[] argumentos) {
+    public static void consultaObjeto(ResultSetObjeto objeto, String consulta, Object[] argumentos) {
         try {
             PreparedStatement statement = rellenarStatemet(consulta, argumentos);
             ResultSet resultSet = statement.executeQuery();
