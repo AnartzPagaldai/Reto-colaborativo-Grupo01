@@ -122,8 +122,7 @@ public class vInsertarContratosJugadores {
                         sueldo=TipoSueldo.VEINTIDOS_MILLONES_MEDIO;
                     }
                     if (fechaCorrecta && dorsalCorrecto && clasulaCorrecta) {
-                        insertar =
-                                Main.insertarContratoJugadores(cbNombres.getSelectedItem().toString(), cbJugadores.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), sueldo);
+                        insertar = Main.insertarContratoJugadores(cbNombres.getSelectedItem().toString(), cbJugadores.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), sueldo);
                         if (insertar) {
                             JOptionPane.showMessageDialog(null, "¡Contrato hecho con exito!");
                             tfDorsal.setText("");

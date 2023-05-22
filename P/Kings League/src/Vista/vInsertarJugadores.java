@@ -142,7 +142,7 @@ public class vInsertarJugadores {
                     if (!enlaceCorrecto){
                         throw new Exception("El enlace no es valido");
                     }
-                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||ftTelefono.getText().isEmpty()){
+                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||ftTelefono.getText().isEmpty()||tfIMG.getText().isEmpty()){
                         throw new Exception("No pueden haber campos vacios");
                     }
                     if (cbPosicion.getSelectedIndex()==1){

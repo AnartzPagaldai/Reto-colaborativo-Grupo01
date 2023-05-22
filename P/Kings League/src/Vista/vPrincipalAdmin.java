@@ -261,11 +261,7 @@ public class vPrincipalAdmin {
         bUpdatePersonal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarActualizarPersonal();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
         bDeletePersonal.addActionListener(new ActionListener() {
@@ -345,6 +341,16 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.generarVerPartido();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bUpdateContratoJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarUpdateContratosJugadores();
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }

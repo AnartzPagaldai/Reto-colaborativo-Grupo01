@@ -11,7 +11,7 @@ public class Personal implements ResultSetObjeto {
     private String nombre;
     private String apellidos;
     private String dni;
-    private int telefono;
+    private String telefono;
     private TipoPersonal oficio;
     private String img;
 
@@ -23,7 +23,7 @@ public class Personal implements ResultSetObjeto {
         this.oficio = oficio;
     }
 
-    public Personal(String nombre, String apellidos, String dni, int telefono, TipoPersonal oficio, String img) {
+    public Personal(String nombre, String apellidos, String dni, String telefono, TipoPersonal oficio, String img) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
@@ -64,11 +64,11 @@ public class Personal implements ResultSetObjeto {
         this.dni = dni;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -93,7 +93,7 @@ public class Personal implements ResultSetObjeto {
         nombre = resultSet.getString("nombre");
         apellidos = resultSet.getString("apellidos");
         dni = resultSet.getString("dni");
-        telefono = resultSet.getInt("telefono");
+        telefono = resultSet.getString("telefono");
         oficio = TipoPersonal.valueOf(resultSet.getString("oficio"));
         img = resultSet.getString("img");
     }

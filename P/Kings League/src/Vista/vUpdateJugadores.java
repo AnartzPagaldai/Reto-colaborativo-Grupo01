@@ -167,7 +167,7 @@ public class vUpdateJugadores {
                     if (cbTipo.getSelectedIndex()==1){
                         tipoJugadorString= tipoJugador.DRAFT.toString();
                     }else tipoJugadorString=tipoJugador.WILDCARD.toString();
-                    updateJugador= Main.updateJugador(tfNombre.getText(), tfApellido.getText(), tfDNI.getText(),
+                    updateJugador= Main.updateJugador(jugador.getId(),tfNombre.getText(), tfApellido.getText(), tfDNI.getText(),
                             ftTelefono.getText(), Jugador.TipoPosicion.valueOf(posicion), Jugador.TipoJugador.valueOf(tipoJugadorString) ,tfIMG.getText(), Integer.parseInt(sVelocidad.getValue().toString()),
                             Integer.parseInt(sFisico.getValue().toString()), Integer.parseInt(sDefensa.getValue().toString()),
                             Integer.parseInt(sPase.getValue().toString()),Integer.parseInt(sTiro.getValue().toString()),Integer.parseInt(sTalento.getValue().toString()));
