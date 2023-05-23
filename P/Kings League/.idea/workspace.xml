@@ -4,203 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="informe body">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Controlador/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Controlador/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Controlador/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Controlador/class-use/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Controlador/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Controlador/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Controlador/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Controlador/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Controlador/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Controlador/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/BaseDeDatos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/BaseDeDatos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/ResultSetObjeto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/ResultSetObjeto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/class-use/BaseDeDatos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/class-use/BaseDeDatos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/class-use/ResultSetObjeto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/class-use/ResultSetObjeto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/BaseDeDatos/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/TipoPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/TipoPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/TipoSueldo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/TipoSueldo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/class-use/TipoPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/class-use/TipoPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/class-use/TipoSueldo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/class-use/TipoSueldo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Enumeraciones/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/Equipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/Equipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/TEquipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/TEquipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/class-use/Equipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/class-use/Equipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/class-use/TEquipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/class-use/TEquipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Equipo/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/Jornada.TipoJornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/Jornada.TipoJornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/Jornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/Jornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/TJornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/TJornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/class-use/Jornada.TipoJornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/class-use/Jornada.TipoJornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/class-use/Jornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/class-use/Jornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/class-use/TJornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/class-use/TJornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jornada/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/ContratoJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/ContratoJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/Jugador.TipoJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/Jugador.TipoJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/Jugador.TipoPosicion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/Jugador.TipoPosicion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/Jugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/Jugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/TContratosJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/TContratosJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/TJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/TJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/ContratoJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/ContratoJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/Jugador.TipoJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/Jugador.TipoJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/Jugador.TipoPosicion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/Jugador.TipoPosicion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/Jugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/Jugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/TContratosJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/TContratosJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/TJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/class-use/TJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Jugador/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/Partido.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/Partido.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/TPartido.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/TPartido.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/class-use/Partido.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/class-use/Partido.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/class-use/TPartido.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/class-use/TPartido.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Partido/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/ContratoPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/ContratoPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/Personal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/Personal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/TContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/TContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/TPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/TPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/ContratoPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/ContratoPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/Personal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/Personal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/TContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/TContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/TPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/class-use/TPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Personal/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/Split.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/Split.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/TSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/TSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/class-use/Split.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/class-use/Split.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/class-use/TSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/class-use/TSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Split/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/TUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/TUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/Usuario.TipoUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/Usuario.TipoUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/Usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/Usuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/class-use/TUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/class-use/TUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/class-use/Usuario.TipoUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/class-use/Usuario.TipoUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/class-use/Usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/class-use/Usuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/Usuario/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/XML.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/XML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/class-use/XML.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/class-use/XML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Modelo/XML/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vActualizarEquipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vActualizarEquipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vActualizarPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vActualizarPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vBorrarEquipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vBorrarEquipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vBorrarJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vBorrarJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vBorrarPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vBorrarPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vClasificacionEquipos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vClasificacionEquipos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vConsultarEquipos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vConsultarEquipos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vConsultarJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vConsultarJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vCrearSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vCrearSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteContratosjugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteContratosjugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteusuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vDeleteusuarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInicioSesion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInicioSesion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertEquipos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertEquipos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarContratosJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarContratosJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarResultados.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vInsertarResultados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPartidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPartidos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPartidosPorJornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPartidosPorJornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPerfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPerfilUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPrincipalAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPrincipalAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPrincipalUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vPrincipalUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vRegistro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vRegistro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdateContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdateContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdateJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdateJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdateSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdateSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdatecontratosjugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/class-use/vUpdatecontratosjugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vActualizarEquipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vActualizarEquipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vActualizarPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vActualizarPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vBorrarEquipo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vBorrarEquipo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vBorrarJugador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vBorrarJugador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vBorrarPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vBorrarPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vClasificacionEquipos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vClasificacionEquipos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vConsultarEquipos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vConsultarEquipos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vConsultarJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vConsultarJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vCrearSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vCrearSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteContratosjugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteContratosjugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteusuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vDeleteusuarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInicioSesion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInicioSesion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertEquipos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertEquipos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarContratosJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarContratosJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarResultados.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vInsertarResultados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vPartidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vPartidos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vPartidosPorJornada.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vPartidosPorJornada.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vPerfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vPerfilUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vPrincipalAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vPrincipalAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vPrincipalUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vPrincipalUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vRegistro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vRegistro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdateContratosPersonal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdateContratosPersonal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdateJugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdateJugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdateSplit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdateSplit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdatecontratosjugadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/Vista/vUpdatecontratosjugadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-20.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-21.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/legal/jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/legal/jquery.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/legal/jqueryUI.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/script-dir/jquery-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/script-dir/jquery-3.6.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/script-dir/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/script-dir/jquery-ui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/script-dir/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/script-dir/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaDoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaDoc/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarEquipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" afterDir="false" />
-=======
     <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="get jornadas a medias">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoSueldo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoSueldo.class" afterDir="false" />
@@ -210,35 +15,30 @@
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TJugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/ultimaJornada.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/ultimaJornada.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vCrearSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vCrearSplit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteSplit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteusuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteusuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vRegistro.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vRegistro.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vRegistro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateJugadores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,6 +49,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -270,7 +71,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;117&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/1GDAW05/Desktop/Reto-colaborativo-Grupo01/P/Kings League&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -314,12 +115,8 @@
       <workItem from="1684566282330" duration="759000" />
       <workItem from="1684699548144" duration="354000" />
       <workItem from="1684783509832" duration="2555000" />
-<<<<<<< Updated upstream
       <workItem from="1684824289848" duration="8083000" />
       <workItem from="1684834579003" duration="5184000" />
-=======
-      <workItem from="1684834568898" duration="6822000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="xml generacion y get">
       <created>1683800631820</created>
@@ -430,11 +227,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="OracleBreakpointType">
-          <url>file://$APPLICATION_CONFIG_DIR$/consoles/db/3145f268-5b9a-41ad-a314-1b9ebbb97d6e/console.sql</url>
-          <line>118</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java</url>
           <line>95</line>
@@ -454,91 +246,6 @@
           <url>file://$PROJECT_DIR$/src/Vista/vUpdateJugadores.java</url>
           <line>167</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>897</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>896</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>845</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>844</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>843</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java</url>
@@ -576,24 +283,9 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>911</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>913</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>916</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
-          <line>918</line>
-          <option name="timeStamp" value="37" />
+          <url>file://$PROJECT_DIR$/src/Modelo/Split/TSplit.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

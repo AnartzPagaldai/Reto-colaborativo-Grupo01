@@ -60,7 +60,7 @@ public class TEquipo {
 
     public static ArrayList<Equipo> selectAllEquipos(ArrayList equipos) throws SQLException {
         BaseDeDatos.abrirConexion();
-        PreparedStatement ps = BaseDeDatos.getCon().prepareStatement("select nombre, logo_img, color from equipos");
+        PreparedStatement ps = BaseDeDatos.getCon().prepareStatement("select nombre, logo_img, color from equipos order by id");
         ResultSet resul = ps.executeQuery();
         while (resul.next()) {
             Equipo equipo = new Equipo();
@@ -112,11 +112,12 @@ public class TEquipo {
         boolean existe = false;
         try {
             BaseDeDatos.abrirConexion();
-            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from equipos where nombre=?");
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from equipos where upper(nombre) = upper(?)");
             ps.setString(1, equipo.getNombre());
             ResultSet resultado= ps.executeQuery();
-            if (resultado.next()){
-                existe=true;
+            if (resultado.next()) {
+                equipo.setId(resultado.getInt("id"));
+                existe = true;
             }
             BaseDeDatos.cerrarConexion();
             return existe;
@@ -128,18 +129,21 @@ public class TEquipo {
         boolean update=false;
         try {
             BaseDeDatos.abrirConexion();
-            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE JUGADORES SET NOMBRE=? AND PRESUPUESTO_ANUAL=? AND LOGO_IMG=? AND COLOR=? WHERE id=?");
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE EQUIPOS SET NOMBRE=?, PRESUPUESTO_ANUAL=?, LOGO_IMG=?, COLOR=? WHERE id=?");
             ps.setString(1, equipo.getNombre());
             ps.setDouble(2, equipo.getPresupuestoAnual());
             ps.setString(3, equipo.getLogoImg());
             ps.setString(4, equipo.getColor());
+            ps.setInt(5, equipo.getId());
             int resultado= ps.executeUpdate();
+            System.out.println(resultado);
             if (resultado==1){
                 update=true;
             }
             BaseDeDatos.cerrarConexion();
             return update;
-        }catch (Exception e){
+        }catch (Exception e) {
+            e.printStackTrace();
             System.out.println(e.getClass()+ e.getMessage());
             return false;
         }

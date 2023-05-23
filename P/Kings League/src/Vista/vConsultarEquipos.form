@@ -407,36 +407,6 @@
                       <text value="               "/>
                     </properties>
                   </component>
-                  <grid id="f9491" class="javax.swing.JMenu" binding="mJugadores" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <text value="Jugadores"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="f6418" class="javax.swing.JMenuItem" binding="jmiSeleccionar">
-                        <constraints/>
-                        <properties>
-                          <background color="-1926088"/>
-                          <font size="20"/>
-                          <foreground color="-16777216"/>
-                          <text value="Seleccionar"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                  <component id="dc973" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <text value="               "/>
-                    </properties>
-                  </component>
                   <grid id="e1ff9" class="javax.swing.JMenu" binding="mPartidos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
                     <constraints/>
                     <properties>
@@ -504,15 +474,6 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="f4cb4" class="javax.swing.JMenuItem" binding="jmiVerPerfil">
-                        <constraints/>
-                        <properties>
-                          <background color="-1926088"/>
-                          <font size="20"/>
-                          <foreground color="-16777216"/>
-                          <text value="Ver perfil"/>
-                        </properties>
-                      </component>
                       <component id="b1863" class="javax.swing.JMenuItem" binding="jmiCerrarSesion">
                         <constraints/>
                         <properties>
@@ -520,6 +481,15 @@
                           <font size="20"/>
                           <foreground color="-16777216"/>
                           <text value="Cerrar sesion"/>
+                        </properties>
+                      </component>
+                      <component id="f4cb4" class="javax.swing.JMenuItem" binding="jmiVerPerfil">
+                        <constraints/>
+                        <properties>
+                          <background color="-1926088"/>
+                          <font size="20"/>
+                          <foreground color="-16777216"/>
+                          <text value="Ver perfil"/>
                         </properties>
                       </component>
                       <hspacer id="11688">

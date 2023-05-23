@@ -24,8 +24,6 @@ public class vInsertarResultados {
     private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
-    private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
     private JMenu mClasificacion;
@@ -262,18 +260,18 @@ public class vInsertarResultados {
             if (i > partidos.length - 1) {
                 barras.get(i).setText("");
                 golesEq1.get(i).setVisible(false);
+                golesEq1.get(i).setText("");
                 golesEq2.get(i).setVisible(false);
+                golesEq2.get(i).setText("");
                 nombresEquipos1.get(i).setVisible(false);
                 nombresEquipos2.get(i).setVisible(false);
             }
-            if (golesEq1.get(2).getText().equals("0") && golesEq2.get(2).getText().equals("0")) {
+            if ((Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 && golesEq1.get(2).getText().equals("0") && golesEq2.get(2).getText().equals("0"))) {
                 golesEq1.get(2).setText("sin");
                 golesEq2.get(2).setText("jugar");
             }
-            panelGanador.setVisible((Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 &&
-                    barras.get(2).getText().equals("-") &&
-                    !golesEq1.get(2).getText().equals("sin")));
-            if (panelGanador.isVisible()) {
+            panelGanador.setVisible(false);
+            if (x == 2 && Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 && barras.get(2).getText().equals("-") && !golesEq1.get(2).getText().equals("sin")) {
                 if (Integer.parseInt(golesEq1.get(x).getText()) > Integer.parseInt(golesEq2.get(x).getText())) {
                     jEquipoGanador.setText(nombresEquipos1.get(x).getText());
                     jEquipoGanador.setIcon(nombresEquipos1.get(x).getIcon());
@@ -281,6 +279,7 @@ public class vInsertarResultados {
                     jEquipoGanador.setText(nombresEquipos2.get(x).getText());
                     jEquipoGanador.setIcon(nombresEquipos2.get(x).getIcon());
                 }
+                panelGanador.setVisible(true);
             }
 
         }

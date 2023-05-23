@@ -164,4 +164,8 @@ public class vInsertarContratosPersonal {
             cbPersonal.addItem(personalSinContrato.get(x));
         }
     }
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 }

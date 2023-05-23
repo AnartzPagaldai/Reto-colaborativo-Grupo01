@@ -74,10 +74,7 @@ public class TContratosJugador {
             ps.setInt(1, Integer.parseInt(id));
             int resul= ps.executeUpdate();
             System.out.println(resul +" Fila eliminada en Contratos_Jugadores");
-            ResultSet resulatdo=ps.executeQuery();
-            if (resulatdo.next()){
-                borrar=true;
-            }
+            borrar = resul != 0;
             System.out.println();
             return borrar;
         }catch (Exception e){
@@ -137,6 +134,7 @@ public class TContratosJugador {
             ps.setInt(5, contratoJugador.getTipoSueldo().getValor());
             ps.setInt(6, contratoJugador.getId());
             int resultado= ps.executeUpdate();
+            System.out.println(resultado);
             if (resultado==1){
                 update=true;
             }

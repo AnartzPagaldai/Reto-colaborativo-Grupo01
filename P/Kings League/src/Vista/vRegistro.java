@@ -184,7 +184,7 @@ public class vRegistro {
         bSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.cerrarSesion();
+                Main.cerrarSesion2();
             }
         });
     }

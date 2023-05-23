@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-            <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd"><jornada num_jornada="13" id_jornada="25">
+            <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd"><jornada num_jornada="13" id_jornada="46">
                     <tipo_split>INVIERNO</tipo_split>
                     <tipo_jornada>PLAY-OFF</tipo_jornada><partido id_partido="71">
-            <equipo1>Kunisports</equipo1>
-            <goles_equipo1>9</goles_equipo1>
-            <equipo2>Saiyans FC</equipo2>
-            <goles_equipo2>8</goles_equipo2>
+            <equipo1>1K FC</equipo1>
+            <goles_equipo1>7</goles_equipo1>
+            <equipo2>Los Troncos FC</equipo2>
+            <goles_equipo2>4</goles_equipo2>
             <fecha_partido>22/05/23</fecha_partido>
             <lugar_partido>Cupra Arena</lugar_partido>
             </partido><partido id_partido="72">
-            <equipo1>PIO FC</equipo1>
-            <goles_equipo1>4</goles_equipo1>
-            <equipo2>Jijantes FC</equipo2>
-            <goles_equipo2>7</goles_equipo2>
+            <equipo1>Jijantes FC</equipo1>
+            <goles_equipo1>7</goles_equipo1>
+            <equipo2>PIO FC</equipo2>
+            <goles_equipo2>9</goles_equipo2>
             <fecha_partido>22/05/23</fecha_partido>
             <lugar_partido>Cupra Arena</lugar_partido>
             </partido><partido id_partido="73">
-            <equipo1>Kunisports</equipo1>
-            <goles_equipo1>6</goles_equipo1>
-            <equipo2>Jijantes FC</equipo2>
-            <goles_equipo2>3</goles_equipo2>
+            <equipo1>Los Troncos FC</equipo1>
+            <goles_equipo1>5</goles_equipo1>
+            <equipo2>PIO FC</equipo2>
+            <goles_equipo2>0</goles_equipo2>
             <fecha_partido>29/05/23</fecha_partido>
             <lugar_partido>Cupra Arena</lugar_partido>
             </partido></jornada></jornadas>

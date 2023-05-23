@@ -85,4 +85,8 @@ public class vDeleteContratosPersonal {
             cbID.addItem(id.get(x));
         }
     }
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 }

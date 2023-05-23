@@ -38,7 +38,6 @@ public class vConsultarEquipos {
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
     private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
     private JMenu mClasificacion;
@@ -89,7 +88,7 @@ public class vConsultarEquipos {
         try {
             ArrayList<Equipo> listaEquipos = Main.rellenarBotones();
 
-            for (int x = 0; x < listaEquipos.size(); x++)
+            for (int x = 0; x < 12; x++)
             {
                 Color colorFondo = Color.decode(listaEquipos.get(x).getColor());
 

@@ -41,7 +41,7 @@ public class TJornada {
     public static boolean generarJornadas() throws Exception {
         try {
             BaseDeDatos.abrirConexion();
-            if (TSplit.comprobarSplit()) {
+            if (!TSplit.comprobarSplit()) {
                 throw new Exception("se deve insertar el split antes de generar los emfrentamientos");
             }
             CallableStatement statement = BaseDeDatos.getCon().prepareCall("{call GESTION_CALENDARIO.GENERAR_ENFRENTAMIENTOS");

@@ -146,7 +146,7 @@ public class vPartidos {
             golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
             golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
             barras.get(x).setText("-");
-            if (golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0")) {
+            if (Main.getNumJornada() == 13 && golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0")) {
                 golesEquipos1.get(2).setText("sin");
                 golesEquipos2.get(2).setText("jugar");
             }
