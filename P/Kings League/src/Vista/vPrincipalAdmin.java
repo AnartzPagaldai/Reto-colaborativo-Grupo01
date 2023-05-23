@@ -304,7 +304,7 @@ public class vPrincipalAdmin {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarActualizarEquipos();
+                    Main.generarActualizarEquipo();
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -330,13 +330,13 @@ public class vPrincipalAdmin {
         bInsertarContratoJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarInsertarContratosJugador();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
+            }
+        });
+        bActualizarXML.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.generarXml();
             }
         });
 

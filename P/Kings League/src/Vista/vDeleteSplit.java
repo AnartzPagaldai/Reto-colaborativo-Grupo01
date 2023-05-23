@@ -32,6 +32,10 @@ public class vDeleteSplit {
     private JComboBox comboBox1;
 
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
+
     public vDeleteSplit() throws MalformedURLException {
 
 
@@ -73,12 +77,12 @@ public class vDeleteSplit {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
+
+
     }
 
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
+
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vDeleteSplit");

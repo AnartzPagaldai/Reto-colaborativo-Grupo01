@@ -102,7 +102,7 @@ public class vActualizarPersonal {
                     tfDNI.setText(personal.getDni());
                     tfIMG.setText(personal.getImg());
                     tfTelefono.setText(personal.getTelefono());
-                    cbDNIS.setToolTipText(personal.getOficio().toString());
+                    cbOficio.setSelectedItem(personal.getOficio().toString());
                 }
             }
         });
@@ -127,6 +127,7 @@ public class vActualizarPersonal {
                     update= Main.updatePersonal(personal.getId(),tfNombre.getText(), tfApellido.getText(), tfDNI.getText(), tfTelefono.getText(), tipoPersonal, tfIMG.getText());
                     if (update){
                         JOptionPane.showMessageDialog(null, "¡Personal actualizado con exito!");
+                        cbDNIS.setSelectedIndex(0);
                     }
                 }catch (Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());

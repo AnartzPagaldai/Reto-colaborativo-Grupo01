@@ -97,9 +97,6 @@ public class vBorrarPersonal extends JDialog {
 
     private void onOK() throws Exception {
         boolean borrar;
-        if (jlDni.getText().isEmpty()) {
-            throw new Exception("No puede estar el campo vacío.");
-        }
         borrar = Main.borrarJugador(jlDni.getText());
         if (borrar) {
             JOptionPane.showMessageDialog(null, "¡Jugador borrado con exito!");
@@ -109,7 +106,7 @@ public class vBorrarPersonal extends JDialog {
     }
 
     private void onCancel() {
-        Main.PrincipalAdmin();
+       this.dispose();
     }
 
     private void createUIComponents() throws Exception {

@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="informe body">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
@@ -196,6 +197,48 @@
       <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarEquipo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" afterDir="false" />
+=======
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="get jornadas a medias">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoSueldo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoSueldo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TContratosJugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TContratosJugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TJugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TJugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TContratosPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TContratosPersonal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteusuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteusuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vRegistro.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vRegistro.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateJugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,8 +314,12 @@
       <workItem from="1684566282330" duration="759000" />
       <workItem from="1684699548144" duration="354000" />
       <workItem from="1684783509832" duration="2555000" />
+<<<<<<< Updated upstream
       <workItem from="1684824289848" duration="8083000" />
       <workItem from="1684834579003" duration="5184000" />
+=======
+      <workItem from="1684834568898" duration="6822000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="xml generacion y get">
       <created>1683800631820</created>
@@ -388,7 +435,172 @@
           <line>118</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Vista/vUpdateJugadores.java</url>
+          <line>212</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Vista/vUpdateJugadores.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>897</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>896</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>845</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>844</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>843</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>911</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>913</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>916</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>918</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

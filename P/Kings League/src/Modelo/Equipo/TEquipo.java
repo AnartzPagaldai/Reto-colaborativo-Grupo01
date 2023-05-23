@@ -163,7 +163,25 @@ public class TEquipo {
             return null;
         }
     }
-
+    public static Equipo getEquipoPorIDDavid(Equipo equipo){
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from equipos where id=?");
+            ps.setInt(1, equipo.getId());
+            ResultSet resulatdo=ps.executeQuery();
+            if (resulatdo.next()){
+                equipo.setId(resulatdo.getInt("id"));
+                equipo.setNombre(resulatdo.getString("nombre"));
+                equipo.setPresupuestoAnual(resulatdo.getDouble("presupuesto_anual"));
+                equipo.setLogoImg(resulatdo.getString("logo_img"));
+                equipo.setColor(resulatdo.getString("color"));
+            }
+            return equipo;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return null;
+        }
+    }
     public static boolean delete(Equipo equipo) {
         boolean borrar = false;
         try {
