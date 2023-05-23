@@ -6,6 +6,9 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase Split.
+ */
 public class Split implements ResultSetObjeto {
     private int id;
     private Date anio;
@@ -23,6 +26,9 @@ public class Split implements ResultSetObjeto {
         CERRADO
     }
 
+    /**
+     * Generar un objeto Split vacío.
+     */
     public Split() {
     }
 

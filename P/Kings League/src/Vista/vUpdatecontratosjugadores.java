@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vUpdatecontratosjugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a actualizar los contratos de los jugadores.
+ */
 public class vUpdatecontratosjugadores {
     private JPanel pDegradado;
     private JPanel pDatos;
@@ -27,17 +31,6 @@ public class vUpdatecontratosjugadores {
     private JComboBox cbEquipos;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
-    private JMenuBar jmheader;
-    private JMenu jmInicio;
-    private JMenuItem jmiPrincipal;
-    private JMenu mEquipos;
-    private JMenuItem jmiConsultarEquipos;
-    private JMenu mPartidos;
-    private JMenuItem jmiVer;
-    private JMenu mClasificacion;
-    private JMenu mUsuario;
-    private JMenuItem jmiVerPerfil;
-    private JMenuItem jmiCerrarSesion;
     private JComboBox cbSueldo;
     private JComboBox cbID;
     private JPanel pPrincipal;
@@ -91,12 +84,11 @@ public class vUpdatecontratosjugadores {
                 try {
                     contratoJugador=Main.contratosJugadorPorID(cbID.getSelectedItem().toString());
                     tfJugador.setText(contratoJugador.getJugador().getDni());
-                    tfClausula.setText(String.valueOf(contratoJugador.getClausula()));
+                    tfClausula.setText(String.valueOf((double)contratoJugador.getClausula()));
                     cbEquipos.setSelectedItem(contratoJugador.getEquipo().getNombre());
                     tfDorsal.setText(contratoJugador.getDorsal());
                     cbSueldo.setSelectedItem(contratoJugador.getTipoSueldo().getValor());
-                    tfFechaFin.setText(contratoJugador.getFechaFin().toString());
-
+                    tfFechaFin.setText(String.valueOf(contratoJugador.getFechaFin()));
                 }catch (Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
@@ -129,7 +121,7 @@ public class vUpdatecontratosjugadores {
                         sueldo=TipoSueldo.VEINTIDOS_MILLONES_MEDIO;
                     }
                     if (fechaCorrecta && dorsalCorrecto && clasulaCorrecta) {
-                        update = Main.updateContratosJugadores(cbEquipos.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), sueldo);
+                        update = Main.updateContratosJugadores(contratoJugador.getId(),cbEquipos.getSelectedItem().toString(), tfFechaFin.getText(), Double.parseDouble(tfClausula.getText()), tfDorsal.getText(), sueldo);
                         if (update) {
                             JOptionPane.showMessageDialog(null, "¡Contrato actualizado con exito!");
                             tfDorsal.setText("");
@@ -137,6 +129,7 @@ public class vUpdatecontratosjugadores {
                             tfFechaFin.setText("");
                             cbSueldo.setSelectedIndex(0);
                             tfJugador.setText("");
+                            cbID.setSelectedIndex(0);
                             cbEquipos.setSelectedIndex(0);
                             tfClausula.setBackground(new Color(255, 233, 176));
                             tfFechaFin.setBackground(new Color(255, 233, 176));

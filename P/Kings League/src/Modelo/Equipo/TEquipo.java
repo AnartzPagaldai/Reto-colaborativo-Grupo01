@@ -14,6 +14,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase TEquipo.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los equipos (mostrar equipos, insertarlos, etc.).
+ */
 public class TEquipo {
 
     public static ArrayList<Jugador> getInfomeEquipos(Equipo equipo, Personal[] personales) {
@@ -159,7 +163,25 @@ public class TEquipo {
             return null;
         }
     }
-
+    public static Equipo getEquipoPorIDDavid(Equipo equipo){
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from equipos where id=?");
+            ps.setInt(1, equipo.getId());
+            ResultSet resulatdo=ps.executeQuery();
+            if (resulatdo.next()){
+                equipo.setId(resulatdo.getInt("id"));
+                equipo.setNombre(resulatdo.getString("nombre"));
+                equipo.setPresupuestoAnual(resulatdo.getDouble("presupuesto_anual"));
+                equipo.setLogoImg(resulatdo.getString("logo_img"));
+                equipo.setColor(resulatdo.getString("color"));
+            }
+            return equipo;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return null;
+        }
+    }
     public static boolean delete(Equipo equipo) {
         boolean borrar = false;
         try {
@@ -167,9 +189,8 @@ public class TEquipo {
             PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("delete equipos where id=?");
             ps.setInt(1, equipo.getId());
             int resul= ps.executeUpdate();
-            System.out.println(resul +" Fila eliminada en Jugadores");
-            ResultSet resulatdo=ps.executeQuery();
-            if (resulatdo.next()){
+            System.out.println(resul +" Fila eliminada en Equipos");
+            if (resul==1){
                 borrar=true;
             }
             System.out.println();

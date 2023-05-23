@@ -13,6 +13,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Generar la clase vClasificacionEquipos.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a mostrar la clasificación de los equipos.
+ */
 public class vClasificacionEquipos {
     private JPanel pPrincipal;
     private JPanel pDegradado;

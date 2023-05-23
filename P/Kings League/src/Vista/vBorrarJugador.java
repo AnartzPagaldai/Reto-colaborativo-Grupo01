@@ -7,7 +7,12 @@ import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.ParseException;
+import java.util.ArrayList;
 
+/**
+ * Generar la clase vBorrarJugador.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar un jugador.
+ */
 public class vBorrarJugador extends JDialog {
     private JPanel pPrincipal;
     private JPanel pDegradado;
@@ -18,6 +23,7 @@ public class vBorrarJugador extends JDialog {
     private JButton bCancelar;
     private JPanel pFooter;
     private JPanel pBotones;
+    private JComboBox cbDNIS;
     private JFormattedTextField tfDni;
 
 
@@ -42,17 +48,14 @@ public class vBorrarJugador extends JDialog {
             }
         };
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
-
+        generarCombo();
         setContentPane(pPrincipal);
         setModal(true);
         getRootPane().setDefaultButton(bAceptar);
 
         bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                     onOK();
-
-
             }
         });
 
@@ -84,13 +87,11 @@ public class vBorrarJugador extends JDialog {
         // add your code here
         try {
             boolean borrar;
-            if (tfDni.getText().isEmpty()) {
-                throw new Exception("No puede estar el campo vacio");
-            }
-            borrar = Main.borrarJugador(tfDni.getText());
+            borrar = Main.borrarJugador(cbDNIS.getSelectedItem().toString());
             if (borrar) {
                 JOptionPane.showMessageDialog(null, "¡Jugador borrado con exito!");
-                tfDni.setText("");
+                cbDNIS.removeAllItems();
+                generarCombo();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.getMessage());
@@ -113,8 +114,14 @@ public class vBorrarJugador extends JDialog {
         System.exit(0);
     }
 
-    private void createUIComponents() throws ParseException {
-        // TODO: place custom component creation code here
-        tfDni = new JFormattedTextField(new MaskFormatter("########U"));
+    /**
+     * Método para rellenar el JComboBox con los DNIs de los jugadores existentes.
+     * Se llamará a un método del Main en el que se obtienen los DNIs y tras obtener ese ArrayList se rellenará el JComboBox.
+     */
+    private void generarCombo(){
+        ArrayList<String> dni=Main.selectDNI();
+        for (int x=0; x<dni.size();x++){
+            cbDNIS.addItem(dni.get(x));
+        }
     }
 }

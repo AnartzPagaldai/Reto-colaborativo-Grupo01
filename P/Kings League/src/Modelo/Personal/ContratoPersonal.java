@@ -6,6 +6,9 @@ import Modelo.Personal.Personal;
 
 import java.sql.Date;
 
+/**
+ * Generar la clase ContratoPersonal.
+ */
 public class ContratoPersonal {
     private int id;
     private Date fechaInicio;
@@ -14,6 +17,9 @@ public class ContratoPersonal {
     private Personal personal;
     private Equipo equipo;
 
+    /**
+     * Generar un objeto ContratoPersonal vacío.
+     */
     public ContratoPersonal() {
     }
 

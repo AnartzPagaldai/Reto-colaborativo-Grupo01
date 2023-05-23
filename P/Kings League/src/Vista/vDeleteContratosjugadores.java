@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase vDeleteContratosjugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar los contratos de los jugadores.
+ */
 public class vDeleteContratosjugadores {
     private JPanel pPrincipal;
     private JPanel pDegradado;

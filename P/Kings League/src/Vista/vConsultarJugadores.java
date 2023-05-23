@@ -12,6 +12,10 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
 
+/**
+ * Generar la clase vConsultarJugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a mostrar los jugadores de los equipos.
+ */
 public class vConsultarJugadores {
 
     private ImageIcon imagenInstagram;

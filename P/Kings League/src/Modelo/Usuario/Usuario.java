@@ -1,5 +1,8 @@
 package Modelo.Usuario;
 
+/**
+ * Generar la clase Usuario.
+ */
 public class Usuario {
     private int id;
     private String nombre;
@@ -11,10 +14,20 @@ public class Usuario {
         ADMIN
     }
 
+    /**
+     * Generar un objeto Usuario vacío.
+     */
     public Usuario() {
     }
 
-    public Usuario( String nombre, String contrasena, String correo) {
+    /**
+     * Generar un objeto Usuario con tres parámetros.
+     *
+     * @param nombre String
+     * @param contrasena String
+     * @param correo String
+     */
+    public Usuario(String nombre, String contrasena, String correo) {
         this.nombre = nombre;
         this.correo = correo;
         this.contrasena = contrasena;

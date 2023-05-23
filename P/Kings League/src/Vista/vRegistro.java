@@ -10,6 +10,10 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vRegistro.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana en la que un usuario se puede registrar.
+ */
 public class vRegistro {
 
     private ImageIcon LogoKingsLeague;

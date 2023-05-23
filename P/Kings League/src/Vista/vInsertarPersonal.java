@@ -2,7 +2,6 @@ package Vista;
 
 import Controlador.Main;
 import Modelo.Enumeraciones.TipoPersonal;
-import Modelo.Personal.TPersonal;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -11,11 +10,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.ParseException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertarPersonal.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar a los miembros del personal.
+ */
 public class vInsertarPersonal {
     private JPanel pPrincipal;
     private JPanel pDegradado;
@@ -24,25 +26,24 @@ public class vInsertarPersonal {
     private JLabel jlNombre;
     private JLabel jlTelefono;
     private JTextField tfNombre;
-    private JLabel JLThegrefg;
-    private JLabel JLIbai;
     private JPanel pHeader;
     private JLabel fLogoKingsLeague;
     private JLabel jlApellidos;
     private JLabel jlDni;
     private JLabel jlOficio;
     private JLabel jlImagen;
-    private JTextField tfApellidos;
-    private JFormattedTextField ftfDni;
-    private JFormattedTextField ftfTelefono;
+    private JTextField tfApellido;
+    private JFormattedTextField tfDNI;
+    private JFormattedTextField tfTelefono;
     private JComboBox<String> cbOficio;
-    private JTextField tfImagen;
+    private JTextField tfIMG;
     private JButton bCrear;
     private JButton bAtras;
     private JPanel pBotones;
     private ImageIcon LogoKingsLeague;
-    private static boolean correcto = true;
-
+    private static final String patronEnlace = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
+    private boolean enlaceCorrecto;
+    private TipoPersonal personal;
 
     public vInsertarPersonal() throws MalformedURLException {
 
@@ -67,8 +68,15 @@ public class vInsertarPersonal {
             }
         };
 
-        cbOficio.addItem("Presidente");
-        cbOficio.addItem("Entrenador");
+        ArrayList<String> oficios= new ArrayList<>();
+        oficios.add("SELECCIONE UNA OPCION");
+        oficios.add("ENTRENADOR");
+        oficios.add("PRESIDENTE");
+
+        for (int x=0;x<oficios.size(); x++){
+            cbOficio.addItem(oficios.get(x));
+        }
+
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
 
@@ -82,25 +90,33 @@ public class vInsertarPersonal {
         bCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                validarNombre(tfNombre.getText());
-                validarApellidos(tfApellidos.getText());
-                validarOficio(cbOficio.getSelectedIndex());
-                validarImagen(tfImagen.getText());
-                validarDni(ftfDni.getText());
-                if (correcto){
-                    try {
-
-                        JOptionPane.showMessageDialog(null, "Personal insertado correctamente.");
-                    } catch (Exception ex) {
-                        throw new RuntimeException(ex);
+                boolean insertar;
+                try {
+                    enlaceCorrecto();
+                    if (cbOficio.getSelectedIndex()==0){
+                        throw new Exception("Por favor, seleccione un oficios correcto");
                     }
-                    tfNombre.setText("");
-                    tfApellidos.setText("");
-                    ftfDni.setText("");
-                    ftfTelefono.setText("");
-                    cbOficio.setSelectedIndex(0);
-                    tfImagen.setText("");
-                    JOptionPane.showMessageDialog(null, "personal insetado");
+                    if (!enlaceCorrecto){
+                        throw new Exception("El enlace es incorrecto");
+                    }
+                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||tfTelefono.getText().isEmpty() || tfIMG.getText().isEmpty()){
+                        throw new Exception("No pueden haber campos vacios");
+                    }
+                    if (cbOficio.getSelectedIndex()==1){
+                        personal=TipoPersonal.ENTRENADOR;
+                    }else personal=TipoPersonal.PRESIDENTE;
+                    insertar= Main.insertarPersonal(tfNombre.getText(), tfApellido.getText(), tfDNI.getText(), tfTelefono.getText(), personal, tfIMG.getText());
+                    if (insertar){
+                        JOptionPane.showMessageDialog(null, "¡Personal creado con exito!");
+                        tfNombre.setText("");
+                        tfIMG.setText("");
+                        tfApellido.setText("");
+                        tfDNI.setText("");
+                        tfTelefono.setText("");
+                        cbOficio.setSelectedIndex(0);
+                    }
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
 
             }
@@ -114,66 +130,20 @@ public class vInsertarPersonal {
 
     }
 
-    private void validarDni(String dni) {
-        Matcher encaja;
-        Pattern pat = Pattern.compile("[0-9][A-Z a-z]");
-        encaja = pat.matcher(dni);
-        if (!encaja.matches()) {
-            JOptionPane.showMessageDialog(null, "el dni no es correcto");
-            correcto = false;
-        } else
-            correcto = true;
-        if (!Main.buscarDni(ftfDni.getText())) {
-            JOptionPane.showMessageDialog(null, "ya hay una persona con este dni");
-            correcto = false;
-        }
-    }
-
     private void createUIComponents() throws Exception {
-        try {
-            ftfDni = new JFormattedTextField(new MaskFormatter("########U"));
-            ftfTelefono = new JFormattedTextField((new MaskFormatter("#########")));
-        } catch (ParseException e) {
-            throw new Exception("Algún campo no cumple con el formato establecido.");
-        }
+        tfTelefono = new JFormattedTextField(new MaskFormatter("#########"));
+        tfDNI = new JFormattedTextField(new MaskFormatter("########U"));
     }
 
-    public static void validarNombre(String nombre) {
-        Matcher encaja;
-        Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
-        encaja = pat.matcher(nombre);
-        if (!encaja.matches()) {
-            JOptionPane.showMessageDialog(null, "El nombre debe empezar por una mayúscula y seguir con minúsculas.");
-            correcto = false;
-        }
-    }
-
-    public static void validarApellidos(String apellidos) {
-        Matcher encaja;
-        Pattern pat = Pattern.compile("^[A-Z][a-z]+( [A-Z][a-z]+)*$");
-        encaja = pat.matcher(apellidos);
-        if (!encaja.matches()) {
-            JOptionPane.showMessageDialog(null, "Los apellidos deben empezar por una mayúscula y seguir con minúsculas.");
-            correcto = false;
-        }
-    }
-
-    public static void validarOficio(int opcion) {
-
-        if (opcion == 0) {
-            JOptionPane.showMessageDialog(null, "El oficio debe ser 'presidente' o 'entrenador'.");
-            correcto = false;
-        }
-    }
-
-    public static void validarImagen(String imagen) {
-
-        Matcher encaja;
-        Pattern pat = Pattern.compile("^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$");
-        encaja = pat.matcher(imagen);
-        if (!encaja.matches()) {
-            JOptionPane.showMessageDialog(null, "La imagen debe empezar por 'https' y terminar con '.png'.");
-            correcto = false;
+    public void enlaceCorrecto(){
+        Pattern pattern = Pattern.compile(patronEnlace);
+        Matcher matcher = pattern.matcher(tfIMG.getText());
+        if (!matcher.matches()){
+            enlaceCorrecto=false;
+            tfIMG.setBackground(Color.red);
+        }else {
+            tfIMG.setBackground(Color.green);
+            enlaceCorrecto=true;
         }
     }
 

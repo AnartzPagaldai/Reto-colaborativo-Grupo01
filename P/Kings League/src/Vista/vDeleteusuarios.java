@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Generar la clase vClasificacionEquipos.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar un usuario.
+ */
 public class vDeleteusuarios {
     private JPanel pPrincipal;
     private JPanel pDegradado;
@@ -27,6 +31,10 @@ public class vDeleteusuarios {
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
 
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 
     public vDeleteusuarios() throws MalformedURLException {
 
@@ -65,12 +73,12 @@ public class vDeleteusuarios {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
+
+
     }
 
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
+
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vDeleteusuarios");

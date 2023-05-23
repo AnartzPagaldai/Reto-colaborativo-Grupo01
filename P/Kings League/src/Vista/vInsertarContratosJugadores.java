@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertarContratosJugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los contratos de los jugadores.
+ */
 public class vInsertarContratosJugadores {
     private JPanel pDegradado;
     private JPanel pDatos;
@@ -122,8 +126,7 @@ public class vInsertarContratosJugadores {
                         sueldo=TipoSueldo.VEINTIDOS_MILLONES_MEDIO;
                     }
                     if (fechaCorrecta && dorsalCorrecto && clasulaCorrecta) {
-                        insertar =
-                                Main.insertarContratoJugadores(cbNombres.getSelectedItem().toString(), cbJugadores.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), sueldo);
+                        insertar = Main.insertarContratoJugadores(cbNombres.getSelectedItem().toString(), cbJugadores.getSelectedItem().toString(), tfFechaFin.getText(), tfClausula.getText(), tfDorsal.getText(), sueldo);
                         if (insertar) {
                             JOptionPane.showMessageDialog(null, "¡Contrato hecho con exito!");
                             tfDorsal.setText("");

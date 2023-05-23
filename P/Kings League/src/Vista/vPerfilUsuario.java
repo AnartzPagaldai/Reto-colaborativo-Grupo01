@@ -14,6 +14,10 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vPerfilUsuario.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a mostrar el perfil del usuario y a poder actualizar sus datos.
+ */
 public class vPerfilUsuario {
 
 

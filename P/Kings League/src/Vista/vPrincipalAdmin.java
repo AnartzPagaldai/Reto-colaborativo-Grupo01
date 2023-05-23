@@ -12,6 +12,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase vPrincipalAdmin.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana principal del usuario admin.
+ */
 public class vPrincipalAdmin {
     private JPanel pPrincipal;
     private JPanel pDegradado;
@@ -261,11 +265,7 @@ public class vPrincipalAdmin {
         bUpdatePersonal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarActualizarPersonal();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
             }
         });
         bDeletePersonal.addActionListener(new ActionListener() {
@@ -304,7 +304,7 @@ public class vPrincipalAdmin {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarActualizarEquipos();
+                    Main.generarActualizarEquipo();
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -330,13 +330,13 @@ public class vPrincipalAdmin {
         bInsertarContratoJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarInsertarContratosJugador();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+
+            }
+        });
+        bActualizarXML.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.generarXml();
             }
         });
 
@@ -345,6 +345,16 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.generarVerPartido();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        bUpdateContratoJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarUpdateContratosJugadores();
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }

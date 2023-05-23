@@ -8,6 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase TSplit.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los splits (mostrar splits, insertarlos, etc.).
+ */
 public class TSplit {
 
     public static Split ConsultarSplitDeJorada(Jornada jornada) {

@@ -4,6 +4,9 @@ import Modelo.Split.Split;
 
 import javax.swing.*;
 
+/**
+ * Generar la clase Jornada.
+ */
 public class Jornada {
     private int id;
     private int numJornada;
@@ -23,10 +26,19 @@ public class Jornada {
        }
     }
 
-
+    /**
+     * Generar un objeto Jornada vacío.
+     */
     public Jornada() {
     }
 
+    /**
+     * Generar un objeto Jornada.
+     *
+     * @param numJornada int
+     * @param tipoJornada TipoJornada
+     * @param split Split
+     */
     public Jornada(int numJornada, TipoJornada tipoJornada, Split split) {
         this.numJornada = numJornada;
         this.tipoJornada = tipoJornada;

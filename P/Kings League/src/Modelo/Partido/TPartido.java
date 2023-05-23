@@ -5,6 +5,10 @@ import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Equipo.TEquipo;
 
+/**
+ * Generar la clase tPartido.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los partidos (actualizar partidos, insertarlos, etc.).
+ */
 public class TPartido {
 
     public static boolean actualizarPartido(Partido partido) {

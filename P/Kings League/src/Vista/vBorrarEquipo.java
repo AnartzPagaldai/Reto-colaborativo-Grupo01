@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase vBorrarEquipo.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar un equipo.
+ */
 public class vBorrarEquipo extends JDialog {
     private JPanel pPrincipal;
     private JButton bAceptar;
@@ -18,14 +22,10 @@ public class vBorrarEquipo extends JDialog {
     private JLabel jlNombre;
     private JPanel pFooter;
     private JPanel pBotones;
-    private JComboBox cbNombres;
-    private Equipo equipo;
+    private  JComboBox cbNombres;
 
     public vBorrarEquipo() {
-        ArrayList<String> nombres=Main.selectNombresEquipos();
-        for (int x=0; x<nombres.size();x++){
-            cbNombres.addItem(nombres.get(x));
-        }
+        generarCombo();
         pPrincipal = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -82,11 +82,6 @@ public class vBorrarEquipo extends JDialog {
         cbNombres.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (cbNombres.getSelectedIndex()==0){
-                    JOptionPane.showMessageDialog(null, "Seleccione un nombre correcto");
-                }else {
-                    equipo = Main.equipoPorNombre(cbNombres.getSelectedItem().toString());
-                }
             }
         });
     }
@@ -94,9 +89,14 @@ public class vBorrarEquipo extends JDialog {
 
     private void onOK() {
         boolean delete;
-        delete=Main.deleteEquipo(equipo.getNombre());
+        delete=Main.deleteEquipo(cbNombres.getSelectedItem().toString());
+        if (cbNombres.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(null, "Seleccione un nombre correcto");
+        }
         if (delete){
             JOptionPane.showMessageDialog(null, "¡Equipo borrado con exito!");
+            cbNombres.removeAllItems();
+            generarCombo();
         }else JOptionPane.showMessageDialog(null, "Problemas al eliminar");
     }
 
@@ -113,5 +113,16 @@ public class vBorrarEquipo extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+    }
+
+    /**
+     * Método para rellenar el JComboBox con los nombres de los equipos existentes.
+     * Se llamará a un método del Main en el que se obtienen los nombres y tras obtener ese ArrayList se rellenará el JComboBox.
+     */
+    private void generarCombo(){
+        ArrayList<String> nombres=Main.selectNombresEquipos();
+        for (int x=0; x<nombres.size();x++){
+            cbNombres.addItem(nombres.get(x));
+        }
     }
 }

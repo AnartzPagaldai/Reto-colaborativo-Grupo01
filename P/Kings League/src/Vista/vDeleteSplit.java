@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Generar la clase vDeleteSplit.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar los splits.
+ */
 public class vDeleteSplit {
     private JPanel pPrincipal;
     private JPanel pDegradado;
@@ -27,6 +31,10 @@ public class vDeleteSplit {
     private JMenuItem jmiCerrarSesion;
     private JComboBox comboBox1;
 
+
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
 
     public vDeleteSplit() throws MalformedURLException {
 
@@ -69,12 +77,12 @@ public class vDeleteSplit {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
+
+
     }
 
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
+
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vDeleteSplit");

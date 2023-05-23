@@ -14,6 +14,10 @@ import Modelo.Usuario.Usuario;
 
 import static Controlador.Main.*;
 
+/**
+ * Generar la clase vInicioSesion.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana con la que se inicia sesión en la aplicación.
+ */
 public class vInicioSesion {
     private JPanel pDatos;
     private JPanel pPrincipal;

@@ -13,6 +13,10 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertEquipos.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los equipos.
+ */
 public class vInsertEquipos {
     private JPanel pDegradado;
     private JPanel pDatos;

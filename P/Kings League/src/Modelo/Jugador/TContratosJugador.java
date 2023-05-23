@@ -1,5 +1,6 @@
 package Modelo.Jugador;
 
+import Controlador.Main;
 import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Enumeraciones.TipoSueldo;
 import Modelo.Equipo.Equipo;
@@ -8,6 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase TContratosJugador.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los contratos de los jugadores (mostrar un contrato, insertarlos, etc.).
+ */
 public class TContratosJugador {
     public static boolean insertar(ContratoJugador contratoJugador){
         boolean insertar=false;
@@ -86,16 +91,32 @@ public class TContratosJugador {
             BaseDeDatos.abrirConexion();
             PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from contratos_jugadores where id=?");
             ps.setInt(1, contratoJugador.getId());
-            ResultSet resulatdo=ps.executeQuery();
-            if (resulatdo.next()){
-                contratoJugador.setId(resulatdo.getInt("id"));
-                contratoJugador.setEquipo((Equipo) resulatdo.getObject("id_equipo"));
-                contratoJugador.setJugador((Jugador) resulatdo.getObject("id_jugador"));
-                contratoJugador.setFechaInicio(resulatdo.getDate("fecha_inicio"));
-                contratoJugador.setFechaFin(resulatdo.getDate("fecha_fin"));
-                contratoJugador.setClausula(resulatdo.getInt("clausula"));
-                contratoJugador.setDorsal(resulatdo.getString("dorsal"));
-                contratoJugador.setTipoSueldo((TipoSueldo) resulatdo.getObject("sueldo"));
+            ResultSet resultado=ps.executeQuery();
+            if (resultado.next()){
+                contratoJugador.setId(resultado.getInt("id"));
+                Equipo equipo = Main.equipoPorID(resultado.getInt("id_equipo"));
+                contratoJugador.setEquipo(equipo);
+                Jugador jugador =Main.jugadorPorID(resultado.getInt("id_jugador"));
+                contratoJugador.setJugador(jugador);
+                contratoJugador.setFechaInicio(resultado.getDate("fecha_inicio"));
+                contratoJugador.setFechaFin(resultado.getDate("fecha_fin"));
+                contratoJugador.setClausula(resultado.getInt("clausula"));
+                contratoJugador.setDorsal(resultado.getString("dorsal"));
+                int sueldo= resultado.getInt("sueldo");
+                TipoSueldo tipoSueldo = null;
+                if (sueldo==10000000){
+                    tipoSueldo=TipoSueldo.DIEZ_MILLONES;
+                }
+                if (sueldo==10500000){
+                    tipoSueldo=TipoSueldo.DIEZ_MILLONES_MEDIO;
+                }
+                if (sueldo==(15000000)){
+                    tipoSueldo=TipoSueldo.QUINCE_MILLONES;
+                }
+                if (sueldo==(22500000)){
+                    tipoSueldo=TipoSueldo.VEINTIDOS_MILLONES_MEDIO;
+                }
+                contratoJugador.setTipoSueldo(tipoSueldo);
             }
             return contratoJugador;
         }catch (Exception e){
@@ -108,7 +129,7 @@ public class TContratosJugador {
         boolean update=false;
         try {
             BaseDeDatos.abrirConexion();
-            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE contratos_jugadores SET id_equipo=? AND fecha_fin=? AND clausula=? AND dorsal=? AND suedlo=? WHERE id=?");
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE contratos_jugadores SET id_equipo=?, fecha_fin=? , clausula=? , dorsal=? , sueldo=? WHERE id=?");
             ps.setInt(1, contratoJugador.getEquipo().getId());
             ps.setDate(2, contratoJugador.getFechaFin());
             ps.setDouble(3, contratoJugador.getClausula());

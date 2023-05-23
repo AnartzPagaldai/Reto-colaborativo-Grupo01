@@ -13,6 +13,10 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * Generar la clase vPrincipalUsuario.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana principal del usuario normal.
+ */
 public class  vPrincipalUsuario {
     private JPanel pPrincipal;
 

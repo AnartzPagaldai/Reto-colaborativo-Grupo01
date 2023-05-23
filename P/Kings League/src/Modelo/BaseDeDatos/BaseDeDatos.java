@@ -2,6 +2,9 @@ package Modelo.BaseDeDatos;
 
 import java.sql.*;
 
+/**
+ * Generar la clase BaseDeDatos.
+ */
 public class BaseDeDatos {
     private static Connection con;
 
@@ -12,7 +15,6 @@ public class BaseDeDatos {
             String url = "jdbc:oracle:thin:@SrvOracle:1521:orcl";
             String user = "eqdaw01";
             String passwd = "eqdaw01";
-            //String url = "jdbc:oracle:thin:@localhost:1521:XE", user = "JAVA_USER", passwd = "JAVA_USER";
             con = DriverManager.getConnection(url, user, passwd);
         } catch (Exception e) {
             System.out.println("Problemas con la base de datos " + e.getMessage() + " " + e.getClass());

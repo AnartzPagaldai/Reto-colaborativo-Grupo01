@@ -10,6 +10,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Generar la clase vPartidos.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a mostrar los partidos entre equipos.
+ */
 public class vPartidos {
     private JPanel pPrincipal;
     private JPanel pDegradado;

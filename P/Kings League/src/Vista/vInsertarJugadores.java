@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertarJugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los jugadores.
+ */
 public class vInsertarJugadores {
     private JPanel pPrincipal;
     private ImageIcon LogoKingsLeague;
@@ -62,7 +66,6 @@ public class vInsertarJugadores {
     private static final String patronEnlace = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
     private boolean enlaceCorrecto;
     private String posicion;
-    private String tipoJugadorString;
     private Jugador.TipoJugador tipoJugador;
     private Jugador.TipoPosicion TipoPosicion;
     public vInsertarJugadores() throws MalformedURLException {
@@ -142,7 +145,7 @@ public class vInsertarJugadores {
                     if (!enlaceCorrecto){
                         throw new Exception("El enlace no es valido");
                     }
-                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||ftTelefono.getText().isEmpty()){
+                    if (tfNombre.getText().isEmpty()||tfApellido.getText().isEmpty()||tfDNI.getText().isEmpty()||tfApellido.getText().isEmpty()||ftTelefono.getText().isEmpty()||tfIMG.getText().isEmpty()){
                         throw new Exception("No pueden haber campos vacios");
                     }
                     if (cbPosicion.getSelectedIndex()==1){
@@ -158,10 +161,10 @@ public class vInsertarJugadores {
                         posicion= TipoPosicion.DELANTERO.toString();
                     }
                     if (cbTipo.getSelectedIndex()==1){
-                        tipoJugadorString= tipoJugador.DRAFT.toString();
-                    }else tipoJugadorString=tipoJugador.WILDCARD.toString();
+                        tipoJugador= Jugador.TipoJugador.DRAFT;
+                    }else tipoJugador= Jugador.TipoJugador.WILDCARD;
                     insertarJugador= Main.insertarJugador(tfNombre.getText(), tfApellido.getText(), tfDNI.getText(),
-                            ftTelefono.getText(), Jugador.TipoPosicion.valueOf(posicion), Jugador.TipoJugador.valueOf(tipoJugadorString) ,tfIMG.getText(), Integer.parseInt(sVelocidad.getValue().toString()),
+                            ftTelefono.getText(), Jugador.TipoPosicion.valueOf(posicion), tipoJugador ,tfIMG.getText(), Integer.parseInt(sVelocidad.getValue().toString()),
                             Integer.parseInt(sFisico.getValue().toString()), Integer.parseInt(sDefensa.getValue().toString()),
                             Integer.parseInt(sPase.getValue().toString()),Integer.parseInt(sTiro.getValue().toString()),Integer.parseInt(sTalento.getValue().toString()));
                     if (insertarJugador){
@@ -207,7 +210,6 @@ public class vInsertarJugadores {
     }
 
     private void createUIComponents() throws ParseException {
-        // TODO: place custom component creation code here
         ftTelefono = new JFormattedTextField(new MaskFormatter("#########"));
         tfDNI = new JFormattedTextField(new MaskFormatter("########U"));
     }
