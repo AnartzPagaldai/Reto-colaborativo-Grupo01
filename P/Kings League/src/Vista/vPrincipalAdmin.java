@@ -384,7 +384,19 @@ public class vPrincipalAdmin {
                 try {
                     Main.generarInsertarResultados();
                 } catch (Exception ex) {
+                    ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Error al abrir la ventana");
+                }
+            }
+        });
+
+        bUpdateContratoJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarUpdateContratoJugadores();
+                } catch (Exception ex) {
+
                 }
             }
         });
