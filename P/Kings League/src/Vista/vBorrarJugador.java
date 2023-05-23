@@ -117,6 +117,11 @@ public class vBorrarJugador extends JDialog {
     private void createUIComponents() throws ParseException {
         tfDni = new JFormattedTextField(new MaskFormatter("########U"));
     }
+
+    /**
+     * Método para rellenar el JComboBox con los DNIs de los jugadores existentes.
+     * Se llamará a un método del Main en el que se obtienen los DNIs y tras obtener ese ArrayList se rellenará el JComboBox.
+     */
     private void generarCombo(){
         ArrayList<String> dni=Main.selectDNI();
         for (int x=0; x<dni.size();x++){

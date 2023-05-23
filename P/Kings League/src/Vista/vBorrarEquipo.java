@@ -114,6 +114,11 @@ public class vBorrarEquipo extends JDialog {
         dialog.setVisible(true);
         System.exit(0);
     }
+
+    /**
+     * Método para rellenar el JComboBox con los nombres de los equipos existentes.
+     * Se llamará a un método del Main en el que se obtienen los nombres y tras obtener ese ArrayList se rellenará el JComboBox.
+     */
     private void generarCombo(){
         ArrayList<String> nombres=Main.selectNombresEquipos();
         for (int x=0; x<nombres.size();x++){

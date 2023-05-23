@@ -73,6 +73,12 @@ public class Main {
 
     public static ArrayList<Partido> partidos;
 
+    /**
+     * Lo primero que se hará será mostrar la ventana de inicio de sesión.
+     *
+     * @param args
+     * @throws MalformedURLException
+     */
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
         //TJornada.generarJornadas();
@@ -93,6 +99,12 @@ public class Main {
         //generarXml();
     }
 
+    /**
+     * Método para generar las jornadas.
+     * Se llamará al método generarJornadas localizado en la clase TJornada.
+     *
+     * @throws Exception
+     */
     public static void generarJornadas () throws Exception  {
         TJornada.generarJornadas();
     }
@@ -124,6 +136,7 @@ public class Main {
     }
 
     // Crear ventanas
+
     public static void generarVentanaInicio() throws MalformedURLException {
         vInicio = new JFrame("vInicioSesion");
         vInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -347,7 +360,6 @@ public class Main {
         vPrinicpalAdmin.setVisible(false);
         actual=vUpdatecontratosjugadores;
     }
-
     public static void generarVerPartido() throws Exception {
         vPartido = new JFrame("vParido");
         vPartido.setContentPane(new vPartidos().getpPrincipal());
@@ -365,10 +377,11 @@ public class Main {
     // Métodos para los CRUD
 
     /**
-     * Comprobar si existe el usuario indicado.
+     * Método para comprobar si existe el usuario indicado.
+     * Se creará un objeto usuario con los parámetros introducidos y se comprobará si ya existe en la base de datos.
      *
-     * @param nombre
-     * @param contrasena
+     * @param nombre String
+     * @param contrasena String
      * @return boolean
      */
     public static boolean selectUsuario(String nombre, String contrasena) {
@@ -384,12 +397,13 @@ public class Main {
     }
 
     /**
-     * Crear un nuevo usuario.
+     * Método para crear un nuevo usuario.
+     * Se creará un objeto usuario con los parámetros introducidos y se comprobará si ya existe. Si no es así se insertará.
      *
-     * @param nombre
-     * @param correo
-     * @param contrasena
-     * @param tipo
+     * @param nombre String
+     * @param correo String
+     * @param contrasena String
+     * @param tipo Usuario.TipoUsuario
      * @return boolean
      */
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
@@ -421,6 +435,13 @@ public class Main {
         return equipos;
     }
 
+    /**
+     * Método para mostrar todos los jugadores de un equipo mediante un HashMap.
+     * El equipo será previamente seleccionado en la ventana vConsultarEquipos.
+     *
+     * @param posicion int
+     * @return HashMap
+     */
     public static HashMap<String, String> getPersonaPorPosicion(int posicion) {
         HashMap<String, String> persona = new HashMap<>();
         if (posicion == 0 || posicion == 1) {
@@ -447,7 +468,12 @@ public class Main {
         return XML.getClasificacion();
     }
 
-
+    /**
+     * Método para mostrar las jornadas existentes.
+     *
+     * @return ArrayList
+     * @throws Exception
+     */
     public static ArrayList<Integer> getJornadas() throws Exception{
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
@@ -466,6 +492,13 @@ public class Main {
             ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
         return dePartidosAhashmap(partidoDeJornada);
     }
+
+    /**
+     * Método para pasar los partidos y sus resulatdos a un HashMap, y posteriormente a un Array.
+     *
+     * @param partidos ArrayList<Partido>
+     * @return HashMap
+     */
     private static HashMap<String, String>[] dePartidosAhashmap(ArrayList<Partido> partidos) {
         ArrayList<HashMap<String, String>> partidosMap = new ArrayList<>();
         for (int i = 0; i < partidos.size(); i++) {
@@ -490,6 +523,13 @@ public class Main {
         return jugadoresInfome.size()+2;
     }
 
+    /**
+     * Método para rellenar los botones de la ventana vConsultarEquipos con los equipos existentes.
+     * Se crea un ArrayList que contiene equipos.
+     *
+     * @return ArrayList
+     * @throws SQLException
+     */
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
         ArrayList equipos = new ArrayList<>();
         TEquipo.selectAllEquipos(equipos);
@@ -522,10 +562,10 @@ public class Main {
     }
 
     /**
-     * Actualizar los datos del perfil del usuario.
+     * Método para actualizar los datos del perfil del usuario.
      *
-     * @param usuarioAntes
-     * @param usuarioActual
+     * @param usuarioAntes Usuario
+     * @param usuarioActual Usuario
      * @throws SQLException
      */
     public static void actalizarUsuario(Usuario usuarioAntes, Usuario usuarioActual) throws SQLException {
@@ -548,21 +588,22 @@ public class Main {
     }
 
     /**
-     * Insertar un nuevo jugador.
+     * Método para insertar un nuevo jugador.
+     * Se creará un objeto jugador con los parámetros introducidos y se insertará en la base de datos.
      *
-     * @param nombre
-     * @param apellido
-     * @param dni
-     * @param telefono
-     * @param posicion
-     * @param tipo
-     * @param img
-     * @param velocidad
-     * @param fisico
-     * @param defensa
-     * @param pase
-     * @param tiro
-     * @param talento
+     * @param nombre String
+     * @param apellido String
+     * @param dni String
+     * @param telefono String
+     * @param posicion Jugador.TipoPosicion
+     * @param tipo Jugador.TipoJugador
+     * @param img String
+     * @param velocidad int
+     * @param fisico int
+     * @param defensa int
+     * @param pase int
+     * @param tiro int
+     * @param talento int
      * @return boolean
      */
     public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
@@ -586,9 +627,10 @@ public class Main {
     }
 
     /**
-     * Borrar datos de un jugador.
+     * Método para borrar los datos de un jugador.
+     * Tras crear un objeto jugador con el dni previamente introducido, se eliminará de la base de datos.
      *
-     * @param dni
+     * @param dni String
      * @return boolean
      */
     public static boolean borrarJugador(String dni){
@@ -600,12 +642,13 @@ public class Main {
     }
 
     /**
-     * Actualizar datos de un partido.
+     * Método para actualizar los datos de un partido.
+     * Tras comprobar que existen los equipos, se creará un objeto partido con los datos correspondientes y se actualizará el partido.
      *
-     * @param equipo1
-     * @param equipo2
-     * @param golesEq1
-     * @param golesEq2
+     * @param equipo1 String
+     * @param equipo2 String
+     * @param golesEq1 String
+     * @param golesEq2 String
      * @return boolean
      */
     public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2) {
@@ -640,14 +683,14 @@ public class Main {
     }
 
     /**
-     * Insertar un nuevo miembro del personal.
+     * Método para insertar un nuevo miembro del personal.
      *
-     * @param nombre
-     * @param apellido
-     * @param dni
-     * @param telefono
-     * @param oficio
-     * @param img
+     * @param nombre String
+     * @param apellido String
+     * @param dni String
+     * @param telefono String
+     * @param oficio TipoPersonal
+     * @param img String
      * @return boolean
      */
     public static boolean insertarPersonal(String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
@@ -686,7 +729,7 @@ public class Main {
     }
 
     /**
-     * Mostrar todos los DNIs de los miembros del personal.
+     * Método para mostrar todos los DNIs de los miembros del personal.
      *
      * @return ArrayList
      */
@@ -695,13 +738,40 @@ public class Main {
         dnis=TPersonal.selectDNI(dnis);
         return dnis;
     }
+
+    /**
+     * Método para comprobar si existe un jugador con un DNI específico.
+     *
+     * @param dni String
+     * @return Jugador
+     */
     public static Jugador jugadorPorDNI(String dni){
         Jugador jugador =new Jugador();
         jugador.setDni(dni);
         jugador=TJugador.getJugadorPorDNI(jugador);
         return jugador;
     }
-    public static boolean updateJugador(int id,String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+
+    /**
+     * Método para actualizar un jugador tras seleccionar su DNI.
+     *
+     * @param id int
+     * @param nombre String
+     * @param apellido String
+     * @param dni String
+     * @param telefono String
+     * @param posicion Jugador.TipoPosicion
+     * @param tipo Jugador.TipoJugador
+     * @param img String
+     * @param velocidad int
+     * @param fisico int
+     * @param defensa int
+     * @param pase int
+     * @param tiro int
+     * @param talento int
+     * @return boolean
+     */
+    public static boolean updateJugador(int id, String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
         boolean update;
         Jugador jugador=new Jugador();
         jugador.setId(id);
@@ -745,6 +815,13 @@ public class Main {
         return nombres;
     }
 
+    /**
+     * Método para obtener los datos de un equipo partiendo de su nombre.
+     * Tras crear un objeto equipo y añadirle el nombre, si existe se obtendrán sus datos.
+     *
+     * @param nombre String
+     * @return Equipo
+     */
     public static Equipo equipoPorNombre(String nombre) {
         Equipo equipo =new Equipo();
         equipo.setNombre(nombre);

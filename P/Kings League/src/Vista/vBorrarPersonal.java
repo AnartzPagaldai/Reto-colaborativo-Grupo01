@@ -96,10 +96,9 @@ public class vBorrarPersonal extends JDialog {
     }
 
     private void onOK() throws Exception {
-        // TODO: comprobar que existe el dni y si es así; borrarlo
         boolean borrar;
         if (jlDni.getText().isEmpty()) {
-            throw new Exception("No puede estar el campo vacio");
+            throw new Exception("No puede estar el campo vacío.");
         }
         borrar = Main.borrarJugador(jlDni.getText());
         if (borrar) {
@@ -131,6 +130,11 @@ public class vBorrarPersonal extends JDialog {
         dialog.setVisible(true);
         System.exit(0);
     }
+
+    /**
+     * Método para rellenar el JComboBox con los DNIs del personal existente.
+     * Se llamará a un método del Main en el que se obtienen los DNIs y tras obtener ese ArrayList se rellenará el JComboBox.
+     */
     public void generarCombo(){
         ArrayList<String> dni= Main.selectDNIPersonal();
         for (int x=0; x<dni.size();x++){
