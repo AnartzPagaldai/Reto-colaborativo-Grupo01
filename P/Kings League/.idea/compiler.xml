@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Kings League" options="--add-exports java.base/jdk.internal.util.xml.impl=ALL-UNNAMED" />
+      <module name="Kings League" options="--add-exports java.base/jdk.internal.util.xml.impl=ALL-UNNAMED --add-modules java.desktop,java.sql" />
     </option>
   </component>
 </project>
