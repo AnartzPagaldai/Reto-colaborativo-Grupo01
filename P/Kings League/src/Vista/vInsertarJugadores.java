@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertarJugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los jugadores.
+ */
 public class vInsertarJugadores {
     private JPanel pPrincipal;
     private ImageIcon LogoKingsLeague;

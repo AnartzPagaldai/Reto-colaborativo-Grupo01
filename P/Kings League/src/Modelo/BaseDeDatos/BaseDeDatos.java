@@ -2,6 +2,9 @@ package Modelo.BaseDeDatos;
 
 import java.sql.*;
 
+/**
+ * Generar la clase BaseDeDatos.
+ */
 public class BaseDeDatos {
     private static Connection con;
 

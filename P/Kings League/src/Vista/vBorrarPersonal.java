@@ -9,6 +9,10 @@ import java.awt.event.*;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase vBorrarPersonal.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar un miembro del personal.
+ */
 public class vBorrarPersonal extends JDialog {
     private JPanel pPrincipal;
     private JPanel pDegradado;

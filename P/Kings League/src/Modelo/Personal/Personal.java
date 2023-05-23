@@ -6,6 +6,9 @@ import Modelo.Enumeraciones.TipoPersonal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase Personal.
+ */
 public class Personal implements ResultSetObjeto {
     private int id;
     private String nombre;
@@ -15,14 +18,33 @@ public class Personal implements ResultSetObjeto {
     private TipoPersonal oficio;
     private String img;
 
+    /**
+     * Generar un objeto Personal vacío.
+     */
     public Personal() {
     }
 
+    /**
+     * Generar un objeto Personal con dos parámetros.
+     *
+     * @param id int
+     * @param oficio TipoPersonal
+     */
     public Personal(int id, TipoPersonal oficio) {
         this.id = id;
         this.oficio = oficio;
     }
 
+    /**
+     * Generar un objeto Personal con seis parámetros.
+     *
+     * @param nombre String
+     * @param apellidos String
+     * @param dni String
+     * @param telefono String
+     * @param oficio TipoPersonal
+     * @param img String
+     */
     public Personal(String nombre, String apellidos, String dni, String telefono, TipoPersonal oficio, String img) {
         this.nombre = nombre;
         this.apellidos = apellidos;

@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertarContratosJugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los contratos de los jugadores.
+ */
 public class vInsertarContratosJugadores {
     private JPanel pDegradado;
     private JPanel pDatos;

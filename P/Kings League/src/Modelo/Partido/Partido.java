@@ -5,6 +5,9 @@ import Modelo.Jornada.Jornada;
 
 import java.sql.Date;
 
+/**
+ * Generar la clase Partido.
+ */
 public class Partido {
     private int id;
     private int golesEquipo1;
@@ -15,9 +18,20 @@ public class Partido {
     private Equipo equipo2;
     private Jornada jornada;
 
+    /**
+     * Generar un objeto Partido vacío.
+     */
     public Partido() {
     }
 
+    /**
+     * Generar un objeto Partido.
+     *
+     * @param fecha Date
+     * @param lugar String
+     * @param equipo1 Equipo
+     * @param equipo2 Equipo
+     */
     public Partido(Date fecha, String lugar, Equipo equipo1, Equipo equipo2) {
         this.fecha = fecha;
         this.lugar = lugar;

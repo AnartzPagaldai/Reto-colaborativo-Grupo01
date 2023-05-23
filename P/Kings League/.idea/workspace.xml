@@ -4,7 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="informe body" />
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="informe body">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/Jornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/Jornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/ContratoJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/ContratoJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Partido/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Partido/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Partido/TPartido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Partido/TPartido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/ContratoPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/ContratoPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/Personal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Personal/TPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Split/Split.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/Split.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Usuario/TUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Usuario/TUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/Usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Usuario/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/XML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vBorrarPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vClasificacionEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vClasificacionEquipos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vCrearSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vCrearSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteusuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteusuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInicioSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInicioSesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertEquipos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosJugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPerfilUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPerfilUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vRegistro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateJugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,25 +83,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;4&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lorena/Desktop/RETO/P/Kings League&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "4",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/1GDAW05/Desktop/Reto-colaborativo-Grupo01/P/Kings League",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;OracleSqlPlus&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "OracleSqlPlus"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\1GDAW04\Desktop\Reto-colaborativo-Grupo01\P\Kings League\src\Modelo\XML" />
@@ -78,6 +131,7 @@
       <workItem from="1684566282330" duration="759000" />
       <workItem from="1684699548144" duration="354000" />
       <workItem from="1684783509832" duration="2555000" />
+      <workItem from="1684824289848" duration="5533000" />
     </task>
     <task id="LOCAL-00001" summary="xml generacion y get">
       <created>1683800631820</created>

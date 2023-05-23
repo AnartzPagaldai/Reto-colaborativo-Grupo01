@@ -5,6 +5,9 @@ import Modelo.BaseDeDatos.ResultSetObjeto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase Jugador.
+ */
 public class Jugador implements ResultSetObjeto {
     private int id;
     private String nombre;
@@ -32,6 +35,9 @@ public class Jugador implements ResultSetObjeto {
     private int talento;
     private int defensa;
 
+    /**
+     * Generar un objeto Jugador vacío.
+     */
     public Jugador() {
     }
 

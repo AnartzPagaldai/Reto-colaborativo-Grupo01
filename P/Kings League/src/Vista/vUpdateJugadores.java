@@ -15,6 +15,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vUpdateJugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a actualizar un jugador.
+ */
 public class vUpdateJugadores {
     private JPanel pPrincipal;
     private ImageIcon LogoKingsLeague;

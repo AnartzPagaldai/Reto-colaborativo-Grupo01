@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vInsertarPersonal.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar a los miembros del personal.
+ */
 public class vInsertarPersonal {
     private JPanel pPrincipal;
     private JPanel pDegradado;

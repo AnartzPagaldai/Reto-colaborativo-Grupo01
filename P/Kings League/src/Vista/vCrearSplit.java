@@ -7,6 +7,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Generar la clase vCrearSplit.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar un split.
+ */
 public class vCrearSplit {
     private JPanel pPrincipal;
     private JPanel pDegradado;
@@ -59,7 +63,7 @@ public class vCrearSplit {
                 String tipo;
                 if (!rbInvierno.isSelected() && !rbVerano.isSelected())
                 {
-                    JOptionPane.showMessageDialog(null, "tienes que elegir un tipo de split");
+                    JOptionPane.showMessageDialog(null, "Tienes que elegir un tipo de split.");
                 }
                 else
                 {

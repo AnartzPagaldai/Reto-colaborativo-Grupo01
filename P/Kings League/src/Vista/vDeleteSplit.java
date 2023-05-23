@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Generar la clase vDeleteSplit.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar los splits.
+ */
 public class vDeleteSplit {
     private JPanel pPrincipal;
     private JPanel pDegradado;

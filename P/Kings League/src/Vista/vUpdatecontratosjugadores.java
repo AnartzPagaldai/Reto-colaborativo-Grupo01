@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vUpdatecontratosjugadores.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a actualizar los contratos de los jugadores.
+ */
 public class vUpdatecontratosjugadores {
     private JPanel pDegradado;
     private JPanel pDatos;

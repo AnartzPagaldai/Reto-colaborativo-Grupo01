@@ -9,6 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase TPersonal.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los miembros del personal (mostrar un miembro, insertarlos, etc.).
+ */
 public class TPersonal {
     public static boolean insertar(Personal personal) {
         boolean insertar=false;

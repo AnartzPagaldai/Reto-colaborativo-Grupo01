@@ -6,6 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase TUsuario.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los usuarios (mostrar usuario, insertarlos, etc.).
+ */
 public class TUsuario {
     public static boolean insertar(Usuario usuario){
         boolean insertar=false;

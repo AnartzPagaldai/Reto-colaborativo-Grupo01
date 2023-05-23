@@ -3,6 +3,10 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Generar la clase vDeleteContratosPersonal.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar los contratos de los miembros del personal.
+ */
 public class vDeleteContratosPersonal {
     private JPanel pDegradado;
     private JPanel pDatos;

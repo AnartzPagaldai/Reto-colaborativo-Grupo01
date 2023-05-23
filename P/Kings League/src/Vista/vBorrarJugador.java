@@ -9,6 +9,10 @@ import java.awt.event.*;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase vBorrarJugador.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar un jugador.
+ */
 public class vBorrarJugador extends JDialog {
     private JPanel pPrincipal;
     private JPanel pDegradado;

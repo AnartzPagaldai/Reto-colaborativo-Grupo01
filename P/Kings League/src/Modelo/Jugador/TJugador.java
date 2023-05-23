@@ -8,6 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase TJugador.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los jugadores (mostrar un jugador, insertarlos, etc.).
+ */
 public class TJugador {
     public static boolean insertar(Jugador jugador){
       boolean insertar=false;

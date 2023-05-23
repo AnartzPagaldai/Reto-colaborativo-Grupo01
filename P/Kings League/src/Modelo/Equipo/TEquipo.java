@@ -14,6 +14,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase TEquipo.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los equipos (mostrar equipos, insertarlos, etc.).
+ */
 public class TEquipo {
 
     public static ArrayList<Jugador> getInfomeEquipos(Equipo equipo, Personal[] personales) {

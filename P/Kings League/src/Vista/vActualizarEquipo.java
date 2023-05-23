@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Generar la clase vActualizarEquipo.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a actualizar un equipo.
+ */
 public class vActualizarEquipo {
     private JPanel pPrincipal;
     private JPanel pDegradado;

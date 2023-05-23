@@ -12,6 +12,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase vPrincipalAdmin.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana principal del usuario admin.
+ */
 public class vPrincipalAdmin {
     private JPanel pPrincipal;
     private JPanel pDegradado;

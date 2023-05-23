@@ -5,6 +5,10 @@ import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Generar la clase vUpdateSplit.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a actualizar un split.
+ */
 public class vUpdateSplit {
     private JPanel pPrincipal;
     private JPanel pDegradado;

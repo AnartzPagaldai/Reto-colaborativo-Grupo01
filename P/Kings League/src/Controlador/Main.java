@@ -29,7 +29,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+/**
+ * Generar la clase Main.
+ * Esta clase cuenta con ventanas, objetos, listas de objetos y métodos.
+ */
 public class Main {
     public static JFrame actual;
     public static JFrame vInicio;

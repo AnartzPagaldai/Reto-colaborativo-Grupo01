@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Generar la clase vUpdateContratosPersonal.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a actualizar los contratos del personal.
+ */
 public class vUpdateContratosPersonal {
     private JPanel pDegradado;
     private JPanel pDatos;

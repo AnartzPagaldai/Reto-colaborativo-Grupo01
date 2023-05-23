@@ -7,6 +7,10 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Generar la clase vInsertarContratosPersonal.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los contratos del personal.
+ */
 public class vInsertarContratosPersonal {
     private JPanel pPrincipal;
     private JPanel pDegradado;

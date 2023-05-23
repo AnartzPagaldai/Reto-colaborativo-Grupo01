@@ -5,6 +5,9 @@ import Modelo.BaseDeDatos.ResultSetObjeto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Generar la clase Equipo.
+ */
 public class Equipo implements ResultSetObjeto {
     private int id;
     private String nombre;
@@ -14,6 +17,9 @@ public class Equipo implements ResultSetObjeto {
 
     private String color;
 
+    /**
+     * Generar un objeto Equipo vacío.
+     */
     public Equipo() {
 
     }

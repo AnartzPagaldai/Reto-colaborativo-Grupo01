@@ -14,6 +14,10 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase vConsultarEquipos.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a mostrar los equipos.
+ */
 public class vConsultarEquipos {
 
 

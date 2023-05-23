@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase vBorrarEquipo.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a eliminar un equipo.
+ */
 public class vBorrarEquipo extends JDialog {
     private JPanel pPrincipal;
     private JButton bAceptar;

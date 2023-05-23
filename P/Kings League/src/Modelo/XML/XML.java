@@ -22,6 +22,9 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.StringJoiner;
 
+/**
+ * Generar la clase XML.
+ */
 public class XML {
     public static void generarXMLjornadas() {
         generarXML("GENERAR_XML_JORNADAS()");

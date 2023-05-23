@@ -8,6 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+/**
+ * Generar la clase TContratosJugador.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con los contratos de los jugadores (mostrar un contrato, insertarlos, etc.).
+ */
 public class TContratosJugador {
     public static boolean insertar(ContratoJugador contratoJugador){
         boolean insertar=false;

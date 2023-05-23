@@ -24,7 +24,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * Generar la clase TJornada.
+ * Esta clase contiene los métodos necesarios para hacer operaciones con las jornadas (mostrar jornadas, insertarlas, etc.).
+ */
 public class TJornada {
 
     public static ArrayList<Partido> getJornadas() {

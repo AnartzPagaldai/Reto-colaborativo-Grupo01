@@ -12,7 +12,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * Generar la clase vInsertarResultados.
+ * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana destinada a insertar los resultados de los partidos.
+ */
 public class vInsertarResultados {
     private JPanel pPrincipal;
     private JPanel pDegradado;
