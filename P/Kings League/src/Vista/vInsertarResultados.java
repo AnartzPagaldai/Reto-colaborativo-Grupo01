@@ -71,13 +71,15 @@ public class vInsertarResultados {
     private JPanel panelGanador;
     private JLabel jEquipoGanador;
     private JButton bRefrescar;
+    private JMenu jmInicio;
+    private JMenuItem jmiPrincipal;
 
-    static ArrayList<JLabel> nombresEquipos1 = new ArrayList<>();
+    ArrayList<JLabel> nombresEquipos1 = new ArrayList<>();
 
-    static ArrayList<JLabel> nombresEquipos2 = new ArrayList<>();
-    static ArrayList<JTextField> golesEq1 = new ArrayList<>();
-    static ArrayList<JTextField> golesEq2 = new ArrayList<>();
-    static ArrayList<JLabel> barras = new ArrayList<>();
+    ArrayList<JLabel> nombresEquipos2 = new ArrayList<>();
+    ArrayList<JTextField> golesEq1 = new ArrayList<>();
+    ArrayList<JTextField> golesEq2 = new ArrayList<>();
+    ArrayList<JLabel> barras = new ArrayList<>();
 
     static HashMap<String, String>[] partidos;
 
@@ -187,6 +189,9 @@ public class vInsertarResultados {
             public void actionPerformed(ActionEvent e) {
                 try {
                     for (int x = 0; x < partidos.length; x++) {
+                        if (golesEq1.get(x).getText().equals(golesEq2.get(x).getText())) {
+                            throw new Exception("no pueden empartar");
+                        }
                         if (!Main.ActualizarPartido(nombresEquipos1.get(x).getText(), nombresEquipos2.get(x).getText(), golesEq1.get(x).getText(), golesEq2.get(x).getText())) {
                             throw new Exception("no se a actualizado toda la jornada");
                         }
@@ -210,6 +215,12 @@ public class vInsertarResultados {
                 rellenarPartido();
             }
         });
+        jmiPrincipal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.Principal();
+            }
+        });
     }
 
     private void rellenarPartido() {
@@ -220,7 +231,7 @@ public class vInsertarResultados {
                 try {
                     escudoEquipo1 = new ImageIcon(new URL(partidos[x].get("logoEquipo1")));
                 } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
+                    ex.printStackTrace();
                 }
                 Image LogoNuevo = escudoEquipo1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
                 ImageIcon newIcon = new ImageIcon(LogoNuevo);
@@ -255,8 +266,13 @@ public class vInsertarResultados {
                 nombresEquipos1.get(i).setVisible(false);
                 nombresEquipos2.get(i).setVisible(false);
             }
-
-            panelGanador.setVisible((Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 && x == 2 && !golesEq1.get(x).equals("sin")));
+            if (golesEq1.get(2).getText().equals("0") && golesEq2.get(2).getText().equals("0")) {
+                golesEq1.get(2).setText("sin");
+                golesEq2.get(2).setText("jugar");
+            }
+            panelGanador.setVisible((Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 &&
+                    barras.get(2).getText().equals("-") &&
+                    !golesEq1.get(2).getText().equals("sin")));
             if (panelGanador.isVisible()) {
                 if (Integer.parseInt(golesEq1.get(x).getText()) > Integer.parseInt(golesEq2.get(x).getText())) {
                     jEquipoGanador.setText(nombresEquipos1.get(x).getText());

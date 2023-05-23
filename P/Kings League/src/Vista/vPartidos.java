@@ -4,6 +4,8 @@ import Controlador.Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +69,10 @@ public class vPartidos {
     private JLabel barra4;
     private JLabel barra5;
     private JLabel barra6;
+    private JPanel panelGanador;
+    private JLabel jEquipoGanador;
+    private JMenu jmInicio;
+    private JMenuItem jmiPrincipal;
 
     public vPartidos() throws Exception {
 
@@ -135,8 +141,24 @@ public class vPartidos {
 
             golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
             golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
-
             barras.get(x).setText("-");
+            if (golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0")) {
+                golesEquipos1.get(2).setText("sin");
+                golesEquipos2.get(2).setText("jugar");
+            }
+            panelGanador.setVisible(Main.getNumJornada() == 13 &&
+                    barras.get(2).getText().equals("-") &&
+                    !golesEquipos1.get(2).getText().equals("sin"));
+            if (panelGanador.isVisible()) {
+                if (Integer.parseInt(golesEquipos1.get(x).getText()) > Integer.parseInt(golesEquipos2.get(x).getText())) {
+                    jEquipoGanador.setText(nombresEquipos1.get(x).getText());
+                    jEquipoGanador.setIcon(nombresEquipos1.get(x).getIcon());
+                } else {
+                    jEquipoGanador.setText(nombresEquipos2.get(x).getText());
+                    jEquipoGanador.setIcon(nombresEquipos2.get(x).getIcon());
+                }
+            }
+
 
 
         }
@@ -180,7 +202,12 @@ public class vPartidos {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-
+        jmiPrincipal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.Principal();
+            }
+        });
     }
 
 

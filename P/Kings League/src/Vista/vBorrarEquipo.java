@@ -101,7 +101,7 @@ public class vBorrarEquipo extends JDialog {
     }
 
     private void onCancel() {
-        Main.PrincipalAdmin();
+        this.dispose();
     }
 
     public JPanel getpPrincipal() {

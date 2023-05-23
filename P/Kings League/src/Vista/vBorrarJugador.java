@@ -99,7 +99,7 @@ public class vBorrarJugador extends JDialog {
     }
 
     private void onCancel() {
-        Main.PrincipalAdmin();
+        this.dispose();
     }
 
     public JPanel getpPrincipal() {

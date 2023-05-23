@@ -69,6 +69,10 @@ public class Main {
 
     public static ArrayList<Partido> partidos;
 
+    public static JFrame vUpdatecontratosjugadores;
+
+    private static int numJornada;
+
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
         //TJornada.generarJornadas();
@@ -258,7 +262,7 @@ public class Main {
         vInsertEquipos.pack();
         vInsertEquipos.setVisible(true);
         vInsertEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalUsuario.setVisible(false);
+        vPrinicpalAdmin.setVisible(false);
         actual=vInsertEquipos;
     }
     public static void generarActualizarPersonal() throws MalformedURLException {
@@ -438,7 +442,9 @@ public class Main {
         }
         return NumJornadas;}
     public static HashMap<String, String>[] getUltimaJornada() {
-        return dePartidosAhashmap(TJornada.getUltimaJornada());
+        ArrayList<Partido> partidos = TJornada.getUltimaJornada();
+        numJornada = partidos.get(0).getJornada().getNumJornada();
+        return dePartidosAhashmap(partidos);
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
@@ -739,7 +745,29 @@ public class Main {
         return update;
     }
 
-    public static void generarActualizarEquipos() {
-        // todo
+    public static int getNumJornada() {
+        return numJornada;
+    }
+
+    public static void generarActualizarEquipos() throws MalformedURLException {
+        vEquipoActualizar = new JFrame("vEquipoActulizar");
+        vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
+        vEquipoActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vEquipoActualizar.pack();
+        vEquipoActualizar.setVisible(true);
+        vEquipoActualizar.setLocationRelativeTo(null);
+        actual = vEquipoActualizar;
+        vInicio.dispose();
+    }
+
+    public static void generarUpdateContratoJugadores() throws Exception {
+        vUpdatecontratosjugadores = new JFrame("vEquipoActulizar");
+        vUpdatecontratosjugadores.setContentPane(new vUpdatecontratosjugadores().getpPrincipal());
+        vUpdatecontratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdatecontratosjugadores.pack();
+        vUpdatecontratosjugadores.setVisible(true);
+        vUpdatecontratosjugadores.setLocationRelativeTo(null);
+        actual = vEquipoActualizar;
+        vInicio.dispose();
     }
 }

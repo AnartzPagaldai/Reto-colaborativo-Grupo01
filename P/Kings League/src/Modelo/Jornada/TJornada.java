@@ -132,7 +132,7 @@ public class TJornada {
 
     private static void comprobarJornada(Partido partido, int numJornadaAnterior) throws Exception {
         if (partido.getJornada().getNumJornada() < numJornadaAnterior)
-            throw new Exception("no se puede crear playoff sin abaer jugado la jornada anterior");
+            throw new Exception("no se puede crear playoff sin aber jugado la jornada anterior");
     }
 
     private static void comprbarEinsertarJornadaPlayoff(Partido partido, int numJornadaAnterior) throws Exception {
