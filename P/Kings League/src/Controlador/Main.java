@@ -12,7 +12,9 @@ import Modelo.Jugador.TContratosJugador;
 import Modelo.Jugador.TJugador;
 import Modelo.Partido.Partido;
 import Modelo.Partido.TPartido;
+import Modelo.Personal.ContratoPersonal;
 import Modelo.Personal.Personal;
+import Modelo.Personal.TContratosPersonal;
 import Modelo.Personal.TPersonal;
 import Modelo.Split.TSplit;
 import Modelo.Usuario.TUsuario;
@@ -612,8 +614,8 @@ public class Main {
         jugador.setNombre(nombre);
         jugador.setApellidos(apellido);
         jugador.setDni(dni);
-        jugador.setTipoPosicion(Jugador.TipoPosicion.valueOf(posicion.toString()));
-        jugador.setTipoJugador(Jugador.TipoJugador.valueOf(tipo.toString()));
+        jugador.setTipoPosicion(posicion);
+        jugador.setTipoJugador((tipo));
         jugador.setTelefono(telefono);
         jugador.setImg(img);
         jugador.setVelocidad(velocidad);
@@ -772,14 +774,21 @@ public class Main {
      * @return boolean
      */
     public static boolean updateJugador(int id, String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+    public static Jugador jugadorPorID(int id){
+        Jugador jugador =new Jugador();
+        jugador.setId(id);
+        jugador=TJugador.getJugadorPorID(jugador);
+        return jugador;
+    }
+    public static boolean updateJugador(int id,String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
         boolean update;
         Jugador jugador=new Jugador();
         jugador.setId(id);
         jugador.setNombre(nombre);
         jugador.setApellidos(apellido);
         jugador.setDni(dni);
-        jugador.setTipoPosicion(Jugador.TipoPosicion.valueOf(posicion.toString()));
-        jugador.setTipoJugador(Jugador.TipoJugador.valueOf(tipo.toString()));
+        jugador.setTipoPosicion((posicion));
+        jugador.setTipoJugador(tipo);
         jugador.setTelefono(telefono);
         jugador.setImg(img);
         jugador.setVelocidad(velocidad);
@@ -828,7 +837,24 @@ public class Main {
         equipo=TEquipo.getEquipoPorNombreDavid(equipo);
         return equipo;
     }
-
+    public static Equipo equipoPorID(int id) {
+        Equipo equipo =new Equipo();
+        equipo.setId(id);
+        equipo=TEquipo.getEquipoPorIDDavid(equipo);
+        return equipo;
+    }
+    public static Personal personalPorID(int id) {
+        Personal personal =new Personal();
+        personal.setId(id);
+        personal=TPersonal.getPersonalPorID(personal);
+        return personal;
+    }
+    public static Personal personalPorDNI(String dni) {
+        Personal personal =new Personal();
+        personal.setDni(dni);
+        personal=TPersonal.getPersonalPorDNI(personal);
+        return personal;
+    }
     public static boolean updateEquipos(String nombre, double presupuesto, String imagen, String color) {
         boolean update;
         boolean existe;
@@ -881,7 +907,12 @@ public class Main {
     }
     public static ArrayList<String> getIDContratosJugadores(){
         ArrayList<String> id=new ArrayList<>();
-        id=TContratosJugador.getID(id);
+        id=TContratosPersonal.getID(id);
+        return id;
+    }
+    public static ArrayList<String> getIDContratosPersonales(){
+        ArrayList<String> id=new ArrayList<>();
+        id=TContratosPersonal.getID(id);
         return id;
     }
     public static boolean deleteContratosJugadores(String id){
@@ -897,26 +928,26 @@ public class Main {
         return contratoJugador;
     }
 
-    public static boolean updateContratosJugadores(String nombre, String fechaFin, String clausula, String dorsal, TipoSueldo sueldo) {
+    public static ContratoPersonal contratosPersonalPorID(String id){
+        ContratoPersonal contratoPersonal=new ContratoPersonal();
+        contratoPersonal.setId(Integer.parseInt(id));
+        contratoPersonal=TContratosPersonal.datosContratoPorId(contratoPersonal);
+        return contratoPersonal;
+    }
+    public static boolean updateContratosJugadores(int id,String nombre, String fechaFin, double clausula, String dorsal, TipoSueldo sueldo) {
         boolean update;
         ContratoJugador contratoJugador=new ContratoJugador();
+        contratoJugador.setId(id);
         Equipo equipo=new Equipo();
         equipo.setNombre(nombre);
         equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
         contratoJugador.setEquipo(equipo);
         contratoJugador.setFechaFin(java.sql.Date.valueOf(fechaFin));
-        contratoJugador.setClausula(Double.parseDouble(clausula));
+        contratoJugador.setClausula(clausula);
         contratoJugador.setDorsal(dorsal);
         contratoJugador.setTipoSueldo(sueldo);
         update= TContratosJugador.update(contratoJugador);
         return update;
-    }
-
-    public static Personal personalPorDNI(String dni) {
-        Personal personal = new Personal();
-        personal.setDni(dni);
-        personal=TPersonal.getPersonalPorDNI(personal);
-        return personal;
     }
 
     public static boolean updatePersonal(int id, String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
@@ -931,5 +962,48 @@ public class Main {
         personal.setImg(img);
         update=TPersonal.update(personal);
         return update;
+    }
+
+    public static ArrayList<String> getDNISinContratoPersonal() {
+        ArrayList<String> dnis=new ArrayList<>();
+        dnis= TContratosPersonal.getDNIJugadoresSinContratos(dnis);
+        return dnis;
+    }
+
+    public static boolean insertarContratoPersonal(String dni, String nombre, String fecha_fin, TipoSueldo sueldo) {
+        boolean insertar;
+        ContratoPersonal contratoPersonal=new ContratoPersonal();
+        Equipo equipo=equipoPorNombre(nombre);
+        Personal personal=new Personal();
+        personal.setDni(dni);
+        personal=TPersonal.getPersonalPorDNI(personal);
+        contratoPersonal.setPersonal(personal);
+        contratoPersonal.setEquipo(equipo);
+        contratoPersonal.setFechaInicio(fechaActual());
+        contratoPersonal.setFechaFin(java.sql.Date.valueOf(fecha_fin));
+        contratoPersonal.setSueldo(sueldo);
+        insertar=TContratosPersonal.insertar(contratoPersonal);
+        return insertar;
+    }
+
+    public static boolean updateContratosPersonal(int id,String nombre, String fechaFin,TipoSueldo sueldo) {
+        boolean update;
+        ContratoPersonal contratoPersonal=new ContratoPersonal();
+        contratoPersonal.setId(id);
+        Equipo equipo=new Equipo();
+        equipo.setNombre(nombre);
+        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
+        contratoPersonal.setEquipo(equipo);
+        contratoPersonal.setFechaInicio(fechaActual());
+        contratoPersonal.setFechaFin(java.sql.Date.valueOf(fechaFin));
+        contratoPersonal.setSueldo(sueldo);
+        update= TContratosPersonal.update(contratoPersonal);
+        return update;
+    }
+
+    public static boolean deleteContratosPersonales(String id) {
+        boolean delete;
+        delete=TContratosPersonal.delete(id);
+        return delete;
     }
 }

@@ -25,8 +25,16 @@ public class Jugador implements ResultSetObjeto {
     private String img;
     private TipoJugador tipoJugador;
     public enum TipoJugador{
-        DRAFT,
-        WILDCARD;
+        DRAFT("DRAFT"),
+        WILDCARD("WILD-CARD");
+        public final String valor;
+        TipoJugador(String valor) {
+            this.valor=valor;
+        }
+
+        public String getValor() {
+            return valor;
+        }
     }
     private int velocidad;
     private int fisico;

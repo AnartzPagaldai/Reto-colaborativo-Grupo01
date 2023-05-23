@@ -2,6 +2,7 @@ package Modelo.Personal;
 
 import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.BaseDeDatos.BaseDeDatos;
+import Modelo.Equipo.Equipo;
 import Modelo.Jugador.Jugador;
 
 import java.sql.PreparedStatement;
@@ -95,7 +96,7 @@ public class TPersonal {
         boolean update = false;
         try {
             BaseDeDatos.abrirConexion();
-            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE PERSONALES SET NOMBRE=? AND APELLIDOS=? AND DNI=? AND TELEFONO=? AND OFICIO=? AND IMG=? WHERE ID=?");
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("UPDATE PERSONALES SET NOMBRE=?, APELLIDOS=?,DNI=? , TELEFONO=? , OFICIO=? , IMG=? WHERE ID=?");
             ps.setString(1, personal.getNombre());
             ps.setString(2, personal.getApellidos());
             ps.setString(3, personal.getDni());
@@ -111,6 +112,27 @@ public class TPersonal {
         }catch (Exception e){
             System.out.println(e.getClass()+ e.getMessage());
             return false;
+        }
+    }
+    public static Personal getPersonalPorID(Personal personal){
+        try {
+            BaseDeDatos.abrirConexion();
+            PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("select * from personales where id=?");
+            ps.setInt(1, personal.getId());
+            ResultSet resulatdo=ps.executeQuery();
+            if (resulatdo.next()){
+                personal.setId(resulatdo.getInt("id"));
+                personal.setNombre(resulatdo.getString("nombre"));
+                personal.setApellidos(resulatdo.getString("apellidos"));
+                personal.setDni(resulatdo.getString("dni"));
+                personal.setTelefono(resulatdo.getString("telefono"));
+                personal.setOficio(TipoPersonal.valueOf(resulatdo.getString("oficio")));
+                personal.setImg(resulatdo.getString("img"));
+            }
+            return personal;
+        }catch (Exception e){
+            System.out.println(e.getClass()+ e.getMessage());
+            return null;
         }
     }
 }

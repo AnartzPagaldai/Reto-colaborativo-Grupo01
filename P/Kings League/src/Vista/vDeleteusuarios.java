@@ -32,6 +32,10 @@ public class vDeleteusuarios {
     private JMenuItem jmiCerrarSesion;
 
 
+    public JPanel getpPrincipal() {
+        return pPrincipal;
+    }
+
     public vDeleteusuarios() throws MalformedURLException {
 
         pPrincipal = new JPanel() {
@@ -69,12 +73,12 @@ public class vDeleteusuarios {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
+
+
     }
 
 
-    public JPanel getpPrincipal() {
-        return pPrincipal;
-    }
+
 
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vDeleteusuarios");

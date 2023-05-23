@@ -100,7 +100,7 @@ public class vBorrarJugador extends JDialog {
     }
 
     private void onCancel() {
-        Main.PrincipalAdmin();
+        this.dispose();
     }
 
     public JPanel getpPrincipal() {
@@ -112,10 +112,6 @@ public class vBorrarJugador extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
-    }
-
-    private void createUIComponents() throws ParseException {
-        tfDni = new JFormattedTextField(new MaskFormatter("########U"));
     }
 
     /**

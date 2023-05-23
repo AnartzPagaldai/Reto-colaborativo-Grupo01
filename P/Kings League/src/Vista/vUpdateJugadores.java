@@ -67,7 +67,6 @@ public class vUpdateJugadores {
     private static final String patronEnlace = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
     private boolean enlaceCorrecto;
     private String posicion;
-    private String tipoJugadorString;
     private Jugador.TipoJugador tipoJugador;
     private Jugador.TipoPosicion TipoPosicion;
     private Jugador jugador;
@@ -169,10 +168,10 @@ public class vUpdateJugadores {
                         posicion= TipoPosicion.DELANTERO.toString();
                     }
                     if (cbTipo.getSelectedIndex()==1){
-                        tipoJugadorString= tipoJugador.DRAFT.toString();
-                    }else tipoJugadorString=tipoJugador.WILDCARD.toString();
+                        tipoJugador= Jugador.TipoJugador.DRAFT;
+                    }else tipoJugador= Jugador.TipoJugador.WILDCARD;
                     updateJugador= Main.updateJugador(jugador.getId(),tfNombre.getText(), tfApellido.getText(), tfDNI.getText(),
-                            ftTelefono.getText(), Jugador.TipoPosicion.valueOf(posicion), Jugador.TipoJugador.valueOf(tipoJugadorString) ,tfIMG.getText(), Integer.parseInt(sVelocidad.getValue().toString()),
+                            ftTelefono.getText(), Jugador.TipoPosicion.valueOf(posicion), tipoJugador,tfIMG.getText(), Integer.parseInt(sVelocidad.getValue().toString()),
                             Integer.parseInt(sFisico.getValue().toString()), Integer.parseInt(sDefensa.getValue().toString()),
                             Integer.parseInt(sPase.getValue().toString()),Integer.parseInt(sTiro.getValue().toString()),Integer.parseInt(sTalento.getValue().toString()));
                     if (updateJugador){
@@ -221,8 +220,8 @@ public class vUpdateJugadores {
                     tfDNI.setText(jugador.getDni());
                     tfIMG.setText(jugador.getImg());
                     ftTelefono.setText(jugador.getTelefono());
-                    cbTipo.setSelectedItem(jugador.getTipoJugador());
-                    cbPosicion.setSelectedItem(jugador.getTipoPosicion());
+                    cbTipo.setSelectedItem(jugador.getTipoJugador().toString());
+                    cbPosicion.setSelectedItem(jugador.getTipoPosicion().toString());
                     sDefensa.setValue(jugador.getDefensa());
                     sFisico.setValue(jugador.getFisico());
                     sTiro.setValue(jugador.getTiro());
