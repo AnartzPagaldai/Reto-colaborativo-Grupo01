@@ -242,14 +242,12 @@ public class vPartidosPorJornada {
                 nombresEquipos1.get(i).setVisible(false);
                 nombresEquipos2.get(i).setVisible(false);
             }
-            if (golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0")) {
+            if ((Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 && golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0"))) {
                 golesEquipos1.get(2).setText("sin");
                 golesEquipos2.get(2).setText("jugar");
             }
-            panelGanador.setVisible((Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 &&
-                    barras.get(2).getText().equals("-") &&
-                    !golesEquipos1.get(2).getText().equals("sin")));
-            if (panelGanador.isVisible()) {
+            panelGanador.setVisible(false);
+            if (x == 2 && Integer.parseInt(cbJornada.getSelectedItem().toString()) == 13 && barras.get(2).getText().equals("-") && !golesEquipos1.get(2).getText().equals("sin")) {
                 if (Integer.parseInt(golesEquipos1.get(x).getText()) > Integer.parseInt(golesEquipos2.get(x).getText())) {
                     jEquipoGanador.setText(nombresEquipos1.get(x).getText());
                     jEquipoGanador.setIcon(nombresEquipos1.get(x).getIcon());
@@ -257,7 +255,9 @@ public class vPartidosPorJornada {
                     jEquipoGanador.setText(nombresEquipos2.get(x).getText());
                     jEquipoGanador.setIcon(nombresEquipos2.get(x).getIcon());
                 }
+                panelGanador.setVisible(true);
             }
+
 
         }
     }

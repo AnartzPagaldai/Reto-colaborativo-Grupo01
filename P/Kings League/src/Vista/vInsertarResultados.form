@@ -108,41 +108,6 @@
                       <text value="               "/>
                     </properties>
                   </component>
-                  <grid id="3f34e" class="javax.swing.JMenu" binding="mJugadores" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <text value="Jugadores"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="9b0c5" class="javax.swing.JMenuItem" binding="jmiSeleccionar">
-                        <constraints/>
-                        <properties>
-                          <background color="-545995"/>
-                          <font size="20"/>
-                          <text value="Seleccionar"/>
-                        </properties>
-                      </component>
-                      <hspacer id="fad5f">
-                        <constraints/>
-                      </hspacer>
-                      <hspacer id="48f88">
-                        <constraints/>
-                      </hspacer>
-                    </children>
-                  </grid>
-                  <component id="3a613" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <text value="               "/>
-                    </properties>
-                  </component>
                   <grid id="9fd73" class="javax.swing.JMenu" binding="mPartidos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
                     <constraints/>
                     <properties>

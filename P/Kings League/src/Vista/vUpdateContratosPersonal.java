@@ -164,4 +164,8 @@ public class vUpdateContratosPersonal {
             fechaCorrecta=true;
         }
     }
+
+    public JPanel getpPrincipla() {
+        return pPrincipal;
+    }
 }

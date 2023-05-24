@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+import Modelo.Jornada.Jornada;
 
 import javax.swing.*;
 import java.awt.*;
@@ -61,25 +62,25 @@ public class vCrearSplit {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String tipo;
-                if (!rbInvierno.isSelected() && !rbVerano.isSelected())
-                {
+                if (!rbInvierno.isSelected() && !rbVerano.isSelected()) {
                     JOptionPane.showMessageDialog(null, "Tienes que elegir un tipo de split.");
-                }
-                else
-                {
+                } else {
                     if (rbVerano.isSelected())
                         tipo = rbVerano.getText();
                     else
                         tipo = rbInvierno.getText();
-                    Main.crearSplit(tipo.toUpperCase());
+                    try {
+                        if (!Main.crearSplit(tipo.toUpperCase())) throw new Exception("no se a creado el split");
+                        JOptionPane.showMessageDialog(null, "se a creado el split");
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
                 }
                 Main.PrincipalAdmin();
             }
 
         });
-
-
-
 
 
     }

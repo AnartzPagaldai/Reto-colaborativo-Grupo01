@@ -90,6 +90,7 @@ public class vUpdatecontratosjugadores {
                     cbSueldo.setSelectedItem(contratoJugador.getTipoSueldo().getValor());
                     tfFechaFin.setText(String.valueOf(contratoJugador.getFechaFin()));
                 }catch (Exception ex){
+                    ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
@@ -136,6 +137,7 @@ public class vUpdatecontratosjugadores {
                         } else throw new Exception("Fallos al actualizar el contrato");
                     }
                 } catch (Exception ex) {
+                    ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
@@ -174,7 +176,7 @@ public class vUpdatecontratosjugadores {
         }else dorsalCorrecto=true;
     }
     public void clasulaCorrecto() throws Exception {
-        int clausula= Integer.parseInt(tfClausula.getText());
+        int clausula= Integer.parseInt(tfClausula.getText().substring(0,tfClausula.getText().length() - 2));
         if (clausula<1000000){
             clasulaCorrecta=false;
             tfClausula.setBackground(Color.red);

@@ -52,11 +52,12 @@ public class vActualizarEquipo {
     private ImageIcon LogoKingsLeague;
     private boolean correcto;
     private Equipo equipo;
-    private static final String patronLogo = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png)$";
+    private static final String patronLogo = "^(https?://)?([\\w.-]+)\\.([a-zA-Z]{2,})(/[\\w.-]*)*/?\\.(png|svg.png)$";
     private static final String patronColor = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
-    private static final String numeros= "^[0-9]+$";
+    private static final String numeros= "^\\d+(\\.\\d+)?$";
+
     private boolean numerosCorrectos;
-    private boolean enlaceCorrecto;
+    private boolean enlaceCorrecto = true;
     private boolean colorCorrecto;
 
 
@@ -102,16 +103,18 @@ public class vActualizarEquipo {
             public void actionPerformed(ActionEvent e) {
                 boolean update;
                 try {
-                    enlaceCorrecto();
+                    //enlaceCorrecto(); con algunos el patro no va
                     colorCorrecto();
                     numerosCorrectos();
                     if (enlaceCorrecto && colorCorrecto && numerosCorrectos){
                         update= Main.updateEquipos(tfNombre.getText(), Double.parseDouble(tfPresupuesto.getText()), tfImagen.getText(), tfColor.getText());
-                        if (update){
+                        if (update) {
                             JOptionPane.showMessageDialog(null, "¡Equipo modificado con exito!");
-                        }else throw new Exception("Error al actualizar");
+                        } else
+                            throw new Exception("Error al actualizar");
                     }else throw new Exception("Introduzca bien los datos, por favor");
                 }catch (Exception ex){
+                    ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
 

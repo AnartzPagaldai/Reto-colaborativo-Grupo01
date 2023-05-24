@@ -75,6 +75,7 @@ public class vPrincipalAdmin {
     private JComboBox cbDNIS;
     private JButton bgenerarSplit;
     private JButton bInsertarResul;
+    private JButton bVerPatidos;
 
 
     public vPrincipalAdmin() throws MalformedURLException {
@@ -265,7 +266,12 @@ public class vPrincipalAdmin {
         bUpdatePersonal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    Main.generarActualizarPersonal();
+                } catch (MalformedURLException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "erro al crear la ventana");
+                }
             }
         });
         bDeletePersonal.addActionListener(new ActionListener() {
@@ -330,7 +336,11 @@ public class vPrincipalAdmin {
         bInsertarContratoJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    Main.generarInsertarContratosJugador();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "error al crear la ventana");
+                }
             }
         });
         bActualizarXML.addActionListener(new ActionListener() {
@@ -373,7 +383,7 @@ public class vPrincipalAdmin {
                     Main.generarJornadas();
                     JOptionPane.showMessageDialog(null, "emparejamientos creados");
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error al generar los emparejamientos" + ex.getMessage());
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                     ex.printStackTrace();
                 }
             }
@@ -390,16 +400,66 @@ public class vPrincipalAdmin {
             }
         });
 
-        bUpdateContratoJugadores.addActionListener(new ActionListener() {
+        bVerPatidos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Main.generarUpdateContratoJugadores();
+                    Main.generarVerPartidos();
                 } catch (Exception ex) {
-
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al abrir la ventana");
                 }
             }
         });
+
+        bDeleteContratoJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarBorrarContratoJugadores();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al abrir la ventana");
+                }
+            }
+        });
+
+        bInsertarContratosPersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarInsertarContratosPersonal();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al crear la ventana");
+                }
+            }
+        });
+
+        bUpdateContratosPersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Main.generarActualizarContratosPersonal();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al crear la ventana");
+                }
+            }
+        });
+
+        bDeleteContratosPersonal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                   Main.generarBorrarContratoPersonal();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al crear la ventana");
+                }
+            }
+        });
+
     }
 
 

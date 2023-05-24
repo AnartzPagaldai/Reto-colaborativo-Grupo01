@@ -134,6 +134,13 @@ public class vActualizarPersonal {
                 }
             }
         });
+
+        bAtras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.PrincipalAdmin();
+            }
+        });
     }
     public static void main(String[] args) throws MalformedURLException {
         JFrame frame = new JFrame("vActualizarPersonal");
@@ -156,5 +163,9 @@ public class vActualizarPersonal {
             tfIMG.setBackground(Color.green);
             enlaceCorrecto=true;
         }
+    }
+
+    public Container getpPrincipal() {
+        return pPrincipal;
     }
 }

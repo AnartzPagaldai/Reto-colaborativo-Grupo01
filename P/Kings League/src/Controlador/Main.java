@@ -21,6 +21,7 @@ import Modelo.Usuario.TUsuario;
 import Modelo.Usuario.Usuario;
 import Vista.*;
 import Modelo.XML.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.MalformedURLException;
@@ -38,8 +39,8 @@ import java.util.stream.Collectors;
 public class Main {
     public static JFrame actual;
     public static JFrame vInicio;
-    public static JFrame vPrinicpalUsuario;
-    public static JFrame vPrinicpalAdmin;
+    public static JFrame vPrincipalUsuario;
+    public static JFrame vPrincipalAdmin;
     public static JFrame vEquipos;
     public static JFrame vRegistro;
     public static JFrame vJugadores;
@@ -66,7 +67,7 @@ public class Main {
     public static JFrame vPartido;
     public static Usuario u;
 
-    public static Equipo equipo=new Equipo();
+    public static Equipo equipo = new Equipo();
     private static ArrayList<Jugador> jugadoresInfome;
 
     private static Usuario usuarioInicio = new Usuario();
@@ -75,8 +76,15 @@ public class Main {
 
     public static ArrayList<Partido> partidos;
 
-    public static JFrame vUpdatecontratosjugadores;
+    public static JFrame vPartidosPorJornada;
 
+    public static JFrame vDeleteContratosjugadores;
+
+    public static JFrame vInsertarContratosPersonal;
+
+    public static JFrame vUpdateContratosPersonal;
+
+    public static JFrame vDeleteContratosPersonal;
     private static int numJornada;
 
     /**
@@ -87,22 +95,6 @@ public class Main {
      */
     public static void main(String[] args) throws MalformedURLException {
         generarVentanaInicio();
-        //TJornada.generarJornadas();
-        /*try {
-            HashMap[] mp = getJornadas();
-            for (HashMap hashMap : mp) {
-                System.out.println(hashMap);
-            }
-            HashMap[] map = getJornada(1);
-            for (HashMap hashMap : map) {
-                System.out.println(hashMap);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }*/
-        //crearSplit("verano");
-        //generarJornada();
-        //generarXml();
     }
 
     /**
@@ -111,34 +103,49 @@ public class Main {
      *
      * @throws Exception
      */
-    public static void generarJornadas () throws Exception  {
+    public static void generarJornadas() throws Exception {
         TJornada.generarJornadas();
     }
+
     public static void cerrarSesion() {
+        actual.dispose();
+        if (vPrincipalUsuario != null) {
+            vPrincipalUsuario.dispose();
+            vPrincipalUsuario = null;
+        } else {
+            vPrincipalAdmin.dispose();
+            vPrincipalAdmin = null;
+        }
+        vInicio.setVisible(true);
+    }
+
+    public static void cerrarSesion2() {
         actual.dispose();
         vInicio.setVisible(true);
     }
 
     public static void PrincipalUsuario() {
         actual.dispose();
-        vPrinicpalUsuario.setVisible(true);
+        vPrincipalUsuario.setVisible(true);
     }
 
     public static void Principal() {
         actual.dispose();
-        if (vPrinicpalUsuario != null)
-           vPrinicpalUsuario.setVisible(true);
+        if (vPrincipalUsuario != null)
+            vPrincipalUsuario.setVisible(true);
         else
-            vPrinicpalAdmin.setVisible(true);
+            vPrincipalAdmin.setVisible(true);
     }
+
     public static void vEquipos() {
         actual.dispose();
         vEquipos.setVisible(true);
     }
+
     public static void PrincipalAdmin() {
         actual.dispose();
-        vPrinicpalAdmin.setVisible(true);
-        vPrinicpalAdmin.setEnabled(true);
+        vPrincipalAdmin.setVisible(true);
+        vPrincipalAdmin.setEnabled(true);
     }
 
     // Crear ventanas
@@ -152,6 +159,7 @@ public class Main {
         vInicio.setVisible(true);
         vInicio.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
+
     public static void generarVentanaRegistro() throws MalformedURLException {
         vRegistro = new JFrame("vRegistro");
         vRegistro.setContentPane(new vRegistro().getpPrincipal());
@@ -162,20 +170,20 @@ public class Main {
         actual = vRegistro;
         vInicio.dispose();
     }
+
     public static void generarVentanaPrincipalUsuario() throws MalformedURLException {
-        vPrinicpalUsuario = new JFrame("vPrincipalUsuario");
-        vPrinicpalUsuario.setContentPane(new vPrincipalUsuario().getpPrincipal());
-        vPrinicpalUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vPrinicpalUsuario.pack();
-        vPrinicpalUsuario.setVisible(true);
-        vPrinicpalUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vPrinicpalUsuario;
+        vPrincipalUsuario = new JFrame("vPrincipalUsuario");
+        vPrincipalUsuario.setContentPane(new vPrincipalUsuario().getpPrincipal());
+        vPrincipalUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPrincipalUsuario.pack();
+        vPrincipalUsuario.setVisible(true);
+        vPrincipalUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vPrincipalUsuario;
         vInicio.dispose();
     }
 
-    public static void crearVentanaSplit ()
-    {
-         vInsertSplit = new JFrame("vCrearSplit");
+    public static void crearVentanaSplit() {
+        vInsertSplit = new JFrame("vCrearSplit");
         vInsertSplit.setContentPane(new vCrearSplit().getpPrincipal());
         vInsertSplit.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vInsertSplit.pack();
@@ -184,40 +192,44 @@ public class Main {
         actual = vInsertSplit;
         vInicio.dispose();
     }
+
     public static void generarVentanaPrincipalAdmin() throws MalformedURLException {
-        vPrinicpalAdmin = new JFrame("vPrincipalAdmin");
-        vPrinicpalAdmin.setContentPane(new vPrincipalAdmin().getpPrincipal());
-        vPrinicpalAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vPrinicpalAdmin.pack();
-        vPrinicpalAdmin.setVisible(true);
-        vPrinicpalAdmin.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vPrinicpalAdmin;
+        vPrincipalAdmin = new JFrame("vPrincipalAdmin");
+        vPrincipalAdmin.setContentPane(new vPrincipalAdmin().getpPrincipal());
+        vPrincipalAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPrincipalAdmin.pack();
+        vPrincipalAdmin.setVisible(true);
+        vPrincipalAdmin.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vPrincipalAdmin;
         vInicio.dispose();
 
     }
+
     public static void generarVentanaEquipos() throws MalformedURLException {
-        vEquipos= new JFrame("vConsultarEquipos");
+        vEquipos = new JFrame("vConsultarEquipos");
         vEquipos.setContentPane(new vConsultarEquipos().getpPrincipal());
         vEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vEquipos.pack();
         vEquipos.setVisible(true);
         vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        if (vPrinicpalUsuario != null)
-            vPrinicpalUsuario.setVisible(false);
+        if (vPrincipalUsuario != null)
+            vPrincipalUsuario.setVisible(false);
         else
-            vPrinicpalAdmin.setVisible(false);
+            vPrincipalAdmin.setVisible(false);
         actual = vEquipos;
     }
+
     public static void generarVentanaJugadores() throws MalformedURLException {
-        vJugadores= new JFrame("vConsultarJugadores");
+        vJugadores = new JFrame("vConsultarJugadores");
         vJugadores.setContentPane(new vConsultarJugadores().getpPrincipal());
         vJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vJugadores.pack();
         vJugadores.setVisible(true);
         vJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
         vEquipos.setVisible(false);
-        actual=vJugadores;
+        actual = vJugadores;
     }
+
     public static void generarVentanaAjustesUsuario() throws MalformedURLException {
         vUsuario = new JFrame("vPerfilUsuario");
         vUsuario.setContentPane(new vPerfilUsuario().getpPrincipal());
@@ -225,9 +237,10 @@ public class Main {
         vUsuario.pack();
         vUsuario.setVisible(true);
         vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalUsuario.setVisible(false);
-        actual=vUsuario;
+        vPrincipalUsuario.setVisible(false);
+        actual = vUsuario;
     }
+
     public static void generarActualizarEquipo() throws MalformedURLException {
         vEquipoActualizar = new JFrame("vActualizarEquipo");
         vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
@@ -235,9 +248,10 @@ public class Main {
         vEquipoActualizar.pack();
         vEquipoActualizar.setVisible(true);
         vEquipoActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual=vEquipoActualizar;
-        vPrinicpalAdmin.setVisible(false);
+        actual = vEquipoActualizar;
+        vPrincipalAdmin.setVisible(false);
     }
+
     public static void generarInsertarJugadores() throws MalformedURLException {
         vInsertarJugadores = new JFrame("vInsertarJugadores");
         vInsertarJugadores.setContentPane(new vInsertarJugadores().getpPrincipal());
@@ -245,25 +259,28 @@ public class Main {
         vInsertarJugadores.pack();
         vInsertarJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
         vInsertarJugadores.setVisible(true);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarJugadores;
+        vPrincipalAdmin.setVisible(false);
+        actual = vInsertarJugadores;
     }
+
     public static void generarActualizarJugadores() throws MalformedURLException {
-        vUpdateJugadores= new JFrame("vUpdateJugadores");
+        vUpdateJugadores = new JFrame("vUpdateJugadores");
         vUpdateJugadores.setContentPane(new vUpdateJugadores().getpPrincipal());
         vUpdateJugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vUpdateJugadores.pack();
         vUpdateJugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
         vUpdateJugadores.setVisible(true);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vUpdateJugadores;
+        vPrincipalAdmin.setVisible(false);
+        actual = vUpdateJugadores;
     }
+
     public static void generarBorrarJugadores() throws MalformedURLException {
         vBorrarJugadores = new vBorrarJugador();
         vBorrarJugadores.pack();
         vBorrarJugadores.setVisible(true);
-        vPrinicpalAdmin.setEnabled(false);
+        vPrincipalAdmin.setEnabled(false);
     }
+
     public static void generarVentanaClasificacion() throws MalformedURLException {
         vClasificacion = new JFrame("vClasificacionEquipos");
         vClasificacion.setContentPane(new vClasificacionEquipos().getpPrincipal());
@@ -271,19 +288,21 @@ public class Main {
         vClasificacion.pack();
         vClasificacion.setVisible(true);
         vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalUsuario.setVisible(false);
-        actual=vClasificacion;
+        vPrincipalUsuario.setVisible(false);
+        actual = vClasificacion;
     }
+
     public static void generarVentanaInsertarEquipos() throws MalformedURLException {
-        vInsertEquipos= new JFrame("vInsertEquipos");
+        vInsertEquipos = new JFrame("vInsertEquipos");
         vInsertEquipos.setContentPane(new vInsertEquipos().getpPrincipal());
         vInsertEquipos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vInsertEquipos.pack();
         vInsertEquipos.setVisible(true);
         vInsertEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vInsertEquipos;
+        vPrincipalAdmin.setVisible(false);
+        actual = vInsertEquipos;
     }
+
     public static void generarActualizarPersonal() throws MalformedURLException {
         vPersonalActualizar = new JFrame("vActualizarPersonal");
         vPersonalActualizar.setContentPane(new vActualizarPersonal().getpPrincipal());
@@ -291,21 +310,24 @@ public class Main {
         vPersonalActualizar.pack();
         vPersonalActualizar.setVisible(true);
         vPersonalActualizar.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual=vPersonalActualizar;
-        vPrinicpalAdmin.setVisible(false);
+        actual = vPersonalActualizar;
+        vPrincipalAdmin.setVisible(false);
     }
+
     public static void generarBorrarEquipos() throws MalformedURLException {
         vBorrarEquipos = new vBorrarEquipo();
         vBorrarEquipos.pack();
         vBorrarEquipos.setVisible(true);
-        vPrinicpalAdmin.setEnabled(false);
+        vPrincipalAdmin.setEnabled(false);
     }
+
     public static void generarBorrarPersonales() throws MalformedURLException {
         vBorrarPersonales = new vBorrarPersonal();
         vBorrarPersonales.pack();
         vBorrarPersonales.setVisible(true);
-        vPrinicpalAdmin.setEnabled(false);
+        vPrincipalAdmin.setEnabled(false);
     }
+
     public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException {
         vContratosJ = new JFrame("vDeleteSplit");
         vContratosJ.setContentPane(new vInsertarContratosJugadores().getpPrincipal());
@@ -313,9 +335,10 @@ public class Main {
         vContratosJ.pack();
         vContratosJ.setVisible(true);
         vContratosJ.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vContratosJ;
+        vPrincipalAdmin.setVisible(false);
+        actual = vContratosJ;
     }
+
     public static void generarBorrarSplits() throws MalformedURLException {
         vBorrarSplits = new JFrame("vDeleteSplit");
         vBorrarSplits.setContentPane(new vDeleteSplit().getpPrincipal());
@@ -323,9 +346,10 @@ public class Main {
         vBorrarSplits.pack();
         vBorrarSplits.setVisible(true);
         vBorrarSplits.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vBorrarSplits;
+        vPrincipalAdmin.setVisible(false);
+        actual = vBorrarSplits;
     }
+
     public static void generarBorrarUsuarios() throws MalformedURLException {
         vBorrarUsuarios = new JFrame("vDeleteusuarios");
         vBorrarUsuarios.setContentPane(new vDeleteusuarios().getpPrincipal());
@@ -333,9 +357,10 @@ public class Main {
         vBorrarUsuarios.pack();
         vBorrarUsuarios.setVisible(true);
         vBorrarUsuarios.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vBorrarUsuarios;
+        vPrincipalAdmin.setVisible(false);
+        actual = vBorrarUsuarios;
     }
+
     public static void generarInsertarPersonal() throws MalformedURLException {
         vInsertarPersonal = new JFrame("vInsertarPersonal");
         vInsertarPersonal.setContentPane(new vInsertarPersonal().getpPrincipal());
@@ -343,9 +368,10 @@ public class Main {
         vInsertarPersonal.pack();
         vInsertarPersonal.setVisible(true);
         vInsertarPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarPersonal;
+        vPrincipalAdmin.setVisible(false);
+        actual = vInsertarPersonal;
     }
+
     public static void generarInsertarResultados() throws Exception {
         vInsertarResultados = new JFrame("vInsertarResultados");
         vInsertarResultados.setContentPane(new vInsertarResultados().getpPrincipal());
@@ -353,9 +379,10 @@ public class Main {
         vInsertarResultados.pack();
         vInsertarResultados.setVisible(true);
         vInsertarResultados.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarResultados;
+        vPrincipalAdmin.setVisible(false);
+        actual = vInsertarResultados;
     }
+
     public static void generarInsertarEquipos() throws Exception {
         vInsertarEquipos = new JFrame("vInsertEquipos");
         vInsertarEquipos.setContentPane(new vInsertEquipos().getpPrincipal());
@@ -363,19 +390,21 @@ public class Main {
         vInsertarEquipos.pack();
         vInsertarEquipos.setVisible(true);
         vInsertarEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vInsertarEquipos;
+        vPrincipalAdmin.setVisible(false);
+        actual = vInsertarEquipos;
     }
+
     public static void generarUpdateContratosJugadores() throws Exception {
-        vUpdatecontratosjugadores= new JFrame("vUpdatecontratosjugadores");
+        vUpdatecontratosjugadores = new JFrame("vUpdatecontratosjugadores");
         vUpdatecontratosjugadores.setContentPane(new vUpdatecontratosjugadores().getpPrincipal());
         vUpdatecontratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vUpdatecontratosjugadores.pack();
         vUpdatecontratosjugadores.setVisible(true);
         vUpdatecontratosjugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrinicpalAdmin.setVisible(false);
-        actual=vUpdatecontratosjugadores;
+        vPrincipalAdmin.setVisible(false);
+        actual = vUpdatecontratosjugadores;
     }
+
     public static void generarVerPartido() throws Exception {
         vPartido = new JFrame("vParido");
         vPartido.setContentPane(new vPartidos().getpPrincipal());
@@ -383,11 +412,25 @@ public class Main {
         vPartido.pack();
         vPartido.setVisible(true);
         vPartido.setExtendedState(Frame.MAXIMIZED_BOTH);
-        if (vPrinicpalUsuario != null )
-            vPrinicpalUsuario.setVisible(false);
+        if (vPrincipalUsuario != null)
+            vPrincipalUsuario.setVisible(false);
         else
-            vPrinicpalAdmin.setVisible(false);
-        actual=vPartido;
+            vPrincipalAdmin.setVisible(false);
+        actual = vPartido;
+    }
+
+    public static void generarVerPartidos() throws Exception {
+        vPartidosPorJornada = new JFrame("vParido");
+        vPartidosPorJornada.setContentPane(new vPartidosPorJornada().getpPrincipal());
+        vPartidosPorJornada.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vPartidosPorJornada.pack();
+        vPartidosPorJornada.setVisible(true);
+        vPartidosPorJornada.setExtendedState(Frame.MAXIMIZED_BOTH);
+        if (vPrincipalUsuario != null)
+            vPrincipalUsuario.setVisible(false);
+        else
+            vPrincipalAdmin.setVisible(false);
+        actual = vPartidosPorJornada;
     }
 
     // Métodos para los CRUD
@@ -396,7 +439,7 @@ public class Main {
      * Método para comprobar si existe el usuario indicado.
      * Se creará un objeto usuario con los parámetros introducidos y se comprobará si ya existe en la base de datos.
      *
-     * @param nombre String
+     * @param nombre     String
      * @param contrasena String
      * @return boolean
      */
@@ -416,10 +459,10 @@ public class Main {
      * Método para crear un nuevo usuario.
      * Se creará un objeto usuario con los parámetros introducidos y se comprobará si ya existe. Si no es así se insertará.
      *
-     * @param nombre String
-     * @param correo String
+     * @param nombre     String
+     * @param correo     String
      * @param contrasena String
-     * @param tipo Usuario.TipoUsuario
+     * @param tipo       Usuario.TipoUsuario
      * @return boolean
      */
     public static boolean crearUsuario(String nombre, String correo, String contrasena, Usuario.TipoUsuario tipo) {
@@ -442,7 +485,7 @@ public class Main {
 
     public static HashMap setObjetosInformeEquipo(String nombre) {
         equipo = new Equipo();
-        HashMap<String, String> equipos=new HashMap<>();
+        HashMap<String, String> equipos = new HashMap<>();
         equipo.setNombre(nombre);
         jugadoresInfome = TEquipo.getInfomeEquipos(equipo, personalesInfome);
         equipos.put("nombre", equipo.getNombre());
@@ -490,7 +533,7 @@ public class Main {
      * @return ArrayList
      * @throws Exception
      */
-    public static ArrayList<Integer> getJornadas() throws Exception{
+    public static ArrayList<Integer> getJornadas() throws Exception {
         partidos = TJornada.getJornadas();
         ArrayList<Integer> NumJornadas = new ArrayList<>();
         if (partidos == null) {
@@ -499,7 +542,9 @@ public class Main {
         for (int x = 1; x <= partidos.get(partidos.size() - 1).getJornada().getNumJornada(); x++) {
             NumJornadas.add(x);
         }
-        return NumJornadas;}
+        return NumJornadas;
+    }
+
     public static HashMap<String, String>[] getUltimaJornada() {
         ArrayList<Partido> partidos = TJornada.getUltimaJornada();
         numJornada = partidos.get(0).getJornada().getNumJornada();
@@ -507,7 +552,7 @@ public class Main {
     }
 
     public static HashMap<String, String>[] getJornada(int numJornada) {
-            ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Partido> partidoDeJornada = partidos.stream().filter(_partido -> _partido.getJornada().getNumJornada() == numJornada).collect(Collectors.toCollection(ArrayList::new));
         return dePartidosAhashmap(partidoDeJornada);
     }
 
@@ -536,9 +581,11 @@ public class Main {
             }
             partidosMap.add(partidoMap);
         }
-    return partidosMap.toArray(new HashMap[partidosMap.size()]);}
-    public static int getCantidadPersonas(){
-        return jugadoresInfome.size()+2;
+        return partidosMap.toArray(new HashMap[partidosMap.size()]);
+    }
+
+    public static int getCantidadPersonas() {
+        return jugadoresInfome.size() + 2;
     }
 
     /**
@@ -554,35 +601,34 @@ public class Main {
         return equipos;
     }
 
-    public static Equipo getEquipo(){
+    public static Equipo getEquipo() {
         return equipo;
     }
 
-    public static void setNombreEquipo(String nombre){
+    public static void setNombreEquipo(String nombre) {
         equipo.setNombre(nombre);
     }
-    public static String getNombreEquipo(){
+
+    public static String getNombreEquipo() {
         return equipo.getNombre();
     }
-    public static String buscarNombre()
-    {
+
+    public static String buscarNombre() {
         return usuarioInicio.getNombre();
     }
 
-    public static String buscarCorreo()
-    {
+    public static String buscarCorreo() {
         return usuarioInicio.getCorreo();
     }
 
-    public static String buscarContrasena()
-    {
+    public static String buscarContrasena() {
         return usuarioInicio.getContrasena();
     }
 
     /**
      * Método para actualizar los datos del perfil del usuario.
      *
-     * @param usuarioAntes Usuario
+     * @param usuarioAntes  Usuario
      * @param usuarioActual Usuario
      * @throws SQLException
      */
@@ -590,18 +636,19 @@ public class Main {
         TUsuario.updateUsuario(usuarioAntes, usuarioActual);
     }
 
-    public static String getUsuarioTipo(String nombre, String contrasena){
-        Usuario usuarioAntes=new Usuario();
+    public static String getUsuarioTipo(String nombre, String contrasena) {
+        Usuario usuarioAntes = new Usuario();
         usuarioAntes.setNombre(nombre);
         usuarioAntes.setContrasena(contrasena);
-        usuarioAntes=TUsuario.selectUsuarioDatos(usuarioAntes);
+        usuarioAntes = TUsuario.selectUsuarioDatos(usuarioAntes);
         return usuarioAntes.getTipoUsuario().toString();
     }
-    public static Usuario getUsuario(String nombre, String contrasena){
-        Usuario usuario=new Usuario();
+
+    public static Usuario getUsuario(String nombre, String contrasena) {
+        Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setContrasena(contrasena);
-        usuario=TUsuario.selectUsuarioDatos(usuario);
+        usuario = TUsuario.selectUsuarioDatos(usuario);
         return usuario;
     }
 
@@ -609,24 +656,24 @@ public class Main {
      * Método para insertar un nuevo jugador.
      * Se creará un objeto jugador con los parámetros introducidos y se insertará en la base de datos.
      *
-     * @param nombre String
-     * @param apellido String
-     * @param dni String
-     * @param telefono String
-     * @param posicion Jugador.TipoPosicion
-     * @param tipo Jugador.TipoJugador
-     * @param img String
+     * @param nombre    String
+     * @param apellido  String
+     * @param dni       String
+     * @param telefono  String
+     * @param posicion  Jugador.TipoPosicion
+     * @param tipo      Jugador.TipoJugador
+     * @param img       String
      * @param velocidad int
-     * @param fisico int
-     * @param defensa int
-     * @param pase int
-     * @param tiro int
-     * @param talento int
+     * @param fisico    int
+     * @param defensa   int
+     * @param pase      int
+     * @param tiro      int
+     * @param talento   int
      * @return boolean
      */
-    public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+    public static boolean insertarJugador(String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento) {
         boolean insertar;
-        Jugador jugador=new Jugador();
+        Jugador jugador = new Jugador();
         jugador.setNombre(nombre);
         jugador.setApellidos(apellido);
         jugador.setDni(dni);
@@ -640,7 +687,7 @@ public class Main {
         jugador.setPase(pase);
         jugador.setTiro(tiro);
         jugador.setTalento(talento);
-        insertar=TJugador.insertar(jugador);
+        insertar = TJugador.insertar(jugador);
         return insertar;
     }
 
@@ -651,11 +698,11 @@ public class Main {
      * @param dni String
      * @return boolean
      */
-    public static boolean borrarJugador(String dni){
+    public static boolean borrarJugador(String dni) {
         boolean borrar;
-        Jugador jugador=new Jugador();
+        Jugador jugador = new Jugador();
         jugador.setDni(dni);
-        borrar=TJugador.eliminar(jugador);
+        borrar = TJugador.eliminar(jugador);
         return borrar;
     }
 
@@ -663,13 +710,13 @@ public class Main {
      * Método para actualizar los datos de un partido.
      * Tras comprobar que existen los equipos, se creará un objeto partido con los datos correspondientes y se actualizará el partido.
      *
-     * @param equipo1 String
-     * @param equipo2 String
+     * @param equipo1  String
+     * @param equipo2  String
      * @param golesEq1 String
      * @param golesEq2 String
      * @return boolean
      */
-    public static boolean ActualizarPartido (String equipo1, String equipo2, String golesEq1, String golesEq2) {
+    public static boolean ActualizarPartido(String equipo1, String equipo2, String golesEq1, String golesEq2) {
         Equipo equ1 = TEquipo.getEquipoPorNombre(equipo1);
         Equipo equ2 = TEquipo.getEquipoPorNombre(equipo2);
         Partido elPartido = new Partido();
@@ -682,8 +729,8 @@ public class Main {
         return valido;
     }
 
-    public static void crearSplit(String tipoSlit) {
-        TSplit.crearSplit(tipoSlit);
+    public static boolean crearSplit(String tipoSlit) throws Exception {
+        return TSplit.crearSplit(tipoSlit);
     }
 
     public static void generarXml() {
@@ -703,24 +750,24 @@ public class Main {
     /**
      * Método para insertar un nuevo miembro del personal.
      *
-     * @param nombre String
+     * @param nombre   String
      * @param apellido String
-     * @param dni String
+     * @param dni      String
      * @param telefono String
-     * @param oficio TipoPersonal
-     * @param img String
+     * @param oficio   TipoPersonal
+     * @param img      String
      * @return boolean
      */
     public static boolean insertarPersonal(String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
         boolean insertar;
-        Personal personal=new Personal();
+        Personal personal = new Personal();
         personal.setNombre(nombre);
         personal.setApellidos(apellido);
         personal.setDni(dni);
         personal.setTelefono(telefono);
         personal.setOficio(oficio);
         personal.setImg(img);
-        insertar=TPersonal.insertar(personal);
+        insertar = TPersonal.insertar(personal);
         return insertar;
     }
 
@@ -729,6 +776,7 @@ public class Main {
         if (TPersonal.consutlarPorDni(dni)) return true;
         return TJugador.consultarPorDni(dni);
     }
+
     public static boolean actualizarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
         return TPersonal.actualizarPersonal(new Personal(nombre, apellido, dni, telefono, TipoPersonal.valueOf(oficio), img));
     }
@@ -740,9 +788,10 @@ public class Main {
     public static boolean borrarPersonal(String dni) {
         return TPersonal.borrarPersonal(dni);
     }
-    public static ArrayList<String> selectDNI(){
-        ArrayList<String> dnis=new ArrayList<>();
-        dnis=TJugador.selectDNI(dnis);
+
+    public static ArrayList<String> selectDNI() {
+        ArrayList<String> dnis = new ArrayList<>();
+        dnis = TJugador.selectDNI(dnis);
         return dnis;
     }
 
@@ -751,9 +800,9 @@ public class Main {
      *
      * @return ArrayList
      */
-    public static ArrayList<String> selectDNIPersonal(){
-        ArrayList<String> dnis=new ArrayList<>();
-        dnis=TPersonal.selectDNI(dnis);
+    public static ArrayList<String> selectDNIPersonal() {
+        ArrayList<String> dnis = new ArrayList<>();
+        dnis = TPersonal.selectDNI(dnis);
         return dnis;
     }
 
@@ -763,42 +812,37 @@ public class Main {
      * @param dni String
      * @return Jugador
      */
-    public static Jugador jugadorPorDNI(String dni){
-        Jugador jugador =new Jugador();
+    public static Jugador jugadorPorDNI(String dni) {
+        Jugador jugador = new Jugador();
         jugador.setDni(dni);
-        jugador=TJugador.getJugadorPorDNI(jugador);
+        jugador = TJugador.getJugadorPorDNI(jugador);
         return jugador;
     }
 
     /**
      * Método para actualizar un jugador tras seleccionar su DNI.
      *
-     * @param id int
-     * @param nombre String
-     * @param apellido String
-     * @param dni String
-     * @param telefono String
-     * @param posicion Jugador.TipoPosicion
-     * @param tipo Jugador.TipoJugador
-     * @param img String
+     * @param id        int
+     * @param nombre    String
+     * @param apellido  String
+     * @param dni       String
+     * @param telefono  String
+     * @param posicion  Jugador.TipoPosicion
+     * @param tipo      Jugador.TipoJugador
+     * @param img       String
      * @param velocidad int
-     * @param fisico int
-     * @param defensa int
-     * @param pase int
-     * @param tiro int
-     * @param talento int
+     * @param fisico    int
+     * @param defensa   int
+     * @param pase      int
+     * @param tiro      int
+     * @param talento   int
      * @return boolean
      */
-    public static boolean updateJugador(int id, String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
-    public static Jugador jugadorPorID(int id){
-        Jugador jugador =new Jugador();
-        jugador.setId(id);
-        jugador=TJugador.getJugadorPorID(jugador);
-        return jugador;
-    }
-    public static boolean updateJugador(int id,String nombre, String apellido, String dni, String telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico, int defensa, int pase, int tiro, int talento){
+    public static boolean updateJugador(int id, String nombre, String apellido, String dni, String
+            telefono, Jugador.TipoPosicion posicion, Jugador.TipoJugador tipo, String img, int velocidad, int fisico,
+                                        int defensa, int pase, int tiro, int talento) {
         boolean update;
-        Jugador jugador=new Jugador();
+        Jugador jugador = new Jugador();
         jugador.setId(id);
         jugador.setNombre(nombre);
         jugador.setApellidos(apellido);
@@ -813,30 +857,38 @@ public class Main {
         jugador.setPase(pase);
         jugador.setTiro(tiro);
         jugador.setTalento(talento);
-        update=TJugador.update(jugador);
+        update = TJugador.update(jugador);
         return update;
     }
+
+    public static Jugador jugadorPorID(int id) {
+        Jugador jugador = new Jugador();
+        jugador.setId(id);
+        jugador = TJugador.getJugadorPorID(jugador);
+        return jugador;
+    }
+
 
     public static boolean insertarEquipo(String nombre, double presupuesto, String imagen, String color) {
         boolean insertar;
         boolean existe;
-        Equipo equipo=new Equipo();
+        Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
         equipo.setPresupuestoAnual(presupuesto);
         equipo.setLogoImg(imagen);
         equipo.setColor(color);
-        existe=TEquipo.selectEquipoInsertar(equipo);
-        if (existe){
-            insertar=false;
-        }else{
-            insertar=TEquipo.insertar(equipo);
+        existe = TEquipo.selectEquipoInsertar(equipo);
+        if (existe) {
+            insertar = false;
+        } else {
+            insertar = TEquipo.insertar(equipo);
         }
         return insertar;
     }
 
-    public static ArrayList<String> selectNombresEquipos(){
-        ArrayList<String> nombres=new ArrayList<>();
-        nombres=TEquipo.selectNombre(nombres);
+    public static ArrayList<String> selectNombresEquipos() {
+        ArrayList<String> nombres = new ArrayList<>();
+        nombres = TEquipo.selectNombre(nombres);
         return nombres;
     }
 
@@ -848,69 +900,77 @@ public class Main {
      * @return Equipo
      */
     public static Equipo equipoPorNombre(String nombre) {
-        Equipo equipo =new Equipo();
+        Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
-        equipo=TEquipo.getEquipoPorNombreDavid(equipo);
+        equipo = TEquipo.getEquipoPorNombreDavid(equipo);
         return equipo;
     }
+
     public static Equipo equipoPorID(int id) {
-        Equipo equipo =new Equipo();
+        Equipo equipo = new Equipo();
         equipo.setId(id);
-        equipo=TEquipo.getEquipoPorIDDavid(equipo);
+        equipo = TEquipo.getEquipoPorIDDavid(equipo);
         return equipo;
     }
+
     public static Personal personalPorID(int id) {
-        Personal personal =new Personal();
+        Personal personal = new Personal();
         personal.setId(id);
-        personal=TPersonal.getPersonalPorID(personal);
+        personal = TPersonal.getPersonalPorID(personal);
         return personal;
     }
+
     public static Personal personalPorDNI(String dni) {
-        Personal personal =new Personal();
+        Personal personal = new Personal();
         personal.setDni(dni);
-        personal=TPersonal.getPersonalPorDNI(personal);
+        personal = TPersonal.getPersonalPorDNI(personal);
         return personal;
     }
+
     public static boolean updateEquipos(String nombre, double presupuesto, String imagen, String color) {
         boolean update;
         boolean existe;
-        Equipo equipo=new Equipo();
+        Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
         equipo.setPresupuestoAnual(presupuesto);
         equipo.setLogoImg(imagen);
         equipo.setColor(color);
-        existe=TEquipo.selectEquipoInsertar(equipo);
-        if (existe){
-            update=false;
-        }else{
-            update=TEquipo.update(equipo);
+        existe = TEquipo.selectEquipoInsertar(equipo);
+        if (!existe) {
+            update = false;
+        } else {
+            update = TEquipo.update(equipo);
         }
         return update;
     }
 
     public static boolean deleteEquipo(String nombre) {
         boolean delete;
-        Equipo equipo =new Equipo();
+        Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
-        equipo=equipoPorNombre(equipo.getNombre());
-        delete=TEquipo.delete(equipo);
+        equipo = equipoPorNombre(equipo.getNombre());
+        delete = TEquipo.delete(equipo);
         return delete;
     }
-    public static ArrayList<String> getDNISinContrato(){
-        ArrayList<String> dnis=new ArrayList<>();
-        dnis= TContratosJugador.getDNIJugadoresSinContratos(dnis);
+
+    public static ArrayList<String> getDNISinContrato() {
+        ArrayList<String> dnis = new ArrayList<>();
+        dnis = TContratosJugador.getDNIJugadoresSinContratos(dnis);
         return dnis;
     }
-    public static java.sql.Date fechaActual(){
+
+    public static java.sql.Date fechaActual() {
         Date fechaActual = new Date();
         java.sql.Date fechaSQL = new java.sql.Date(fechaActual.getTime());
         return fechaSQL;
     }
-    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String fecha_fin, String clausula, String dorsal, TipoSueldo sueldo) {
+
+    public static boolean insertarContratoJugadores(String nombreEquipo, String dniJugador, String
+            fecha_fin, String clausula, String dorsal, TipoSueldo sueldo) {
         boolean insertar;
-        ContratoJugador contratoJugador=new ContratoJugador();
-        Equipo equipo=equipoPorNombre(nombreEquipo);
-        Jugador jugador=jugadorPorDNI(dniJugador);
+        ContratoJugador contratoJugador = new ContratoJugador();
+        Equipo equipo = equipoPorNombre(nombreEquipo);
+        Jugador jugador = jugadorPorDNI(dniJugador);
         contratoJugador.setJugador(jugador);
         contratoJugador.setEquipo(equipo);
         contratoJugador.setFechaInicio(fechaActual());
@@ -918,56 +978,63 @@ public class Main {
         contratoJugador.setClausula(Double.parseDouble(clausula));
         contratoJugador.setDorsal(dorsal);
         contratoJugador.setTipoSueldo(sueldo);
-        insertar=TContratosJugador.insertar(contratoJugador);
+        insertar = TContratosJugador.insertar(contratoJugador);
         return insertar;
     }
-    public static ArrayList<String> getIDContratosJugadores(){
-        ArrayList<String> id=new ArrayList<>();
-        id=TContratosPersonal.getID(id);
+
+    public static ArrayList<String> getIDContratosJugadores() {
+        ArrayList<String> id = new ArrayList<>();
+        id = TContratosJugador.getID(id);
         return id;
     }
-    public static ArrayList<String> getIDContratosPersonales(){
-        ArrayList<String> id=new ArrayList<>();
-        id=TContratosPersonal.getID(id);
+
+    public static ArrayList<String> getIDContratosPersonales() {
+        ArrayList<String> id = new ArrayList<>();
+        id = TContratosPersonal.getID(id);
         return id;
     }
-    public static boolean deleteContratosJugadores(String id){
+
+    public static boolean deleteContratosJugadores(String id) {
         boolean delete;
-        delete=TContratosJugador.delete(id);
+        delete = TContratosJugador.delete(id);
         return delete;
     }
 
-    public static ContratoJugador contratosJugadorPorID(String id){
-        ContratoJugador contratoJugador=new ContratoJugador();
+    public static ContratoJugador contratosJugadorPorID(String id) {
+        ContratoJugador contratoJugador = new ContratoJugador();
         contratoJugador.setId(Integer.parseInt(id));
-        contratoJugador=TContratosJugador.datosContratoPorId(contratoJugador);
+        contratoJugador = TContratosJugador.datosContratoPorId(contratoJugador);
         return contratoJugador;
     }
 
-    public static ContratoPersonal contratosPersonalPorID(String id){
-        ContratoPersonal contratoPersonal=new ContratoPersonal();
+    public static ContratoPersonal contratosPersonalPorID(String id) {
+        ContratoPersonal contratoPersonal = new ContratoPersonal();
         contratoPersonal.setId(Integer.parseInt(id));
-        contratoPersonal=TContratosPersonal.datosContratoPorId(contratoPersonal);
+        contratoPersonal = TContratosPersonal.datosContratoPorId(contratoPersonal);
         return contratoPersonal;
     }
-    public static boolean updateContratosJugadores(int id,String nombre, String fechaFin, double clausula, String dorsal, TipoSueldo sueldo) {
+
+    public static boolean updateContratosJugadores(int id, String nombre, String fechaFin, double clausula, String
+            dorsal, TipoSueldo sueldo) {
         boolean update;
-        ContratoJugador contratoJugador=new ContratoJugador();
-        Equipo equipo=new Equipo();
+        ContratoJugador contratoJugador = new ContratoJugador();
+        Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
-        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
+        equipo = TEquipo.getEquipoPorNombre(equipo.getNombre());
         contratoJugador.setEquipo(equipo);
         contratoJugador.setFechaFin(java.sql.Date.valueOf(fechaFin));
         contratoJugador.setClausula(clausula);
         contratoJugador.setDorsal(dorsal);
         contratoJugador.setTipoSueldo(sueldo);
-        update= TContratosJugador.update(contratoJugador);
+        contratoJugador.setId(id);
+        update = TContratosJugador.update(contratoJugador);
         return update;
     }
 
-    public static boolean updatePersonal(int id, String nombre, String apellido, String dni, String telefono, TipoPersonal oficio, String img) {
+    public static boolean updatePersonal(int id, String nombre, String apellido, String dni, String
+            telefono, TipoPersonal oficio, String img) {
         boolean update;
-        Personal personal=new Personal();
+        Personal personal = new Personal();
         personal.setId(id);
         personal.setNombre(nombre);
         personal.setApellidos(apellido);
@@ -975,74 +1042,98 @@ public class Main {
         personal.setTelefono(telefono);
         personal.setOficio(oficio);
         personal.setImg(img);
-        update=TPersonal.update(personal);
+        update = TPersonal.update(personal);
         return update;
     }
 
     public static ArrayList<String> getDNISinContratoPersonal() {
-        ArrayList<String> dnis=new ArrayList<>();
-        dnis= TContratosPersonal.getDNIJugadoresSinContratos(dnis);
+        ArrayList<String> dnis = new ArrayList<>();
+        dnis = TContratosPersonal.getDNIJugadoresSinContratos(dnis);
         return dnis;
     }
 
     public static boolean insertarContratoPersonal(String dni, String nombre, String fecha_fin, TipoSueldo sueldo) {
         boolean insertar;
-        ContratoPersonal contratoPersonal=new ContratoPersonal();
-        Equipo equipo=equipoPorNombre(nombre);
-        Personal personal=new Personal();
+        ContratoPersonal contratoPersonal = new ContratoPersonal();
+        Equipo equipo = equipoPorNombre(nombre);
+        Personal personal = new Personal();
         personal.setDni(dni);
-        personal=TPersonal.getPersonalPorDNI(personal);
+        personal = TPersonal.getPersonalPorDNI(personal);
         contratoPersonal.setPersonal(personal);
         contratoPersonal.setEquipo(equipo);
         contratoPersonal.setFechaInicio(fechaActual());
         contratoPersonal.setFechaFin(java.sql.Date.valueOf(fecha_fin));
         contratoPersonal.setSueldo(sueldo);
-        insertar=TContratosPersonal.insertar(contratoPersonal);
+        insertar = TContratosPersonal.insertar(contratoPersonal);
         return insertar;
     }
 
-    public static boolean updateContratosPersonal(int id,String nombre, String fechaFin,TipoSueldo sueldo) {
+    public static boolean updateContratosPersonal(int id, String nombre, String fechaFin, TipoSueldo sueldo) {
         boolean update;
-        ContratoPersonal contratoPersonal=new ContratoPersonal();
+        ContratoPersonal contratoPersonal = new ContratoPersonal();
         contratoPersonal.setId(id);
-        Equipo equipo=new Equipo();
+        Equipo equipo = new Equipo();
         equipo.setNombre(nombre);
-        equipo=TEquipo.getEquipoPorNombre(equipo.getNombre());
+        equipo = TEquipo.getEquipoPorNombre(equipo.getNombre());
         contratoPersonal.setEquipo(equipo);
         contratoPersonal.setFechaInicio(fechaActual());
         contratoPersonal.setFechaFin(java.sql.Date.valueOf(fechaFin));
         contratoPersonal.setSueldo(sueldo);
-        update= TContratosPersonal.update(contratoPersonal);
+        update = TContratosPersonal.update(contratoPersonal);
         return update;
     }
 
     public static boolean deleteContratosPersonales(String id) {
         boolean delete;
-        delete=TContratosPersonal.delete(id);
+        delete = TContratosPersonal.delete(id);
         return delete;
+    }
+
     public static int getNumJornada() {
         return numJornada;
     }
 
-    public static void generarActualizarEquipos() throws MalformedURLException {
-        vEquipoActualizar = new JFrame("vEquipoActulizar");
-        vEquipoActualizar.setContentPane(new vActualizarEquipo().getpPrincipal());
-        vEquipoActualizar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vEquipoActualizar.pack();
-        vEquipoActualizar.setVisible(true);
-        vEquipoActualizar.setLocationRelativeTo(null);
-        actual = vEquipoActualizar;
-        vInicio.dispose();
+    public static void generarBorrarContratoJugadores() {
+        vDeleteContratosjugadores = new JFrame("vActualizarEquipo");
+        vDeleteContratosjugadores.setContentPane(new vDeleteContratosjugadores().getpPrincipal());
+        vDeleteContratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vDeleteContratosjugadores.pack();
+        vDeleteContratosjugadores.setVisible(true);
+        vDeleteContratosjugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vDeleteContratosjugadores;
+        vPrincipalAdmin.setVisible(false);
     }
 
-    public static void generarUpdateContratoJugadores() throws Exception {
-        vUpdatecontratosjugadores = new JFrame("vEquipoActulizar");
-        vUpdatecontratosjugadores.setContentPane(new vUpdatecontratosjugadores().getpPrincipal());
-        vUpdatecontratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vUpdatecontratosjugadores.pack();
-        vUpdatecontratosjugadores.setVisible(true);
-        vUpdatecontratosjugadores.setLocationRelativeTo(null);
-        actual = vEquipoActualizar;
-        vInicio.dispose();
+    public static void generarInsertarContratosPersonal() throws MalformedURLException {
+        vInsertarContratosPersonal = new JFrame("vActualizarEquipo");
+        vInsertarContratosPersonal.setContentPane(new vInsertarContratosPersonal().getpPrincipal());
+        vInsertarContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarContratosPersonal.pack();
+        vInsertarContratosPersonal.setVisible(true);
+        vInsertarContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vInsertarContratosPersonal;
+        vPrincipalAdmin.setVisible(false);
+    }
+
+    public static void generarActualizarContratosPersonal() throws MalformedURLException {
+        vUpdateContratosPersonal = new JFrame("vActualizarEquipo");
+        vUpdateContratosPersonal.setContentPane(new vUpdateContratosPersonal().getpPrincipla());
+        vUpdateContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdateContratosPersonal.pack();
+        vUpdateContratosPersonal.setVisible(true);
+        vUpdateContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vUpdateContratosPersonal;
+        vPrincipalAdmin.setVisible(false);
+    }
+
+    public static void generarBorrarContratoPersonal() throws MalformedURLException {
+        vDeleteContratosPersonal = new JFrame("vActualizarEquipo");
+        vDeleteContratosPersonal.setContentPane(new vDeleteContratosPersonal().getpPrincipal());
+        vDeleteContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vDeleteContratosPersonal.pack();
+        vDeleteContratosPersonal.setVisible(true);
+        vDeleteContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vDeleteContratosPersonal;
+        vPrincipalAdmin.setVisible(false);
     }
 }
