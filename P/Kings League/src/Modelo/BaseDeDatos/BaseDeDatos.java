@@ -12,10 +12,10 @@ public class BaseDeDatos {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
-            /*String url = "jdbc:oracle:thin:@SrvOracle:1521:orcl";
+            String url = "jdbc:oracle:thin:@SrvOracle:1521:orcl";
             String user = "eqdaw01";
-            String passwd = "eqdaw01";*/
-            String url = "jdbc:oracle:thin:@localhost:1521:xe", user = "JAVA_USER",passwd = "JAVA_USER";
+            String passwd = "eqdaw01";
+            //String url = "jdbc:oracle:thin:@localhost:1521:xe", user = "JAVA_USER",passwd = "JAVA_USER";
             con = DriverManager.getConnection(url, user, passwd);
         } catch (Exception e) {
             System.out.println("Problemas con la base de datos " + e.getMessage() + " " + e.getClass());
