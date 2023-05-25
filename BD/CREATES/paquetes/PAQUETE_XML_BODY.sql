@@ -19,6 +19,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
     BEGIN
         INFORME_PARTIDOS_POR_JORNADA(C_PARTIDOS);
         RESULT := '<?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE jornadas SYSTEM "jornadas.dtd">
             <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd">';
 
         LOOP
@@ -91,6 +92,7 @@ CREATE OR REPLACE PACKAGE BODY PAQUETE_XML AS
         JORNADA NUMBER(1) := 0;
     BEGIN
         XML := XML || '<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE jornadas SYSTEM "jornadas.dtd">
             <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd">';
         FOR FILA IN  C_XML LOOP
                 IF JORNADA = 0 THEN
