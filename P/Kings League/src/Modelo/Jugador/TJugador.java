@@ -74,20 +74,15 @@ public class TJugador {
 
     }
     public static boolean eliminar(Jugador jugador){
-        boolean borrar = false;
         try {
             BaseDeDatos.abrirConexion();
             PreparedStatement ps= BaseDeDatos.getCon().prepareStatement("delete jugadores where dni=?");
             ps.setString(1, jugador.getDni());
             int resul= ps.executeUpdate();
             System.out.println(resul +" Fila eliminada en Jugadores");
-            ResultSet resulatdo=ps.executeQuery();
-            if (resulatdo.next()){
-                borrar=true;
-            }
-            System.out.println();
-            return borrar;
+            return resul != 0;
         }catch (Exception e){
+            e.printStackTrace();
             System.out.println(e.getClass()+ e.getMessage());
             return false;
         }
