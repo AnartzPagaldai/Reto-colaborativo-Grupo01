@@ -1,25 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-            <jornadas xmlns:xs = "http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation = "jornadas.xsd"><jornada num_jornada="13" id_jornada="46">
-                    <tipo_split>INVIERNO</tipo_split>
-                    <tipo_jornada>PLAY-OFF</tipo_jornada><partido id_partido="71">
-            <equipo1>1K FC</equipo1>
-            <goles_equipo1>7</goles_equipo1>
-            <equipo2>Los Troncos FC</equipo2>
-            <goles_equipo2>4</goles_equipo2>
-            <fecha_partido>22/05/23</fecha_partido>
-            <lugar_partido>Cupra Arena</lugar_partido>
-            </partido><partido id_partido="72">
-            <equipo1>Jijantes FC</equipo1>
-            <goles_equipo1>7</goles_equipo1>
-            <equipo2>PIO FC</equipo2>
-            <goles_equipo2>9</goles_equipo2>
-            <fecha_partido>22/05/23</fecha_partido>
-            <lugar_partido>Cupra Arena</lugar_partido>
-            </partido><partido id_partido="73">
-            <equipo1>Los Troncos FC</equipo1>
-            <goles_equipo1>5</goles_equipo1>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jornadas SYSTEM "jornadas.dtd">
+<jornadas xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="jornadas.xsd">
+    <jornada num_jornada="11" id_jornada="11">
+        <tipo_split>INVIERNO</tipo_split>
+        <tipo_jornada>NORMAL</tipo_jornada>
+        <partido id_partido="4">
+            <equipo1>Saiyans FC</equipo1>
+            <goles_equipo1>0</goles_equipo1>
             <equipo2>PIO FC</equipo2>
             <goles_equipo2>0</goles_equipo2>
-            <fecha_partido>29/05/23</fecha_partido>
-            <lugar_partido>Cupra Arena</lugar_partido>
-            </partido></jornada></jornadas>
+            <fecha_partido>24/05/23</fecha_partido>
+            <lugar_partido>CUPRA ARENA</lugar_partido>
+        </partido>
+        <partido id_partido="16">
+            <equipo1>Ultimate Mostoles</equipo1>
+            <goles_equipo1>0</goles_equipo1>
+            <equipo2>Los Troncos FC</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>24/05/23</fecha_partido>
+            <lugar_partido>CUPRA ARENA</lugar_partido>
+        </partido>
+        <partido id_partido="22">
+            <equipo1>El Barrio</equipo1>
+            <goles_equipo1>0</goles_equipo1>
+            <equipo2>Kunisports</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>24/05/23</fecha_partido>
+            <lugar_partido>CUPRA ARENA</lugar_partido>
+        </partido>
+        <partido id_partido="51">
+            <equipo1>Aniquiladores FC</equipo1>
+            <goles_equipo1>0</goles_equipo1>
+            <equipo2>Jijantes FC</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>24/05/23</fecha_partido>
+            <lugar_partido>CUPRA ARENA</lugar_partido>
+        </partido>
+        <partido id_partido="58">
+            <equipo1>1K FC</equipo1>
+            <goles_equipo1>0</goles_equipo1>
+            <equipo2>xBuyer Team</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>24/05/23</fecha_partido>
+            <lugar_partido>CUPRA ARENA</lugar_partido>
+        </partido>
+        <partido id_partido="62">
+            <equipo1>Rayo de Barcelona</equipo1>
+            <goles_equipo1>0</goles_equipo1>
+            <equipo2>Porcinos FC</equipo2>
+            <goles_equipo2>0</goles_equipo2>
+            <fecha_partido>24/05/23</fecha_partido>
+            <lugar_partido>CUPRA ARENA</lugar_partido>
+        </partido>
+    </jornada>
+</jornadas>
