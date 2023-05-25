@@ -88,7 +88,7 @@ public class vConsultarEquipos {
         try {
             ArrayList<Equipo> listaEquipos = Main.rellenarBotones();
 
-            for (int x = 0; x < 12; x++)
+            for (int x = 0; x < Math.min(12, listaEquipos.size()); x++)
             {
                 Color colorFondo = Color.decode(listaEquipos.get(x).getColor());
 
@@ -171,18 +171,6 @@ public class vConsultarEquipos {
             public void mouseExited(MouseEvent e) {
                 mEquipos.setBackground(UIManager.getColor("Menu.background"));
                 mEquipos.setOpaque(false);
-            }
-        });
-        mJugadores.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mJugadores.setBackground(Color.orange);
-                mJugadores.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mJugadores.setBackground(UIManager.getColor("Menu.background"));
-                mJugadores.setOpaque(false);
             }
         });
         mClasificacion.addMouseListener(new MouseAdapter() {

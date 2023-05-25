@@ -145,7 +145,6 @@ public class Main {
     public static void PrincipalAdmin() {
         actual.dispose();
         vPrincipalAdmin.setVisible(true);
-        vPrincipalAdmin.setEnabled(true);
     }
 
     // Crear ventanas
@@ -278,7 +277,6 @@ public class Main {
         vBorrarJugadores = new vBorrarJugador();
         vBorrarJugadores.pack();
         vBorrarJugadores.setVisible(true);
-        vPrincipalAdmin.setEnabled(false);
     }
 
     public static void generarVentanaClasificacion() throws MalformedURLException {
@@ -318,14 +316,12 @@ public class Main {
         vBorrarEquipos = new vBorrarEquipo();
         vBorrarEquipos.pack();
         vBorrarEquipos.setVisible(true);
-        vPrincipalAdmin.setEnabled(false);
     }
 
     public static void generarBorrarPersonales() throws MalformedURLException {
         vBorrarPersonales = new vBorrarPersonal();
         vBorrarPersonales.pack();
         vBorrarPersonales.setVisible(true);
-        vPrincipalAdmin.setEnabled(false);
     }
 
     public static void generarInsertarContratosJugador() throws MalformedURLException, SQLException {
@@ -596,7 +592,7 @@ public class Main {
      * @throws SQLException
      */
     public static ArrayList<Equipo> rellenarBotones() throws SQLException {
-        ArrayList equipos = new ArrayList<>();
+        ArrayList<Equipo> equipos = new ArrayList<>();
         TEquipo.selectAllEquipos(equipos);
         return equipos;
     }
