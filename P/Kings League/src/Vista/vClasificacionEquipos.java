@@ -236,6 +236,9 @@ public class vClasificacionEquipos {
         diferencia.add(diferencia12);
 
         lSplit.setText(equipos[0].get("split"));
+        if (equipos[1] == null) {
+            throw new MalformedURLException("antes se tiene que crear las jornadas");
+        }
         for (int x=0; x<equipos.length-1; x++){
             posicion.get(x).setText(equipos[x+1].get("posicion"));
             logoEquipo = new ImageIcon(new URL(equipos[x+1].get("logoImg")));
@@ -302,115 +305,8 @@ public class vClasificacionEquipos {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-
-
-        // Poner los ":hover" en los elementos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
-        mEquipos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mEquipos.setBackground(Color.orange);
-                mEquipos.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mEquipos.setBackground(UIManager.getColor("Menu.background"));
-                mEquipos.setOpaque(false);
-            }
-        });
-        mClasificacion.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mClasificacion.setBackground(Color.orange);
-                mClasificacion.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mClasificacion.setBackground(UIManager.getColor("Menu.background"));
-                mClasificacion.setOpaque(false);
-            }
-        });
-        mPartidos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mPartidos.setBackground(Color.orange);
-                mPartidos.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mPartidos.setBackground(UIManager.getColor("Menu.background"));
-                mPartidos.setOpaque(false);
-            }
-        });
-        jmInicio.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-               jmInicio.setBackground(Color.orange);
-               jmInicio.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                jmInicio.setBackground(UIManager.getColor("Menu.background"));
-                jmInicio.setOpaque(false);
-            }
-        });
-        mUsuario.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mUsuario.setBackground(Color.orange);
-                mUsuario.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mUsuario.setBackground(UIManager.getColor("Menu.background"));
-                mUsuario.setOpaque(false);
-            }
-        });
-
-
-        // Poner los métodos
-        jmiVerPerfil.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaAjustesUsuario();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
-
-        jmiCerrarSesion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.cerrarSesion();
-            }
-        });
-
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.vEquipos();
-            }
-        });
-
-        mClasificacion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-        jmiPrincipal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.PrincipalUsuario();
-            }
-        });
-
-
-
-
-
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(jmInicio,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
     }
 
 

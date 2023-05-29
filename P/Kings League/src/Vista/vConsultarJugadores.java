@@ -32,11 +32,8 @@ public class vConsultarJugadores {
     private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
-    private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
-    private JMenu mClasificacion;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
@@ -67,6 +64,8 @@ public class vConsultarJugadores {
     private JMenu mPrincipal;
     private JMenuItem jmiPrincipal;
     private JLabel lImg;
+    private JMenu mClasificacion;
+    private JMenuItem jmiClasi;
     private JLabel jaOficio;
     private int posicion=0;
     private int maximo;
@@ -127,6 +126,9 @@ public class vConsultarJugadores {
         Image imgUsuario = imagenUsuario.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
+
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(mPrincipal,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
         bIzquierda.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -141,12 +143,6 @@ public class vConsultarJugadores {
                 posicion++;
                 maximoReset();
                 mostrarPersona();
-            }
-        });
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.vEquipos();
             }
         });
     }

@@ -67,6 +67,7 @@ public class vConsultarEquipos {
     private JMenu jmInicio;
     private JMenu mPrincipal;
     private JMenuItem jmiPrincipal;
+    private JMenuItem jmiClasi;
 
 
     public vConsultarEquipos() throws MalformedURLException {
@@ -161,66 +162,8 @@ public class vConsultarEquipos {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-        mEquipos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mEquipos.setBackground(Color.orange);
-                mEquipos.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mEquipos.setBackground(UIManager.getColor("Menu.background"));
-                mEquipos.setOpaque(false);
-            }
-        });
-        mClasificacion.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mClasificacion.setBackground(Color.orange);
-                mClasificacion.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mClasificacion.setBackground(UIManager.getColor("Menu.background"));
-                mClasificacion.setOpaque(false);
-            }
-        });
-        mPartidos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mPartidos.setBackground(Color.orange);
-                mPartidos.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mPartidos.setBackground(UIManager.getColor("Menu.background"));
-                mPartidos.setOpaque(false);
-            }
-        });
-        mUsuario.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mUsuario.setBackground(Color.orange);
-                mUsuario.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mUsuario.setBackground(UIManager.getColor("Menu.background"));
-                mUsuario.setOpaque(false);
-            }
-        });
-        jmiPrincipal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.Principal();
-            }
-        });
-        jmiCerrarSesion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                    Main.cerrarSesion();
-            }
-        });
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(jmInicio,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
         bEquipo1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

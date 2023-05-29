@@ -38,6 +38,7 @@ import java.util.stream.Collectors;
  */
 public class Main {
     public static JFrame actual;
+    public static JFrame anterior;
     public static JFrame vInicio;
     public static JFrame vPrincipalUsuario;
     public static JFrame vPrincipalAdmin;
@@ -131,10 +132,26 @@ public class Main {
 
     public static void Principal() {
         actual.dispose();
-        if (vPrincipalUsuario != null)
+        if (anterior != null) {
+            anterior.setVisible(true);
+            actual = anterior;
+            anterior = null;
+        } else if (vPrincipalUsuario != null) {
             vPrincipalUsuario.setVisible(true);
-        else
+            actual = vPrincipalUsuario;
+        }
+        else if (vPrincipalAdmin != null) {
             vPrincipalAdmin.setVisible(true);
+            actual = vPrincipalAdmin;
+        }
+    }
+
+    public static void pricipalVisibleFalse() {
+        if (vPrincipalUsuario == actual || vPrincipalAdmin == actual) {
+            actual.setVisible(false);
+        } else {
+            actual.dispose();
+        }
     }
 
     public static void vEquipos() {
@@ -211,10 +228,7 @@ public class Main {
         vEquipos.pack();
         vEquipos.setVisible(true);
         vEquipos.setExtendedState(Frame.MAXIMIZED_BOTH);
-        if (vPrincipalUsuario != null)
-            vPrincipalUsuario.setVisible(false);
-        else
-            vPrincipalAdmin.setVisible(false);
+        pricipalVisibleFalse();
         actual = vEquipos;
     }
 
@@ -236,7 +250,8 @@ public class Main {
         vUsuario.pack();
         vUsuario.setVisible(true);
         vUsuario.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrincipalUsuario.setVisible(false);
+        actual.setVisible(false);
+        anterior = actual;
         actual = vUsuario;
     }
 
@@ -286,9 +301,12 @@ public class Main {
         vClasificacion.pack();
         vClasificacion.setVisible(true);
         vClasificacion.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrincipalUsuario.setVisible(false);
+        pricipalVisibleFalse();
+
         actual = vClasificacion;
     }
+
+
 
     public static void generarVentanaInsertarEquipos() throws MalformedURLException {
         vInsertEquipos = new JFrame("vInsertEquipos");
@@ -408,10 +426,7 @@ public class Main {
         vPartido.pack();
         vPartido.setVisible(true);
         vPartido.setExtendedState(Frame.MAXIMIZED_BOTH);
-        if (vPrincipalUsuario != null)
-            vPrincipalUsuario.setVisible(false);
-        else
-            vPrincipalAdmin.setVisible(false);
+        pricipalVisibleFalse();
         actual = vPartido;
     }
 
@@ -422,10 +437,7 @@ public class Main {
         vPartidosPorJornada.pack();
         vPartidosPorJornada.setVisible(true);
         vPartidosPorJornada.setExtendedState(Frame.MAXIMIZED_BOTH);
-        if (vPrincipalUsuario != null)
-            vPrincipalUsuario.setVisible(false);
-        else
-            vPrincipalAdmin.setVisible(false);
+        pricipalVisibleFalse();
         actual = vPartidosPorJornada;
     }
 
@@ -541,8 +553,12 @@ public class Main {
         return NumJornadas;
     }
 
-    public static HashMap<String, String>[] getUltimaJornada() {
+    public static HashMap<String, String>[] getUltimaJornada() throws Exception {
         ArrayList<Partido> partidos = TJornada.getUltimaJornada();
+        if (partidos == null) {
+            numJornada = 0;
+            throw new Exception("no hay partidos jugados");
+        }
         numJornada = partidos.get(0).getJornada().getNumJornada();
         return dePartidosAhashmap(partidos);
     }

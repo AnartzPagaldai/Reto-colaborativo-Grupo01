@@ -59,11 +59,8 @@ public class vPartidosPorJornada {
     private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
-    private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
-    private JMenu mClasificacion;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
@@ -80,6 +77,8 @@ public class vPartidosPorJornada {
     private JLabel jEquipoGanador;
     private JMenu jmInicio;
     private JMenuItem jmiPrincipal;
+    private JMenu mClasificacion;
+    private JMenuItem jmiClasi;
 
     private ArrayList<JLabel> nombresEquipos1 = new ArrayList<>();
 
@@ -183,19 +182,13 @@ public class vPartidosPorJornada {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(jmInicio,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
         cbJornada.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 partidos = Main.getJornada((Integer) cbJornada.getSelectedItem());
                 rellenarPartido();
-            }
-        });
-
-        jmiPrincipal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.Principal();
             }
         });
     }
