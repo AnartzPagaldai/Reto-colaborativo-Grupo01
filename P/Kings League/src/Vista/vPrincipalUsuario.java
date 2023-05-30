@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.Main;
+
 import java.awt.Desktop;
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +18,7 @@ import java.util.concurrent.TimeoutException;
  * Generar la clase vPrincipalUsuario.
  * Esta clase tiene el contenido y los métodos necesarios para ejecutar la ventana principal del usuario normal.
  */
-public class  vPrincipalUsuario {
+public class vPrincipalUsuario {
     private JPanel pPrincipal;
 
     private ImageIcon imagenInstagram;
@@ -128,79 +129,10 @@ public class  vPrincipalUsuario {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-
-
-        // Poner los ":hover" en los elementos de la barra de navegación (al pasar el ratón por encima el fondo cambia)
-        mEquipos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mEquipos.setBackground(Color.orange);
-                mEquipos.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mEquipos.setBackground(UIManager.getColor("Menu.background"));
-                mEquipos.setOpaque(false);
-            }
-        });
-
-        mClasificacion.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mClasificacion.setBackground(Color.orange);
-                mClasificacion.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mClasificacion.setBackground(UIManager.getColor("Menu.background"));
-                mClasificacion.setOpaque(false);
-            }
-        });
-        mPartidos.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mPartidos.setBackground(Color.orange);
-                mPartidos.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mPartidos.setBackground(UIManager.getColor("Menu.background"));
-                mPartidos.setOpaque(false);
-            }
-        });
-        mUsuario.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                mUsuario.setBackground(Color.orange);
-                mUsuario.setOpaque(true);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                mUsuario.setBackground(UIManager.getColor("Menu.background"));
-                mUsuario.setOpaque(false);
-            }
-        });
-
-        jmiCerrarSesion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.cerrarSesion();
-            }
-        });
         bGolazos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openLink(youtubeLink);
-            }
-        });
-        jmiConsultarEquipos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaEquipos();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
             }
         });
 
@@ -211,37 +143,9 @@ public class  vPrincipalUsuario {
             }
         });
 
-        jmiVerPerfil.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaAjustesUsuario();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
-        jmiClasi.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Main.generarVentanaClasificacion();
-                } catch (MalformedURLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
 
-        jmiVer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                   Main.generarVerPartido();
-                } catch (Exception ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
     }
 
     public JPanel getpPrincipal() {

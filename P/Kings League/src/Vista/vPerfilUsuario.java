@@ -145,7 +145,7 @@ public class vPerfilUsuario {
         bVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.PrincipalUsuario();
+                Main.Principal();
             }
         });
     }

@@ -28,11 +28,8 @@ public class vPartidos {
     private JMenuBar jmheader;
     private JMenu mEquipos;
     private JMenuItem jmiConsultarEquipos;
-    private JMenu mJugadores;
-    private JMenuItem jmiSeleccionar;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
-    private JMenu mClasificacion;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
@@ -77,6 +74,9 @@ public class vPartidos {
     private JLabel jEquipoGanador;
     private JMenu jmInicio;
     private JMenuItem jmiPrincipal;
+    private JLabel labelganador;
+    private JMenu mClasificacion;
+    private JMenuItem jmiClasi;
 
     public vPartidos() throws Exception {
 
@@ -126,45 +126,49 @@ public class vPartidos {
         barras.add(barra6);
 
 
-        HashMap <String, String> [] partidos = Main.getUltimaJornada();
-        for (int x = 0; x < partidos.length; x++) {
+        try {
+            HashMap <String, String> [] partidos = Main.getUltimaJornada();
+            for (int x = 0; x < partidos.length; x++) {
 
-            nombresEquipos1.get(x).setText(partidos[x].get("nombre_equiop1"));
+                nombresEquipos1.get(x).setText(partidos[x].get("nombre_equiop1"));
 
-            escudoEquipo1 = new ImageIcon(new URL(partidos[x].get("logoEquipo1")));
-            Image LogoNuevo = escudoEquipo1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-            ImageIcon newIcon = new ImageIcon(LogoNuevo);
-            nombresEquipos1.get(x).setIcon(newIcon);
+                escudoEquipo1 = new ImageIcon(new URL(partidos[x].get("logoEquipo1")));
+                Image LogoNuevo = escudoEquipo1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                ImageIcon newIcon = new ImageIcon(LogoNuevo);
+                nombresEquipos1.get(x).setIcon(newIcon);
 
-            nombresEquipos2.get(x).setText(partidos[x].get("nombre_equiop2"));
+                nombresEquipos2.get(x).setText(partidos[x].get("nombre_equiop2"));
 
-            escudoEquipo2 = new ImageIcon(new URL(partidos[x].get("logoEquipo2")));
-            Image LogoEquipo = escudoEquipo2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-            ImageIcon iconoEquipo = new ImageIcon(LogoEquipo);
-            nombresEquipos2.get(x).setIcon(iconoEquipo);
+                escudoEquipo2 = new ImageIcon(new URL(partidos[x].get("logoEquipo2")));
+                Image LogoEquipo = escudoEquipo2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                ImageIcon iconoEquipo = new ImageIcon(LogoEquipo);
+                nombresEquipos2.get(x).setIcon(iconoEquipo);
 
-            golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
-            golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
-            barras.get(x).setText("-");
-            if (Main.getNumJornada() == 13 && golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0")) {
-                golesEquipos1.get(2).setText("sin");
-                golesEquipos2.get(2).setText("jugar");
-            }
-            panelGanador.setVisible(Main.getNumJornada() == 13 &&
-                    barras.get(2).getText().equals("-") &&
-                    !golesEquipos1.get(2).getText().equals("sin"));
-            if (panelGanador.isVisible()) {
-                if (Integer.parseInt(golesEquipos1.get(x).getText()) > Integer.parseInt(golesEquipos2.get(x).getText())) {
-                    jEquipoGanador.setText(nombresEquipos1.get(x).getText());
-                    jEquipoGanador.setIcon(nombresEquipos1.get(x).getIcon());
-                } else {
-                    jEquipoGanador.setText(nombresEquipos2.get(x).getText());
-                    jEquipoGanador.setIcon(nombresEquipos2.get(x).getIcon());
+                golesEquipos1.get(x).setText(partidos[x].get("golesEquipo1"));
+                golesEquipos2.get(x).setText(partidos[x].get("golesEquipo2"));
+                barras.get(x).setText("-");
+                if (Main.getNumJornada() == 13 && golesEquipos1.get(2).getText().equals("0") && golesEquipos2.get(2).getText().equals("0")) {
+                    golesEquipos1.get(2).setText("sin");
+                    golesEquipos2.get(2).setText("jugar");
                 }
+                panelGanador.setVisible(Main.getNumJornada() == 13 &&
+                        barras.get(2).getText().equals("-") &&
+                        !golesEquipos1.get(2).getText().equals("sin"));
+                if (panelGanador.isVisible()) {
+                    if (Integer.parseInt(golesEquipos1.get(x).getText()) > Integer.parseInt(golesEquipos2.get(x).getText())) {
+                        jEquipoGanador.setText(nombresEquipos1.get(x).getText());
+                        jEquipoGanador.setIcon(nombresEquipos1.get(x).getIcon());
+                    } else {
+                        jEquipoGanador.setText(nombresEquipos2.get(x).getText());
+                        jEquipoGanador.setIcon(nombresEquipos2.get(x).getIcon());
+                    }
+                }
+
+
+
             }
-
-
-
+        } catch (Exception e) {
+            labelganador.setText(e.getMessage());
         }
 
 
@@ -206,12 +210,8 @@ public class vPartidos {
         ImageIcon UsuIcono = new ImageIcon(imgUsuario);
         mUsuario.setIcon(UsuIcono);
 
-        jmiPrincipal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.Principal();
-            }
-        });
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(jmInicio,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
     }
 
 

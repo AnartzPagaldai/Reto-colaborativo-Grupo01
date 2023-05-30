@@ -26,15 +26,20 @@ public class TSplit {
             BaseDeDatos.abrirConexion();
             PreparedStatement st = BaseDeDatos.getCon().prepareStatement("select max(id) id from splits");
             ResultSet resultSet = st.executeQuery();
-            if (resultSet.next()) {
-                PreparedStatement st2 = BaseDeDatos.getCon().prepareStatement("select id_split from jornadas where id = (select max(id) from jornadas)");
-                ResultSet resultSet2 = st2.executeQuery();
-                if (resultSet2.next()) {
-                    if (resultSet2.getInt("id_split") != resultSet.getInt("id")) {
-                        throw new Exception("no se puede crear el siguiente split si no se ha terminado al anterior.");
+            resultSet.next();
+            int id = resultSet.getInt("id");
+            if (id != 0) {
+                PreparedStatement st1 = BaseDeDatos.getCon().prepareStatement("select id_split from jornadas where id = (select max(id) from jornadas)");
+                ResultSet resultSet1 = st1.executeQuery();
+                if (resultSet1.next()) {
+                    if (resultSet1.getInt("id_split") != id) {
+                        throw new Exception("No se puede crear el siguiente split si no se ha terminado al anterior.");
                     }
                 }
                 ArrayList<Partido> partidos = TJornada.getUltimaJornada();
+                if (partidos == null) {
+                    throw new Exception("No se puede crear el siguiente split si no se ha terminado al anterior.");
+                }
                 if (partidos.get(0).getJornada().getNumJornada() != 13 ||
                         (partidos.get(0).getJornada().getNumJornada() == 13 &&
                                 partidos.get(2).getGolesEquipo1() == 0 && partidos.get(2).getGolesEquipo2() == 0)) {

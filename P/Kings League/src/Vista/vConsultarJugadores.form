@@ -114,36 +114,6 @@
                       <text value="               "/>
                     </properties>
                   </component>
-                  <grid id="3bcd" class="javax.swing.JMenu" binding="mJugadores" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="28"/>
-                      <foreground color="-16777216"/>
-                      <text value="Jugadores"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="9bae9" class="javax.swing.JMenuItem" binding="jmiSeleccionar">
-                        <constraints/>
-                        <properties>
-                          <background color="-1926088"/>
-                          <font size="20"/>
-                          <foreground color="-16777216"/>
-                          <text value="Seleccionar"/>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
-                  <component id="7b844" class="javax.swing.JLabel">
-                    <constraints/>
-                    <properties>
-                      <background color="-1585287"/>
-                      <font size="26"/>
-                      <foreground color="-1585287"/>
-                      <text value="               "/>
-                    </properties>
-                  </component>
                   <grid id="aea87" class="javax.swing.JMenu" binding="mPartidos" layout-manager="FlowLayout" hgap="34" vgap="5" flow-align="1">
                     <constraints/>
                     <properties>
@@ -174,17 +144,26 @@
                       <text value="               "/>
                     </properties>
                   </component>
-                  <grid id="22aa2" class="javax.swing.JMenu" binding="mClasificacion" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="34" vgap="-1">
-                    <margin top="0" left="0" bottom="0" right="0"/>
+                  <grid id="1597c" class="javax.swing.JMenu" binding="mClasificacion" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                     <constraints/>
                     <properties>
                       <background color="-1585287"/>
                       <font size="28"/>
                       <foreground color="-16777216"/>
-                      <text value="Ver clasificación"/>
+                      <text value="Clasificacion"/>
                     </properties>
                     <border type="none"/>
-                    <children/>
+                    <children>
+                      <component id="9b713" class="javax.swing.JMenuItem" binding="jmiClasi">
+                        <constraints/>
+                        <properties>
+                          <background color="-1926088"/>
+                          <font size="20"/>
+                          <foreground color="-16777216"/>
+                          <text value="Ver clasificacion"/>
+                        </properties>
+                      </component>
+                    </children>
                   </grid>
                   <component id="fefe6" class="javax.swing.JLabel">
                     <constraints/>

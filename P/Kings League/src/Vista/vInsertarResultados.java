@@ -26,7 +26,6 @@ public class vInsertarResultados {
     private JMenuItem jmiConsultarEquipos;
     private JMenu mPartidos;
     private JMenuItem jmiVer;
-    private JMenu mClasificacion;
     private JMenu mUsuario;
     private JMenuItem jmiVerPerfil;
     private JMenuItem jmiCerrarSesion;
@@ -71,6 +70,8 @@ public class vInsertarResultados {
     private JButton bRefrescar;
     private JMenu jmInicio;
     private JMenuItem jmiPrincipal;
+    private JMenu mClasificacion;
+    private JMenuItem jmiClasi;
 
     ArrayList<JLabel> nombresEquipos1 = new ArrayList<>();
 
@@ -173,6 +174,9 @@ public class vInsertarResultados {
 
         Image imgRefrescar = new ImageIcon(new URL("https://cdn-icons-png.flaticon.com/512/126/126561.png?w=826&t=st=1684772091~exp=1684772691~hmac=7ff49a98fc4fafc7ccaa276213e1b005678078194f2ea106495526feaeec7ef8")).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
         bRefrescar.setIcon(new ImageIcon(imgRefrescar));
+
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(jmInicio,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
         cbJornada.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -211,12 +215,6 @@ public class vInsertarResultados {
                 }
                 partidos = Main.getJornada((Integer) cbJornada.getSelectedItem());
                 rellenarPartido();
-            }
-        });
-        jmiPrincipal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.Principal();
             }
         });
     }

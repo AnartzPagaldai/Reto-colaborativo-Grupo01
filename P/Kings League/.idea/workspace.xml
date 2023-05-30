@@ -4,41 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="get jornadas a medias">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="todo funcionanado sin enlazar todo">
+      <change afterPath="$PROJECT_DIR$/src/Vista/ListenersRepetidos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoPersonal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoSueldo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Enumeraciones/TipoSueldo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TContratosJugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TContratosJugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TJugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Jugador/TJugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TContratosPersonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kings League/Modelo/Personal/TContratosPersonal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Equipo/TEquipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jornada/TJornada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Jugador/TContratosJugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/ultimaJornada.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/ultimaJornada.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarEquipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vActualizarPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vClasificacionEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vClasificacionEquipos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vCrearSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vCrearSplit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vDeleteContratosjugadores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarContratosPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidos.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vPartidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPerfilUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPerfilUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vRegistro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdateContratosPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vUpdatecontratosjugadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalUsuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +59,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;117&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;96&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/1GDAW05/Desktop/Reto-colaborativo-Grupo01/P/Kings League&quot;,
@@ -91,6 +80,17 @@
       <recent name="C:\Users\1GDAW04\Desktop\Reto-colaborativo-Grupo01\P\Kings League\src\Modelo\XML" />
       <recent name="C:\Users\Lantek\kings leage\Reto-colaborativo-Grupo01\P\Kings League\src\Modelo\XML" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Kings League.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Kings_League_jar/Kings League.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.Kings League.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -222,7 +222,8 @@
     <MESSAGE value="tipo jugador add" />
     <MESSAGE value="set Obejto Infrom equipo return equipo" />
     <MESSAGE value="informe body" />
-    <option name="LAST_COMMIT_MESSAGE" value="informe body" />
+    <MESSAGE value="todo funcionanado sin enlazar todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo funcionanado sin enlazar todo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -284,7 +285,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Modelo/Split/TSplit.java</url>
-          <line>57</line>
+          <line>62</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>

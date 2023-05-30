@@ -1,31 +1,31 @@
 ﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="jornadas" type="tipo_jornadas"/>
+    <xs:element name="jornadas" type="tipo_jornadas"/>
     <xs:complexType name="tipo_jornadas">
-      <xs:sequence>
-          <xs:element name="jornada" maxOccurs="13" type="tipo_jornada"/>
-      </xs:sequence>
+        <xs:sequence>
+            <xs:element name="jornada" maxOccurs="13" type="tipo_jornada"/>
+        </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="tipo_jornada">
-      <xs:sequence>
-        <xs:element name="tipo_split" type="xs:string"/>
-        <xs:element name="tipo_jornada" type="xs:string"/>
-        <xs:element name="partido" type="tipo_partido" maxOccurs="6"/>
-      </xs:sequence>
-      <xs:attribute name="num_jornada" type="xs:int" use="required"/>
-      <xs:attribute name="id_jornada" type="xs:int" use="required"/>
-      </xs:complexType>
-      
-      <xs:complexType name="tipo_partido">
-      <xs:sequence>
-        <xs:element name="equipo1" type="xs:string"/>
-        <xs:element name="goles_equipo1" type="xs:int" minOccurs="0"/>
-        <xs:element name="equipo2" type="xs:string"/>
-        <xs:element name="goles_equipo2" type="xs:int" minOccurs="0"/>
-        <xs:element name="fecha_partido" type="xs:string"/>
-        <xs:element name="lugar_partido" type="xs:string"/>
-      </xs:sequence>
-      <xs:attribute name="id_partido" type="xs:int" use="required"/>
-      </xs:complexType>
-      
+        <xs:sequence>
+            <xs:element name="tipo_split" type="xs:string"/>
+            <xs:element name="tipo_jornada" type="xs:string"/>
+            <xs:element name="partido" type="tipo_partido" maxOccurs="6"/>
+        </xs:sequence>
+        <xs:attribute name="num_jornada" type="xs:int" use="required"/>
+        <xs:attribute name="id_jornada" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipo_partido">
+        <xs:sequence>
+            <xs:element name="equipo1" type="xs:string"/>
+            <xs:element name="goles_equipo1" type="xs:int" minOccurs="0"/>
+            <xs:element name="equipo2" type="xs:string"/>
+            <xs:element name="goles_equipo2" type="xs:int" minOccurs="0"/>
+            <xs:element name="fecha_partido" type="xs:string"/>
+            <xs:element name="lugar_partido" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id_partido" type="xs:int" use="required"/>
+    </xs:complexType>
+
 </xs:schema>
