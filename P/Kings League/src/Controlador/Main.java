@@ -569,7 +569,7 @@ public class Main {
         ArrayList<Partido> partidos = TJornada.getUltimaJornada();
         if (partidos == null) {
             numJornada = 0;
-            throw new Exception("no hay partidos jugados");
+            throw new Exception("No hay partidos jugados.");
         }
         numJornada = partidos.get(0).getJornada().getNumJornada();
         return dePartidosAhashmap(partidos);
