@@ -107,7 +107,7 @@ public class vActualizarEquipo {
                     colorCorrecto();
                     numerosCorrectos();
                     if (enlaceCorrecto && colorCorrecto && numerosCorrectos){
-                        update= Main.updateEquipos(tfNombre.getText(), Double.parseDouble(tfPresupuesto.getText()), tfImagen.getText(), tfColor.getText());
+                        update= Main.updateEquipos(cbNombres.getSelectedItem().toString(),tfNombre.getText(), Double.parseDouble(tfPresupuesto.getText()), tfImagen.getText(), tfColor.getText());
                         if (update) {
                             JOptionPane.showMessageDialog(null, "¡Equipo modificado con exito!");
                         } else
