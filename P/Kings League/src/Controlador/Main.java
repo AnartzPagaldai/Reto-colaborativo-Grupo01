@@ -1,6 +1,5 @@
 package Controlador;
 
-import Modelo.BaseDeDatos.BaseDeDatos;
 import Modelo.Enumeraciones.TipoPersonal;
 import Modelo.Enumeraciones.TipoSueldo;
 import Modelo.Equipo.Equipo;
@@ -29,7 +28,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -125,11 +123,6 @@ public class Main {
         vInicio.setVisible(true);
     }
 
-    public static void PrincipalUsuario() {
-        actual.dispose();
-
-        vPrincipalUsuario.setVisible(true);
-    }
 
     public static void Principal() {
         actual.dispose();
@@ -155,10 +148,6 @@ public class Main {
         }
     }
 
-    public static void vEquipos() {
-        actual.dispose();
-        vEquipos.setVisible(true);
-    }
 
     public static void PrincipalAdmin() {
         actual.dispose();
@@ -354,27 +343,7 @@ public class Main {
         actual = vContratosJ;
     }
 
-    public static void generarBorrarSplits() throws MalformedURLException {
-        vBorrarSplits = new JFrame("vDeleteSplit");
-        vBorrarSplits.setContentPane(new vDeleteSplit().getpPrincipal());
-        vBorrarSplits.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vBorrarSplits.pack();
-        vBorrarSplits.setVisible(true);
-        vBorrarSplits.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrincipalAdmin.setVisible(false);
-        actual = vBorrarSplits;
-    }
 
-    public static void generarBorrarUsuarios() throws MalformedURLException {
-        vBorrarUsuarios = new JFrame("vDeleteusuarios");
-        vBorrarUsuarios.setContentPane(new vDeleteusuarios().getpPrincipal());
-        vBorrarUsuarios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vBorrarUsuarios.pack();
-        vBorrarUsuarios.setVisible(true);
-        vBorrarUsuarios.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vPrincipalAdmin.setVisible(false);
-        actual = vBorrarUsuarios;
-    }
 
     public static void generarInsertarPersonal() throws MalformedURLException {
         vInsertarPersonal = new JFrame("vInsertarPersonal");
@@ -441,7 +410,49 @@ public class Main {
         pricipalVisibleFalse();
         actual = vPartidosPorJornada;
     }
+    public static void generarBorrarContratoJugadores() {
+        vDeleteContratosjugadores = new JFrame("vActualizarEquipo");
+        vDeleteContratosjugadores.setContentPane(new vDeleteContratosjugadores().getpPrincipal());
+        vDeleteContratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vDeleteContratosjugadores.pack();
+        vDeleteContratosjugadores.setVisible(true);
+        vDeleteContratosjugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vDeleteContratosjugadores;
+        vPrincipalAdmin.setVisible(false);
+    }
 
+    public static void generarInsertarContratosPersonal() throws MalformedURLException {
+        vInsertarContratosPersonal = new JFrame("vActualizarEquipo");
+        vInsertarContratosPersonal.setContentPane(new vInsertarContratosPersonal().getpPrincipal());
+        vInsertarContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vInsertarContratosPersonal.pack();
+        vInsertarContratosPersonal.setVisible(true);
+        vInsertarContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vInsertarContratosPersonal;
+        vPrincipalAdmin.setVisible(false);
+    }
+
+    public static void generarActualizarContratosPersonal() throws MalformedURLException {
+        vUpdateContratosPersonal = new JFrame("vActualizarEquipo");
+        vUpdateContratosPersonal.setContentPane(new vUpdateContratosPersonal().getpPrincipla());
+        vUpdateContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vUpdateContratosPersonal.pack();
+        vUpdateContratosPersonal.setVisible(true);
+        vUpdateContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vUpdateContratosPersonal;
+        vPrincipalAdmin.setVisible(false);
+    }
+
+    public static void generarBorrarContratoPersonal() throws MalformedURLException {
+        vDeleteContratosPersonal = new JFrame("vActualizarEquipo");
+        vDeleteContratosPersonal.setContentPane(new vDeleteContratosPersonal().getpPrincipal());
+        vDeleteContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        vDeleteContratosPersonal.pack();
+        vDeleteContratosPersonal.setVisible(true);
+        vDeleteContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        actual = vDeleteContratosPersonal;
+        vPrincipalAdmin.setVisible(false);
+    }
     // Métodos para los CRUD
 
     /**
@@ -784,20 +795,6 @@ public class Main {
         return insertar;
     }
 
-
-    public static boolean buscarDni(String dni) {
-        if (TPersonal.consutlarPorDni(dni)) return true;
-        return TJugador.consultarPorDni(dni);
-    }
-
-    public static boolean actualizarPersonal(String nombre, String apellido, String dni, String telefono, String oficio, String img) {
-        return TPersonal.actualizarPersonal(new Personal(nombre, apellido, dni, telefono, TipoPersonal.valueOf(oficio), img));
-    }
-
-    public static boolean buscarDniPersoal(String dni) {
-        return TPersonal.consutlarPorDni(dni);
-    }
-
     public static boolean borrarPersonal(String dni) {
         return TPersonal.borrarPersonal(dni);
     }
@@ -940,15 +937,16 @@ public class Main {
         return personal;
     }
 
-    public static boolean updateEquipos(String nombre, double presupuesto, String imagen, String color) {
+    public static boolean updateEquipos(String nombreAntiguo,String nombre, double presupuesto, String imagen, String color) {
         boolean update;
         boolean existe;
         Equipo equipo = new Equipo();
-        equipo.setNombre(nombre);
+        equipo.setNombre(nombreAntiguo);
         equipo.setPresupuestoAnual(presupuesto);
         equipo.setLogoImg(imagen);
         equipo.setColor(color);
         existe = TEquipo.selectEquipoInsertar(equipo);
+        equipo.setNombre(nombre);
         if (!existe) {
             update = false;
         } else {
@@ -1106,47 +1104,5 @@ public class Main {
         return numJornada;
     }
 
-    public static void generarBorrarContratoJugadores() {
-        vDeleteContratosjugadores = new JFrame("vActualizarEquipo");
-        vDeleteContratosjugadores.setContentPane(new vDeleteContratosjugadores().getpPrincipal());
-        vDeleteContratosjugadores.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vDeleteContratosjugadores.pack();
-        vDeleteContratosjugadores.setVisible(true);
-        vDeleteContratosjugadores.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vDeleteContratosjugadores;
-        vPrincipalAdmin.setVisible(false);
-    }
 
-    public static void generarInsertarContratosPersonal() throws MalformedURLException {
-        vInsertarContratosPersonal = new JFrame("vActualizarEquipo");
-        vInsertarContratosPersonal.setContentPane(new vInsertarContratosPersonal().getpPrincipal());
-        vInsertarContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vInsertarContratosPersonal.pack();
-        vInsertarContratosPersonal.setVisible(true);
-        vInsertarContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vInsertarContratosPersonal;
-        vPrincipalAdmin.setVisible(false);
-    }
-
-    public static void generarActualizarContratosPersonal() throws MalformedURLException {
-        vUpdateContratosPersonal = new JFrame("vActualizarEquipo");
-        vUpdateContratosPersonal.setContentPane(new vUpdateContratosPersonal().getpPrincipla());
-        vUpdateContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vUpdateContratosPersonal.pack();
-        vUpdateContratosPersonal.setVisible(true);
-        vUpdateContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vUpdateContratosPersonal;
-        vPrincipalAdmin.setVisible(false);
-    }
-
-    public static void generarBorrarContratoPersonal() throws MalformedURLException {
-        vDeleteContratosPersonal = new JFrame("vActualizarEquipo");
-        vDeleteContratosPersonal.setContentPane(new vDeleteContratosPersonal().getpPrincipal());
-        vDeleteContratosPersonal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        vDeleteContratosPersonal.pack();
-        vDeleteContratosPersonal.setVisible(true);
-        vDeleteContratosPersonal.setExtendedState(Frame.MAXIMIZED_BOTH);
-        actual = vDeleteContratosPersonal;
-        vPrincipalAdmin.setVisible(false);
-    }
 }

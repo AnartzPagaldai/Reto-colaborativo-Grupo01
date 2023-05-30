@@ -106,12 +106,9 @@ public class vConsultarJugadores {
                 g2d.fillRect(0, 0, getWidth(), getHeight());
             }
         };
-        jmiPrincipal.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.PrincipalUsuario();
-            }
-        });
+
+        ListenersRepetidos.mouseListenerBarraDeNavegacion(mPrincipal,mEquipos, mPartidos, mClasificacion);
+        ListenersRepetidos.actionListenerBarraDeNavegacion(jmiPrincipal,jmiConsultarEquipos, jmiVer, jmiClasi, jmiCerrarSesion, jmiVerPerfil);
 
         pPrincipal.add(pDegradado, BorderLayout.CENTER);
 
