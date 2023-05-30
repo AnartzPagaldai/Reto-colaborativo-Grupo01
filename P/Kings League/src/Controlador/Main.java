@@ -127,6 +127,7 @@ public class Main {
 
     public static void PrincipalUsuario() {
         actual.dispose();
+
         vPrincipalUsuario.setVisible(true);
     }
 

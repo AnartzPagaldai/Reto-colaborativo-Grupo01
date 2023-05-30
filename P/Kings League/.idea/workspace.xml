@@ -4,30 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="todo funcionanado sin enlazar todo">
-      <change afterPath="$PROJECT_DIR$/src/Vista/ListenersRepetidos.java" afterDir="false" />
+    <list default="true" id="5dad3d72-fa45-4e78-a70f-6a49ecaf73bf" name="Changes" comment="triggers arreglos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controlador/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controlador/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/BaseDeDatos/BaseDeDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/Split/TSplit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/clasificacion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/jornadas.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vClasificacionEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vClasificacionEquipos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarEquipos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vConsultarJugadores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarResultados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidos.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPartidosPorJornada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPerfilUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPerfilUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/vPrincipalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vPrincipalUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo/XML/ultimaJornada.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo/XML/ultimaJornada.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/vInsertarJugadores.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +47,8 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/1GDAW05/Desktop/Reto-colaborativo-Grupo01/P/Kings League&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -117,6 +103,7 @@
       <workItem from="1684783509832" duration="2555000" />
       <workItem from="1684824289848" duration="8083000" />
       <workItem from="1684834579003" duration="5184000" />
+      <workItem from="1685430049021" duration="3947000" />
     </task>
     <task id="LOCAL-00001" summary="xml generacion y get">
       <created>1683800631820</created>
@@ -288,11 +275,17 @@
           <line>62</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controlador/Main.java</url>
+          <line>984</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="e" />
+        <watch expression="jugador" />
       </configuration>
     </watches-manager>
   </component>
