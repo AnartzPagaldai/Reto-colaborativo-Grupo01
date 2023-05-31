@@ -220,7 +220,7 @@ public class vUpdateJugadores {
                     tfDNI.setText(jugador.getDni());
                     tfIMG.setText(jugador.getImg());
                     ftTelefono.setText(jugador.getTelefono());
-                    cbTipo.setSelectedItem(jugador.getTipoJugador().toString());
+                    cbTipo.setSelectedItem(jugador.getTipoJugador().getValor());
                     cbPosicion.setSelectedItem(jugador.getTipoPosicion().toString());
                     sDefensa.setValue(jugador.getDefensa());
                     sFisico.setValue(jugador.getFisico());

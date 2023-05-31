@@ -152,6 +152,7 @@ public class Main {
     public static void PrincipalAdmin() {
         actual.dispose();
         vPrincipalAdmin.setVisible(true);
+        actual=vPrincipalAdmin;
     }
 
     // Crear ventanas

@@ -123,7 +123,12 @@ public class TJugador {
                 jugador.setTelefono(resulatdo.getString("telefono"));
                 jugador.setTipoPosicion(Jugador.TipoPosicion.valueOf(resulatdo.getString("posicion")));
                 jugador.setImg(resulatdo.getString("img"));
-                jugador.setTipoJugador(Jugador.TipoJugador.valueOf(resulatdo.getString("tipo")));
+                String tipo =resulatdo.getString("tipo");
+                Jugador.TipoJugador tipoJugador;
+                if (tipo.equalsIgnoreCase("DRAFT")){
+                    tipoJugador= Jugador.TipoJugador.DRAFT;
+                }else tipoJugador= Jugador.TipoJugador.WILDCARD;
+                jugador.setTipoJugador(tipoJugador);
                 jugador.setVelocidad(resulatdo.getInt("velocidad"));
                 jugador.setFisico(resulatdo.getInt("fisico"));
                 jugador.setTiro(resulatdo.getInt("tiro"));

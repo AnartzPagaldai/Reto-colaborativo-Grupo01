@@ -153,7 +153,7 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearPlayOff();
-                    JOptionPane.showMessageDialog(null, "se a credo el playoff");
+                    JOptionPane.showMessageDialog(null, "Se ha credo el playoff");
                     Main.generarXml();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -166,7 +166,7 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearJornadaPlayOff(true);
-                    JOptionPane.showMessageDialog(null, "se a creado la semifinal");
+                    JOptionPane.showMessageDialog(null, "Se ha creado la semifinal");
                     Main.generarXml();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -179,7 +179,7 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.crearJornadaPlayOff(false);
-                    JOptionPane.showMessageDialog(null, "se a creado la final");
+                    JOptionPane.showMessageDialog(null, "Se ha creado la final");
                     Main.generarXml();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -204,7 +204,7 @@ public class vPrincipalAdmin {
                     Main.generarActualizarPersonal();
                 } catch (MalformedURLException ex) {
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "erro al crear la ventana");
+                    JOptionPane.showMessageDialog(null, "Error al crear la ventana");
                 }
             }
         });
@@ -273,7 +273,7 @@ public class vPrincipalAdmin {
                 try {
                     Main.generarInsertarContratosJugador();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "error al crear la ventana");
+                    JOptionPane.showMessageDialog(null, "Error al crear la ventana");
                 }
             }
         });
@@ -305,7 +305,7 @@ public class vPrincipalAdmin {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.generarJornadas();
-                    JOptionPane.showMessageDialog(null, "emparejamientos creados");
+                    JOptionPane.showMessageDialog(null, "Emparejamientos creados");
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                     ex.printStackTrace();

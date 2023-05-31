@@ -192,13 +192,13 @@ public class vInsertarResultados {
                 try {
                     for (int x = 0; x < partidos.length; x++) {
                         if (golesEq1.get(x).getText().equals(golesEq2.get(x).getText())) {
-                            throw new Exception("no pueden empartar");
+                            throw new Exception("No pueden empatar");
                         }
                         if (!Main.ActualizarPartido(nombresEquipos1.get(x).getText(), nombresEquipos2.get(x).getText(), golesEq1.get(x).getText(), golesEq2.get(x).getText())) {
-                            throw new Exception("no se a actualizado toda la jornada");
+                            throw new Exception("No se ha actualizado toda la jornada");
                         }
                     }
-                    JOptionPane.showMessageDialog(null, "se a actualizado la jornada");
+                    JOptionPane.showMessageDialog(null, "Jornada actualizada");
                 } catch (Exception ex) {
                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
